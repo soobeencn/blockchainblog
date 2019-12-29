@@ -1,0 +1,9 @@
+PyYAML>=3.0
+Sphinx>=1.5.2
+Docutils
+readthedocs-sphinx-ext
+recommonmark
+click>=4.0
+virtualenv
+six
+mock
