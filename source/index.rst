@@ -3,11 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to 区块链研究记录's documentation!
+研究记录:
 ==========================================
 
 .. toctree::
    :maxdepth: 2
+   :glob:
 
    beginning/index
    base/index
