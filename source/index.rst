@@ -10,6 +10,9 @@ Welcome to 区块链研究记录's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   beginning/index
+   base/index
+   tool/index
 
 
 Indices and tables
