@@ -41,24 +41,25 @@
     - 银行系统:账号    姓名    身份证    
     - 比特币系统:点对点交易    
     - 账号->地址
-:: 
+    :: 
 
-    {
-        "付款地址":"S9DF8FSS0SS34D"
-        "收款地址":"JFSDJFSSDJFDSL"
-        "金额":"0.2btc"
-    }
+        {
+            "付款地址":"S9DF8FSS0SS34D"
+            "收款地址":"JFSDJFSSDJFDSL"
+            "金额":"0.2btc"
+        }
     
     - 密码->私钥
-::
+    ::
 
-    地址:23JKFADFASFS
-    私钥:iwueoijslkdjakljdfjsa9f9982423k4jkl234j23l4j2k3l
-    Hash(Hash(fun(iwueoijslkdjakljdfjsa9f9982423k4jkl234j23l4j2k3l)))    ->    23JKFADFASFS
+        地址:23JKFADFASFS
+        私钥:iwueoijslkdjakljdfjsa9f9982423k4jkl234j23l4j2k3l
+        Hash(Hash(fun(iwueoijslkdjakljdfjsa9f9982423k4jkl234j23l4j2k3l)))    ->    23JKFADFASFS
     
 * 非对称加密技术(交易签名)
     - 交易进行Hash得到摘要
     - 用私钥对摘要进行签名
+
 * 签名过程
 ::
 
@@ -67,13 +68,10 @@
                "金额":"0.2btc"
             }') -> 8adsfkash123
     
-    
-    
     #参数1为交易摘要
     #参数2为私钥
     #返回签名信息
     sign("kjfaldsk342kl","jfeaifjaoweiu489324jkfaljflasd") -> "23i4ouipafifjiof"
-
 
 * 广播交易
     
@@ -83,17 +81,19 @@
     #返回交易摘要
     verify("39230kksdfkl","2934uiowjiwejoq") -> "9SK88SDF8S"
 
-::
+    ::
 
-    if(verify("123wasdsad123","dqaasd12233de")
-        == hash('{"付款地址":"SSFJDSJFNXNDKD1"
-                  "收款地址":"I23EIOWIEJKLDJSLW"
-                  "金额":"0.2btc"
-                 }') ) 
+        if(verify("123wasdsad123","dqaasd12233de")
+            == hash('{"付款地址":"SSFJDSJFNXNDKD1"
+                    "收款地址":"I23EIOWIEJKLDJSLW"
+                    "金额":"0.2btc"
+                    }') ) 
 
 
 #写入账本
+
 #广播
+
 else:
     #donothing
 
@@ -101,6 +101,7 @@ else:
 * 签名和验证
     - 签名:加密的过程
     - 验证:解密的过程
+
 * 补充
     - 关于隐私(银行做的很差)
     - 安全(比特币系统中如果不泄露私钥,金额绝对安全)
@@ -111,13 +112,14 @@ else:
 * 消耗资源
 * 奖励
     - 每次记账,新发行一定数量的比特币到账户    12.5个比特币
+
 * 挖矿-工作量证明
     - 规则
         - 一段时间内(10分钟)只有一人可以记账成功
         - 通过解决密码学难题(即工作量证明)竞争获取唯一记账权
         - 其他节点复制上次记账结果
-* 工作量证明
 
+* 工作量证明
 :: 
 
     Hash(上一个Hash值,交易记录集) = 456635BCD
@@ -128,7 +130,6 @@ else:
                         添加一笔给自己转账的交易(挖矿奖励)
 
 * 工作量分析
-
 
 共识机制(工作量证明;最长链选择)
 ------------------------------
