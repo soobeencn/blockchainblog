@@ -50,6 +50,7 @@
     `
     - 密码->私钥
     ::
+
     地址:23JKFADFASFS
     私钥:iwueoijslkdjakljdfjsa9f9982423k4jkl234j23l4j2k3l
     Hash(Hash(fun(iwueoijslkdjakljdfjsa9f9982423k4jkl234j23l4j2k3l)))    ->    23JKFADFASFS
@@ -58,7 +59,8 @@
     - 交易进行Hash得到摘要
     - 用私钥对摘要进行签名
 * 签名过程
-    ::
+::
+
     hash('{"付款地址":"SSFJDSJFNXNDKD1"
                "收款地址":"I23EIOWIEJKLDJSLW"
                "金额":"0.2btc"
@@ -82,11 +84,12 @@
 verify("39230kksdfkl","2934uiowjiwejoq") -> "9SK88SDF8S"
 `
 ::
-if(verify("123wasdsad123","dqaasd12233de")
-    == hash('{"付款地址":"SSFJDSJFNXNDKD1"
-               "收款地址":"I23EIOWIEJKLDJSLW"
-               "金额":"0.2btc"
-            }') ) :
+
+    if(verify("123wasdsad123","dqaasd12233de")
+        == hash('{"付款地址":"SSFJDSJFNXNDKD1"
+                  "收款地址":"I23EIOWIEJKLDJSLW"
+                  "金额":"0.2btc"
+                 }') ) :
 
 
 #写入账本
@@ -114,14 +117,16 @@ else:
         - 通过解决密码学难题(即工作量证明)竞争获取唯一记账权
         - 其他节点复制上次记账结果
 * 工作量证明
-`
-Hash(上一个Hash值,交易记录集) = 456635BCD
-Hash(上一个Hash值,交易记录集,随机数) = 0000aFD563BCD
-#现在为了增加难度,要求是18个0开头,率先找到可以记录成功
-#交易记录集:收集广播中还没有被记录账本的交易
-                     交易的有效性验证
-                     添加一笔给自己转账的交易(挖矿奖励)
-`
+
+:: 
+
+    Hash(上一个Hash值,交易记录集) = 456635BCD
+    Hash(上一个Hash值,交易记录集,随机数) = 0000aFD563BCD
+    #现在为了增加难度,要求是18个0开头,率先找到可以记录成功
+    #交易记录集:收集广播中还没有被记录账本的交易
+                        交易的有效性验证
+                        添加一笔给自己转账的交易(挖矿奖励)
+
 * 工作量分析
 
 
