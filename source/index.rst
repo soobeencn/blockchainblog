@@ -13,4 +13,7 @@
    beginning/index
    base/index
    tool/index
+   hadoop/index
+   AI/index
+   
 
