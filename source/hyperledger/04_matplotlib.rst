@@ -34,8 +34,7 @@ Hyperledger Fabric 性能评测
         - query:100
         - transfer:50
         - 结果如下:
-
-
+        ![test1](./images/fabric_test_01.jpeg)
 * 第二次测试(默认配置文件)
     - 服务器配置: 8core-16processor
     - 交易数量: 100笔   
