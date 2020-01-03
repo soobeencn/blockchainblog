@@ -12,5 +12,5 @@
     01_base
     02_fabric
     03_framework
-    04_matplotlib
-    05_seaborn
+    04_performance
+    05_explorer
