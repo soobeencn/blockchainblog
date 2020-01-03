@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. # Linux 基础 &mdash; 区块链研究记录 1.0 documentation</title>
+  <title>1. 比特币 基础 &mdash; 区块链研究记录 1.0 documentation</title>
   
 
   
@@ -82,13 +82,15 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">入门篇</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">1. # Linux 基础</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. 比特币 基础</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_ipython.html">2. Jquery 基础</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_numpy.html">3. 数值计算（Numpy）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_matplotlib.html">4. 数据绘图（Matplotlib）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05_seaborn.html">5. 数据绘图（Seaborn)</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../base/index.html">基础篇</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tool/index.html">工具篇</a></li>
 </ul>
 
             
@@ -136,7 +138,7 @@
         
           <li><a href="index.html">入门篇</a> &raquo;</li>
         
-      <li>1. # Linux 基础</li>
+      <li>1. 比特币 基础</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -155,8 +157,237 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="linux">
-<h1>1. # Linux 基础<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id1">
+<h1>1. 比特币 基础<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>## 区块链历史
+* 密码朋克(Cypherpunk)</p>
+<blockquote>
+<div><ul class="simple">
+<li>比特币之父:中本聪</li>
+<li>2009.1.3 成功挖出了50个比特币 (Hal-Finney)</li>
+</ul>
+</div></blockquote>
+<p>## 区块链前景
+* 应用场景</p>
+<blockquote>
+<div><ul class="simple">
+<li>资产:数字资产发行、支付(跨境支付)、交易、结算</li>
+<li>记账:股权交易、供应链金融、商业积分</li>
+<li>不可篡改:溯源、众筹、医疗证明、存在性证明</li>
+<li>点对点:共享经济、物联网</li>
+<li>隐私:匿名交易</li>
+</ul>
+</div></blockquote>
+<p>## 比特币是什么
+* 比特币是数字货币
+* 什么是货币</p>
+<blockquote>
+<div><ul class="simple">
+<li>&lt;货币论&gt;:货币是可以承载价值的一般等价物</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>数字货币</dt>
+<dd><ul class="first last">
+<li>一串数字</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>信任从何而来</dt>
+<dd><ul class="first last">
+<li>财产只受自己控制(只受自己的私钥控制)</li>
+<li>无通胀(总量2100万个)</li>
+<li>没有假钞</li>
+<li>流通性好(点对点直接到账,流通性好)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>去中心化记账系统</li>
+</ul>
+<p>## 比特币原理
+* 账本如何验证
+* 所有权问题
+* 为什么参与记账?(挖矿)
+* 以谁的账本为准?(共识机制)
+* 账本如何验证?</p>
+<blockquote>
+<div><ul class="simple">
+<li>核对账本记录    少数服从多数</li>
+<li>Hash(原始信息) = 摘要信息</li>
+<li>账本记录时间:每10分钟记录一次</li>
+</ul>
+</div></blockquote>
+<ul>
+<li><dl class="first docutils">
+<dt>账户所有权问题</dt>
+<dd><ul class="first simple">
+<li>银行系统:账号    姓名    身份证</li>
+<li>比特币系统:点对点交易</li>
+<li>账号-&gt;地址</li>
+</ul>
+<p><a href="#id2"><span class="problematic" id="id3">``</span></a>`
+{</p>
+<blockquote>
+<div><p>“付款地址”:”S9DF8FSS0SS34D”
+“收款地址”:”JFSDJFSSDJFDSL”
+“金额”:”0.2btc”</p>
+</div></blockquote>
+<ul class="simple">
+<li>密码-&gt;私钥</li>
+</ul>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">地址:23JKFADFASFS</span>
+<span class="pre">私钥:iwueoijslkdjakljdfjsa9f9982423k4jkl234j23l4j2k3l</span>
+<span class="pre">Hash(Hash(fun(iwueoijslkdjakljdfjsa9f9982423k4jkl234j23l4j2k3l)))</span>&#160;&#160;&#160; <span class="pre">-&gt;</span>&#160;&#160;&#160; <span class="pre">23JKFADFASFS</span>
+<span class="pre">`</span></code></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>非对称加密技术(交易签名)</dt>
+<dd><ul class="first last simple">
+<li>交易进行Hash得到摘要</li>
+<li>用私钥对摘要进行签名</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>签名过程</dt>
+<dd><p class="first"><a href="#id4"><span class="problematic" id="id5">``</span></a>`
+hash(‘{“付款地址”:”SSFJDSJFNXNDKD1”</p>
+<blockquote>
+<div><blockquote>
+<div><p>“收款地址”:”I23EIOWIEJKLDJSLW”
+“金额”:”0.2btc”</p>
+</div></blockquote>
+<p>}’) -&gt; 8adsfkash123</p>
+</div></blockquote>
+<p class="last">#参数1为交易摘要
+#参数2为私钥
+#返回签名信息
+sign(“kjfaldsk342kl”,”jfeaifjaoweiu489324jkfaljflasd”) -&gt; “23i4ouipafifjiof”
+<a href="#id6"><span class="problematic" id="id7">``</span></a><a href="#id8"><span class="problematic" id="id9">`</span></a></p>
+</dd>
+</dl>
+</li>
+<li><p class="first">广播交易</p>
+</li>
+<li><p class="first">验证</p>
+</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">#参数1为签名信息</span>
+<span class="pre">#参数2为收款方地址</span>
+<span class="pre">#返回交易摘要</span>
+<span class="pre">verify(&quot;39230kksdfkl&quot;,&quot;2934uiowjiwejoq&quot;)</span> <span class="pre">-&gt;</span> <span class="pre">&quot;9SK88SDF8S&quot;</span>
+<span class="pre">`</span></code>
+<a href="#id10"><span class="problematic" id="id11">``</span></a>`
+if(verify(“123wasdsad123”,”dqaasd12233de”)</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>== hash(‘{“付款地址”:”SSFJDSJFNXNDKD1”</dt>
+<dd><blockquote class="first">
+<div>“收款地址”:”I23EIOWIEJKLDJSLW”
+“金额”:”0.2btc”</div></blockquote>
+<p class="last">}’) ) :</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>#写入账本
+#广播
+else:</p>
+<blockquote>
+<div>#donothing</div></blockquote>
+<p><a href="#id12"><span class="problematic" id="id13">``</span></a>`
+* 签名和验证</p>
+<blockquote>
+<div><ul class="simple">
+<li>签名:加密的过程</li>
+<li>验证:解密的过程</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>补充</dt>
+<dd><ul class="first last">
+<li>关于隐私(银行做的很差)</li>
+<li>安全(比特币系统中如果不泄露私钥,金额绝对安全)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>## 为什么记账
+* 记账:Hash打包过程
+* 消耗资源
+* 奖励</p>
+<blockquote>
+<div><ul class="simple">
+<li>每次记账,新发行一定数量的比特币到账户    12.5个比特币</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>挖矿-工作量证明</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>规则</dt>
+<dd><ul class="first last">
+<li>一段时间内(10分钟)只有一人可以记账成功</li>
+<li>通过解决密码学难题(即工作量证明)竞争获取唯一记账权</li>
+<li>其他节点复制上次记账结果</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>工作量证明</li>
+</ul>
+<p><a href="#id14"><span class="problematic" id="id15">``</span></a>`
+Hash(上一个Hash值,交易记录集) = 456635BCD
+Hash(上一个Hash值,交易记录集,随机数) = 0000aFD563BCD
+#现在为了增加难度,要求是18个0开头,率先找到可以记录成功
+#交易记录集:收集广播中还没有被记录账本的交易</p>
+<blockquote>
+<div>交易的有效性验证
+添加一笔给自己转账的交易(挖矿奖励)</div></blockquote>
+<p><a href="#id16"><span class="problematic" id="id17">``</span></a>`
+* 工作量分析</p>
+<p>## 共识机制(工作量证明;最长链选择)
+### 两个节点同时完成工作量证明,使用谁的区块?</p>
+<blockquote>
+<div><ul class="simple">
+<li>无仲裁机构裁决</li>
+<li>都说用我的区块</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>### 为什么要遵守协议</dt>
+<dd><ul class="first last simple">
+<li>节点工作量只有在其他的节点认同其是有效的</li>
+</ul>
+</dd>
+<dt>### 每个节点只认可累计工作量最大的区块链</dt>
+<dd><ul class="first last simple">
+<li>独立</li>
+<li>延长最长链</li>
+<li>分叉解决</li>
+</ul>
+</dd>
+</dl>
+<p>## 进阶
+### 比特币P2P网络
+### 区块结构Merkle Tree
+### 比特币UTXO及交易脚本
+### 比特币白皮书</p>
 </div>
 
 
