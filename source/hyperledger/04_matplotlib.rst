@@ -57,7 +57,7 @@ Hyperledger Fabric 性能评测
 
         - 上述结果,只修改了交易数量 100 --> 10000 , 发现Fabric整体性能并未得到提升.
 
-    ### 第四次测试
+* 第四次测试
     - 服务器配置: 8core-16processor
     - 交易数量: 10000笔   
     - tps(opts):
@@ -68,7 +68,7 @@ Hyperledger Fabric 性能评测
 
         - 加大tps峰值属性, 此时Fabric整体性能提升了四倍左右.
 
-    ### 第五次测试
+* 第五次测试
     - 服务器配置: 8core-16processor
     - 交易数量: 10000笔   
     - tps(opts):
@@ -79,7 +79,7 @@ Hyperledger Fabric 性能评测
 
         - 经过第四次与第五次测试发现, 提升了opts中的tps峰值, 已无法提升Fabric整体性能, 于是此时继续提升服务器性能.
 
-    ### 第六次测试
+* 第六次测试
     - 服务器配置: 16core-32processor
     - 交易数量: 1000笔   
     - tps(opts):
@@ -90,7 +90,7 @@ Hyperledger Fabric 性能评测
 
         - 为保证结果足够准确,提升服务器性能之后, 仅扩大tps峰值10倍, 进行了上述测试, 发现与8core-16processor服务器结果几乎一致, 因此继续修改网络配置文件.
 
-    ### 第七次测试
+* 第七次测试
     - 服务器配置: 16core-32processor
     - 交易数量: 10000笔   
     - tps(opts):
