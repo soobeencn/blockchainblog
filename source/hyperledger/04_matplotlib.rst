@@ -43,6 +43,7 @@ Hyperledger Fabric 性能评测
         - query:100
         - transfer:50
         - 结果如下:
+        .. image:: /images/fabric_test_02.jpeg
         - 此时发现,提升cpu性能之后, Fabric整体性能并未得到提升.于是开始修改网络配置文件,自定义交易数量及可选择的tps峰值选项.
 
 * 第三次测试
@@ -53,7 +54,7 @@ Hyperledger Fabric 性能评测
         - query:100
         - transfer:50
         - 结果如下: 
-
+        .. image:: /images/fabric_test_03.jpeg
         - 上述结果,只修改了交易数量 100 --> 10000 , 发现Fabric整体性能并未得到提升.
 
 * 第四次测试
@@ -64,7 +65,7 @@ Hyperledger Fabric 性能评测
         - query:1000
         - transfer:500
         - 结果如下:
-
+        .. image:: /images/fabric_test_04.jpeg
         - 加大tps峰值属性, 此时Fabric整体性能提升了四倍左右.
 
 * 第五次测试
@@ -75,7 +76,7 @@ Hyperledger Fabric 性能评测
         - query:10000
         - transfer:5000
         - 结果如下:
-
+        .. image:: /images/fabric_test_05.jpeg
         - 经过第四次与第五次测试发现, 提升了opts中的tps峰值, 已无法提升Fabric整体性能, 于是此时继续提升服务器性能.
 
 * 第六次测试
@@ -86,7 +87,7 @@ Hyperledger Fabric 性能评测
         - query:1000
         - transfer:500
         - 结果如下:
-
+        .. image:: /images/fabric_test_06.jpeg
         - 为保证结果足够准确,提升服务器性能之后, 仅扩大tps峰值10倍, 进行了上述测试, 发现与8core-16processor服务器结果几乎一致, 因此继续修改网络配置文件.
 
 * 第七次测试
@@ -97,7 +98,7 @@ Hyperledger Fabric 性能评测
         - query:10000
         - transfer:5000
         - 结果如下:
-
+        .. image:: /images/fabric_test_07.jpeg
         - 同样与上述测试几乎相当, 测试到此结束.
 
 总结: 
