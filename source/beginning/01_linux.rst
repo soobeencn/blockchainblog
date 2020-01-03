@@ -49,42 +49,45 @@
     }
     ```
     - 密码->私钥
-    ```
+    ::
     地址:23JKFADFASFS
     私钥:iwueoijslkdjakljdfjsa9f9982423k4jkl234j23l4j2k3l
     Hash(Hash(fun(iwueoijslkdjakljdfjsa9f9982423k4jkl234j23l4j2k3l)))    ->    23JKFADFASFS
-    ```
+    
 * 非对称加密技术(交易签名)
     - 交易进行Hash得到摘要
     - 用私钥对摘要进行签名
 * 签名过程
-    ```
+    ::
     hash('{"付款地址":"SSFJDSJFNXNDKD1"
                "收款地址":"I23EIOWIEJKLDJSLW"
                "金额":"0.2btc"
             }') -> 8adsfkash123
-    ```
-    ```
+    ::
+    
+    ::
     #参数1为交易摘要
     #参数2为私钥
     #返回签名信息
     sign("kjfaldsk342kl","jfeaifjaoweiu489324jkfaljflasd") -> "23i4ouipafifjiof"
-    ```
+    ::
 * 广播交易
     
 * 验证
-```
+`
 #参数1为签名信息
 #参数2为收款方地址
 #返回交易摘要
 verify("39230kksdfkl","2934uiowjiwejoq") -> "9SK88SDF8S"
-```
-```
+`
+::
 if(verify("123wasdsad123","dqaasd12233de")
     == hash('{"付款地址":"SSFJDSJFNXNDKD1"
                "收款地址":"I23EIOWIEJKLDJSLW"
                "金额":"0.2btc"
             }') ) :
+::
+
 #写入账本
 #广播
 else:
