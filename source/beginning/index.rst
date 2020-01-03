@@ -9,10 +9,8 @@
     :maxdepth: 2
     :numbered: 2
 
-    06_blockchain100
-    01_linux
-    02_ipython
-    03_numpy
-    04_matplotlib
-    05_seaborn
-    06_blockchain100
+    01_blockchain100
+    02_linux
+    03_ipython
+    04_numpy
+    
