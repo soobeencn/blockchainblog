@@ -11,9 +11,9 @@
    :glob:
 
    beginning/index
-   base/index
+   ethereum/index
    hyperledger/index
    hadoop/index
-   AI/index
+   ai/index
    
 
