@@ -9,6 +9,7 @@
     :maxdepth: 2
     :numbered: 2
 
+    06_blockchain100
     01_linux
     02_ipython
     03_numpy
