@@ -14,6 +14,6 @@
    ethereum/index
    hyperledger/index
    hadoop/index
-   ai/index
+   safe/index
    
 
