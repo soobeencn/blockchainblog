@@ -1,0 +1,302 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. 去中心化应用 [Dapp开发指南] &mdash; 区块链研究记录 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. 交易所 导航" href="04_matplotlib.html" />
+    <link rel="prev" title="2. 智能合约 [solidity]" href="02_ipython.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 区块链研究记录
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">入门篇</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">以太坊 [Ethereum]</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_linux.html">1. 以太坊入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_ipython.html">2. 智能合约 [solidity]</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. 去中心化应用 [Dapp开发指南]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python">3.1. python环境准备</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">3.2. 发行自己的数字货币</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">开发工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">代币合约开发</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.3. 实战</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04_matplotlib.html">4. 交易所 导航</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_seaborn.html">5. 以太坊浏览器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hyperledger/index.html">联盟链 [Hyperledger Fabric]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hadoop/index.html">大数据 [Hadoop]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/index.html">服务器运维 [Operations]</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">区块链研究记录</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">以太坊 [Ethereum]</a> &raquo;</li>
+        
+      <li>3. 去中心化应用 [Dapp开发指南]</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ethereum/03_numpy.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dapp">
+<h1>3. 去中心化应用 [Dapp开发指南]<a class="headerlink" href="#dapp" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="python">
+<h2>3.1. python环境准备<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pipenv</span>
+<span class="n">pipenv</span> <span class="o">--</span><span class="n">python</span><span class="o">=</span><span class="n">python3</span><span class="o">.</span><span class="mf">6.4</span>
+<span class="n">pipenv</span> <span class="n">install</span> <span class="n">flask</span><span class="o">==</span><span class="mf">0.12</span><span class="o">.</span><span class="mi">2</span>   <span class="p">(</span><span class="n">ignore</span> <span class="n">warning</span><span class="p">)</span>
+<span class="n">pipenv</span> <span class="n">install</span> <span class="n">requests</span><span class="o">==</span><span class="mf">2.18</span><span class="o">.</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>3.2. 发行自己的数字货币<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>开发工具<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>remix/metamask</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h3>代币合约开发<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>solidity</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>3.3. 实战<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>知识点</dt>
+<dd><ul class="first last">
+<li>HTML、JavaScript、CSS</li>
+<li>Web服务器</li>
+<li>智能合约</li>
+<li>Web3.js</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>开发流程</dt>
+<dd><ul class="first last">
+<li>新建项目</li>
+<li>合约编写</li>
+<li>合约编译、部署、测试</li>
+<li>与合约交互</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>开发工具</dt>
+<dd><ul class="first last">
+<li>Vs Code/Atom/Subline</li>
+<li>Truffle/Ganache</li>
+<li>MetaMask</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Truffle命令</dt>
+<dd><ul class="first last">
+<li>truffle compile:讲solidity代码编译成字节码(EVM能理解的代码)   ganache模拟了EVM</li>
+<li>truffle migrate:把代码部署到区块链</li>
+<li>truffle console    truffle console  –network development</li>
+<li>truffle test</li>
+<li>npm run dev</li>
+<li>npm install lite-server</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="04_matplotlib.html" class="btn btn-neutral float-right" title="4. 交易所 导航" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="02_ipython.html" class="btn btn-neutral float-left" title="2. 智能合约 [solidity]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, 艾克中国
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

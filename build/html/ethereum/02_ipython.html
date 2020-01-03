@@ -1,0 +1,478 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. 智能合约 [solidity] &mdash; 区块链研究记录 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. 去中心化应用 [Dapp开发指南]" href="03_numpy.html" />
+    <link rel="prev" title="1. 以太坊入门" href="01_linux.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 区块链研究记录
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">入门篇</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">以太坊 [Ethereum]</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_linux.html">1. 以太坊入门</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. 智能合约 [solidity]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.1. 什么是智能合约</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#evm">2.2. 运行环境–&gt;EVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2.3. solidity 语言详解</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">文件结构</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">数据类型</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">2.4. 结构体和映射</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mappings">映射(Mappings)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">2.5. 全局变量和函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">2.6. 参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">2.7. 控制结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">2.8. 可见性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">2.9. 函数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="03_numpy.html">3. 去中心化应用 [Dapp开发指南]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_matplotlib.html">4. 交易所 导航</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_seaborn.html">5. 以太坊浏览器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hyperledger/index.html">联盟链 [Hyperledger Fabric]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hadoop/index.html">大数据 [Hadoop]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/index.html">服务器运维 [Operations]</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">区块链研究记录</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">以太坊 [Ethereum]</a> &raquo;</li>
+        
+      <li>2. 智能合约 [solidity]</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ethereum/02_ipython.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="solidity">
+<h1>2. 智能合约 [solidity]<a class="headerlink" href="#solidity" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>2.1. 什么是智能合约<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>以太坊上的程序,是代码和数据(状态)的集合</li>
+<li>准图灵完备</li>
+<li>典型应用:代币:EOS    游戏:迷恋猫</li>
+</ul>
+</div>
+<div class="section" id="evm">
+<h2>2.2. 运行环境–&gt;EVM<a class="headerlink" href="#evm" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>solidity—&gt;EVM(提供了一个沙盒的环境)</li>
+<li>java——-&gt;JVM</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>2.3. solidity 语言详解<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>文件结构<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>版本声明</li>
+<li>import</li>
+<li><dl class="first docutils">
+<dt>合约</dt>
+<dd><ul class="first last">
+<li>状态变量</li>
+<li>函数</li>
+<li>结构类型</li>
+<li>事件</li>
+<li>函数修改器</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>代码注释</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h3>数据类型<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>值类型(Value Type)</dt>
+<dd><ul class="first last">
+<li>Booleans</li>
+<li><dl class="first docutils">
+<dt>Integers</dt>
+<dd><ul class="first last">
+<li>int/uint        关键字unit8到uint256(以8步进)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Fixed Point Numbers</li>
+<li>Fixed-Size Byte Arrays</li>
+<li>Rational and Integer Literals</li>
+<li>String Literals</li>
+<li>Hexadecimal literals</li>
+<li>Enums</li>
+<li>Function Types</li>
+<li><dl class="first docutils">
+<dt>Address:表示一个账户地址(20字节,16进制数)</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>成员</dt>
+<dd><ul class="first last">
+<li>属性:balance</li>
+<li>函数:transfer()</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Address Literals</dt>
+<dd><ul class="first last">
+<li>地址合法性检查</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>引用 类型(Reference Type)    Data Location(memory、storage)</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>数组(Arrays)</dt>
+<dd><ul class="first last">
+<li>T[K]:元素类型为T,固定长度为K的数组</li>
+<li>T[]:元素类型为T,长度动态调整</li>
+<li>bytes string:一种特殊的数组</li>
+<li>string可转化为bytes,bytes类似于byte[]</li>
+<li><dl class="first docutils">
+<dt>成员</dt>
+<dd><ul class="first last">
+<li>属性:length</li>
+<li>函数:push()</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>2.4. 结构体和映射<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mappings">
+<h3>映射(Mappings)<a class="headerlink" href="#mappings" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>mapping(address=&gt;uint)</li>
+<li>public balances</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>2.5. 全局变量和函数<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>区块和交易属性(查看官方文档)</dt>
+<dd><ul class="first last">
+<li>msg.sender(address)   交易附带地址</li>
+<li>msg.value(uint)            当前交易附带的亿台币  (wei)</li>
+<li>block.coinbase(address)     当前块的地址   当前矿工的地址</li>
+<li>block.difficulty(uint)              当前块的难度</li>
+<li>block.number(uint)               当前块的块号</li>
+<li>block.timestamp(uint)           当前块的时间戳  1970.1.1 0.0</li>
+<li>now(uint)                               timestamp的别名</li>
+<li>tx.gasprice(uint)                    当前交易的价格</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>错误处理</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>什么是错误处理</dt>
+<dd><ul class="first last">
+<li>程序发生错误时,处理方式—回调</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>如何处理</dt>
+<dd><ul class="first last">
+<li>assert   (gas回退)</li>
+<li>require  (gas不足)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>有关数字及加密功能</li>
+<li>有关地址和合约</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2>2.6. 参数<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>输入参数</li>
+<li>输出参数</li>
+<li>命名参数</li>
+<li>参数解构</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id8">
+<h2>2.7. 控制结构<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>没有switch goto</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id9">
+<h2>2.8. 可见性<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>public   消耗的gas更多</dt>
+<dd><ul class="first last">
+<li>公开函数是合约接口的一部分,可以通过内部,或者消息来进行调用.对于public类型的状态变量,会自动创建一个访问器</li>
+<li>函数默认可见性是public</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>private</dt>
+<dd><ul class="first last">
+<li>私有函数和状态变量仅在当前合约中可以访问,在继承的合约内,不可访问</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>external     消耗的gas更少</dt>
+<dd><ul class="first last">
+<li>外部函数是合约接口的一部分,只能使用消息调用</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>internal</dt>
+<dd><ul class="first last">
+<li>函数和状态变量只能通过内部访问.如在当前的合约中调用,或继承的合约里调用.</li>
+<li>状态变量默认的可见性是internal</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h2>2.9. 函数<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>构造函数</li>
+<li>视图函数(constant/view)</li>
+<li>纯函数(pure)</li>
+<li>回退函数</li>
+<li>函数重载</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="03_numpy.html" class="btn btn-neutral float-right" title="3. 去中心化应用 [Dapp开发指南]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="01_linux.html" class="btn btn-neutral float-left" title="1. 以太坊入门" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, 艾克中国
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

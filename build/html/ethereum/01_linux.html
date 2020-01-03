@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. 以太坊入门 &mdash; 区块链研究记录 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. 智能合约 [solidity]" href="02_ipython.html" />
+    <link rel="prev" title="以太坊 [Ethereum]" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 区块链研究记录
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">入门篇</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">以太坊 [Ethereum]</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. 以太坊入门</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1.1. 以太坊由来</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">1.2. 以太坊特点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#account">1.3. 以太坊核心概念-account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">1.4. 预测平台</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">1.5. 迷恋猫</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">1.6. 以太币单位</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">1.7. 以太坊网络</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">1.8. 什么是智能合约</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#evm">1.9. 运行环境–&gt;EVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">1.10. 钱包   (开发者工具,部署合约,管理账号等)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gas">1.11. 交易手续费 Gas  (限制交易所需的工作量)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="02_ipython.html">2. 智能合约 [solidity]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_numpy.html">3. 去中心化应用 [Dapp开发指南]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_matplotlib.html">4. 交易所 导航</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_seaborn.html">5. 以太坊浏览器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hyperledger/index.html">联盟链 [Hyperledger Fabric]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hadoop/index.html">大数据 [Hadoop]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/index.html">服务器运维 [Operations]</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">区块链研究记录</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">以太坊 [Ethereum]</a> &raquo;</li>
+        
+      <li>1. 以太坊入门</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ethereum/01_linux.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>1. 以太坊入门<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>1.1. 以太坊由来<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>vitalik buterin 2013发表以太坊白皮书</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>1.2. 以太坊特点<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>可编程的操作系统</li>
+<li>智能合约、EVM</li>
+<li>约15s出块、挖矿奖励3ETH、叔块奖励</li>
+<li>无总量限制</li>
+</ul>
+</div>
+<div class="section" id="account">
+<h2>1.3. 以太坊核心概念-account<a class="headerlink" href="#account" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>账户</dt>
+<dd><ul class="first last">
+<li>地址(Address):20字节</li>
+<li>状态(state)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>账户分类</dt>
+<dd><ul class="first last">
+<li>外部账户(EOA)    Externally owned account    not contacted code</li>
+<li>合约账户    contract account</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>账户关系</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>1.4. 预测平台<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Augur</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>1.5. 迷恋猫<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.cryptokitties.co/">https://www.cryptokitties.co/</a></li>
+<li>越接近0代的越贵</li>
+<li><dl class="first docutils">
+<dt>两个来源</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>系统生成</dt>
+<dd><ul class="first last">
+<li>第0代 每15分钟诞生一只</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>人工繁殖</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>百度莱茨   网易招财猫   小米加密兔</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2>1.6. 以太币单位<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>最小单位:1Wei</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2>1.7. 以太坊网络<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>主网</dt>
+<dd><ul class="first last">
+<li>测试过程    会非常贵   消耗的Gas很多</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>测试网络</li>
+<li>私有链</li>
+<li>模拟环境</li>
+</ul>
+<p>## 区块链分类
+* 公有链</p>
+<blockquote>
+<div><ul class="simple">
+<li>账本完全公开,透明</li>
+<li>比特币、以太坊、</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>私有链</dt>
+<dd><ul class="first last">
+<li>个人,或者公司内部使用</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>联盟链</dt>
+<dd><ul class="first last">
+<li>有一定的准入机制</li>
+<li>IMB发起的超级账本</li>
+<li>对特定的组织开放,超级节点已经选好</li>
+<li>一般不会采用POW</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2>1.8. 什么是智能合约<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>以太坊上的程序,是代码和数据(状态)的集合</li>
+<li>准图灵完备</li>
+<li>典型应用:代币:EOS    游戏:迷恋猫</li>
+</ul>
+</div>
+<div class="section" id="evm">
+<h2>1.9. 运行环境–&gt;EVM<a class="headerlink" href="#evm" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>solidity—&gt;EVM(提供了一个沙盒的环境)</li>
+<li>java——-&gt;JVM</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h2>1.10. 钱包   (开发者工具,部署合约,管理账号等)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Geth Mist MetaMask</li>
+</ul>
+</div>
+<div class="section" id="gas">
+<h2>1.11. 交易手续费 Gas  (限制交易所需的工作量)<a class="headerlink" href="#gas" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>费用:Gas价格(用以太币计价) * Gas数量</li>
+<li>EVM执行交易   Gas按照特定的规则执行消耗   Gas被消耗光  会触发异常   Gas返回合约的发起人</li>
+<li>普通的转账消耗Gas 21000</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="02_ipython.html" class="btn btn-neutral float-right" title="2. 智能合约 [solidity]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="以太坊 [Ethereum]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, 艾克中国
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
