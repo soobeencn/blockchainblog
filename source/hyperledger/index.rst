@@ -9,8 +9,8 @@
     :maxdepth: 2
     :numbered: 2
 
-    01_linux
-    02_ipython
-    03_numpy
+    01_base
+    02_fabric
+    03_framework
     04_matplotlib
     05_seaborn
