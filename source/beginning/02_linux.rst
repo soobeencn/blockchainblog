@@ -155,4 +155,6 @@
 比特币白皮书
 >>>>>>>>>>>>>
 
+.. |rst| replace:: reStructuredText
+
 
