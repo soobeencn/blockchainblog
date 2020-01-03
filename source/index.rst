@@ -12,7 +12,7 @@
 
    beginning/index
    base/index
-   tool/index
+   hyperledger/index
    hadoop/index
    AI/index
    
