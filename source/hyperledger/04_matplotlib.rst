@@ -1,7 +1,7 @@
 Hyperledger Fabric 性能评测
 ==========================
 
-1.环境配置
+环境配置
 --------------------------
 - go version : 1.13.4
 - fabric version : v1.4.0 / v1.4.1
@@ -12,7 +12,7 @@ Hyperledger Fabric 性能评测
 - docker compose : latest
 - fabric evm: 1order 2org 4peer
 
-2.部署流程
+部署流程
 -------------------------
 * caliper源码部署
     * git clone https://github.com/hyperledger/caliper-benchmarks.git
@@ -24,7 +24,7 @@ Hyperledger Fabric 性能评测
 * 按照配置文件执行测试
     * npx caliper benchmark run --caliper-workspace . --caliper-benchconfig benchmarks/scenario/simple/config.yaml --caliper-networkconfig networks/fabric/fabric-v1.4/2org1peergoleveldb/fabric-go.yaml
 
-3.报告分析:
+报告分析:
 ---------------------------
 * 第一次测试(默认配置文件)
     - 服务器配置: 4core-8processor
@@ -101,7 +101,7 @@ Hyperledger Fabric 性能评测
 
         - 同样与上述测试几乎相当, 测试到此结束.
 
-4.总结: 
+总结: 
 ----------------------
 * 1.Fabric不同场景下, open TPS维持在220左右, query TPS保持在440左右, transfer TPS维持在180左右, 同时交易成功率仅有25% ~ 50%左右, 另外交易延迟区间也足够大, 这点可能会影响到账速度.
 * 2.在测试过程中,执行open测试的时候, 发现cpu占用率达到100%以上,同时经过多轮提升cpu性能均会出现cpu占用率超过100%的情况,无法提升send rate, 导致吞吐率无法从根本上提升.
