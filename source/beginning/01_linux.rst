@@ -41,15 +41,17 @@
     - 银行系统:账号    姓名    身份证    
     - 比特币系统:点对点交易    
     - 账号->地址
-    `
+:: 
+
     {
         "付款地址":"S9DF8FSS0SS34D"
         "收款地址":"JFSDJFSSDJFDSL"
         "金额":"0.2btc"
     }
-    `
+    
+
     - 密码->私钥
-    ::
+::
 
     地址:23JKFADFASFS
     私钥:iwueoijslkdjakljdfjsa9f9982423k4jkl234j23l4j2k3l
@@ -67,29 +69,28 @@
             }') -> 8adsfkash123
     
     
-    `
+    
     #参数1为交易摘要
     #参数2为私钥
     #返回签名信息
     sign("kjfaldsk342kl","jfeaifjaoweiu489324jkfaljflasd") -> "23i4ouipafifjiof"
-    `
+
 
 * 广播交易
     
 * 验证
-`
-#参数1为签名信息
-#参数2为收款方地址
-#返回交易摘要
-verify("39230kksdfkl","2934uiowjiwejoq") -> "9SK88SDF8S"
-`
+    #参数1为签名信息
+    #参数2为收款方地址
+    #返回交易摘要
+    verify("39230kksdfkl","2934uiowjiwejoq") -> "9SK88SDF8S"
+
 ::
 
     if(verify("123wasdsad123","dqaasd12233de")
         == hash('{"付款地址":"SSFJDSJFNXNDKD1"
                   "收款地址":"I23EIOWIEJKLDJSLW"
                   "金额":"0.2btc"
-                 }') ) :
+                 }') ) 
 
 
 #写入账本
@@ -97,14 +98,14 @@ verify("39230kksdfkl","2934uiowjiwejoq") -> "9SK88SDF8S"
 else:
     #donothing
 
-`
+
 * 签名和验证
     - 签名:加密的过程
     - 验证:解密的过程
 * 补充
     - 关于隐私(银行做的很差)
     - 安全(比特币系统中如果不泄露私钥,金额绝对安全)
-`
+
 为什么记账
 ---------------------------
 * 记账:Hash打包过程
