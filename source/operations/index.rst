@@ -1,8 +1,7 @@
 服务器运维 [Operations]
 ==========
 
-这一部分主要介绍区块链的入门内容;
-包含比特币,以太坊,联盟链等.
+本章节带大家一起探秘有趣的深层网络知识.
 
 
 .. toctree::
@@ -10,7 +9,4 @@
     :numbered: 2
 
     01_linux
-    02_ipython
-    03_numpy
-    04_matplotlib
-    05_seaborn
+    
