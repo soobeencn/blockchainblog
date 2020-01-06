@@ -13,3 +13,4 @@
     03_framework
     04_performance
     05_explorer
+    06_fabric_dev
