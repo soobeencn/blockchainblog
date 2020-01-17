@@ -47,7 +47,7 @@ SQL注入是怎么产生的?
 >>>>>>>>>>
 
     | 用户登陆场景
-    | login:  str‘#  
+    | login:  [str‘#]   [str‘ --***]
     | password:
 
 
