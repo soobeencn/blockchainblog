@@ -46,9 +46,11 @@ SQL注入是怎么产生的?
 字符串注入
 >>>>>>>>>>
 
-    | 用户登陆场景
-    | login:  [str‘#]   [str‘ --***]
-    | password:
+    - 用户登陆场景
+::
+
+    login:  [str‘#]   [str‘-- ***]
+    password:
 
 
 
