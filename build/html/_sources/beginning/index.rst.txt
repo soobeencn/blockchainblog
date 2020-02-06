@@ -1,4 +1,4 @@
-入门篇
+比特币 [Bitcoin]
 ==========
 
 这一部分主要介绍区块链的入门内容;
@@ -9,9 +9,8 @@
     :maxdepth: 2
     :numbered: 2
 
-    01_linux
-    02_ipython
-    03_numpy
-    04_matplotlib
-    05_seaborn
-    06_blockchain100
+    01_blockchain100
+    02_linux
+    03_ipython
+    04_numpy
+    

@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. 区块链基础" href="01_linux.html" />
+    <link rel="next" title="1. 区块链 基础" href="01_base.html" />
     <link rel="prev" title="5. 以太坊浏览器" href="../ethereum/05_seaborn.html" /> 
 </head>
 
@@ -81,18 +81,19 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">入门篇</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">比特币 [Bitcoin]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ethereum/index.html">以太坊 [Ethereum]</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">联盟链 [Hyperledger Fabric]</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="01_linux.html">1. 区块链基础</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_ipython.html">2. Fabric 理论基础</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03_numpy.html">3. Fabric 系统架构</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_matplotlib.html">4. Hyperledger Fabric 性能评测</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05_seaborn.html">5. Hyperledger Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_base.html">1. 区块链 基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_fabric.html">2. Fabric 简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_framework.html">3. Fabric 系统架构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_performance.html">4. Hyperledger Fabric 性能评测</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_explorer.html">5. Hyperledger Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_fabric_dev.html">6. 联盟链应用</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hadoop/index.html">大数据 [Hadoop]</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../operations/index.html">服务器运维 [Operations]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/index.html">Linux内核 [Operations]</a></li>
 </ul>
 
             
@@ -159,20 +160,42 @@
             
   <div class="section" id="hyperledger-fabric">
 <h1>联盟链 [Hyperledger Fabric]<a class="headerlink" href="#hyperledger-fabric" title="Permalink to this headline">¶</a></h1>
-<p>这一部分主要介绍数据科学的入门内容;包含数据科学的基础工具，如：Jupyter、Linux，以及 Python 基本的数据科学包 Numpy，画图包 Matplotlib;</p>
+<p>至今最盛名的联盟链,Hyperledger Fabric.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="01_linux.html">1. 区块链基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_ipython.html">2. Fabric 理论基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_numpy.html">3. Fabric 系统架构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_matplotlib.html">4. Hyperledger Fabric 性能评测</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="04_matplotlib.html#id1">4.1. 环境配置</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_matplotlib.html#id2">4.2. 部署流程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_matplotlib.html#id3">4.3. 报告分析:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_matplotlib.html#id4">4.4. 总结:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_base.html">1. 区块链 基础</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_base.html#id2">1.1. 技术名词</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_base.html#id3">1.2. 区块链类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_base.html#id4">1.3. 区块链特点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_base.html#id5">1.4. 区块链平台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_base.html#id6">1.5. 应用场景</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_base.html#id7">1.6. 区块链技术</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_base.html#id11">1.7. 拓展阅读</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="05_seaborn.html">5. Hyperledger Explorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_fabric.html">2. Fabric 简介</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_fabric.html#hyperledger">2.1. Hyperledger简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_fabric.html#id1">2.2. Fabric简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_fabric.html#id2">2.3. 智能合约</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_fabric.html#id3">2.4. 链码</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03_framework.html">3. Fabric 系统架构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_performance.html">4. Hyperledger Fabric 性能评测</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04_performance.html#id1">4.1. 环境配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_performance.html#id2">4.2. 部署流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_performance.html#id3">4.3. 报告分析:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_performance.html#id4">4.4. 总结:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="05_explorer.html">5. Hyperledger Explorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_fabric_dev.html">6. 联盟链应用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="06_fabric_dev.html#id2">6.1. 上帝视角</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_fabric_dev.html#bitcoin">6.2. BitCoin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_fabric_dev.html#ethereum">6.3. Ethereum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_fabric_dev.html#hyperledger">6.4. Hyperledger</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -185,7 +208,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="01_linux.html" class="btn btn-neutral float-right" title="1. 区块链基础" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="01_base.html" class="btn btn-neutral float-right" title="1. 区块链 基础" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../ethereum/05_seaborn.html" class="btn btn-neutral float-left" title="5. 以太坊浏览器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
