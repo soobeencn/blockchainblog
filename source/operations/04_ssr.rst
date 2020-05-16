@@ -4,11 +4,13 @@ ssr 一键搭建
 ssr 一键部署:
 ---------------------
 ::
+
     wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssrmu.sh && chmod +x ssrmu.sh && bash ssrmu.sh
 
 使用bbr加速
 ---------------------
 ::
+
     wget https://d.kxxzz.com/sh/tcp.sh    ..2019年脚本
     wget https://d.kxxzz.com/sh/tcp2020/tcp.sh   ..2020年脚本
     使用root权限
