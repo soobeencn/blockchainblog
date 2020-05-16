@@ -11,10 +11,10 @@ ssr 一键部署:
 ---------------------
 
 >>> wget https://d.kxxzz.com/sh/tcp.sh    `2019年脚本`
-    wget https://d.kxxzz.com/sh/tcp2020/tcp.sh   `2020年脚本`
-    使用root权限
-    chmod +x tcp.sh
-    ./tcp.sh
+>>> wget https://d.kxxzz.com/sh/tcp2020/tcp.sh   `2020年脚本`
+>>> sudo `使用root权限`
+>>> chmod +x tcp.sh
+>>> ./tcp.sh
 
 **对应的内核版本应与对应的加速管理模块匹配,否则无法正常使用.**
 
