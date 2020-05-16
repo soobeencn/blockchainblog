@@ -166,17 +166,15 @@
 <div class="section" id="id2">
 <h2>3.1. 攻击顺序<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><ul>
-<li><p class="first">选择目标网站</p>
-</li>
-<li><p class="first">ping 目标网站地址 获得网站ip</p>
-</li>
+<div><ul class="simple">
+<li>选择目标网站</li>
+<li>ping 目标网站地址 获得网站ip</li>
 <li><dl class="first docutils">
 <dt>选择攻击原理</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
 <dt>如何实现服务器拥堵瘫痪</dt>
-<dd><ul class="first simple">
+<dd><ul class="first last">
 <li>1.制作病毒 传播病毒 控制N台电脑同时访问目标站 造成目标站的网络拥堵</li>
 <li><dl class="first docutils">
 <dt>2.租用一个 支持IP伪装的[大流量服务器]</dt>
@@ -188,8 +186,6 @@
 </li>
 <li>3.连接[大流量服务器]</li>
 </ul>
-<p class="last">&gt;&gt;&gt;chmod 777 ntp
-&gt;&gt;&gt;./ntp ip 80 ntpcan.txt 2 -1 120</p>
 </dd>
 </dl>
 </li>
@@ -199,6 +195,8 @@
 </li>
 </ul>
 </div></blockquote>
+<p>&gt;&gt;&gt;chmod 777 ntp
+&gt;&gt;&gt; ./ntp ip 80 ntpcan.txt 2 -1 120</p>
 <dl class="docutils">
 <dt>** 法则: **</dt>
 <dd><ul class="first last simple">
