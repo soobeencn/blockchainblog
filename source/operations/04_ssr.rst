@@ -9,9 +9,8 @@ ssr 一键部署:
 
 使用bbr加速
 ---------------------
-::
 
-    wget https://d.kxxzz.com/sh/tcp.sh    `2019年脚本`
+>>> wget https://d.kxxzz.com/sh/tcp.sh    `2019年脚本`
     wget https://d.kxxzz.com/sh/tcp2020/tcp.sh   `2020年脚本`
     使用root权限
     chmod +x tcp.sh

