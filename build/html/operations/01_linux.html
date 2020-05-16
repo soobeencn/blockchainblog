@@ -98,9 +98,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#id6">字符串注入</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">1.4. 如何预防SQL注入?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id12">输入变量检查</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id13">过滤和转义特殊字符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">1.4. 如何预防SQL注入?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">输入变量检查</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">过滤和转义特殊字符</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mysql">利用mysql的预编译机制</a></li>
 </ul>
 </li>
@@ -217,21 +217,25 @@
 <ul class="simple">
 <li>where条件中包含数字的内容</li>
 </ul>
-<p>&gt;&gt;&gt;id = -1 OR 1 = 1    [true]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="n">OR</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>    <span class="p">[</span><span class="n">true</span><span class="p">]</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id6">
 <h3>字符串注入<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>用户登陆场景</li>
 </ul>
-<p>&gt;&gt;&gt;login:  [str‘#]   [str‘– <a href="#id7"><span class="problematic" id="id8">**</span></a><a href="#id9"><span class="problematic" id="id10">*</span></a>]
-&gt;&gt;&gt;password:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; login:  [str‘#]   [str‘-- ***]
+&gt;&gt;&gt; password:
+</pre></div>
 </div>
 </div>
-<div class="section" id="id11">
-<h2>1.4. 如何预防SQL注入?<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id12">
-<h3>输入变量检查<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id7">
+<h2>1.4. 如何预防SQL注入?<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>输入变量检查<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>输入参数非空校验</li>
@@ -239,8 +243,8 @@
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id13">
-<h3>过滤和转义特殊字符<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>过滤和转义特殊字符<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="mysql">
 <h3>利用mysql的预编译机制<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h3>
