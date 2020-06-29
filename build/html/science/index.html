@@ -34,7 +34,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. 聊聊Java面试的经典题目" href="01_java.html" />
+    <link rel="prev" title="4. ssr 一键搭建" href="../operations/04_ssr.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -78,12 +80,18 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">比特币 [Bitcoin]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ethereum/index.html">以太坊 [Ethereum]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hyperledger/index.html">联盟链 [Hyperledger Fabric]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hadoop/index.html">大数据 [Hadoop]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../operations/index.html">Linux内核 [Operations]</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">面试记录 [Interviewer]</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_java.html">1. 聊聊Java面试的经典题目</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_server.html">2. 区块链真题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html">3. ElasticSearch 面试题</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -152,7 +160,31 @@
 <h1>面试记录 [Interviewer]<a class="headerlink" href="#interviewer" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="01_java.html">1. 聊聊Java面试的经典题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_java.html">1. 聊聊Java面试的经典题目</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_java.html#tcp">1.1. tcp协议传输层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_java.html#id1">1.2. 滑动窗口协议</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03_server.html">2. 区块链真题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_es.html">3. ElasticSearch 面试题</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#elasticsearch-es">3.1. elasticsearch 了解多少，说说你们公司 es 的集群架构，索引数据大小，分片有多少，以及一些调优手段</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#id5">3.2. 倒排索引是什么</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#es">3.3. ES索引数据多了怎么办,如何调优,部署</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#esmaster">3.4. ES如何实现master选举</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#id9">3.5. 详细描述一下ES索引文档的过程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#id10">3.6. 详细描述一下ES搜索的过程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#es-linux">3.7. ES部署时,对linux的设置有哪些优化方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#lucene">3.8. lucene的内部结构是什么</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#id11">3.9. ES如何实现master选举</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#elasticsearch-20-10-master-10-master">3.10. Elasticsearch 中的节点（比如共 20 个），其中的 10 个选了一个 master，另外 10 个选了另一个 master，怎么办？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#gc-es">3.11. 对于GC方面,使用ES时要注意什么</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#id12">3.12. Elasticsearch 对于大数据量（上亿量级）的聚合如何实现？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#id13">3.13. 并发情况下,ES如何保证读写一致</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#id14">3.14. 介绍一下个性化搜索方案</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#id15">3.15. 是否了解字典树</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html#id16">3.16. 拼写纠错是如何实现的</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -162,6 +194,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="01_java.html" class="btn btn-neutral float-right" title="1. 聊聊Java面试的经典题目" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../operations/04_ssr.html" class="btn btn-neutral float-left" title="4. ssr 一键搭建" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

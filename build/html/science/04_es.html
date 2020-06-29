@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. ElasticSearch 面试题 &mdash; 区块链研究记录 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="2. 区块链真题" href="03_server.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 区块链研究记录
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">比特币 [Bitcoin]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ethereum/index.html">以太坊 [Ethereum]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hyperledger/index.html">联盟链 [Hyperledger Fabric]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hadoop/index.html">大数据 [Hadoop]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/index.html">Linux内核 [Operations]</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">面试记录 [Interviewer]</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_java.html">1. 聊聊Java面试的经典题目</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_server.html">2. 区块链真题</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. ElasticSearch 面试题</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#elasticsearch-es">3.1. elasticsearch 了解多少，说说你们公司 es 的集群架构，索引数据大小，分片有多少，以及一些调优手段</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">设计阶段调优</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">写入调优</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">查询调优</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">其他调优</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">3.2. 倒排索引是什么</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#es">3.3. ES索引数据多了怎么办,如何调优,部署</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">动态索引层面</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">存储层面</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">部署层面</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#esmaster">3.4. ES如何实现master选举</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">3.5. 详细描述一下ES索引文档的过程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">3.6. 详细描述一下ES搜索的过程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#es-linux">3.7. ES部署时,对linux的设置有哪些优化方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lucene">3.8. lucene的内部结构是什么</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">3.9. ES如何实现master选举</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elasticsearch-20-10-master-10-master">3.10. Elasticsearch 中的节点（比如共 20 个），其中的 10 个选了一个 master，另外 10 个选了另一个 master，怎么办？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gc-es">3.11. 对于GC方面,使用ES时要注意什么</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">3.12. Elasticsearch 对于大数据量（上亿量级）的聚合如何实现？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">3.13. 并发情况下,ES如何保证读写一致</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">3.14. 介绍一下个性化搜索方案</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">3.15. 是否了解字典树</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">3.16. 拼写纠错是如何实现的</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">区块链研究记录</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">面试记录 [Interviewer]</a> &raquo;</li>
+        
+      <li>3. ElasticSearch 面试题</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/science/04_es.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="elasticsearch">
+<h1>3. ElasticSearch 面试题<a class="headerlink" href="#elasticsearch" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="elasticsearch-es">
+<h2>3.1. elasticsearch 了解多少，说说你们公司 es 的集群架构，索引数据大小，分片有多少，以及一些调优手段<a class="headerlink" href="#elasticsearch-es" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>设计阶段调优<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id2">
+<h3>写入调优<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id3">
+<h3>查询调优<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id4">
+<h3>其他调优<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>3.2. 倒排索引是什么<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="es">
+<h2>3.3. ES索引数据多了怎么办,如何调优,部署<a class="headerlink" href="#es" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>动态索引层面<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id7">
+<h3>存储层面<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id8">
+<h3>部署层面<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="esmaster">
+<h2>3.4. ES如何实现master选举<a class="headerlink" href="#esmaster" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>1,只有候选节点(master: ture)的节点才能成为主节点;</li>
+<li>2,最小节点数(min_master_nodes)的目的是为了防止脑裂;</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h2>3.5. 详细描述一下ES索引文档的过程<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id10">
+<h2>3.6. 详细描述一下ES搜索的过程<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="es-linux">
+<h2>3.7. ES部署时,对linux的设置有哪些优化方法<a class="headerlink" href="#es-linux" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="lucene">
+<h2>3.8. lucene的内部结构是什么<a class="headerlink" href="#lucene" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>索引</li>
+<li>搜索</li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h2>3.9. ES如何实现master选举<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="elasticsearch-20-10-master-10-master">
+<h2>3.10. Elasticsearch 中的节点（比如共 20 个），其中的 10 个选了一个 master，另外 10 个选了另一个 master，怎么办？<a class="headerlink" href="#elasticsearch-20-10-master-10-master" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="gc-es">
+<h2>3.11. 对于GC方面,使用ES时要注意什么<a class="headerlink" href="#gc-es" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id12">
+<h2>3.12. Elasticsearch 对于大数据量（上亿量级）的聚合如何实现？<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id13">
+<h2>3.13. 并发情况下,ES如何保证读写一致<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id14">
+<h2>3.14. 介绍一下个性化搜索方案<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>SEE 基于 word2vec 和 Elasticsearch 实现个性化搜索</li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h2>3.15. 是否了解字典树<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id16">
+<h2>3.16. 拼写纠错是如何实现的<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="03_server.html" class="btn btn-neutral float-left" title="2. 区块链真题" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, 艾克中国
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
