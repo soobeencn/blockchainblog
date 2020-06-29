@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="02_web.html" />
+    <link rel="next" title="2. 数据库真题" href="02_web.html" />
     <link rel="prev" title="面试记录 [Interviewer]" href="index.html" /> 
 </head>
 
@@ -89,11 +89,17 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">面试记录 [Interviewer]</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">1. 聊聊Java面试的经典题目</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#tcp">1.1. tcp协议传输层</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">1.2. 滑动窗口协议</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1.2. 滑动窗口协议</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">如何保证次序</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">如何提高吞吐量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">如何实现最优解</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="03_server.html">2. 区块链真题</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html">3. ElasticSearch 面试题</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="02_web.html">2. 数据库真题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_server.html">3. 区块链真题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_es.html">4. ElasticSearch 面试题</a></li>
 </ul>
 </li>
 </ul>
@@ -149,7 +155,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/science/01_java.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/science/01_java.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -169,6 +175,25 @@
 </div>
 <div class="section" id="id1">
 <h2>1.2. 滑动窗口协议<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>从工程学角度来讲,滑动窗口协议解决了一个怎样的问题<ul>
+<li>tcp协议的使用</li>
+<li>维持发送方/接收方缓冲区<ul>
+<li>缓冲区是用来解决网络之间数据不可靠的问题,例如丢包、半包、出错、乱序</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="id2">
+<h3>如何保证次序<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id3">
+<h3>如何提高吞吐量<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id4">
+<h3>如何实现最优解<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 
@@ -180,7 +205,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="02_web.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="02_web.html" class="btn btn-neutral float-right" title="2. 数据库真题" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="面试记录 [Interviewer]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
