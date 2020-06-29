@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>面试记录 [Interviewer] &mdash; 区块链研究记录 1.0 documentation</title>
+  <title>2. 数据库真题 &mdash; 区块链研究记录 1.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. 聊聊Java面试的经典题目" href="01_java.html" />
-    <link rel="prev" title="4. ssr 一键搭建" href="../operations/04_ssr.html" /> 
+    <link rel="next" title="3. 区块链真题" href="03_server.html" />
+    <link rel="prev" title="1. 聊聊Java面试的经典题目" href="01_java.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,9 +86,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../hyperledger/index.html">联盟链 [Hyperledger Fabric]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hadoop/index.html">大数据 [Hadoop]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../operations/index.html">Linux内核 [Operations]</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">面试记录 [Interviewer]</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">面试记录 [Interviewer]</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_java.html">1. 聊聊Java面试的经典题目</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_sql.html">2. 数据库真题</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. 数据库真题</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sql">2.1. SQL慢查询的解决思路</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">慢SQL的系统表现</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">开启SQL慢查询的日志</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">总结</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="03_server.html">3. 区块链真题</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_es.html">4. ElasticSearch 面试题</a></li>
 </ul>
@@ -138,13 +146,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>面试记录 [Interviewer]</li>
+          <li><a href="index.html">面试记录 [Interviewer]</a> &raquo;</li>
+        
+      <li>2. 数据库真题</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/science/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/science/02_sql.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -157,40 +167,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="interviewer">
-<h1>面试记录 [Interviewer]<a class="headerlink" href="#interviewer" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="01_java.html">1. 聊聊Java面试的经典题目</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="01_java.html#tcp">1.1. tcp协议传输层</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01_java.html#id1">1.2. 滑动窗口协议</a></li>
+  <div class="section" id="id1">
+<h1>2. 数据库真题<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sql">
+<h2>2.1. SQL慢查询的解决思路<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>慢SQL的系统表现<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>1，数据库CPU负载高。一般是查询语句中有很多计算逻辑，导致数据库cpu负载。</li>
+<li>2，IO负载高导致服务器卡住。这个一般和全表查询没索引有关系。</li>
+<li>3，查询语句正常，索引正常但是还是慢。如果表面上索引正常，但是查询慢，需要看看是否索引没有生效。</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="02_sql.html">2. 数据库真题</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="02_sql.html#sql">2.1. SQL慢查询的解决思路</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="03_server.html">3. 区块链真题</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_es.html">4. ElasticSearch 面试题</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#elasticsearch-es">4.1. elasticsearch 了解多少，说说你们公司 es 的集群架构，索引数据大小，分片有多少，以及一些调优手段</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#id5">4.2. 倒排索引是什么</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#es">4.3. ES索引数据多了怎么办,如何调优,部署</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#esmaster">4.4. ES如何实现master选举</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#id9">4.5. 详细描述一下ES索引文档的过程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#id10">4.6. 详细描述一下ES搜索的过程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#es-linux">4.7. ES部署时,对linux的设置有哪些优化方法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#lucene">4.8. lucene的内部结构是什么</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#id11">4.9. ES如何实现master选举</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#elasticsearch-20-10-master-10-master">4.10. Elasticsearch 中的节点（比如共 20 个），其中的 10 个选了一个 master，另外 10 个选了另一个 master，怎么办？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#gc-es">4.11. 对于GC方面,使用ES时要注意什么</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#id12">4.12. Elasticsearch 对于大数据量（上亿量级）的聚合如何实现？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#id13">4.13. 并发情况下,ES如何保证读写一致</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#id14">4.14. 介绍一下个性化搜索方案</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#id15">4.15. 是否了解字典树</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_es.html#id16">4.16. 拼写纠错是如何实现的</a></li>
-</ul>
-</li>
-</ul>
+</div>
+<div class="section" id="id3">
+<h3>开启SQL慢查询的日志<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">在</span> <span class="n">MySQL</span> <span class="n">的配置文件</span> <span class="n">my</span><span class="o">.</span><span class="n">cnf</span> <span class="n">的</span> <span class="p">[</span><span class="n">mysqld</span><span class="p">]</span> <span class="n">项下配置慢查询日志开启</span>
+    <span class="o">-</span> <span class="p">[</span><span class="n">mysqld</span><span class="p">]</span><span class="n">slow_query_log</span><span class="o">=</span><span class="mi">1</span>
+    <span class="o">-</span> <span class="n">slow_query_log_file</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">mysql</span><span class="o">/</span><span class="n">log</span><span class="o">-</span><span class="n">slow</span><span class="o">-</span><span class="n">queries</span><span class="o">.</span><span class="n">log</span>
+    <span class="o">-</span> <span class="n">long_query_time</span><span class="o">=</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>总结<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- 1. 打开慢日志查询，确定是否有SQL语句占用了过多资源，如果是，在不改变业务原意的前提下，对insert、group by、order by、join等语句进行优化。
+- 2. 考虑调整MySQL的系统参数： innodb_buffer_pool_size、innodb_log_file_size、table_cache等。
+- 3. 确定是否是因为高并发引起行锁的超时问题。
+- 4. 如果数据量过大，需要考虑进一步的分库分表
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -202,10 +208,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="01_java.html" class="btn btn-neutral float-right" title="1. 聊聊Java面试的经典题目" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="03_server.html" class="btn btn-neutral float-right" title="3. 区块链真题" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../operations/04_ssr.html" class="btn btn-neutral float-left" title="4. ssr 一键搭建" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="01_java.html" class="btn btn-neutral float-left" title="1. 聊聊Java面试的经典题目" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
