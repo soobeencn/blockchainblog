@@ -181,9 +181,18 @@
 <div class="section" id="id2">
 <h3>慢SQL的系统表现<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>1，数据库CPU负载高。一般是查询语句中有很多计算逻辑，导致数据库cpu负载。</li>
-<li>2，IO负载高导致服务器卡住。这个一般和全表查询没索引有关系。</li>
-<li>3，查询语句正常，索引正常但是还是慢。如果表面上索引正常，但是查询慢，需要看看是否索引没有生效。</li>
+<li><ol class="first">
+<li>数据库CPU负载高。一般是查询语句中有很多计算逻辑，导致数据库cpu负载。</li>
+</ol>
+</li>
+<li><ol class="first">
+<li>IO负载高导致服务器卡住。这个一般和全表查询没索引有关系。</li>
+</ol>
+</li>
+<li><ol class="first">
+<li>查询语句正常，索引正常但是还是慢。如果表面上索引正常，但是查询慢，需要看看是否索引没有生效。</li>
+</ol>
+</li>
 </ul>
 </div>
 <div class="section" id="id3">
