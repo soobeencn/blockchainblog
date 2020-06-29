@@ -188,21 +188,23 @@
 </div>
 <div class="section" id="id3">
 <h3>开启SQL慢查询的日志<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">在</span> <span class="n">MySQL</span> <span class="n">的配置文件</span> <span class="n">my</span><span class="o">.</span><span class="n">cnf</span> <span class="n">的</span> <span class="p">[</span><span class="n">mysqld</span><span class="p">]</span> <span class="n">项下配置慢查询日志开启</span>
-    <span class="o">-</span> <span class="p">[</span><span class="n">mysqld</span><span class="p">]</span><span class="n">slow_query_log</span><span class="o">=</span><span class="mi">1</span>
-    <span class="o">-</span> <span class="n">slow_query_log_file</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">mysql</span><span class="o">/</span><span class="n">log</span><span class="o">-</span><span class="n">slow</span><span class="o">-</span><span class="n">queries</span><span class="o">.</span><span class="n">log</span>
-    <span class="o">-</span> <span class="n">long_query_time</span><span class="o">=</span><span class="mi">2</span>
+<div class="section" id="mysql-my-cnf-mysqld">
+<h4>在 MySQL 的配置文件 my.cnf 的 [mysqld] 项下配置慢查询日志开启<a class="headerlink" href="#mysql-my-cnf-mysqld" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="p">[</span><span class="n">mysqld</span><span class="p">]</span><span class="n">slow_query_log</span><span class="o">=</span><span class="mi">1</span>
+<span class="o">-</span> <span class="n">slow_query_log_file</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">mysql</span><span class="o">/</span><span class="n">log</span><span class="o">-</span><span class="n">slow</span><span class="o">-</span><span class="n">queries</span><span class="o">.</span><span class="n">log</span>
+<span class="o">-</span> <span class="n">long_query_time</span><span class="o">=</span><span class="mi">2</span>
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="id4">
 <h3>总结<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- 1. 打开慢日志查询，确定是否有SQL语句占用了过多资源，如果是，在不改变业务原意的前提下，对insert、group by、order by、join等语句进行优化。
-- 2. 考虑调整MySQL的系统参数： innodb_buffer_pool_size、innodb_log_file_size、table_cache等。
-- 3. 确定是否是因为高并发引起行锁的超时问题。
-- 4. 如果数据量过大，需要考虑进一步的分库分表
-</pre></div>
-</div>
+<ol class="simple">
+<li>打开慢日志查询，确定是否有SQL语句占用了过多资源，如果是，在不改变业务原意的前提下，对insert、group by、order by、join等语句进行优化。</li>
+<li>考虑调整MySQL的系统参数： innodb_buffer_pool_size、innodb_log_file_size、table_cache等。</li>
+<li>确定是否是因为高并发引起行锁的超时问题。</li>
+<li>如果数据量过大，需要考虑进一步的分库分表</li>
+</ol>
 </div>
 </div>
 <div class="section" id="id5">
