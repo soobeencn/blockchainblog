@@ -199,12 +199,12 @@
 </div>
 <div class="section" id="id4">
 <h3>总结<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li>打开慢日志查询，确定是否有SQL语句占用了过多资源，如果是，在不改变业务原意的前提下，对insert、group by、order by、join等语句进行优化。</li>
-<li>考虑调整MySQL的系统参数： innodb_buffer_pool_size、innodb_log_file_size、table_cache等。</li>
-<li>确定是否是因为高并发引起行锁的超时问题。</li>
-<li>如果数据量过大，需要考虑进一步的分库分表</li>
-</ol>
+<ul class="simple">
+<li>1.打开慢日志查询，确定是否有SQL语句占用了过多资源，如果是，在不改变业务原意的前提下，对insert、group by、order by、join等语句进行优化。</li>
+<li>2.考虑调整MySQL的系统参数： innodb_buffer_pool_size、innodb_log_file_size、table_cache等。</li>
+<li>3.确定是否是因为高并发引起行锁的超时问题。</li>
+<li>4.如果数据量过大，需要考虑进一步的分库分表</li>
+</ul>
 </div>
 </div>
 <div class="section" id="id5">

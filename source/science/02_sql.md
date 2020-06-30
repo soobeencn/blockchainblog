@@ -18,10 +18,10 @@
     - long_query_time=2
 #### 总结
 
-1. 打开慢日志查询，确定是否有SQL语句占用了过多资源，如果是，在不改变业务原意的前提下，对insert、group by、order by、join等语句进行优化。
-2. 考虑调整MySQL的系统参数： innodb_buffer_pool_size、innodb_log_file_size、table_cache等。
-3. 确定是否是因为高并发引起行锁的超时问题。
-4. 如果数据量过大，需要考虑进一步的分库分表
+* 1.打开慢日志查询，确定是否有SQL语句占用了过多资源，如果是，在不改变业务原意的前提下，对insert、group by、order by、join等语句进行优化。
+* 2.考虑调整MySQL的系统参数： innodb_buffer_pool_size、innodb_log_file_size、table_cache等。
+* 3.确定是否是因为高并发引起行锁的超时问题。
+* 4.如果数据量过大，需要考虑进一步的分库分表
 
 ### 事务的隔离级别
 
