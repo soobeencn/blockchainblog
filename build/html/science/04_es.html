@@ -87,7 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../operations/index.html">Linux内核 [Operations]</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">面试记录 [Interviewer]</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_java.html">1. 聊聊Java面试的经典题目</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_web.html">2. 数据库真题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_sql.html">2. 数据库真题</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_server.html">3. 区块链真题</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">4. ElasticSearch 面试题</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#elasticsearch-es">4.1. elasticsearch 了解多少，说说你们公司 es 的集群架构，索引数据大小，分片有多少，以及一些调优手段</a><ul>
@@ -113,10 +113,15 @@
 <li class="toctree-l3"><a class="reference internal" href="#elasticsearch-20-10-master-10-master">4.10. Elasticsearch 中的节点（比如共 20 个），其中的 10 个选了一个 master，另外 10 个选了另一个 master，怎么办？</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gc-es">4.11. 对于GC方面,使用ES时要注意什么</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id12">4.12. Elasticsearch 对于大数据量（上亿量级）的聚合如何实现？</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id13">4.13. 并发情况下,ES如何保证读写一致</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id14">4.14. 介绍一下个性化搜索方案</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id15">4.15. 是否了解字典树</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id16">4.16. 拼写纠错是如何实现的</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">4.13. 并发情况下,ES如何保证读写一致</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id14">可以通过版本号使用乐观并发控制,确保新版本不会被旧版本替代,由应用层解决冲突</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">写一致性</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">读一致性</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">4.14. 介绍一下个性化搜索方案</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">4.15. 是否了解字典树</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">4.16. 拼写纠错是如何实现的</a></li>
 </ul>
 </li>
 </ul>
@@ -256,18 +261,34 @@
 </div>
 <div class="section" id="id13">
 <h2>4.13. 并发情况下,ES如何保证读写一致<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="id14">
-<h2>4.14. 介绍一下个性化搜索方案<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<h3>可以通过版本号使用乐观并发控制,确保新版本不会被旧版本替代,由应用层解决冲突<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id15">
+<h3>写一致性<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>一致性级别支持quorum/one/all   默认为quorum,即只有当大多数分片可用时才允许写操作)</li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h3>读一致性<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>replication设置为sync(默认) 即操作在主分片和副本分片都完成后才会返回</li>
+<li>replication设置为async时,也可以通过设置搜索请求参数_preference为primary来查询主分片,确保文档是最新版本</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id17">
+<h2>4.14. 介绍一下个性化搜索方案<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>SEE 基于 word2vec 和 Elasticsearch 实现个性化搜索</li>
 </ul>
 </div>
-<div class="section" id="id15">
-<h2>4.15. 是否了解字典树<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id18">
+<h2>4.15. 是否了解字典树<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="id16">
-<h2>4.16. 拼写纠错是如何实现的<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id19">
+<h2>4.16. 拼写纠错是如何实现的<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
