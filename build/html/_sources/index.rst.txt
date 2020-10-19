@@ -13,9 +13,7 @@
    beginning/index
    ethereum/index
    hyperledger/index
+   base/index
 .. hadoop/index
 .. operations/index
 .. science/index
-   
-   
-
