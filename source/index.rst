@@ -14,6 +14,7 @@
    ethereum/index
    hyperledger/index
    base/index
+   elastic/index
 .. hadoop/index
 .. operations/index
 .. science/index
