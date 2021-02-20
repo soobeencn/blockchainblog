@@ -55,7 +55,7 @@ Kibana 是通向 Elastic 产品集的窗口，
             > elasticsearch.username: "kibana"  
               elasticsearch.password: "123456"
           
-```angular2html
+```
     超级管理员：
     elastic
     admin123
