@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="比特币 [Bitcoin]" href="../elastic/index.html" />
+    <link rel="next" title="Elastic [Elastic Search]" href="../elastic/index.html" />
     <link rel="prev" title="分享与交流 [Interviewer]" href="index.html" /> 
 </head>
 
@@ -93,7 +93,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../elastic/index.html">比特币 [Bitcoin]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elastic/index.html">Elastic [Elastic Search]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opensource/index.html">开源项目 [open source project]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aboutme/index.html">联系我 [Call ME]</a></li>
 </ul>
 
             
@@ -162,11 +164,15 @@
             
   <div class="section" id="id1">
 <h1>1. 区块链技术分享<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>2004年   p2p    p2sp    supernaut      结构化     非结构化    松散化  gnutella   freenet<br />Chord、YaCy、Kademlia   网络模型
-DHT
-Napster、OpenNAP、IRC &#64;find
-p2p<br />网络层  通讯  单机   -   集群   - 分布式(理论)   -   p2p
-2pc 3pc  — &gt;  flp —&gt;  quorum   —&gt;   lese(时钟)   —&gt;cap   —&gt;需要柔性(软状态)base —&gt;bft(没有中心化) pbft(实用) ibft(伊斯坦布尔 pipline) —&gt;paxos   raft()</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>2004年   p2p    p2sp    supernaut      结构化     非结构化    松散化  gnutella   freenet    
+Chord、YaCy、Kademlia   网络模型
+DHT 
+Napster、OpenNAP、IRC @find
+p2p  
+网络层  通讯  单机   -   集群   - 分布式(理论)   -   p2p
+2pc 3pc  — &gt;  flp —&gt;  quorum   —&gt;   lese(时钟)   —&gt;cap   —&gt;需要柔性(软状态)base —&gt;bft(没有中心化) pbft(实用) ibft(伊斯坦布尔 pipline) —&gt;paxos   raft()
+</pre></div>
+</div>
 <p>msa soa</p>
 <div class="section" id="id2">
 <h2>1.1. 共识层   文章<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -185,20 +191,30 @@ p2p<br />网络层  通讯  单机   -   集群   - 分布式(理论)   -   p2p
 <li>如果是 MySQL 的老司机，一上来就知道 skip-name-resolve 这个参数要 改改默认值。
 在我眼里这三种方式都解决了问题，最后一种最快但是纯靠积累和经验，换个问 题也许就不灵了;第一种方式是最牛逼和通用，只需要最少的业务知识。</li>
 </ol>
-<p>如何选择一个开源项目:
-是否满足业务
-是否成熟
-运维能力</p>
+<p><strong>如何选择一个开源项目</strong>:</p>
+<ul class="simple">
+<li>是否满足业务</li>
+<li>是否成熟</li>
+<li>运维能力</li>
+</ul>
 <p>运维能力:
-我们在选择开源项目的时候，基本上都是聚焦于技术指标，例如性能、可靠性、 功能这些方案，而几乎不会去关注运维方面的能力。但如果要将方案应用到线上生产 环境，运维能力是必不可少的一环，否则一旦出问题，运维、研发、测试都只能干瞪 眼，求菩萨保佑了!<br />可以从以下几个方案去考察运维能力:<br />1)开源方案日志是否齐全:有的开源方案日志只有寥寥启动停止几行，出了问题 根本无法排查<br />2)开源方案是否有命令行、管理控制台等维护工具，能够看到系统运行时的 情况<br />3)开源方案是否有故障检测和恢复的能力，例如告警、倒换等</p>
-<p>如何使用开源方案?</p>
-<p>很多人用开源项目，其实是完完全全的“拿来主义”，看了几个 Demo，把程序 跑起来就开始部署到线上应用了。就好像看了一下开车指南，知道了方向盘是转向、 油门是加速、刹车是减速，然后就开车上路了，其实是非常危险的。
-案例:我们有团队使用了 elasticsearch，基本上是拿来就用，倒排索引是什么 不太清楚，配置都是用默认值，跑起来就上线了，结果就遇到节点 ping 时间太长， 剔除异常节点太慢，导致整站访问挂掉。
-案例 2:很多团队最初使用 MySQL 的时候，也没有怎么研究过，经常有业务 部门抱怨 MySQL 太慢了，其实经过定位，发现最关键的几个参数(例如 innodb_ buffer_pool_size, sync_binlog，innodb_log_file_size 等)都没有配置或者配置 错误，性能当然会慢。
-可以从如下几方面进行研究和测试: 1)通读开源项目的设计文档或者白皮书，了解其设计原理 2)核对每个配置项的作用和影响，识别出关键配置项 3)进行多种场景的性能测试
-4)进行压力测试，连续跑几天，观察 cpu、内存、磁盘 io 等指标波动 5)进行故障测试:kill，断电、拔网线、重启 100 次以上、倒换等</p>
-<p>前端:
-IPFS</p>
+我们在选择开源项目的时候，基本上都是聚焦于技术指标，例如性能、可靠性、 功能这些方案，而几乎不会去关注运维方面的能力。但如果要将方案应用到线上生产 环境，运维能力是必不可少的一环，否则一旦出问题，运维、研发、测试都只能干瞪 眼，求菩萨保佑了!</p>
+<p>可以从以下几个方案去考察运维能力:<br />1)开源方案日志是否齐全:有的开源方案日志只有寥寥启动停止几行，出了问题 根本无法排查<br />2)开源方案是否有命令行、管理控制台等维护工具，能够看到系统运行时的 情况<br />3)开源方案是否有故障检测和恢复的能力，例如告警、倒换等</p>
+<p><strong>如何使用开源方案?</strong></p>
+<p>很多人用开源项目，其实是完完全全的“拿来主义”，看了几个 Demo，把程序 跑起来就开始部署到线上应用了。就好像看了一下开车指南，知道了方向盘是转向、 油门是加速、刹车是减速，然后就开车上路了，其实是非常危险的。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>案例:
+1: 我们有团队使用了 elasticsearch，基本上是拿来就用，倒排索引是什么 不太清楚，配置都是用默认值，跑起来就上线了，结果就遇到节点 ping 时间太长， 剔除异常节点太慢，导致整站访问挂掉。 
+案例: 
+2: 很多团队最初使用 MySQL 的时候，也没有怎么研究过，经常有业务 部门抱怨 MySQL 太慢了，其实经过定位，发现最关键的几个参数(例如 innodb_ buffer_pool_size, sync_binlog，innodb_log_file_size 等)都没有配置或者配置 错误，性能当然会慢。 
+
+可以从如下几方面进行研究和测试: 
+    1. 通读开源项目的设计文档或者白皮书，了解其设计原理 
+    2. 核对每个配置项的作用和影响，识别出关键配置项 
+    3. 进行多种场景的性能测试 
+    4. 进行压力测试，连续跑几天，观察 cpu、内存、磁盘 io 等指标波动 
+    5. 进行故障测试:kill，断电、拔网线、重启 100 次以上、倒换等 
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -210,7 +226,7 @@ IPFS</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../elastic/index.html" class="btn btn-neutral float-right" title="比特币 [Bitcoin]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../elastic/index.html" class="btn btn-neutral float-right" title="Elastic [Elastic Search]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="分享与交流 [Interviewer]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
