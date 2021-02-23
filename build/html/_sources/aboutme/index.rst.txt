@@ -1,12 +1,16 @@
 联系我 [Call ME]
 ============================================================
 
-如果有需要, 请联系
-
 
 .. toctree::
     :maxdepth: 2
     :numbered: 2
 
-    01_begin
+.. note:: 
+
+    - github: soobeencn@github.com
+    - site: pwnpub.com
+    - wechat: pwnpub_cn
+    - line: 18620250112
+    - telegram: pwnpub_cn
     
