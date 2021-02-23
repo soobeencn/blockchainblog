@@ -15,6 +15,7 @@
    hyperledger/index
    base/index
    elastic/index
+   opensource/index
 .. hadoop/index
 .. operations/index
 .. science/index
