@@ -19,14 +19,13 @@
    ethereum/index
    hyperledger/index
    base/index
-   elastic/index
    opensource/index
    aboutme/index
 .. hadoop/index
 .. operations/index
 .. science/index
 
---------
+---------------------------
 FAQ:
 
 
