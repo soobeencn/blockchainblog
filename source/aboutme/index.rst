@@ -6,7 +6,7 @@
     :maxdepth: 2
     :numbered: 2
 
-.. CALLME:: 
+.. note:: 
 
     - github: soobeencn@github.com
     - site: pwnpub.com
