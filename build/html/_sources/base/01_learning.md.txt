@@ -52,6 +52,7 @@ r-socket 背压 zookeeper dubbo grpc
     2: 很多团队最初使用 MySQL 的时候，也没有怎么研究过，经常有业务 部门抱怨 MySQL 太慢了，其实经过定位，发现最关键的几个参数(例如 innodb_ buffer_pool_size, sync_binlog，innodb_log_file_size 等)都没有配置或者配置 错误，性能当然会慢。 
 
     可以从如下几方面进行研究和测试: 
+    
 	    1. 通读开源项目的设计文档或者白皮书，了解其设计原理 
 	    2. 核对每个配置项的作用和影响，识别出关键配置项 
 	    3. 进行多种场景的性能测试 
