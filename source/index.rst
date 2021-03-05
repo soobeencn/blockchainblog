@@ -21,8 +21,9 @@
    base/index
    opensource/index
    aboutme/index
+   operations/index
 .. hadoop/index
-.. operations/index
+   
 .. science/index
 
 ---------------------------
