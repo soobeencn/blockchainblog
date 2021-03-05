@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. kafka 快速接入" href="02_kafka.html" />
+    <link rel="next" title="2. kafka 入门指北" href="02_kafka.html" />
     <link rel="prev" title="开源项目 [open source project]" href="index.html" /> 
 </head>
 
@@ -84,26 +84,53 @@
 <li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">比特币 [Bitcoin]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ethereum/index.html">以太坊 [Ethereum]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hyperledger/index.html">联盟链 [Hyperledger Fabric]</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/index.html">分享与交流 [Interviewer]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/index.html">Linux内核 [Operations]</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">开源项目 [open source project]</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">1. Elastic Stack</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#kibana">1.1. Kibana</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#kibana">1.1. kibana</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#elastic">Elastic 软件生态</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id5">本地搭建</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#logstash">1.2. Logstash</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id6">Logstash入门</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">接入指南</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">系统结构</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">动态管道</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#beats-goland">1.3. Beats 【goland】</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#x-pack-plugin">1.4. X-Pack plugin 需要商业授权</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#beats">1.3. Beats 接入指南</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">原理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">队列和交付保障</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-least-once-delivery">至少交付一次（At Least Once Delivery）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#demo">DEMO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#logstash-modules">Logstash Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#codecs-serialize">codecs &amp; serialize</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="02_kafka.html">2. kafka 快速接入</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">1.4. 监控和管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metricbeat">1.5. Metricbeat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id17">接入指南</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#apm-application-performance-monitoring">1.6. APM [application performance monitoring]</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#apm-server">APM Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#apm">APM 代理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">APM 应用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">分布式跟踪</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">运行apm插件</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#elasticsearch">1.7. ElasticSearch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mysql">对比mysql</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">倒排索引</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="02_kafka.html">2. kafka 入门指北</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../base/index.html">分享与交流 [Interviewer]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aboutme/index.html">联系我 [Call ME]</a></li>
 </ul>
 
@@ -178,9 +205,8 @@
 <li>kibana+elasticsearch+logstash/beats</li>
 </ul>
 <div class="section" id="kibana">
-<h2>1.1. Kibana<a class="headerlink" href="#kibana" title="Permalink to this headline">¶</a></h2>
-<p>Kibana 是通向 Elastic 产品集的窗口，
-它可以在 Elasticsearch 中对数据进行视觉探索和实时分析</p>
+<h2>1.1. kibana<a class="headerlink" href="#kibana" title="Permalink to this headline">¶</a></h2>
+<p>Kibana 是通向 Elastic 产品集的窗口， 它可以在 Elasticsearch 中对数据进行视觉探索和实时分析</p>
 <div class="section" id="elastic">
 <h3>Elastic 软件生态<a class="headerlink" href="#elastic" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id1">
@@ -235,6 +261,25 @@
 <div><p>xpack.security.enabled: true</p>
 </div></blockquote>
 </li>
+<li><p class="first">配置tcp通道加密：</p>
+<blockquote>
+<div><p>xpack.security.transport.ssl.enabled: true<br />xpack.security.transport.ssl.verification_mode: certificate<br />xpack.security.transport.ssl.keystore.path: elastic-certificates.p12<br />xpack.security.transport.ssl.truststore.path: elastic-certificates.p12</p>
+</div></blockquote>
+</li>
+<li><p class="first">生成keystore和truststore</p>
+<ul>
+<li><p class="first">进入elasticsearch/bin目录, 将证书文件输出到config目录下</p>
+<blockquote>
+<div><p>bin/elasticsearch-certutil cert -out config/elastic-certificates.p12 -pass “”</p>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p class="first">手动生成密码</p>
+<blockquote>
+<div><p>bin/elasticsearch-setup-passwords interactive</p>
+</div></blockquote>
+</li>
 </ul>
 </li>
 <li><p class="first">配置kibana</p>
@@ -266,22 +311,20 @@
 </li>
 <li><p class="first">kibana</p>
 <ul>
-<li><p class="first">kabana.yml 打开注释，修改默认配置：</p>
+<li><p class="first">kibana.yml 打开注释，修改默认配置：</p>
 <blockquote>
-<div><p>elasticsearch.username: “kibana”<br />elasticsearch.password: “123456”</p>
+<div><p>elasticsearch.username: “kibana”<br />elasticsearch.password: “elastic123”</p>
 </div></blockquote>
 </li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    超级管理员：
+<div class="highlight-angular2html notranslate"><div class="highlight"><pre><span></span>    超级管理员：
     elastic
-    admin123
+    elastic123
 
-    apm
-    admin123
+    apm_system
+    elastic123
 
     kibana
     kibana123
@@ -290,8 +333,9 @@
     ～123
 </pre></div>
 </div>
+</li>
+<li><p class="first">常用管理插件</p>
 <ul class="simple">
-<li>常用管理插件<ul>
 <li>stack monitoring</li>
 <li>APM</li>
 <li>discovery</li>
@@ -300,11 +344,10 @@
 </ul>
 </div>
 </div>
+<hr class="docutils" />
 <div class="section" id="logstash">
 <h2>1.2. Logstash<a class="headerlink" href="#logstash" title="Permalink to this headline">¶</a></h2>
-<p>Logstash 是 Elastic Stack 的中央数据流引擎，
-用于收集、丰富和统一所有数据，而不管格式或模式。
-当与Elasticsearch，Kibana，及 Beats 共同使用的时候便会拥有特别强大的实时处理能力。</p>
+<p>Logstash 是 Elastic Stack 的中央数据流引擎， 用于收集、丰富和统一所有数据，而不管格式或模式。 当与Elasticsearch，Kibana，及 Beats 共同使用的时候便会拥有特别强大的实时处理能力。</p>
 <div class="section" id="id6">
 <h3>Logstash入门<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p><em>the dataflow engine</em></p>
@@ -318,7 +361,72 @@
 </ul>
 </div>
 <div class="section" id="id7">
-<h3>接入指南<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3>系统结构<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<table>
+    <tr>
+        <th colspan="3">Logstash</th>
+    </tr>
+    <tr>
+        <th>Inputs</th><th>Filters</th><th>Outputs</th>
+    </tr>
+    <tr>
+        <td rowspan="1">Beats</td>
+        <td>Structure<br> Transform <br>Normalize</td>
+        <td>ElasticSearch</td>
+    </tr>
+    <tr>
+        <td>
+            TCP <br>
+            UDP <br>
+            HTTP <br>
+        </td>
+        <td>GeoIP Enrichment <br>
+            External Lookups Enrichment<br>
+            CIDR & DNS Lookups
+        </td>
+        <td rowspan="1">TCP <br>
+                        UDP <br> 
+                        HTTP
+        </td>
+    </tr>
+     <tr>
+        <td>
+            JDBC <br>
+            HTTP Poller<br>
+        </td>
+        <td>GeoIP Enrichment <br>
+            External Lookups Enrichment<br>
+            CIDR & DNS Lookups
+        </td>
+        <td rowspan="1">Other Storage Queues
+        </td>
+    </tr>
+    <tr>
+        <th colspan="3">channel <BR>
+                        Dead Letter Queues <br>
+                        Persistent Queues 
+        </th>
+    </tr>
+</table><p><strong>备注:</strong></p>
+<p><em>1.At-least-once: 交付保障和基于持久化队列的自适应缓冲</em><br /><em>2.将错误事件发送到死信队列(dead letter queue)中, 用于离线处理和重放</em></p>
+</div>
+<div class="section" id="id8">
+<h3>动态管道<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>|消息处理机制|
+|:——:|
+|Apache Pipeline|
+|JDBC Pipeline|
+|Netflow Pipeline|</p>
+<ul class="simple">
+<li>带条件和多管道的直接数据流</li>
+<li>使用身份认证和加密来确保传输安全</li>
+<li>使用modules来一键交付</li>
+<li>可轻松构建自定义插件集成和处理器</li>
+</ul>
+</div>
+</div>
+<div class="section" id="beats">
+<h2>1.3. Beats 接入指南<a class="headerlink" href="#beats" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first">获取资源</p>
 <blockquote>
@@ -334,6 +442,17 @@
 <blockquote>
 <div><p>vim filebeat.yml</p>
 </div></blockquote>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">setup</span><span class="p">.</span><span class="nx">kibana</span><span class="o">:</span>
+  <span class="nx">host</span><span class="o">:</span> <span class="s2">&quot;mykibanahost:5601&quot;</span> 
+  <span class="nx">username</span><span class="o">:</span> <span class="s2">&quot;my_kibana_user&quot;</span>  
+  <span class="nx">password</span><span class="o">:</span> <span class="s2">&quot;{pwd}&quot;</span>
+
+<span class="nx">output</span><span class="p">.</span><span class="nx">elasticsearch</span><span class="o">:</span>
+  <span class="nx">hosts</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;localhost:9200&quot;</span><span class="p">]</span>
+  <span class="nx">username</span><span class="o">:</span> <span class="s2">&quot;filebeat_internal&quot;</span>
+  <span class="nx">password</span><span class="o">:</span> <span class="s2">&quot;YOUR_PASSWORD&quot;</span>         
+</pre></div>
+</div>
 </li>
 <li><p class="first">加载列表信息</p>
 <blockquote>
@@ -355,13 +474,35 @@
 <blockquote>
 <div><p>./filebeat -e</p>
 </div></blockquote>
+<p>use root run:</p>
+<blockquote>
+<div><p>./filebeat -e –strict.perms=false</p>
+</div></blockquote>
 </li>
 <li><p class="first">查看日志</p>
 <blockquote>
 <div><p>如果没有异常信息，打开kibana -&gt; discovery -&gt; filebeat-*</p>
 </div></blockquote>
 </li>
-<li><p class="first">日志录入</p>
+<li><p class="first">自定义日志录入:  打开 filebeat.yml, update input or input stream, such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filebeat</span><span class="o">.</span><span class="n">inputs</span><span class="p">:</span>
+
+<span class="c1"># Each - is an input. Most options can be set at the input level, so</span>
+<span class="c1"># you can use different inputs for various configurations.</span>
+<span class="c1"># Below are the input specific configurations.</span>
+
+<span class="o">-</span> <span class="nb">type</span><span class="p">:</span> <span class="n">log</span>
+
+  <span class="c1"># Change to true to enable this input configuration.</span>
+  <span class="n">enabled</span><span class="p">:</span> <span class="n">true</span>
+
+  <span class="c1"># Paths that should be crawled and fetched. Glob based paths.</span>
+  <span class="n">paths</span><span class="p">:</span>
+    <span class="o">-</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/*.</span><span class="n">log</span>
+    <span class="c1"># update the path of your tomcat</span>
+    <span class="o">-</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">local</span><span class="o">-</span><span class="n">jar</span><span class="o">/</span><span class="n">startup</span><span class="o">.</span><span class="n">log</span>
+</pre></div>
+</div>
 </li>
 <li><p class="first"><em><strong>FAQ</strong></em><br />关于启动filebeat遇到的一些常见问题：</p>
 <ul>
@@ -375,14 +516,171 @@
 </ul>
 </li>
 </ul>
+<div class="section" id="id9">
+<h3>原理<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h4>一个基本配置<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">input</span> <span class="p">{</span>
+    <span class="nx">beats</span> <span class="p">{</span> <span class="nx">port</span> <span class="p">=&gt;</span> <span class="mi">5043</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">filter</span> <span class="p">{</span>
+    <span class="nx">mutate</span> <span class="p">{</span> <span class="nx">lowercase</span> <span class="p">=&gt;</span> <span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">output</span> <span class="p">{</span>
+    <span class="nx">elasticsearch</span> <span class="p">{</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="beats-goland">
-<h2>1.3. Beats 【goland】<a class="headerlink" href="#beats-goland" title="Permalink to this headline">¶</a></h2>
-<p>前端agent</p>
+<div class="section" id="id11">
+<h4>一个事件<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Logstash主要的数据单元就是事件</li>
+<li>他们是文档类型， 和Json文档类型很相似，支持任意层次结构和类型</li>
+</ul>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;@timestamp&quot;</span> <span class="p">=&gt;</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">02</span><span class="nx">T01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span>
+    <span class="s2">&quot;message&quot;</span> <span class="p">=&gt;</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;some other field&quot;</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="s2">&quot;has comflex values&quot;</span> <span class="p">=&gt;</span> <span class="mi">123</span>
+    <span class="p">}</span>     
+<span class="p">}</span>
+</pre></div>
 </div>
-<div class="section" id="x-pack-plugin">
-<h2>1.4. X-Pack plugin 需要商业授权<a class="headerlink" href="#x-pack-plugin" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id12">
+<h4>一个管道<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>pipelines 可伸缩</li>
+<li>支持多个input</li>
+<li>支持多个filter， output</li>
+<li>一个Logstash，支持多个管道</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>队列和交付保障<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>|InMemoryQueue|Persistent Queue|
+| :—-: | :—-: |
+|非常快|快|
+|所有数据都在内存|收到的数据先落地磁盘，直到交付完成|
+|没有落地|落地|
+|正在处理的数据可能会因为非正常关闭而丢失|持久化，非正常关闭不会丢失数据|</p>
+</div>
+<div class="section" id="at-least-once-delivery">
+<h3>至少交付一次（At Least Once Delivery）<a class="headerlink" href="#at-least-once-delivery" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>大部分插件支持</li>
+<li>大部分情况，消息只交付一次</li>
+<li>非正常关闭下，持久化队列里面的事件，我们可能会运行worker不止一次，可能会产生重复消息</li>
+<li>幂等操作（永远写相同的ID）可以确保消息不重复</li>
+</ul>
+</div>
+<div class="section" id="demo">
+<h3>DEMO<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="elasticsearch-beats-logstash-kibana">
+<h4>下载 elasticsearch , beats, logstash, kibana<a class="headerlink" href="#elasticsearch-beats-logstash-kibana" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id14">
+<h4>按照自定义需求进行配置 –&gt; kibana展示<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="logstash-modules">
+<h3>Logstash Modules<a class="headerlink" href="#logstash-modules" title="Permalink to this headline">¶</a></h3>
+<p><em>Immediate Insights with Modules</em></p>
+<ul class="simple">
+<li>特定数据类型的一键交付</li>
+<li>从数据到监控面板只需一步</li>
+<li>自动解析和充实数据</li>
+<li>默认的监控面板、告警设置、机器学习任务</li>
+<li><a class="reference external" href="www.elastic.co/guide/en/logstash/current/logstash-modules.html">可用的modules</a></li>
+</ul>
+</div>
+<div class="section" id="codecs-serialize">
+<h3>codecs &amp; serialize<a class="headerlink" href="#codecs-serialize" title="Permalink to this headline">¶</a></h3>
+<p><em><strong>using codecs to serialize/deserialize data</strong></em></p>
+<div class="section" id="id15">
+<h4>demo：<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">input</span> <span class="p">{</span>
+    <span class="nx">file</span> <span class="p">{</span> 
+        <span class="c1">// Deserialize new line separated JSON</span>
+        <span class="nx">path</span> <span class="p">=&gt;</span> <span class="s2">&quot;some/json.log&quot;</span><span class="p">,</span> <span class="nx">codec</span> <span class="p">=&gt;</span> <span class="nx">json_lines</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">output</span> <span class="p">{</span>
+    <span class="c1">// Serialize to the msgpack format</span>
+    <span class="nx">redis</span> <span class="p">{</span> 
+        <span class="nx">codec</span> <span class="p">=&gt;</span> <span class="nx">msgpack</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id16">
+<h2>1.4. 监控和管理<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<p>Monitoring</p>
+<ul class="simple">
+<li>使用 Monitoring UI 集中监控和管理多个Logstash部署</li>
+<li>通过Pipeline Viewer 快速定位和分析瓶颈</li>
+<li>借助 Monitoring API 直接从Logstash节点获取节点指标信息</li>
+</ul>
+<p>Pipeline Management</p>
+<ul class="simple">
+<li>一个UI来管理多个Logstash节点上的多个管道</li>
+<li>Logstash可以轮询和动态重新加载更新的管道</li>
+<li>使用X-Pack Security 特性来控制管道管理的访问</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="metricbeat">
+<h2>1.5. Metricbeat<a class="headerlink" href="#metricbeat" title="Permalink to this headline">¶</a></h2>
+<p><img alt="img_1.png" src="opensource/image/img_1.png" /></p>
+<div class="section" id="id17">
+<h3>接入指南<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>同filebeat类似，详细内容参考filebeat接入指南</li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="apm-application-performance-monitoring">
+<h2>1.6. APM [application performance monitoring]<a class="headerlink" href="#apm-application-performance-monitoring" title="Permalink to this headline">¶</a></h2>
+<p>对于大部分应用程序来说性能都是很重要的一个因素，尤其对于比如网站、手机app等直接由用户访问的应用来说更是如此，因为性能较差的应用将会直接影响其用户体验。因此，能对应用进行性能监控变得非常重要，这将帮助我们找到性能瓶颈并优化。</p>
+<p>应用性能监控（Application Performance Monitoring，APM），是对应用程序性能和可用性的监视和管理。 APM努力检测和诊断复杂的应用程序性能问题，以维持预期的服务等级。</p>
+<div class="section" id="apm-server">
+<h3>APM Server<a class="headerlink" href="#apm-server" title="Permalink to this headline">¶</a></h3>
+<p>APM 服务器会从 APM 代理处接收数据，然后再将这些数据转换为 Elasticsearch 文档。
+它是通过暴露 HTTP 服务器端点（代理会将所收集的 APM 数据流式传输到此端点）来实现这一点的。APM 服务器对来自 APM 代理的事件进行验证和处理之后，服务器会将数据转换为 Elasticsearch 文档，并将这些文档存储在相应的 Elasticsearch 索引中。</p>
+</div>
+<div class="section" id="apm">
+<h3>APM 代理<a class="headerlink" href="#apm" title="Permalink to this headline">¶</a></h3>
+<p>APM 代理是以您服务所用的相同语言编写的开源库。您可以像安装任何其他库一样，将 APM 代理安装到您的服务中。它们可以检测您的代码并在运行时收集性能数据和错误。这些数据会缓存一小段时间，然后发送到 APM 服务器。</p>
+</div>
+<div class="section" id="id18">
+<h3>APM 应用<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>查找并修复代码中存在的问题归根结底就是搜索。通过 Kibana 中的专用 APM 应用，您能够识别瓶颈并在代码层面准确定位到存在问题的地方。因此，您能够编写更好、更高效的代码，进而帮助您加快“开发-测试-部署”周期，让您的应用程序运行更快，客户体验更佳。</p>
+</div>
+<div class="section" id="id19">
+<h3>分布式跟踪<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>纳闷您的请求是如何流经整个基础架构的？通过分布式跟踪将所有内容整合到一起，清晰查看您的各项服务之间的交互情况。查找路径中哪个位置发生了延时问题，然后准确定位到需加以优化的组件。</p>
+<p>效果：
+<img alt="img_2.png" src="opensource/image/img_2.png" /></p>
+<ul class="simple">
+<li>对JVM的监控：
+<img alt="img_3.png" src="opensource/image/img_3.png" /></li>
+<li>同时支持配置alerting阈值</li>
+</ul>
+</div>
+<div class="section" id="id20">
+<h3>运行apm插件<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">javaagent</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">elastic</span><span class="o">-</span><span class="n">apm</span><span class="o">-</span><span class="n">agent</span><span class="o">-</span><span class="mf">1.21</span><span class="o">.</span><span class="mf">0.</span><span class="n">jar</span> <span class="o">-</span><span class="n">Delastic</span><span class="o">.</span><span class="n">apm</span><span class="o">.</span><span class="n">service_name</span><span class="o">=</span><span class="n">my</span><span class="o">-</span><span class="n">cool</span><span class="o">-</span><span class="n">service</span> <span class="o">-</span><span class="n">Delastic</span><span class="o">.</span><span class="n">apm</span><span class="o">.</span><span class="n">application_packages</span><span class="o">=</span><span class="n">org</span><span class="o">.</span><span class="n">example</span><span class="p">,</span><span class="n">org</span><span class="o">.</span><span class="n">another</span><span class="o">.</span><span class="n">example</span> <span class="o">-</span><span class="n">Delastic</span><span class="o">.</span><span class="n">apm</span><span class="o">.</span><span class="n">server_url</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8200</span> <span class="o">-</span><span class="n">jar</span> <span class="n">hyperchain</span><span class="o">-</span><span class="mf">0.0</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="n">SNAPSHOT</span><span class="o">.</span><span class="n">jar</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>X-Pack plugin 需要商业授权</strong></p>
 <ul class="simple">
 <li>Security</li>
 <li>Alerting</li>
@@ -391,6 +689,35 @@
 <li>Graph</li>
 <li>Machine Language</li>
 </ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="elasticsearch">
+<h2>1.7. ElasticSearch<a class="headerlink" href="#elasticsearch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mysql">
+<h3>对比mysql<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h3>
+<p>|ElasticSearch|Mysql|
+|:—:|:—:|
+|Index|Database|
+|Type|Table|
+|Document|Row|
+|Field|Column|
+|Mapping|Schema|
+|Query DSL|SQL|
+|GET http://…|select * from table …|
+|PUT http://…|update table set …|</p>
+<p><strong>备注：</strong></p>
+<ul class="simple">
+<li>ElasticSearch 中的索引 Index 类似于 MySQL 中的数据库 Database；</li>
+<li>ElasticSearch 中的类型 Type 类似于 MySQL 中的表 Table；需要注意，这个概念在 7.x 版本中被完全删除，而且概念上和 Table 也有较大差异；</li>
+<li>ElasticSearch 中的文档 Document 类似于 MySQL 中的数据行 Row，每个文档由多个字段 Filed 组成，这个Filed 就类似于 MySQL 的 Column；</li>
+<li>ElasticSearch 中的映射 Mapping 是对索引库中的索引字段及其数据类型进行定义，类似于关系型数据库中的表结构 Schema；</li>
+<li>ElasticSearch 使用自己的领域语言 Query DSL 来进行增删改查，而 MySQL 使用 SQL 语言进行上诉操作。</li>
+</ul>
+</div>
+<div class="section" id="id21">
+<h3>倒排索引<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 
@@ -402,7 +729,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="02_kafka.html" class="btn btn-neutral float-right" title="2. kafka 快速接入" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="02_kafka.html" class="btn btn-neutral float-right" title="2. kafka 入门指北" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="开源项目 [open source project]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
