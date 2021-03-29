@@ -98,31 +98,41 @@
 <li class="toctree-l4"><a class="reference internal" href="#id8">动态管道</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#beats">1.3. Beats 接入指南</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id9">原理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id13">队列和交付保障</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#beats">1.3. Beats</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">接入指南</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">原理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">队列和交付保障</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#at-least-once-delivery">至少交付一次（At Least Once Delivery）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#packetbeat">packetbeat</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#demo">DEMO</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#logstash-modules">Logstash Modules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#codecs-serialize">codecs &amp; serialize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">监控和管理</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id16">1.4. 监控和管理</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#metricbeat">1.5. Metricbeat</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id17">接入指南</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metricbeat">1.4. Metricbeat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id18">接入指南</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#apm-application-performance-monitoring">1.6. APM [application performance monitoring]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#apm-application-performance-monitoring">1.5. APM [application performance monitoring]</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#apm-server">APM Server</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#apm">APM 代理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id18">APM 应用</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id19">分布式跟踪</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id20">运行apm插件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">APM 应用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">分布式跟踪</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">运行apm插件</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#elasticsearch">1.7. ElasticSearch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#elasticsearch">1.6. ElasticSearch</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#mysql">对比mysql</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id21">倒排索引</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22">倒排索引</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#es">ES 优化写入性能</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#es-cluster">ES cluster</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id26">1.7. 测试结果</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id27">第一周</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id28">第二周</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id30">第三周</a></li>
 </ul>
 </li>
 </ul>
@@ -263,7 +273,10 @@
 </li>
 <li><p class="first">配置tcp通道加密：</p>
 <blockquote>
-<div><p>xpack.security.transport.ssl.enabled: true<br />xpack.security.transport.ssl.verification_mode: certificate<br />xpack.security.transport.ssl.keystore.path: elastic-certificates.p12<br />xpack.security.transport.ssl.truststore.path: elastic-certificates.p12</p>
+<div><p>xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.verification_mode: certificate
+xpack.security.transport.ssl.keystore.path: elastic-certificates.p12
+xpack.security.transport.ssl.truststore.path: elastic-certificates.p12</p>
 </div></blockquote>
 </li>
 <li><p class="first">生成keystore和truststore</p>
@@ -313,26 +326,27 @@
 <ul>
 <li><p class="first">kibana.yml 打开注释，修改默认配置：</p>
 <blockquote>
-<div><p>elasticsearch.username: “kibana”<br />elasticsearch.password: “elastic123”</p>
+<div><p>elasticsearch.username: “kibana”
+elasticsearch.password: “elastic123”</p>
 </div></blockquote>
 </li>
 </ul>
-</li>
-</ul>
-<div class="highlight-angular2html notranslate"><div class="highlight"><pre><span></span>    超级管理员：
-    elastic
-    elastic123
+<div class="highlight-angular2html notranslate"><div class="highlight"><pre><span></span>超级管理员：
+elastic
+elastic123
 
-    apm_system
-    elastic123
+apm_system
+elastic123
 
-    kibana
-    kibana123
+kibana
+kibana123
 
-    ～
-    ～123
+～
+～123
 </pre></div>
 </div>
+</li>
+</ul>
 </li>
 <li><p class="first">常用管理插件</p>
 <ul class="simple">
@@ -426,7 +440,9 @@
 </div>
 </div>
 <div class="section" id="beats">
-<h2>1.3. Beats 接入指南<a class="headerlink" href="#beats" title="Permalink to this headline">¶</a></h2>
+<h2>1.3. Beats<a class="headerlink" href="#beats" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>接入指南<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first">获取资源</p>
 <blockquote>
@@ -442,15 +458,15 @@
 <blockquote>
 <div><p>vim filebeat.yml</p>
 </div></blockquote>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">setup</span><span class="p">.</span><span class="nx">kibana</span><span class="o">:</span>
-  <span class="nx">host</span><span class="o">:</span> <span class="s2">&quot;mykibanahost:5601&quot;</span> 
-  <span class="nx">username</span><span class="o">:</span> <span class="s2">&quot;my_kibana_user&quot;</span>  
-  <span class="nx">password</span><span class="o">:</span> <span class="s2">&quot;{pwd}&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span><span class="o">.</span><span class="n">kibana</span><span class="p">:</span>
+  <span class="n">host</span><span class="p">:</span> <span class="s2">&quot;mykibanahost:5601&quot;</span> 
+  <span class="n">username</span><span class="p">:</span> <span class="s2">&quot;my_kibana_user&quot;</span>  
+  <span class="n">password</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{pwd}</span><span class="s2">&quot;</span>
 
-<span class="nx">output</span><span class="p">.</span><span class="nx">elasticsearch</span><span class="o">:</span>
-  <span class="nx">hosts</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;localhost:9200&quot;</span><span class="p">]</span>
-  <span class="nx">username</span><span class="o">:</span> <span class="s2">&quot;filebeat_internal&quot;</span>
-  <span class="nx">password</span><span class="o">:</span> <span class="s2">&quot;YOUR_PASSWORD&quot;</span>         
+<span class="n">output</span><span class="o">.</span><span class="n">elasticsearch</span><span class="p">:</span>
+  <span class="n">hosts</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;localhost:9200&quot;</span><span class="p">]</span>
+  <span class="n">username</span><span class="p">:</span> <span class="s2">&quot;filebeat_internal&quot;</span>
+  <span class="n">password</span><span class="p">:</span> <span class="s2">&quot;YOUR_PASSWORD&quot;</span>         
 </pre></div>
 </div>
 </li>
@@ -485,22 +501,18 @@
 </div></blockquote>
 </li>
 <li><p class="first">自定义日志录入:  打开 filebeat.yml, update input or input stream, such as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filebeat</span><span class="o">.</span><span class="n">inputs</span><span class="p">:</span>
-
-<span class="c1"># Each - is an input. Most options can be set at the input level, so</span>
-<span class="c1"># you can use different inputs for various configurations.</span>
-<span class="c1"># Below are the input specific configurations.</span>
-
-<span class="o">-</span> <span class="nb">type</span><span class="p">:</span> <span class="n">log</span>
-
-  <span class="c1"># Change to true to enable this input configuration.</span>
-  <span class="n">enabled</span><span class="p">:</span> <span class="n">true</span>
-
-  <span class="c1"># Paths that should be crawled and fetched. Glob based paths.</span>
-  <span class="n">paths</span><span class="p">:</span>
-    <span class="o">-</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/*.</span><span class="n">log</span>
-    <span class="c1"># update the path of your tomcat</span>
-    <span class="o">-</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">local</span><span class="o">-</span><span class="n">jar</span><span class="o">/</span><span class="n">startup</span><span class="o">.</span><span class="n">log</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">filebeat</span><span class="o">.</span><span class="n">inputs</span><span class="p">:</span>
+    <span class="c1"># Each - is an input. Most options can be set at the input level, so</span>
+    <span class="c1"># you can use different inputs for various configurations.</span>
+    <span class="c1"># Below are the input specific configurations.</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="n">log</span>
+    <span class="c1"># Change to true to enable this input configuration.        </span>
+    <span class="n">enabled</span><span class="p">:</span> <span class="n">true</span>
+    <span class="c1"># Paths that should be crawled and fetched. Glob based paths.        </span>
+      <span class="n">paths</span><span class="p">:</span>
+        <span class="o">-</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/*.</span><span class="n">log</span>
+        <span class="c1"># update the path of your tomcat</span>
+        <span class="o">-</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">local</span><span class="o">-</span><span class="n">jar</span><span class="o">/</span><span class="n">startup</span><span class="o">.</span><span class="n">log</span>
 </pre></div>
 </div>
 </li>
@@ -510,16 +522,19 @@
 </li>
 <li><p class="first">使用root用户启动，则按照下方规则进行配置：</p>
 <blockquote>
-<div><p>sudo chown root filebeat.yml<br />sudo chown root modules.d/system.yml<br />sudo ./filebeat -e</p>
+<div><p>sudo chown root filebeat.yml
+sudo chown root modules.d/system.yml
+sudo ./filebeat -e</p>
 </div></blockquote>
 </li>
 </ul>
 </li>
 </ul>
-<div class="section" id="id9">
-<h3>原理<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</div>
 <div class="section" id="id10">
-<h4>一个基本配置<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<h3>原理<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h4>一个基本配置<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">input</span> <span class="p">{</span>
     <span class="nx">beats</span> <span class="p">{</span> <span class="nx">port</span> <span class="p">=&gt;</span> <span class="mi">5043</span> <span class="p">}</span>
 <span class="p">}</span>
@@ -532,8 +547,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id11">
-<h4>一个事件<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id12">
+<h4>一个事件<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Logstash主要的数据单元就是事件</li>
 <li>他们是文档类型， 和Json文档类型很相似，支持任意层次结构和类型</li>
@@ -548,8 +563,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id12">
-<h4>一个管道<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id13">
+<h4>一个管道<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>pipelines 可伸缩</li>
 <li>支持多个input</li>
@@ -558,8 +573,8 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id13">
-<h3>队列和交付保障<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h3>队列和交付保障<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <p>|InMemoryQueue|Persistent Queue|
 | :—-: | :—-: |
 |非常快|快|
@@ -576,13 +591,21 @@
 <li>幂等操作（永远写相同的ID）可以确保消息不重复</li>
 </ul>
 </div>
+<div class="section" id="packetbeat">
+<h3>packetbeat<a class="headerlink" href="#packetbeat" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>实时抓取网络包</li>
+<li>自动解析应用层协议</li>
+<li>替代wireshark</li>
+</ul>
+</div>
 <div class="section" id="demo">
 <h3>DEMO<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="elasticsearch-beats-logstash-kibana">
 <h4>下载 elasticsearch , beats, logstash, kibana<a class="headerlink" href="#elasticsearch-beats-logstash-kibana" title="Permalink to this headline">¶</a></h4>
 </div>
-<div class="section" id="id14">
-<h4>按照自定义需求进行配置 –&gt; kibana展示<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id15">
+<h4>按照自定义需求进行配置 –&gt; kibana展示<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 <div class="section" id="logstash-modules">
@@ -599,8 +622,8 @@
 <div class="section" id="codecs-serialize">
 <h3>codecs &amp; serialize<a class="headerlink" href="#codecs-serialize" title="Permalink to this headline">¶</a></h3>
 <p><em><strong>using codecs to serialize/deserialize data</strong></em></p>
-<div class="section" id="id15">
-<h4>demo：<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id16">
+<h4>demo：<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">input</span> <span class="p">{</span>
     <span class="nx">file</span> <span class="p">{</span> 
         <span class="c1">// Deserialize new line separated JSON</span>
@@ -617,10 +640,9 @@
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
-<div class="section" id="id16">
-<h2>1.4. 监控和管理<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id17">
+<h3>监控和管理<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <p>Monitoring</p>
 <ul class="simple">
 <li>使用 Monitoring UI 集中监控和管理多个Logstash部署</li>
@@ -634,12 +656,12 @@
 <li>使用X-Pack Security 特性来控制管道管理的访问</li>
 </ul>
 </div>
+</div>
 <hr class="docutils" />
 <div class="section" id="metricbeat">
-<h2>1.5. Metricbeat<a class="headerlink" href="#metricbeat" title="Permalink to this headline">¶</a></h2>
-<p><img alt="img_1.png" src="opensource/image/img_1.png" /></p>
-<div class="section" id="id17">
-<h3>接入指南<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<h2>1.4. Metricbeat<a class="headerlink" href="#metricbeat" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id18">
+<h3>接入指南<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>同filebeat类似，详细内容参考filebeat接入指南</li>
 </ul>
@@ -647,7 +669,7 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="apm-application-performance-monitoring">
-<h2>1.6. APM [application performance monitoring]<a class="headerlink" href="#apm-application-performance-monitoring" title="Permalink to this headline">¶</a></h2>
+<h2>1.5. APM [application performance monitoring]<a class="headerlink" href="#apm-application-performance-monitoring" title="Permalink to this headline">¶</a></h2>
 <p>对于大部分应用程序来说性能都是很重要的一个因素，尤其对于比如网站、手机app等直接由用户访问的应用来说更是如此，因为性能较差的应用将会直接影响其用户体验。因此，能对应用进行性能监控变得非常重要，这将帮助我们找到性能瓶颈并优化。</p>
 <p>应用性能监控（Application Performance Monitoring，APM），是对应用程序性能和可用性的监视和管理。 APM努力检测和诊断复杂的应用程序性能问题，以维持预期的服务等级。</p>
 <div class="section" id="apm-server">
@@ -659,23 +681,21 @@
 <h3>APM 代理<a class="headerlink" href="#apm" title="Permalink to this headline">¶</a></h3>
 <p>APM 代理是以您服务所用的相同语言编写的开源库。您可以像安装任何其他库一样，将 APM 代理安装到您的服务中。它们可以检测您的代码并在运行时收集性能数据和错误。这些数据会缓存一小段时间，然后发送到 APM 服务器。</p>
 </div>
-<div class="section" id="id18">
-<h3>APM 应用<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id19">
+<h3>APM 应用<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <p>查找并修复代码中存在的问题归根结底就是搜索。通过 Kibana 中的专用 APM 应用，您能够识别瓶颈并在代码层面准确定位到存在问题的地方。因此，您能够编写更好、更高效的代码，进而帮助您加快“开发-测试-部署”周期，让您的应用程序运行更快，客户体验更佳。</p>
 </div>
-<div class="section" id="id19">
-<h3>分布式跟踪<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id20">
+<h3>分布式跟踪<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
 <p>纳闷您的请求是如何流经整个基础架构的？通过分布式跟踪将所有内容整合到一起，清晰查看您的各项服务之间的交互情况。查找路径中哪个位置发生了延时问题，然后准确定位到需加以优化的组件。</p>
-<p>效果：
-<img alt="img_2.png" src="opensource/image/img_2.png" /></p>
+<p>效果：</p>
 <ul class="simple">
-<li>对JVM的监控：
-<img alt="img_3.png" src="opensource/image/img_3.png" /></li>
+<li>对JVM的监控：</li>
 <li>同时支持配置alerting阈值</li>
 </ul>
 </div>
-<div class="section" id="id20">
-<h3>运行apm插件<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id21">
+<h3>运行apm插件<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">javaagent</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">elastic</span><span class="o">-</span><span class="n">apm</span><span class="o">-</span><span class="n">agent</span><span class="o">-</span><span class="mf">1.21</span><span class="o">.</span><span class="mf">0.</span><span class="n">jar</span> <span class="o">-</span><span class="n">Delastic</span><span class="o">.</span><span class="n">apm</span><span class="o">.</span><span class="n">service_name</span><span class="o">=</span><span class="n">my</span><span class="o">-</span><span class="n">cool</span><span class="o">-</span><span class="n">service</span> <span class="o">-</span><span class="n">Delastic</span><span class="o">.</span><span class="n">apm</span><span class="o">.</span><span class="n">application_packages</span><span class="o">=</span><span class="n">org</span><span class="o">.</span><span class="n">example</span><span class="p">,</span><span class="n">org</span><span class="o">.</span><span class="n">another</span><span class="o">.</span><span class="n">example</span> <span class="o">-</span><span class="n">Delastic</span><span class="o">.</span><span class="n">apm</span><span class="o">.</span><span class="n">server_url</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8200</span> <span class="o">-</span><span class="n">jar</span> <span class="n">hyperchain</span><span class="o">-</span><span class="mf">0.0</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="n">SNAPSHOT</span><span class="o">.</span><span class="n">jar</span>
 </pre></div>
 </div>
@@ -693,7 +713,7 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="elasticsearch">
-<h2>1.7. ElasticSearch<a class="headerlink" href="#elasticsearch" title="Permalink to this headline">¶</a></h2>
+<h2>1.6. ElasticSearch<a class="headerlink" href="#elasticsearch" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="mysql">
 <h3>对比mysql<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h3>
 <p>|ElasticSearch|Mysql|
@@ -709,14 +729,298 @@
 <p><strong>备注：</strong></p>
 <ul class="simple">
 <li>ElasticSearch 中的索引 Index 类似于 MySQL 中的数据库 Database；</li>
+</ul>
+<ol class="simple">
+<li><ul class="first">
 <li>ElasticSearch 中的类型 Type 类似于 MySQL 中的表 Table；需要注意，这个概念在 7.x 版本中被完全删除，而且概念上和 Table 也有较大差异；</li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
 <li>ElasticSearch 中的文档 Document 类似于 MySQL 中的数据行 Row，每个文档由多个字段 Filed 组成，这个Filed 就类似于 MySQL 的 Column；</li>
 <li>ElasticSearch 中的映射 Mapping 是对索引库中的索引字段及其数据类型进行定义，类似于关系型数据库中的表结构 Schema；</li>
 <li>ElasticSearch 使用自己的领域语言 Query DSL 来进行增删改查，而 MySQL 使用 SQL 语言进行上诉操作。</li>
 </ul>
 </div>
-<div class="section" id="id21">
-<h3>倒排索引<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id22">
+<h3>倒排索引<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="es">
+<h3>ES 优化写入性能<a class="headerlink" href="#es" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>用SSD</li>
+<li>多线程bulk</li>
+<li>尽量设置每个bulk的大小在5~15M左右</li>
+<li>增加节点、分片</li>
+<li>设置多个path.data目录，或配置RAID 0阵列</li>
+<li>如果用的是SSD，设置index.store.throttle.type：none</li>
+<li>禁用_all</li>
+<li>增大index.refresh_interval的值，默认1s</li>
+<li>增大index.translog.flush_threshold_size的值</li>
+<li>设置0副本，建完索引优化后再增加副本</li>
+<li>增大indices.memory.index_buffer_size的值</li>
+<li>用比较新版本的ES</li>
+</ul>
+</div>
+<div class="section" id="es-cluster">
+<h3>ES cluster<a class="headerlink" href="#es-cluster" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>node.master：表示节点是否具有称为主节点的资格</li>
+</ul>
+<p>- true代表的是有资格竞选主节点</p>
+<p>- false代表的是没有资格竞选主节点</p>
+<ul class="simple">
+<li>node.data：表示节点是否存储数据</li>
+</ul>
+<div class="section" id="id23">
+<h4>部署单节点<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>123</li>
+<li>123</li>
+<li>213</li>
+<li>234</li>
+<li>2</li>
+</ul>
+</div>
+<div class="section" id="id24">
+<h4>配置文件<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id25">
+<h5>3个节点配置如下:<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h5>
+<p>node-1:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ---------------------------------- Cluster -----------------------------------</span>
+<span class="c1">#</span>
+<span class="c1"># Use a descriptive name for your cluster:</span>
+<span class="n">cluster</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">es</span><span class="o">-</span><span class="n">cluster</span>
+<span class="c1">#</span>
+<span class="c1"># ------------------------------------ Node ------------------------------------</span>
+<span class="c1">#</span>
+<span class="n">node</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">node</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">node</span><span class="o">.</span><span class="n">master</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">node</span><span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="n">true</span>
+<span class="c1">#</span>
+<span class="c1"># ----------------------------------- Paths ------------------------------------</span>
+<span class="c1">#</span>
+<span class="n">path</span><span class="o">.</span><span class="n">logs</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">es</span><span class="o">-</span><span class="n">logs</span>
+<span class="c1">#</span>
+<span class="c1"># ---------------------------------- Network -----------------------------------</span>
+<span class="c1">#</span>
+<span class="c1"># Set a custom port for HTTP:</span>
+<span class="c1">#</span>
+<span class="n">http</span><span class="o">.</span><span class="n">port</span><span class="p">:</span> <span class="mi">9200</span>
+<span class="n">transport</span><span class="o">.</span><span class="n">port</span><span class="p">:</span> <span class="mi">9300</span>
+<span class="c1">#</span>
+<span class="c1"># --------------------------------- Discovery ----------------------------------</span>
+<span class="c1">#</span>
+<span class="c1"># Pass an initial list of hosts to perform discovery when this node is started:</span>
+<span class="c1"># The default list of hosts is [&quot;127.0.0.1&quot;, &quot;[::1]&quot;]</span>
+<span class="n">discovery</span><span class="o">.</span><span class="n">seed_hosts</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;192.168.1.161:9300&quot;</span><span class="p">,</span> <span class="s2">&quot;192.168.1.162:9300&quot;</span><span class="p">,</span> <span class="s2">&quot;192.168.1.163:9300&quot;</span><span class="p">]</span>
+<span class="c1"># Bootstrap the cluster using an initial set of master-eligible nodes:</span>
+<span class="n">cluster</span><span class="o">.</span><span class="n">initial_master_nodes</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;node-1&quot;</span><span class="p">]</span>
+<span class="c1">#discovery.type: single-node</span>
+<span class="c1">#</span>
+<span class="c1"># ---------------------------------- Gateway -----------------------------------</span>
+<span class="c1">#</span>
+<span class="c1"># Block initial recovery after a full cluster restart until N nodes are started:</span>
+<span class="c1">#</span>
+<span class="c1">#gateway.recover_after_nodes: 3</span>
+<span class="c1">#</span>
+<span class="c1"># For more information, consult the gateway module documentation.</span>
+<span class="c1">#</span>
+<span class="c1"># ---------------------------------- Various -----------------------------------</span>
+<span class="n">xpack</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">xpack</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">ssl</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">xpack</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">ssl</span><span class="o">.</span><span class="n">verification_mode</span><span class="p">:</span> <span class="n">certificate</span>
+<span class="n">xpack</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">ssl</span><span class="o">.</span><span class="n">keystore</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">elastic</span><span class="o">-</span><span class="n">certificates</span><span class="o">.</span><span class="n">p12</span>
+<span class="n">xpack</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">ssl</span><span class="o">.</span><span class="n">truststore</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">elastic</span><span class="o">-</span><span class="n">certificates</span><span class="o">.</span><span class="n">p12</span>
+</pre></div>
+</div>
+<p>node-2:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ---------------------------------- Cluster -----------------------------------</span>
+<span class="c1">#</span>
+<span class="c1"># Use a descriptive name for your cluster:</span>
+<span class="n">cluster</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">es</span><span class="o">-</span><span class="n">cluster</span>
+<span class="c1">#</span>
+<span class="c1"># ------------------------------------ Node ------------------------------------</span>
+<span class="c1">#</span>
+<span class="n">node</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">node</span><span class="o">-</span><span class="mi">2</span>
+<span class="n">node</span><span class="o">.</span><span class="n">master</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">node</span><span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="n">true</span>
+<span class="c1">#</span>
+<span class="c1"># ----------------------------------- Paths ------------------------------------</span>
+<span class="c1">#</span>
+<span class="n">path</span><span class="o">.</span><span class="n">logs</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">es</span><span class="o">-</span><span class="n">logs</span>
+<span class="c1">#</span>
+<span class="c1"># ---------------------------------- Network -----------------------------------</span>
+<span class="c1">#</span>
+<span class="c1"># Set a custom port for HTTP:</span>
+<span class="c1">#</span>
+<span class="n">http</span><span class="o">.</span><span class="n">port</span><span class="p">:</span> <span class="mi">9200</span>
+<span class="n">transport</span><span class="o">.</span><span class="n">port</span><span class="p">:</span> <span class="mi">9300</span>
+<span class="c1">#</span>
+<span class="c1"># --------------------------------- Discovery ----------------------------------</span>
+<span class="c1">#</span>
+<span class="c1"># Pass an initial list of hosts to perform discovery when this node is started:</span>
+<span class="c1"># The default list of hosts is [&quot;127.0.0.1&quot;, &quot;[::1]&quot;]</span>
+<span class="n">discovery</span><span class="o">.</span><span class="n">seed_hosts</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;192.168.1.161:9300&quot;</span><span class="p">,</span> <span class="s2">&quot;192.168.1.162:9300&quot;</span><span class="p">,</span> <span class="s2">&quot;192.168.1.163:9300&quot;</span><span class="p">]</span>
+<span class="c1"># Bootstrap the cluster using an initial set of master-eligible nodes:</span>
+<span class="c1"># cluster.initial_master_nodes: [&quot;node-1&quot;]</span>
+<span class="c1">#discovery.type: single-node</span>
+<span class="c1">#</span>
+<span class="c1"># ---------------------------------- Gateway -----------------------------------</span>
+<span class="c1">#</span>
+<span class="c1"># Block initial recovery after a full cluster restart until N nodes are started:</span>
+<span class="c1">#</span>
+<span class="c1">#gateway.recover_after_nodes: 3</span>
+<span class="c1">#</span>
+<span class="c1"># For more information, consult the gateway module documentation.</span>
+<span class="c1">#</span>
+<span class="c1"># ---------------------------------- Various -----------------------------------</span>
+<span class="n">xpack</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">xpack</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">ssl</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">xpack</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">ssl</span><span class="o">.</span><span class="n">verification_mode</span><span class="p">:</span> <span class="n">certificate</span>
+<span class="n">xpack</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">ssl</span><span class="o">.</span><span class="n">keystore</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">elastic</span><span class="o">-</span><span class="n">certificates</span><span class="o">.</span><span class="n">p12</span>
+<span class="n">xpack</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">ssl</span><span class="o">.</span><span class="n">truststore</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">elastic</span><span class="o">-</span><span class="n">certificates</span><span class="o">.</span><span class="n">p12</span>
+</pre></div>
+</div>
+<p>node-3:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ---------------------------------- Cluster -----------------------------------</span>
+<span class="c1">#</span>
+<span class="c1"># Use a descriptive name for your cluster:</span>
+<span class="n">cluster</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">es</span><span class="o">-</span><span class="n">cluster</span>
+<span class="c1">#</span>
+<span class="c1"># ------------------------------------ Node ------------------------------------</span>
+<span class="c1">#</span>
+<span class="n">node</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">node</span><span class="o">-</span><span class="mi">3</span>
+<span class="n">node</span><span class="o">.</span><span class="n">master</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">node</span><span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="n">true</span>
+<span class="c1">#</span>
+<span class="c1"># ----------------------------------- Paths ------------------------------------</span>
+<span class="c1">#</span>
+<span class="n">path</span><span class="o">.</span><span class="n">logs</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">es</span><span class="o">-</span><span class="n">logs</span>
+<span class="c1">#</span>
+<span class="c1"># ---------------------------------- Network -----------------------------------</span>
+<span class="c1">#</span>
+<span class="c1"># Set a custom port for HTTP:</span>
+<span class="c1">#</span>
+<span class="n">http</span><span class="o">.</span><span class="n">port</span><span class="p">:</span> <span class="mi">9200</span>
+<span class="n">transport</span><span class="o">.</span><span class="n">port</span><span class="p">:</span> <span class="mi">9300</span>
+<span class="c1">#</span>
+<span class="c1"># --------------------------------- Discovery ----------------------------------</span>
+<span class="c1">#</span>
+<span class="c1"># Pass an initial list of hosts to perform discovery when this node is started:</span>
+<span class="c1"># The default list of hosts is [&quot;127.0.0.1&quot;, &quot;[::1]&quot;]</span>
+<span class="n">discovery</span><span class="o">.</span><span class="n">seed_hosts</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;192.168.1.161:9300&quot;</span><span class="p">,</span> <span class="s2">&quot;192.168.1.162:9300&quot;</span><span class="p">,</span> <span class="s2">&quot;192.168.1.163:9300&quot;</span><span class="p">]</span>
+<span class="c1"># Bootstrap the cluster using an initial set of master-eligible nodes:</span>
+<span class="c1"># cluster.initial_master_nodes: [&quot;node-1&quot;]</span>
+<span class="c1"># discovery.type: single-node</span>
+<span class="c1">#</span>
+<span class="c1"># ---------------------------------- Gateway -----------------------------------</span>
+<span class="c1">#</span>
+<span class="c1"># Block initial recovery after a full cluster restart until N nodes are started:</span>
+<span class="c1">#</span>
+<span class="c1">#gateway.recover_after_nodes: 3</span>
+<span class="c1">#</span>
+<span class="c1"># For more information, consult the gateway module documentation.</span>
+<span class="c1">#</span>
+<span class="c1"># ---------------------------------- Various -----------------------------------</span>
+<span class="n">xpack</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">xpack</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">ssl</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">xpack</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">ssl</span><span class="o">.</span><span class="n">verification_mode</span><span class="p">:</span> <span class="n">certificate</span>
+<span class="n">xpack</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">ssl</span><span class="o">.</span><span class="n">keystore</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">elastic</span><span class="o">-</span><span class="n">certificates</span><span class="o">.</span><span class="n">p12</span>
+<span class="n">xpack</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">ssl</span><span class="o">.</span><span class="n">truststore</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">elastic</span><span class="o">-</span><span class="n">certificates</span><span class="o">.</span><span class="n">p12</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="node">
+<h4>Node组合<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p class="first">主节点+数据节点(master+data)</p>
+<ul>
+<li><p class="first">节点即有称为主节点的资格，又存储数据</p>
+<p>node.master: true
+node.data: true</p>
+</li>
+</ul>
+</li>
+<li><p class="first">数据节点(data)
+　	- 节点没有成为主节点的资格，不参与选举，只会存储数据</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">node</span><span class="o">.</span><span class="n">master</span><span class="p">:</span> <span class="n">false</span>
+  <span class="n">node</span><span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="n">true</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">客户端节点(client)
+　　- 不会成为主节点，也不会存储数据，主要是针对海量请求的时候，可以进行负载均衡</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">node</span><span class="o">.</span><span class="n">master</span><span class="p">:</span> <span class="n">false</span>
+  <span class="n">node</span><span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="n">false</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="vs">
+<h4>广度优先vs深度优先<a class="headerlink" href="#vs" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="id26">
+<h2>1.7. 测试结果<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+<p><em>功能点:多条件多字段分组聚合统计</em></p>
+<div class="section" id="id27">
+<h3>第一周<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<p>|方案|数据量|存储方式|内存|cpu|节点数量|存储|结果|
+|:–:|:–:|:–:|:–:|:–:|:–:|:–:|:–:|
+|一|5400w|ElasticSearch|8g|32core|  单机单实例 |机械硬盘| 耗时 9s 左右|
+|二|2000w  | mongodb | 8g |32core | 单机单实例  |机械硬盘|耗时25-35s|</p>
+<p>结论:</p>
+<ul class="simple">
+<li>单机情况下, 无任何优化   多条件分组聚合统计效率低下</li>
+<li>存储方式为机械硬盘, 对查询效率有较大影响</li>
+<li>目标: 十亿级别数据量, 对标当前需求, 3s查询得到结果</li>
+</ul>
+<p>针对当前目标及现有资源, 做如下优化:</p>
+<ul class="simple">
+<li>增加节点,分片</li>
+<li>增加内存</li>
+<li>存储选择:SSD</li>
+<li>ES参数调优及索引调优</li>
+<li>代码优化: 根据ES官方可选属性, 针对当前业务场景选择不同维度的查询等</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="id28">
+<h3>第二周<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id29">
+<h4>ES<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
+<p>|节点|数据量|索引|内存|cpu|存储|度量字段数|结果|
+|:–:|:–:|:–:|:–:|:–:|:–:|:–:|:–:|:–:|
+|1node|2000w|单索引|8g|32core |机械硬盘|2| 4s|
+|1node|2000w|单索引|8g|32core |机械硬盘|7| 9s|
+|3node|2000w |单索引|8g*3 |32core|机械硬盘|7|8s|</p>
+<p>结论:</p>
+<ul class="simple">
+<li>首先增加了2个节点,总共3个节点  做7个字段的分组聚合 得到目标数据耗时几户相等</li>
+<li>增加内存  聚合效率相当  内存过大会OOM</li>
+<li>代码优化: 采用breath_first和depth_first   大数据量效率相当</li>
+</ul>
+<p>待做:</p>
+<ul class="simple">
+<li>ES参数调优及索引调优</li>
+<li>存储方式</li>
+<li>cpu/memory</li>
+</ul>
+</div>
+<div class="section" id="mongo">
+<h4>Mongo<a class="headerlink" href="#mongo" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>环境：服务器两台，搭建一个主节点，5个分片（一台3个分片，一台2个分片）</li>
+<li>查询结果：两个维度，八个指标聚合数据：1000W  5~6s</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id30">
+<h3>第三周<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>
