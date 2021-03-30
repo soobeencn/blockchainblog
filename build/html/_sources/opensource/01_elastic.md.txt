@@ -79,7 +79,7 @@ Kibana 是通向 Elastic 产品集的窗口， 它可以在 Elasticsearch 中对
             > elasticsearch.username: "kibana"
               elasticsearch.password: "elastic123"
 
-        ```angular2html
+        ```
         超级管理员：
         elastic
         elastic123
@@ -312,7 +312,7 @@ _Immediate Insights with Modules_
 - 从数据到监控面板只需一步
 - 自动解析和充实数据
 - 默认的监控面板、告警设置、机器学习任务
-- [可用的modules](www.elastic.co/guide/en/logstash/current/logstash-modules.html)
+- [可用的modules] (www.elastic.co/guide/en/logstash/current/logstash-modules.html)
   
 ### codecs & serialize
 ***using codecs to serialize/deserialize data***
