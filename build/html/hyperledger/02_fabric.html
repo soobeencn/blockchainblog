@@ -1,38 +1,41 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>2. Fabric 简介 &mdash; 区块链研究记录 1.0 documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3. Fabric 系统架构" href="03_framework.html" />
@@ -73,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -98,13 +102,16 @@
 <li class="toctree-l2"><a class="reference internal" href="06_fabric_dev.html">6. 联盟链应用</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/index.html">Linux内核 [Operations]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opensource/index.html">开源项目 [open source project]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/index.html">分享与交流 [Interviewer]</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../elastic/index.html">比特币 [Bitcoin]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aboutme/index.html">联系我 [Call ME]</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -139,20 +146,22 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">联盟链 [Hyperledger Fabric]</a> &raquo;</li>
         
-      <li>2. Fabric 简介</li>
+      <li><span class="section-number">2. </span>Fabric 简介</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/hyperledger/02_fabric.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -167,40 +176,41 @@
            <div itemprop="articleBody">
             
   <div class="section" id="fabric">
-<h1>2. Fabric 简介<a class="headerlink" href="#fabric" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>Fabric 简介<a class="headerlink" href="#fabric" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="hyperledger">
-<h2>2.1. Hyperledger简介<a class="headerlink" href="#hyperledger" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Hyperledger简介<a class="headerlink" href="#hyperledger" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>通用行业、通用业务场景的企业级区块链解决方案</li>
-<li>多项目并行</li>
+<li><p>通用行业、通用业务场景的企业级区块链解决方案</p></li>
+<li><p>多项目并行</p></li>
 </ul>
 </div>
 <div class="section" id="id1">
-<h2>2.2. Fabric简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>Fabric简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>IBM发起、Linux基金会托管</li>
-<li>企业级联盟链基础设施</li>
-<li>可插拔的共识机制(solo、kafka…)</li>
-<li>多链多通道隔离</li>
+<li><p>IBM发起、Linux基金会托管</p></li>
+<li><p>企业级联盟链基础设施</p></li>
+<li><p>可插拔的共识机制(solo、kafka…)</p></li>
+<li><p>多链多通道隔离</p></li>
 </ul>
 </div>
 <div class="section" id="id2">
-<h2>2.3. 智能合约<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>智能合约<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>区块链2.0 : 以太坊</li>
-<li>合约协议的数字化代码表达</li>
-<li>分布式有限状态机</li>
-<li>执行环境安全隔离、不受第三方干扰(EVM、Docker)</li>
+<li><p>区块链2.0 : 以太坊</p></li>
+<li><p>合约协议的数字化代码表达</p></li>
+<li><p>分布式有限状态机</p></li>
+<li><p>执行环境安全隔离、不受第三方干扰(EVM、Docker)</p></li>
 </ul>
 </div>
 <div class="section" id="id3">
-<h2>2.4. 链码<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4. </span>链码<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Fabric应用层基石(中间件)</li>
-<li>链码编程接口<ul>
-<li>init()    只执行一次</li>
-<li>invoke()    应用程序与链码交互的入口</li>
-<li>上述两个方法都只接受同一个参数,SDK链码交互的接口</li>
+<li><p>Fabric应用层基石(中间件)</p></li>
+<li><p>链码编程接口</p>
+<ul>
+<li><p>init()    只执行一次</p></li>
+<li><p>invoke()    应用程序与链码交互的入口</p></li>
+<li><p>上述两个方法都只接受同一个参数,SDK链码交互的接口</p></li>
 </ul>
 </li>
 </ul>
@@ -212,29 +222,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="03_framework.html" class="btn btn-neutral float-right" title="3. Fabric 系统架构" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="01_base.html" class="btn btn-neutral float-left" title="1. 区块链 基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="03_framework.html" class="btn btn-neutral float-right" title="3. Fabric 系统架构" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="01_base.html" class="btn btn-neutral float-left" title="1. 区块链 基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, 艾克中国
+        &#169; Copyright 2021, 艾克中国.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -242,7 +252,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

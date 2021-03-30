@@ -1,38 +1,41 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>2. kafka 入门指北 &mdash; 区块链研究记录 1.0 documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="分享与交流 [Interviewer]" href="../base/index.html" />
@@ -73,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -106,6 +110,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -140,20 +145,22 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">开源项目 [open source project]</a> &raquo;</li>
         
-      <li>2. kafka 入门指北</li>
+      <li><span class="section-number">2. </span>kafka 入门指北</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/opensource/02_kafka.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -168,9 +175,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="kafka">
-<h1>2. kafka 入门指北<a class="headerlink" href="#kafka" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>kafka 入门指北<a class="headerlink" href="#kafka" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>2.1. Kafka作为消息系统<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Kafka作为消息系统<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Kafka streams的概念与传统的企业消息系统相比如何？</p>
 <p>传统的消息系统有两个模块: 队列 和 发布-订阅。 在队列中，消费者池从server读取数据，每条记录被池子中的一个消费者消费; 在发布订阅中，记录被广播到所有的消费者。两者均有优缺点。 队列的优点在于它允许你将处理数据的过程分给多个消费者实例，使你可以扩展处理过程。 不好的是，队列不是多订阅者模式的—一旦一个进程读取了数据，数据就会被丢弃。 而发布-订阅系统允许你广播数据到多个进程，但是无法进行扩展处理，因为每条消息都会发送给所有的订阅者。</p>
 <p>消费组在Kafka有两层概念。在队列中，消费组允许你将处理过程分发给一系列进程(消费组中的成员)。 在发布订阅中，Kafka允许你将消息广播给多个消费组。</p>
@@ -181,14 +188,14 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="id2">
-<h2>2.2. 下载<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>下载<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>tar -xzf kafka_2.11-1.0.0.tgz</p>
 <p>cd kafka_2.11-1.0.0</p>
 </div></blockquote>
 </div>
 <div class="section" id="id3">
-<h2>2.3. 启动服务器<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>启动服务器<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>Kafka 使用 ZooKeeper 如果你还没有ZooKeeper服务器，</p>
 <p>你需要先启动一个ZooKeeper服务器。</p>
 <p>您可以通过与kafka打包在一起的便捷脚本来快速简单地创建一个单节点ZooKeeper实例。</p>
@@ -206,21 +213,24 @@
 </div>
 </div>
 <div class="section" id="topic">
-<h2>2.4. 创建一个 topic<a class="headerlink" href="#topic" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4. </span>创建一个 topic<a class="headerlink" href="#topic" title="Permalink to this headline">¶</a></h2>
 <p>让我们创建一个名为“test”的topic，它有一个分区和一个副本：</p>
 <blockquote>
-<div>bin/kafka-topics.sh –create –zookeeper localhost:2181 –replication-factor 1 –partitions 1 –topic test</div></blockquote>
+<div><p>bin/kafka-topics.sh –create –zookeeper localhost:2181 –replication-factor 1 –partitions 1 –topic test</p>
+</div></blockquote>
 <p>现在我们可以运行list（列表）命令来查看这个topic：</p>
 <blockquote>
-<div>bin/kafka-topics.sh –list –zookeeper localhost:2181
-test</div></blockquote>
+<div><p>bin/kafka-topics.sh –list –zookeeper localhost:2181
+test</p>
+</div></blockquote>
 <p>或者，您也可将代理配置为：在发布的topic不存在时，自动创建topic，而不是手动创建。</p>
 </div>
 <div class="section" id="consumer">
-<h2>2.5. 启动一个 consumer<a class="headerlink" href="#consumer" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5. </span>启动一个 consumer<a class="headerlink" href="#consumer" title="Permalink to this headline">¶</a></h2>
 <p>Kafka 还有一个命令行consumer（消费者），将消息转储到标准输出。</p>
 <blockquote>
-<div>bin/kafka-console-consumer.sh –bootstrap-server localhost:9092 –topic test –from-beginning</div></blockquote>
+<div><p>bin/kafka-console-consumer.sh –bootstrap-server localhost:9092 –topic test –from-beginning</p>
+</div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">message</span>    
 <span class="n">This</span> <span class="ow">is</span> <span class="n">another</span> <span class="n">message</span>  
 </pre></div>
@@ -229,23 +239,27 @@ test</div></blockquote>
 <p>所有的命令行工具都有其他选项；运行不带任何参数的命令将显示更加详细的使用信息。</p>
 </div>
 <div class="section" id="id4">
-<h2>2.6. 设置多代理集群<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6. </span>设置多代理集群<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>到目前为止，我们一直在使用单个代理，这并不好玩。对 Kafka来说，单个代理只是一个大小为一的集群，除了启动更多的代理实例外，没有什么变化。 为了深入了解它，让我们把集群扩展到三个节点（仍然在本地机器上）。</p>
 <p>首先，为每个代理创建一个配置文件 (在Windows上使用copy 命令来代替)：</p>
 <blockquote>
-<div>cp config/server.properties config/server-1.properties</div></blockquote>
+<div><p>cp config/server.properties config/server-1.properties</p>
+</div></blockquote>
 <blockquote>
-<div>cp config/server.properties config/server-2.properties</div></blockquote>
+<div><p>cp config/server.properties config/server-2.properties</p>
+</div></blockquote>
 <p>现在编辑这些新文件并设置如下属性：</p>
 <blockquote>
-<div>config/server-1.properties:</div></blockquote>
+<div><p>config/server-1.properties:</p>
+</div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">broker</span><span class="o">.</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span>   
 <span class="n">listeners</span><span class="o">=</span><span class="n">PLAINTEXT</span><span class="p">:</span><span class="o">//</span><span class="p">:</span><span class="mi">9093</span>    
 <span class="n">log</span><span class="o">.</span><span class="n">dir</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">kafka</span><span class="o">-</span><span class="n">logs</span><span class="o">-</span><span class="mi">1</span>
 </pre></div>
 </div>
 <blockquote>
-<div>config/server-2.properties:</div></blockquote>
+<div><p>config/server-2.properties:</p>
+</div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">broker</span><span class="o">.</span><span class="n">id</span><span class="o">=</span><span class="mi">2</span>  
 <span class="n">listeners</span><span class="o">=</span><span class="n">PLAINTEXT</span><span class="p">:</span><span class="o">//</span><span class="p">:</span><span class="mi">9094</span>  
 <span class="n">log</span><span class="o">.</span><span class="n">dir</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">kafka</span><span class="o">-</span><span class="n">logs</span><span class="o">-</span><span class="mi">2</span>  
@@ -254,21 +268,27 @@ test</div></blockquote>
 <p>broker.id属性是集群中每个节点的名称，这一名称是唯一且永久的。我们必须重写端口和日志目录，因为我们在同一台机器上运行这些，我们不希望所有的代理尝试在同一个端口注册，或者覆盖彼此的数据。</p>
 <p>我们已经建立Zookeeper和一个单节点了，现在我们只需要启动两个新的节点：</p>
 <blockquote>
-<div>bin/kafka-server-start.sh config/server-1.properties &amp;
-…</div></blockquote>
+<div><p>bin/kafka-server-start.sh config/server-1.properties &amp;
+…</p>
+</div></blockquote>
 <blockquote>
-<div>bin/kafka-server-start.sh config/server-2.properties &amp;
-…</div></blockquote>
+<div><p>bin/kafka-server-start.sh config/server-2.properties &amp;
+…</p>
+</div></blockquote>
 <p>现在创建一个副本为3的新topic：</p>
 <blockquote>
-<div>bin/kafka-topics.sh –create –zookeeper localhost:2181 –replication-factor 3 –partitions 1 –topic my-replicated-topic</div></blockquote>
+<div><p>bin/kafka-topics.sh –create –zookeeper localhost:2181 –replication-factor 3 –partitions 1 –topic my-replicated-topic</p>
+</div></blockquote>
 <p>Good，现在我们有一个集群，但是我们怎么才能知道那些代理在做什么呢？运行”describe topics”命令来查看：</p>
 <blockquote>
-<div>bin/kafka-topics.sh –describe –zookeeper localhost:2181 –topic my-replicated-topic</div></blockquote>
+<div><p>bin/kafka-topics.sh –describe –zookeeper localhost:2181 –topic my-replicated-topic</p>
+</div></blockquote>
 <blockquote>
-<div>Topic:my-replicated-topic   PartitionCount:1    ReplicationFactor:3 Configs:</div></blockquote>
+<div><p>Topic:my-replicated-topic   PartitionCount:1    ReplicationFactor:3 Configs:</p>
+</div></blockquote>
 <blockquote>
-<div>Topic: my-replicated-topic  Partition: 0    Leader: 1   Replicas: 1,2,0 Isr: 1,2,0</div></blockquote>
+<div><p>Topic: my-replicated-topic  Partition: 0    Leader: 1   Replicas: 1,2,0 Isr: 1,2,0</p>
+</div></blockquote>
 <p>以下是对输出信息的解释。第一行给出了所有分区的摘要，下面的每行都给出了一个分区的信息。因为我们只有一个分区，所以只有一行。</p>
 <p>“leader”是负责给定分区所有读写操作的节点。每个节点都是随机选择的部分分区的领导者。
 “replicas”是复制分区日志的节点列表，不管这些节点是leader还是仅仅活着。
@@ -276,7 +296,8 @@ test</div></blockquote>
 请注意，在示例中，节点1是该主题中唯一分区的领导者。</p>
 <p>我们可以在已创建的原始主题上运行相同的命令来查看它的位置：</p>
 <blockquote>
-<div>bin/kafka-topics.sh –describe –zookeeper localhost:2181 –topic test</div></blockquote>
+<div><p>bin/kafka-topics.sh –describe –zookeeper localhost:2181 –topic test</p>
+</div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Topic</span><span class="p">:</span><span class="n">test</span>  <span class="n">PartitionCount</span><span class="p">:</span><span class="mi">1</span>    <span class="n">ReplicationFactor</span><span class="p">:</span><span class="mi">1</span> <span class="n">Configs</span><span class="p">:</span>
 <span class="n">Topic</span><span class="p">:</span> <span class="n">test</span> <span class="n">Partition</span><span class="p">:</span> <span class="mi">0</span>    <span class="n">Leader</span><span class="p">:</span> <span class="mi">0</span>   <span class="n">Replicas</span><span class="p">:</span> <span class="mi">0</span> <span class="n">Isr</span><span class="p">:</span> <span class="mi">0</span>
 </pre></div>
@@ -284,48 +305,56 @@ test</div></blockquote>
 <p>这没什么大不了，原来的主题没有副本且在服务器0上。我们创建集群时，这是唯一的服务器。</p>
 <p>让我们发表一些信息给我们的新topic：</p>
 <blockquote>
-<div>bin/kafka-console-producer.sh –broker-list localhost:9092 –topic my-replicated-topic
-…</div></blockquote>
+<div><p>bin/kafka-console-producer.sh –broker-list localhost:9092 –topic my-replicated-topic
+…</p>
+</div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my</span> <span class="n">test</span> <span class="n">message</span> <span class="mi">1</span>
 <span class="n">my</span> <span class="n">test</span> <span class="n">message</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <p>现在我们来消费这些消息：</p>
 <blockquote>
-<div>bin/kafka-console-consumer.sh –bootstrap-server localhost:9092 –from-beginning –topic my-replicated-topic
-…</div></blockquote>
+<div><p>bin/kafka-console-consumer.sh –bootstrap-server localhost:9092 –from-beginning –topic my-replicated-topic
+…</p>
+</div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my</span> <span class="n">test</span> <span class="n">message</span> <span class="mi">1</span>
 <span class="n">my</span> <span class="n">test</span> <span class="n">message</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <p>让我们来测试一下容错性。 Broker 1 现在是 leader，让我们来杀了它：</p>
 <blockquote>
-<div>ps aux | grep server-1.properties</div></blockquote>
+<div><p>ps aux | grep server-1.properties</p>
+</div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7564</span> <span class="n">ttys002</span>    <span class="mi">0</span><span class="p">:</span><span class="mf">15.91</span> <span class="o">/</span><span class="n">System</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Frameworks</span><span class="o">/</span><span class="n">JavaVM</span><span class="o">.</span><span class="n">framework</span><span class="o">/</span><span class="n">Versions</span><span class="o">/</span><span class="mf">1.8</span><span class="o">/</span><span class="n">Home</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">java</span><span class="o">...</span>
 </pre></div>
 </div>
 <blockquote>
-<div>kill -9 7564</div></blockquote>
+<div><p>kill -9 7564</p>
+</div></blockquote>
 <p>在 Windows 上用:</p>
 <blockquote>
-<div>wmic process where “caption = ‘java.exe’ and commandline like ‘%server-1.properties%’” get processid</div></blockquote>
+<div><p>wmic process where “caption = ‘java.exe’ and commandline like ‘%server-1.properties%’” get processid</p>
+</div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ProcessId</span>
 <span class="mi">6016</span>
 </pre></div>
 </div>
 <blockquote>
-<div>taskkill /pid 6016 /f</div></blockquote>
+<div><p>taskkill /pid 6016 /f</p>
+</div></blockquote>
 <p>领导权已经切换到一个从属节点，而且节点1也不在同步副本集中了：</p>
 <blockquote>
-<div>bin/kafka-topics.sh –describe –zookeeper localhost:2181 –topic my-replicated-topic</div></blockquote>
+<div><p>bin/kafka-topics.sh –describe –zookeeper localhost:2181 –topic my-replicated-topic</p>
+</div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Topic</span><span class="p">:</span><span class="n">my</span><span class="o">-</span><span class="n">replicated</span><span class="o">-</span><span class="n">topic</span>   <span class="n">PartitionCount</span><span class="p">:</span><span class="mi">1</span>    <span class="n">ReplicationFactor</span><span class="p">:</span><span class="mi">3</span> <span class="n">Configs</span><span class="p">:</span>
 <span class="n">Topic</span><span class="p">:</span> <span class="n">my</span><span class="o">-</span><span class="n">replicated</span><span class="o">-</span><span class="n">topic</span>  <span class="n">Partition</span><span class="p">:</span> <span class="mi">0</span>    <span class="n">Leader</span><span class="p">:</span> <span class="mi">2</span>   <span class="n">Replicas</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span> <span class="n">Isr</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span><span class="mi">0</span>
 </pre></div>
 </div>
 <p>不过，即便原先写入消息的leader已经不在，这些消息仍可用于消费：</p>
 <blockquote>
-<div>bin/kafka-console-consumer.sh –bootstrap-server localhost:9092 –from-beginning –topic my-replicated-topic
-…</div></blockquote>
+<div><p>bin/kafka-console-consumer.sh –bootstrap-server localhost:9092 –from-beginning –topic my-replicated-topic
+…</p>
+</div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my</span> <span class="n">test</span> <span class="n">message</span> <span class="mi">1</span>
 <span class="n">my</span> <span class="n">test</span> <span class="n">message</span> <span class="mi">2</span>
 </pre></div>
@@ -333,23 +362,23 @@ test</div></blockquote>
 </div>
 <hr class="docutils" />
 <div class="section" id="kafkatopicdata">
-<h2>2.7. kafka彻底删除topic及data<a class="headerlink" href="#kafkatopicdata" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7. </span>kafka彻底删除topic及data<a class="headerlink" href="#kafkatopicdata" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">step1:</p>
+<li><p>step1:</p>
 <p>如果需要被删除topic 此时正在被程序 produce和consume，则这些生产和消费程序需要停止。</p>
 <p>因为如果有程序正在生产或者消费该topic，则该topic的offset信息一致会在broker更新。调用kafka delete命令则无法删除该topic。</p>
 <p>同时，需要设置 auto.create.topics.enable = false，默认设置为true。如果设置为true，则produce或者fetch 不存在的topic也会自动创建这个topic。这样会给删除topic带来很多意向不到的问题。</p>
 <p>所以，这一步很重要，必须设置auto.create.topics.enable = false，并认真把生产和消费程序彻底全部停止。</p>
 </li>
-<li><p class="first">step2：</p>
+<li><p>step2：</p>
 <p>server.properties 设置 delete.topic.enable=true</p>
 <p>如果没有设置 delete.topic.enable=true，则调用kafka 的delete命令无法真正将topic删除，而是显示（marked for deletion）</p>
 </li>
-<li><p class="first">step3：</p>
+<li><p>step3：</p>
 <p>调用命令删除topic：</p>
 <p>./bin/kafka-topics  –delete –zookeeper 【zookeeper server:port】  –topic 【topic name】</p>
 </li>
-<li><p class="first">step4：</p>
+<li><p>step4：</p>
 <p>删除kafka存储目录（server.properties文件log.dirs配置，默认为”/data/kafka-logs”）相关topic的数据目录。</p>
 <p>注意：如果kafka 有多个 broker，且每个broker 配置了多个数据盘（比如 /data/kafka-logs,/data1/kafka-logs …），且topic也有多个分区和replica，则需要对所有broker的所有数据盘进行扫描，删除该topic的所有分区数据。</p>
 </li>
@@ -358,7 +387,7 @@ test</div></blockquote>
 <p><strong>具体操作如下：</strong></p>
 <p>（注意：以下步骤里面，kafka在zk里面的节点信息是采用默认值，如果你的系统修改过kafka在zk里面的节点信息，则需要根据系统的实际情况找到准确位置进行操作）</p>
 <ul>
-<li><p class="first">step5：</p>
+<li><p>step5：</p>
 <p>找一台部署了zk的服务器，使用命令：</p>
 <p>bin/zkCli.sh -server 【zookeeper server:port】</p>
 <p>登录到zk shell，然后找到topic所在的目录：ls /brokers/topics，找到要删除的topic，然后执行命令：</p>
@@ -391,29 +420,29 @@ rmr /config/topics/【topic name】
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../base/index.html" class="btn btn-neutral float-right" title="分享与交流 [Interviewer]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="01_elastic.html" class="btn btn-neutral float-left" title="1. Elastic Stack" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../base/index.html" class="btn btn-neutral float-right" title="分享与交流 [Interviewer]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="01_elastic.html" class="btn btn-neutral float-left" title="1. Elastic Stack" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, 艾克中国
+        &#169; Copyright 2021, 艾克中国.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -421,7 +450,6 @@ rmr /config/topics/【topic name】
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

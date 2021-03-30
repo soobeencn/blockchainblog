@@ -1,38 +1,41 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>1. 区块链技术分享 &mdash; 区块链研究记录 1.0 documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="联系我 [Call ME]" href="../aboutme/index.html" />
@@ -73,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -101,6 +105,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -135,20 +140,22 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">分享与交流 [Interviewer]</a> &raquo;</li>
         
-      <li>1. 区块链技术分享</li>
+      <li><span class="section-number">1. </span>区块链技术分享</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/base/01_learning.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -163,7 +170,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>1. 区块链技术分享<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>区块链技术分享<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>2004年   p2p    p2sp    supernaut      结构化     非结构化    松散化  gnutella   freenet    
 Chord、YaCy、Kademlia   网络模型
 DHT 
@@ -175,27 +182,27 @@ p2p
 </div>
 <p>msa soa</p>
 <div class="section" id="id2">
-<h2>1.1. 共识层   文章<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>共识层   文章<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id3">
-<h2>1.2. 加密<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span>加密<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id4">
-<h2>1.3. 智能合约<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3. </span>智能合约<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>r-socket 背压 zookeeper dubbo grpc</p>
 <p>分析问题的能力:</p>
 <p>应用刚启动连接到数据库的时候比较慢，但又不是慢查询</p>
 <ol class="simple">
-<li>这位同学的解决办法是通过 tcpdump 来分析网络通讯包，看具体卡在哪里把 这个问题硬生生地给找到了。</li>
-<li>如果是专业的 DBA 可能会通过 show processlist 看具体连接在做什么?比 如看到这些连接状态是 authentication 状态，然后再通过 Google 或者对这 个状态的理解知道创建连接的时候 MySQL 需要反查 IP、域名，这里比较耗 时，通过配置参数 skip-name-resolve 跳过去就好了。</li>
-<li>如果是 MySQL 的老司机，一上来就知道 skip-name-resolve 这个参数要 改改默认值。
-在我眼里这三种方式都解决了问题，最后一种最快但是纯靠积累和经验，换个问 题也许就不灵了;第一种方式是最牛逼和通用，只需要最少的业务知识。</li>
+<li><p>这位同学的解决办法是通过 tcpdump 来分析网络通讯包，看具体卡在哪里把 这个问题硬生生地给找到了。</p></li>
+<li><p>如果是专业的 DBA 可能会通过 show processlist 看具体连接在做什么?比 如看到这些连接状态是 authentication 状态，然后再通过 Google 或者对这 个状态的理解知道创建连接的时候 MySQL 需要反查 IP、域名，这里比较耗 时，通过配置参数 skip-name-resolve 跳过去就好了。</p></li>
+<li><p>如果是 MySQL 的老司机，一上来就知道 skip-name-resolve 这个参数要 改改默认值。
+在我眼里这三种方式都解决了问题，最后一种最快但是纯靠积累和经验，换个问 题也许就不灵了;第一种方式是最牛逼和通用，只需要最少的业务知识。</p></li>
 </ol>
 <p><strong>如何选择一个开源项目</strong>:</p>
 <ul class="simple">
-<li>是否满足业务</li>
-<li>是否成熟</li>
-<li>运维能力</li>
+<li><p>是否满足业务</p></li>
+<li><p>是否成熟</p></li>
+<li><p>运维能力</p></li>
 </ul>
 <p>运维能力:
 我们在选择开源项目的时候，基本上都是聚焦于技术指标，例如性能、可靠性、 功能这些方案，而几乎不会去关注运维方面的能力。但如果要将方案应用到线上生产 环境，运维能力是必不可少的一环，否则一旦出问题，运维、研发、测试都只能干瞪 眼，求菩萨保佑了!</p>
@@ -224,29 +231,29 @@ p2p
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../aboutme/index.html" class="btn btn-neutral float-right" title="联系我 [Call ME]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="分享与交流 [Interviewer]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../aboutme/index.html" class="btn btn-neutral float-right" title="联系我 [Call ME]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="分享与交流 [Interviewer]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, 艾克中国
+        &#169; Copyright 2021, 艾克中国.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -254,7 +261,6 @@ p2p
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

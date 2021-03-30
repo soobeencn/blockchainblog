@@ -1,41 +1,44 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>6. 联盟链应用 &mdash; 区块链研究记录 1.0 documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="分享与交流 [Interviewer]" href="../base/index.html" />
+    <link rel="next" title="Linux内核 [Operations]" href="../operations/index.html" />
     <link rel="prev" title="5. Hyperledger Explorer" href="05_explorer.html" /> 
 </head>
 
@@ -73,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -120,13 +124,16 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/index.html">Linux内核 [Operations]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opensource/index.html">开源项目 [open source project]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/index.html">分享与交流 [Interviewer]</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../elastic/index.html">比特币 [Bitcoin]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aboutme/index.html">联系我 [Call ME]</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -161,20 +168,22 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">联盟链 [Hyperledger Fabric]</a> &raquo;</li>
         
-      <li>6. 联盟链应用</li>
+      <li><span class="section-number">6. </span>联盟链应用</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/hyperledger/06_fabric_dev.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -189,123 +198,131 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>6. 联盟链应用<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6. </span>联盟链应用<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
-<h2>6.1. 上帝视角<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.1. </span>上帝视角<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
 <h3>理论基础<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>基本原理和架构</li>
-<li>发展阶段</li>
-<li>钱包安装和使用<ul>
-<li>挖矿</li>
-<li>矿池</li>
+<li><p>基本原理和架构</p></li>
+<li><p>发展阶段</p></li>
+<li><p>钱包安装和使用</p>
+<ul>
+<li><p>挖矿</p></li>
+<li><p>矿池</p></li>
 </ul>
 </li>
-<li>比特币/以太坊分叉原理和案例</li>
-<li>拜占庭将军问题</li>
-<li>价值转移</li>
-<li>公有链 私有链 联盟链</li>
-<li>UTXO</li>
-<li>Hash算法 Merkle Tree</li>
-<li>共识协议<ul>
-<li>pow</li>
-<li>pos</li>
-<li>dpos</li>
+<li><p>比特币/以太坊分叉原理和案例</p></li>
+<li><p>拜占庭将军问题</p></li>
+<li><p>价值转移</p></li>
+<li><p>公有链 私有链 联盟链</p></li>
+<li><p>UTXO</p></li>
+<li><p>Hash算法 Merkle Tree</p></li>
+<li><p>共识协议</p>
+<ul>
+<li><p>pow</p></li>
+<li><p>pos</p></li>
+<li><p>dpos</p></li>
 </ul>
 </li>
-<li>时间戳</li>
-<li>智能合约;DAO组织</li>
-<li>软分叉/硬分叉</li>
-<li>以太坊中心化/去中心化</li>
+<li><p>时间戳</p></li>
+<li><p>智能合约;DAO组织</p></li>
+<li><p>软分叉/硬分叉</p></li>
+<li><p>以太坊中心化/去中心化</p></li>
 </ul>
 </div>
 <div class="section" id="id4">
 <h3>数学基础<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>二进制</li>
-<li>真随机数</li>
-<li>hash运算和数字加密</li>
-<li>对称加密和非对称加密/数字签名</li>
-<li>高阶模操作</li>
-<li>指数和对数</li>
-<li>非对称加密算法原理解析</li>
-<li>ASCII编码</li>
-<li>Base64和Base54</li>
-<li>Checksum</li>
-<li>比特币钱包和Vanity地址</li>
-<li>点对点网络的挑战</li>
-<li>double speding 问题</li>
-<li>ledger账本系统和UTXO方案</li>
-<li>挖矿和区块链形成</li>
-<li>TestNet</li>
-<li>BIP比特币优化协议和行业标准</li>
+<li><p>二进制</p></li>
+<li><p>真随机数</p></li>
+<li><p>hash运算和数字加密</p></li>
+<li><p>对称加密和非对称加密/数字签名</p></li>
+<li><p>高阶模操作</p></li>
+<li><p>指数和对数</p></li>
+<li><p>非对称加密算法原理解析</p></li>
+<li><p>ASCII编码</p></li>
+<li><p>Base64和Base54</p></li>
+<li><p>Checksum</p></li>
+<li><p>比特币钱包和Vanity地址</p></li>
+<li><p>点对点网络的挑战</p></li>
+<li><p>double speding 问题</p></li>
+<li><p>ledger账本系统和UTXO方案</p></li>
+<li><p>挖矿和区块链形成</p></li>
+<li><p>TestNet</p></li>
+<li><p>BIP比特币优化协议和行业标准</p></li>
 </ul>
 </div>
 <div class="section" id="id5">
 <h3>以太坊和智能区块链<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>白皮书了解</li>
-<li>以太坊客户端install＆run</li>
-<li>以太坊网络</li>
-<li>智能合约编程入门</li>
-<li>solidity<ul>
-<li>变量</li>
-<li>方法</li>
-<li>继承</li>
-<li>事件</li>
+<li><p>白皮书了解</p></li>
+<li><p>以太坊客户端install＆run</p></li>
+<li><p>以太坊网络</p></li>
+<li><p>智能合约编程入门</p></li>
+<li><p>solidity</p>
+<ul>
+<li><p>变量</p></li>
+<li><p>方法</p></li>
+<li><p>继承</p></li>
+<li><p>事件</p></li>
 </ul>
 </li>
-<li>oracle(先知)</li>
-<li>solidity编程实战</li>
-<li>以太坊前端框架web3.0</li>
-<li>以太坊+ipfs实现去中心化webapp</li>
+<li><p>oracle(先知)</p></li>
+<li><p>solidity编程实战</p></li>
+<li><p>以太坊前端框架web3.0</p></li>
+<li><p>以太坊+ipfs实现去中心化webapp</p></li>
 </ul>
 </div>
 <div class="section" id="ibm">
 <h3>IBM超级账本<a class="headerlink" href="#ibm" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>HyperLedger介绍/区块链3.0</li>
-<li>hyperledger febric架构</li>
-<li>hyperledger febric集群平台搭建</li>
-<li>hyperledger febric智能合约链码开发</li>
-<li>hyperledger febric部署</li>
-<li>hyperledger fabric企业积分管理项目实战</li>
+<li><p>HyperLedger介绍/区块链3.0</p></li>
+<li><p>hyperledger febric架构</p></li>
+<li><p>hyperledger febric集群平台搭建</p></li>
+<li><p>hyperledger febric智能合约链码开发</p></li>
+<li><p>hyperledger febric部署</p></li>
+<li><p>hyperledger fabric企业积分管理项目实战</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="bitcoin">
-<h2>6.2. BitCoin<a class="headerlink" href="#bitcoin" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.2. </span>BitCoin<a class="headerlink" href="#bitcoin" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id6">
 <h3>区块链应用场景<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>资产<ul>
-<li>数字资产发行</li>
-<li>跨境支付</li>
-<li>交易</li>
-<li>结算</li>
+<li><p>资产</p>
+<ul>
+<li><p>数字资产发行</p></li>
+<li><p>跨境支付</p></li>
+<li><p>交易</p></li>
+<li><p>结算</p></li>
 </ul>
 </li>
-<li>记账<ul>
-<li>股权交易</li>
-<li>供应链金融</li>
-<li>商业积分</li>
+<li><p>记账</p>
+<ul>
+<li><p>股权交易</p></li>
+<li><p>供应链金融</p></li>
+<li><p>商业积分</p></li>
 </ul>
 </li>
-<li>不可篡改<ul>
-<li>溯源</li>
-<li>众筹</li>
-<li>医疗证明</li>
-<li>存在性证明</li>
+<li><p>不可篡改</p>
+<ul>
+<li><p>溯源</p></li>
+<li><p>众筹</p></li>
+<li><p>医疗证明</p></li>
+<li><p>存在性证明</p></li>
 </ul>
 </li>
-<li>点对点<ul>
-<li>共享经济</li>
-<li>物联网</li>
+<li><p>点对点</p>
+<ul>
+<li><p>共享经济</p></li>
+<li><p>物联网</p></li>
 </ul>
 </li>
-<li>隐私<ul>
-<li>匿名交易</li>
+<li><p>隐私</p>
+<ul>
+<li><p>匿名交易</p></li>
 </ul>
 </li>
 </ul>
@@ -313,18 +330,21 @@
 <div class="section" id="id7">
 <h3>比特币是什么<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>数字货币<ul>
-<li>一串数字</li>
+<li><p>数字货币</p>
+<ul>
+<li><p>一串数字</p></li>
 </ul>
 </li>
-<li>信任从何而来<ul>
-<li>财产只受自己控制</li>
+<li><p>信任从何而来</p>
+<ul>
+<li><p>财产只受自己控制</p></li>
 </ul>
 </li>
-<li>无通胀</li>
-<li>没有假钞</li>
-<li>流通性好<ul>
-<li>点对点直接到账</li>
+<li><p>无通胀</p></li>
+<li><p>没有假钞</p></li>
+<li><p>流通性好</p>
+<ul>
+<li><p>点对点直接到账</p></li>
 </ul>
 </li>
 </ul>
@@ -334,22 +354,23 @@
 </div>
 </div>
 <div class="section" id="ethereum">
-<h2>6.3. Ethereum<a class="headerlink" href="#ethereum" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.3. </span>Ethereum<a class="headerlink" href="#ethereum" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id9">
 <h3>特点<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>可编程的操作系统</li>
-<li>智能合约</li>
-<li>15s出块</li>
-<li>无总量限制</li>
+<li><p>可编程的操作系统</p></li>
+<li><p>智能合约</p></li>
+<li><p>15s出块</p></li>
+<li><p>无总量限制</p></li>
 </ul>
 </div>
 <div class="section" id="id10">
 <h3>核心概念<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>account<ul>
-<li>EOA</li>
-<li>contract account</li>
+<li><p>account</p>
+<ul>
+<li><p>EOA</p></li>
+<li><p>contract account</p></li>
 </ul>
 </li>
 </ul>
@@ -359,7 +380,7 @@
 </div>
 </div>
 <div class="section" id="hyperledger">
-<h2>6.4. Hyperledger<a class="headerlink" href="#hyperledger" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.4. </span>Hyperledger<a class="headerlink" href="#hyperledger" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="burrow">
 <h3>Burrow<a class="headerlink" href="#burrow" title="Permalink to this headline">¶</a></h3>
 </div>
@@ -369,20 +390,29 @@
 <div class="section" id="fabric">
 <h3>Fabric<a class="headerlink" href="#fabric" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>核心技术<ul>
-<li>整体架构<ul>
-<li>网络拓扑<ul>
-<li>客户端<ul>
-<li>连接Orderer进行通道创建</li>
-<li>连接Peer节点进行交易创建及合约执行</li>
+<li><p>核心技术</p>
+<ul>
+<li><p>整体架构</p>
+<ul>
+<li><p>网络拓扑</p>
+<ul>
+<li><p>客户端</p>
+<ul>
+<li><p>连接Orderer进行通道创建</p></li>
+<li><p>连接Peer节点进行交易创建及合约执行</p></li>
 </ul>
 </li>
-<li>Peer<ul>
-<li>Anchor<ul>
-<li>锚节点<ul>
-<li>组织内部唯一与Orderer进行通信的节点<ul>
-<li>由配置指定<ul>
-<li>可选举产生</li>
+<li><p>Peer</p>
+<ul>
+<li><p>Anchor</p>
+<ul>
+<li><p>锚节点</p>
+<ul>
+<li><p>组织内部唯一与Orderer进行通信的节点</p>
+<ul>
+<li><p>由配置指定</p>
+<ul>
+<li><p>可选举产生</p></li>
 </ul>
 </li>
 </ul>
@@ -391,87 +421,107 @@
 </li>
 </ul>
 </li>
-<li>Endorser<ul>
-<li>背书节点<ul>
-<li>为交易作担保<ul>
-<li>运行智能合约</li>
+<li><p>Endorser</p>
+<ul>
+<li><p>背书节点</p>
+<ul>
+<li><p>为交易作担保</p>
+<ul>
+<li><p>运行智能合约</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Committer<ul>
-<li>记账节点<ul>
-<li>用于验证从Orderer得到的区块和交易信息</li>
+<li><p>Committer</p>
+<ul>
+<li><p>记账节点</p>
+<ul>
+<li><p>用于验证从Orderer得到的区块和交易信息</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Orderer<ul>
-<li>0.6版本实现了PBFT<ul>
-<li>1.0版本上线前剔除了</li>
-<li>PBFT需要五步投票</li>
+<li><p>Orderer</p>
+<ul>
+<li><p>0.6版本实现了PBFT</p>
+<ul>
+<li><p>1.0版本上线前剔除了</p></li>
+<li><p>PBFT需要五步投票</p></li>
 </ul>
 </li>
-<li>排序</li>
-<li>打包区块<ul>
-<li>分发给组织节点</li>
+<li><p>排序</p></li>
+<li><p>打包区块</p>
+<ul>
+<li><p>分发给组织节点</p></li>
 </ul>
 </li>
-<li>两种节点<ul>
-<li>solo<ul>
-<li>开发测试试用<ul>
-<li>单点故障</li>
+<li><p>两种节点</p>
+<ul>
+<li><p>solo</p>
+<ul>
+<li><p>开发测试试用</p>
+<ul>
+<li><p>单点故障</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>kafka<ul>
-<li>一个orderer同为生产者和消费者</li>
+<li><p>kafka</p>
+<ul>
+<li><p>一个orderer同为生产者和消费者</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>CA(可选)<ul>
-<li>建立区块链身份</li>
-<li>例如中国的CFCA</li>
+<li><p>CA(可选)</p>
+<ul>
+<li><p>建立区块链身份</p></li>
+<li><p>例如中国的CFCA</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>共识机制<ul>
-<li>所谓共识<ul>
-<li>交易背书(模拟&#64;Endorser)</li>
-<li>交易排序(排序&#64;Orderer)</li>
-<li>交易验证(验证&#64;Committer)</li>
+<li><p>共识机制</p>
+<ul>
+<li><p>所谓共识</p>
+<ul>
+<li><p>交易背书(模拟&#64;Endorser)</p></li>
+<li><p>交易排序(排序&#64;Orderer)</p></li>
+<li><p>交易验证(验证&#64;Committer)</p></li>
 </ul>
 </li>
-<li>Orderer<ul>
-<li>交易排序<ul>
-<li>solo:单节点排序,所见即所得</li>
-<li>kafka:外置消息队列保证一致性</li>
+<li><p>Orderer</p>
+<ul>
+<li><p>交易排序</p>
+<ul>
+<li><p>solo:单节点排序,所见即所得</p></li>
+<li><p>kafka:外置消息队列保证一致性</p></li>
 </ul>
 </li>
-<li>区块分发<ul>
-<li>中间状态区块(非落盘区块)</li>
-<li>有效交易&amp;无效交易</li>
+<li><p>区块分发</p>
+<ul>
+<li><p>中间状态区块(非落盘区块)</p></li>
+<li><p>有效交易&amp;无效交易</p></li>
 </ul>
 </li>
-<li>多通道数据隔离<ul>
-<li>Fabric独占</li>
+<li><p>多通道数据隔离</p>
+<ul>
+<li><p>Fabric独占</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>CAP原理<ul>
-<li>达成消息一致</li>
-<li>强</li>
-<li>弱</li>
+<li><p>CAP原理</p>
+<ul>
+<li><p>达成消息一致</p></li>
+<li><p>强</p></li>
+<li><p>弱</p></li>
 </ul>
 </li>
 </ul>
@@ -480,41 +530,52 @@
 </li>
 </ul>
 </li>
-<li>智能合约<ul>
-<li>引入<ul>
-<li>以太坊</li>
-<li>合约协议的数字化代码表达<ul>
-<li>欠条</li>
-<li>房屋合同</li>
+<li><p>智能合约</p>
+<ul>
+<li><p>引入</p>
+<ul>
+<li><p>以太坊</p></li>
+<li><p>合约协议的数字化代码表达</p>
+<ul>
+<li><p>欠条</p></li>
+<li><p>房屋合同</p></li>
 </ul>
 </li>
-<li>分布式有限状态机</li>
-<li>执行环境安全隔离、不受第三方干扰<ul>
-<li>EVM</li>
-<li>Docker</li>
+<li><p>分布式有限状态机</p></li>
+<li><p>执行环境安全隔离、不受第三方干扰</p>
+<ul>
+<li><p>EVM</p></li>
+<li><p>Docker</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>链码<ul>
-<li>Fabric应用层基石(中间件)</li>
-<li>执行环境<ul>
-<li>独立的Dokcer容器<ul>
-<li>通过gRPC接口连接背书节点</li>
-<li>生命周期管理<ul>
-<li>打包</li>
-<li>安装</li>
-<li>实例化<ul>
-<li>实现一次</li>
+<li><p>链码</p>
+<ul>
+<li><p>Fabric应用层基石(中间件)</p></li>
+<li><p>执行环境</p>
+<ul>
+<li><p>独立的Dokcer容器</p>
+<ul>
+<li><p>通过gRPC接口连接背书节点</p></li>
+<li><p>生命周期管理</p>
+<ul>
+<li><p>打包</p></li>
+<li><p>安装</p></li>
+<li><p>实例化</p>
+<ul>
+<li><p>实现一次</p></li>
 </ul>
 </li>
-<li>升级<ul>
-<li>Fabric的优势</li>
+<li><p>升级</p>
+<ul>
+<li><p>Fabric的优势</p></li>
 </ul>
 </li>
-<li>交互<ul>
-<li>查询</li>
-<li>写入</li>
+<li><p>交互</p>
+<ul>
+<li><p>查询</p></li>
+<li><p>写入</p></li>
 </ul>
 </li>
 </ul>
@@ -523,48 +584,62 @@
 </li>
 </ul>
 </li>
-<li>系统链码<ul>
-<li>LSCC<ul>
-<li>Lifecycle System Chaincode<ul>
-<li>管理安装实例化</li>
-<li>系统升级</li>
-<li>docker打包链码不受其控制</li>
+<li><p>系统链码</p>
+<ul>
+<li><p>LSCC</p>
+<ul>
+<li><p>Lifecycle System Chaincode</p>
+<ul>
+<li><p>管理安装实例化</p></li>
+<li><p>系统升级</p></li>
+<li><p>docker打包链码不受其控制</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>CSCC<ul>
-<li>Configuration System Chaincode<ul>
-<li>管理某一条链的配置<ul>
-<li>允许新的配置加入某一条链</li>
+<li><p>CSCC</p>
+<ul>
+<li><p>Configuration System Chaincode</p>
+<ul>
+<li><p>管理某一条链的配置</p>
+<ul>
+<li><p>允许新的配置加入某一条链</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>QSCC<ul>
-<li>Query System Chaincode<ul>
-<li>查询区块索引的外部服务</li>
+<li><p>QSCC</p>
+<ul>
+<li><p>Query System Chaincode</p>
+<ul>
+<li><p>查询区块索引的外部服务</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>ESCC<ul>
-<li>Endorsement System Chaincode<ul>
-<li>交易背书链码<ul>
-<li>将交易模拟执行后的结果进行封装+签名</li>
-<li>然后组装成客户端认识的交易背书结果</li>
+<li><p>ESCC</p>
+<ul>
+<li><p>Endorsement System Chaincode</p>
+<ul>
+<li><p>交易背书链码</p>
+<ul>
+<li><p>将交易模拟执行后的结果进行封装+签名</p></li>
+<li><p>然后组装成客户端认识的交易背书结果</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>VSCC<ul>
-<li>Validation System Chaincode<ul>
-<li>交易验证<ul>
-<li>有效验证</li>
+<li><p>VSCC</p>
+<ul>
+<li><p>Validation System Chaincode</p>
+<ul>
+<li><p>交易验证</p>
+<ul>
+<li><p>有效验证</p></li>
 </ul>
 </li>
 </ul>
@@ -573,395 +648,485 @@
 </li>
 </ul>
 </li>
-<li>链码编程接口<ul>
-<li>init()<ul>
-<li>初始化</li>
-<li>只执行一次</li>
+<li><p>链码编程接口</p>
+<ul>
+<li><p>init()</p>
+<ul>
+<li><p>初始化</p></li>
+<li><p>只执行一次</p></li>
 </ul>
 </li>
-<li>invoke()<ul>
-<li>应用程序与链码交互的入口</li>
+<li><p>invoke()</p>
+<ul>
+<li><p>应用程序与链码交互的入口</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>链码执行禁忌<ul>
-<li>注意要素<ul>
-<li>分布式系统</li>
-<li>多个节点隔离执行</li>
-<li>一条交易执行多次<ul>
-<li>次数取决于背书策略的选择</li>
+<li><p>链码执行禁忌</p>
+<ul>
+<li><p>注意要素</p>
+<ul>
+<li><p>分布式系统</p></li>
+<li><p>多个节点隔离执行</p></li>
+<li><p>一条交易执行多次</p>
+<ul>
+<li><p>次数取决于背书策略的选择</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>随机函数</li>
-<li>系统时间</li>
-<li>不稳定的外部依赖</li>
+<li><p>随机函数</p></li>
+<li><p>系统时间</p></li>
+<li><p>不稳定的外部依赖</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>网络搭建<ul>
-<li>环境准备<ul>
-<li>docker<ul>
-<li>fabric-peer</li>
-<li>fabric-orderer</li>
-<li>fabric-baseos</li>
-<li>fabric-tools</li>
-<li>fabric-ca</li>
+<li><p>网络搭建</p>
+<ul>
+<li><p>环境准备</p>
+<ul>
+<li><p>docker</p>
+<ul>
+<li><p>fabric-peer</p></li>
+<li><p>fabric-orderer</p></li>
+<li><p>fabric-baseos</p></li>
+<li><p>fabric-tools</p></li>
+<li><p>fabric-ca</p></li>
 </ul>
 </li>
-<li>fabric源码库<ul>
-<li>版本切换(必要条件)</li>
+<li><p>fabric源码库</p>
+<ul>
+<li><p>版本切换(必要条件)</p></li>
 </ul>
 </li>
-<li>生成两种工具<ul>
-<li>cryptogen<ul>
-<li>生成相关证书</li>
+<li><p>生成两种工具</p>
+<ul>
+<li><p>cryptogen</p>
+<ul>
+<li><p>生成相关证书</p></li>
 </ul>
 </li>
-<li>configtxgen<ul>
-<li>生成创始区块</li>
-<li>生成通道配置</li>
+<li><p>configtxgen</p>
+<ul>
+<li><p>生成创始区块</p></li>
+<li><p>生成通道配置</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>fabric-samples<ul>
-<li>构建配置文件<ul>
-<li>./byfn -m generate</li>
+<li><p>fabric-samples</p>
+<ul>
+<li><p>构建配置文件</p>
+<ul>
+<li><p>./byfn -m generate</p></li>
 </ul>
 </li>
-<li>启动网络<ul>
-<li>./byfn -m up</li>
+<li><p>启动网络</p>
+<ul>
+<li><p>./byfn -m up</p></li>
 </ul>
 </li>
-<li>关闭网络<ul>
-<li>./byfn -m down</li>
+<li><p>关闭网络</p>
+<ul>
+<li><p>./byfn -m down</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>配置文件准备<ul>
-<li>crypto-config.yaml<ul>
-<li>配置组织节点的个数</li>
-<li>配置每个组织节点内部用户的个数<ul>
-<li>生成相应的证书</li>
+<li><p>配置文件准备</p>
+<ul>
+<li><p>crypto-config.yaml</p>
+<ul>
+<li><p>配置组织节点的个数</p></li>
+<li><p>配置每个组织节点内部用户的个数</p>
+<ul>
+<li><p>生成相应的证书</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>configtx.yaml<ul>
-<li>配置联盟中的组织信息<ul>
-<li>组织名字</li>
-<li>证书</li>
+<li><p>configtx.yaml</p>
+<ul>
+<li><p>配置联盟中的组织信息</p>
+<ul>
+<li><p>组织名字</p></li>
+<li><p>证书</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>创世配置构造<ul>
-<li>MSP证书</li>
-<li>Orderer创世区块<ul>
-<li>排序节点</li>
+<li><p>创世配置构造</p>
+<ul>
+<li><p>MSP证书</p></li>
+<li><p>Orderer创世区块</p>
+<ul>
+<li><p>排序节点</p></li>
 </ul>
 </li>
-<li>Channel创世交易(区块)</li>
-<li>组织主节点配置文件<ul>
-<li>非必需</li>
-<li>不设置,gossip协议会自动选举一个主节点出来</li>
+<li><p>Channel创世交易(区块)</p></li>
+<li><p>组织主节点配置文件</p>
+<ul>
+<li><p>非必需</p></li>
+<li><p>不设置,gossip协议会自动选举一个主节点出来</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>网络启动<ul>
-<li>节点进程启动<ul>
-<li>创建Channel</li>
-<li>加入Channel</li>
-<li>安装Chaincode</li>
-<li>实例化Chaincode</li>
-<li>Chaincode交互测试</li>
+<li><p>网络启动</p>
+<ul>
+<li><p>节点进程启动</p>
+<ul>
+<li><p>创建Channel</p></li>
+<li><p>加入Channel</p></li>
+<li><p>安装Chaincode</p></li>
+<li><p>实例化Chaincode</p></li>
+<li><p>Chaincode交互测试</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>源码解读<ul>
-<li>排序接口</li>
-<li>基于Solo的排序服务</li>
-<li>基于Kafka的排序服务</li>
-<li>自由实现排序服务</li>
+<li><p>源码解读</p>
+<ul>
+<li><p>排序接口</p></li>
+<li><p>基于Solo的排序服务</p></li>
+<li><p>基于Kafka的排序服务</p></li>
+<li><p>自由实现排序服务</p></li>
 </ul>
 </li>
-<li>拓展<ul>
-<li>并不能完全满足企业需求</li>
-<li>bccsp密码学<ul>
-<li>需要手动添加国密gm</li>
+<li><p>拓展</p>
+<ul>
+<li><p>并不能完全满足企业需求</p></li>
+<li><p>bccsp密码学</p>
+<ul>
+<li><p>需要手动添加国密gm</p></li>
 </ul>
 </li>
-<li>区块链即服务(Baas)</li>
-<li>性能优化<ul>
-<li>fabric1.0(难题)<ul>
-<li>100~300TPS</li>
+<li><p>区块链即服务(Baas)</p></li>
+<li><p>性能优化</p>
+<ul>
+<li><p>fabric1.0(难题)</p>
+<ul>
+<li><p>100~300TPS</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>面试重点<ul>
-<li>基础知识<ul>
-<li>Peer、Endorser、Committer关系<ul>
-<li>Peer<ul>
-<li>通道</li>
-<li>同步账本</li>
+<li><p>面试重点</p>
+<ul>
+<li><p>基础知识</p>
+<ul>
+<li><p>Peer、Endorser、Committer关系</p>
+<ul>
+<li><p>Peer</p>
+<ul>
+<li><p>通道</p></li>
+<li><p>同步账本</p></li>
 </ul>
 </li>
-<li>Endorser<ul>
-<li>运行ChainCode</li>
+<li><p>Endorser</p>
+<ul>
+<li><p>运行ChainCode</p></li>
 </ul>
 </li>
-<li>Committer<ul>
-<li>记账节点</li>
+<li><p>Committer</p>
+<ul>
+<li><p>记账节点</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>节点、通道、链码关系<ul>
-<li>火车站</li>
-<li>轨道</li>
-<li>火车</li>
+<li><p>节点、通道、链码关系</p>
+<ul>
+<li><p>火车站</p></li>
+<li><p>轨道</p></li>
+<li><p>火车</p></li>
 </ul>
 </li>
-<li>kafka如何保证多个orderer出块一致<ul>
-<li>从官方文档入手,官方是如何设计</li>
+<li><p>kafka如何保证多个orderer出块一致</p>
+<ul>
+<li><p>从官方文档入手,官方是如何设计</p></li>
 </ul>
 </li>
-<li>committer如何验证区块提交的交易的有效性<ul>
-<li>考察交易读写集的读集与写集是否一致</li>
+<li><p>committer如何验证区块提交的交易的有效性</p>
+<ul>
+<li><p>考察交易读写集的读集与写集是否一致</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>交易<ul>
-<li>交易模拟<ul>
-<li>客户端发起</li>
-<li>背书节点执行链码</li>
-<li>生成交易读写集<ul>
-<li>客户端收到response会发送到order节点进行排序</li>
+<li><p>交易</p>
+<ul>
+<li><p>交易模拟</p>
+<ul>
+<li><p>客户端发起</p></li>
+<li><p>背书节点执行链码</p></li>
+<li><p>生成交易读写集</p>
+<ul>
+<li><p>客户端收到response会发送到order节点进行排序</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>交易排序<ul>
-<li>order节点排序完成会将生成好的临时区块广播到其他组织的主节点</li>
+<li><p>交易排序</p>
+<ul>
+<li><p>order节点排序完成会将生成好的临时区块广播到其他组织的主节点</p></li>
 </ul>
 </li>
-<li>交易提交<ul>
-<li>验证签名</li>
-<li>验证背书策略</li>
-<li>验证交易读写集</li>
+<li><p>交易提交</p>
+<ul>
+<li><p>验证签名</p></li>
+<li><p>验证背书策略</p></li>
+<li><p>验证交易读写集</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>账本存储<ul>
-<li>文件系统存储区块<ul>
-<li>更新索引<ul>
-<li>levelDB</li>
+<li><p>账本存储</p>
+<ul>
+<li><p>文件系统存储区块</p>
+<ul>
+<li><p>更新索引</p>
+<ul>
+<li><p>levelDB</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>设计思考<ul>
-<li>如何看待Fabric先执行后排序的设计思路<ul>
-<li>交易模拟</li>
-<li>交易排序</li>
-<li>交易提交</li>
+<li><p>设计思考</p>
+<ul>
+<li><p>如何看待Fabric先执行后排序的设计思路</p>
+<ul>
+<li><p>交易模拟</p></li>
+<li><p>交易排序</p></li>
+<li><p>交易提交</p></li>
 </ul>
 </li>
-<li>如何评价链码<ul>
-<li>过于抽象<ul>
-<li>KV</li>
+<li><p>如何评价链码</p>
+<ul>
+<li><p>过于抽象</p>
+<ul>
+<li><p>KV</p></li>
 </ul>
 </li>
-<li>为了让链码能够独立运行,使用docker对链码构建镜像</li>
+<li><p>为了让链码能够独立运行,使用docker对链码构建镜像</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>去中心化资产交易平台<ul>
-<li>团队需求<ul>
-<li>安全组</li>
-<li>架构</li>
-<li>产品</li>
-<li>设计</li>
-<li>前端</li>
-<li>后台</li>
-<li>运维</li>
+<li><p>去中心化资产交易平台</p>
+<ul>
+<li><p>团队需求</p>
+<ul>
+<li><p>安全组</p></li>
+<li><p>架构</p></li>
+<li><p>产品</p></li>
+<li><p>设计</p></li>
+<li><p>前端</p></li>
+<li><p>后台</p></li>
+<li><p>运维</p></li>
 </ul>
 </li>
-<li>实现效果<ul>
-<li>用户注册</li>
-<li>用户登记</li>
-<li>资产转让</li>
-<li>资产查询</li>
-<li>用户查询</li>
-<li>资产转让历史查询</li>
-<li>用户删除</li>
+<li><p>实现效果</p>
+<ul>
+<li><p>用户注册</p></li>
+<li><p>用户登记</p></li>
+<li><p>资产转让</p></li>
+<li><p>资产查询</p></li>
+<li><p>用户查询</p></li>
+<li><p>资产转让历史查询</p></li>
+<li><p>用户删除</p></li>
 </ul>
 </li>
-<li>开发流程<ul>
-<li>需求整理<ul>
-<li>数据上链</li>
-<li>交易方法</li>
+<li><p>开发流程</p>
+<ul>
+<li><p>需求整理</p>
+<ul>
+<li><p>数据上链</p></li>
+<li><p>交易方法</p></li>
 </ul>
 </li>
-<li>链码编写</li>
-<li>链码交互</li>
+<li><p>链码编写</p></li>
+<li><p>链码交互</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>总结<ul>
-<li>区块链的未来<ul>
-<li>法律</li>
-<li>社会</li>
-<li>经济</li>
-<li>人性</li>
-<li>技术的矛盾体</li>
+<li><p>总结</p>
+<ul>
+<li><p>区块链的未来</p>
+<ul>
+<li><p>法律</p></li>
+<li><p>社会</p></li>
+<li><p>经济</p></li>
+<li><p>人性</p></li>
+<li><p>技术的矛盾体</p></li>
 </ul>
 </li>
-<li>区块链的定位<ul>
-<li>云计算<ul>
-<li>为我们提供IT基础设施</li>
+<li><p>区块链的定位</p>
+<ul>
+<li><p>云计算</p>
+<ul>
+<li><p>为我们提供IT基础设施</p></li>
 </ul>
 </li>
-<li>区块链<ul>
-<li>可信数据的载体,可以防止大数据的误入歧途</li>
+<li><p>区块链</p>
+<ul>
+<li><p>可信数据的载体,可以防止大数据的误入歧途</p></li>
 </ul>
 </li>
-<li>大数据<ul>
-<li>拥有了可信数据,才可以拿到有价值的数据,才可以进行个性化定制</li>
+<li><p>大数据</p>
+<ul>
+<li><p>拥有了可信数据,才可以拿到有价值的数据,才可以进行个性化定制</p></li>
 </ul>
 </li>
-<li>人工智能<ul>
-<li>有效决策</li>
+<li><p>人工智能</p>
+<ul>
+<li><p>有效决策</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>区块链应用阶段<ul>
-<li>数据认证</li>
-<li>数据转移</li>
-<li>数据共享</li>
+<li><p>区块链应用阶段</p>
+<ul>
+<li><p>数据认证</p></li>
+<li><p>数据转移</p></li>
+<li><p>数据共享</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>李工问题<ul>
-<li>性能测试<ul>
-<li>PTE</li>
-<li>wrt</li>
-<li>ab</li>
-<li>blockbench</li>
-<li>caliper<ul>
-<li>成功</li>
+<li><p>李工问题</p>
+<ul>
+<li><p>性能测试</p>
+<ul>
+<li><p>PTE</p></li>
+<li><p>wrt</p></li>
+<li><p>ab</p></li>
+<li><p>blockbench</p></li>
+<li><p>caliper</p>
+<ul>
+<li><p>成功</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Fab3<ul>
-<li>支持以太坊接口查询<ul>
-<li>signlogintransaction</li>
-<li>签名</li>
+<li><p>Fab3</p>
+<ul>
+<li><p>支持以太坊接口查询</p>
+<ul>
+<li><p>signlogintransaction</p></li>
+<li><p>签名</p></li>
 </ul>
 </li>
-<li>启动流程<ul>
-<li>启动Fab3<ul>
-<li>暴露5000端口</li>
+<li><p>启动流程</p>
+<ul>
+<li><p>启动Fab3</p>
+<ul>
+<li><p>暴露5000端口</p></li>
 </ul>
 </li>
-<li>使用web3服务,连接Fab3暴露的端口</li>
-<li>执行web3命令</li>
+<li><p>使用web3服务,连接Fab3暴露的端口</p></li>
+<li><p>执行web3命令</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>跨链<ul>
-<li>chaincodeA<ul>
-<li>==<ul>
-<li>chaincodeB</li>
+<li><p>跨链</p>
+<ul>
+<li><p>chaincodeA</p>
+<ul>
+<li><p>==</p>
+<ul>
+<li><p>chaincodeB</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>主链手续费问题<ul>
-<li>无手续费激励</li>
-<li>10个交易确认一个区块<ul>
-<li>共识算法的问题</li>
+<li><p>主链手续费问题</p>
+<ul>
+<li><p>无手续费激励</p></li>
+<li><p>10个交易确认一个区块</p>
+<ul>
+<li><p>共识算法的问题</p></li>
 </ul>
 </li>
-<li>2s出块<ul>
-<li>共识算法的问题</li>
+<li><p>2s出块</p>
+<ul>
+<li><p>共识算法的问题</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>区块浏览器<ul>
-<li>可根据源码执行<ul>
-<li>已完成</li>
+<li><p>区块浏览器</p>
+<ul>
+<li><p>可根据源码执行</p>
+<ul>
+<li><p>已完成</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>多机多节点部署<ul>
-<li>orderer<ul>
-<li>orderer.example.com</li>
+<li><p>多机多节点部署</p>
+<ul>
+<li><p>orderer</p>
+<ul>
+<li><p>orderer.example.com</p></li>
 </ul>
 </li>
-<li>org1<ul>
-<li>peer0<ul>
-<li>peer0.org1.example.com</li>
+<li><p>org1</p>
+<ul>
+<li><p>peer0</p>
+<ul>
+<li><p>peer0.org1.example.com</p></li>
 </ul>
 </li>
-<li>peer1<ul>
-<li>peer1.org1.example.com</li>
+<li><p>peer1</p>
+<ul>
+<li><p>peer1.org1.example.com</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>org2<ul>
-<li>peer0<ul>
-<li>peer0.org2.example.com</li>
+<li><p>org2</p>
+<ul>
+<li><p>peer0</p>
+<ul>
+<li><p>peer0.org2.example.com</p></li>
 </ul>
 </li>
-<li>peer1<ul>
-<li>peer1.org2.example.com</li>
+<li><p>peer1</p>
+<ul>
+<li><p>peer1.org2.example.com</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Dapp<ul>
-<li>智能合约</li>
-<li>前端</li>
+<li><p>Dapp</p>
+<ul>
+<li><p>智能合约</p></li>
+<li><p>前端</p></li>
 </ul>
 </li>
 </ul>
@@ -977,29 +1142,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../base/index.html" class="btn btn-neutral float-right" title="分享与交流 [Interviewer]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="05_explorer.html" class="btn btn-neutral float-left" title="5. Hyperledger Explorer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../operations/index.html" class="btn btn-neutral float-right" title="Linux内核 [Operations]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="05_explorer.html" class="btn btn-neutral float-left" title="5. Hyperledger Explorer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, 艾克中国
+        &#169; Copyright 2021, 艾克中国.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -1007,7 +1172,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

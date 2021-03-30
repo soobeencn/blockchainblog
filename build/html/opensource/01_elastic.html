@@ -1,38 +1,41 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>1. Elastic Stack &mdash; 区块链研究记录 1.0 documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2. kafka 入门指北" href="02_kafka.html" />
@@ -73,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -147,6 +151,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -181,20 +186,22 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">开源项目 [open source project]</a> &raquo;</li>
         
-      <li>1. Elastic Stack</li>
+      <li><span class="section-number">1. </span>Elastic Stack</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/opensource/01_elastic.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -209,69 +216,67 @@
            <div itemprop="articleBody">
             
   <div class="section" id="elastic-stack">
-<h1>1. Elastic Stack<a class="headerlink" href="#elastic-stack" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>Elastic Stack<a class="headerlink" href="#elastic-stack" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>100% 开源</li>
-<li>kibana+elasticsearch+logstash/beats</li>
+<li><p>100% 开源</p></li>
+<li><p>kibana+elasticsearch+logstash/beats</p></li>
 </ul>
 <div class="section" id="kibana">
-<h2>1.1. kibana<a class="headerlink" href="#kibana" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>kibana<a class="headerlink" href="#kibana" title="Permalink to this headline">¶</a></h2>
 <p>Kibana 是通向 Elastic 产品集的窗口， 它可以在 Elasticsearch 中对数据进行视觉探索和实时分析</p>
 <div class="section" id="elastic">
 <h3>Elastic 软件生态<a class="headerlink" href="#elastic" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id1">
 <h4>解决方案<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>搜索</li>
-<li>地理位置</li>
-<li>日志</li>
-<li>指标</li>
-<li>安全</li>
-<li>APM</li>
+<li><p>搜索</p></li>
+<li><p>地理位置</p></li>
+<li><p>日志</p></li>
+<li><p>指标</p></li>
+<li><p>安全</p></li>
+<li><p>APM</p></li>
 </ul>
 </div>
 <div class="section" id="id2">
 <h4>Elastic 大数据平台<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>数据展示： Kibana</li>
-<li>存储、索引、计算、分析： elasticsearch</li>
-<li>数据抓取：Logstash、Beats</li>
+<li><p>数据展示： Kibana</p></li>
+<li><p>存储、索引、计算、分析： elasticsearch</p></li>
+<li><p>数据抓取：Logstash、Beats</p></li>
 </ul>
 </div>
 <div class="section" id="id3">
 <h4>功能特性<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>机器学习</li>
-<li>数据关联分析</li>
-<li>规则告警</li>
-<li>多集群监控</li>
-<li>报表</li>
-<li>高级安全</li>
+<li><p>机器学习</p></li>
+<li><p>数据关联分析</p></li>
+<li><p>规则告警</p></li>
+<li><p>多集群监控</p></li>
+<li><p>报表</p></li>
+<li><p>高级安全</p></li>
 </ul>
 </div>
 <div class="section" id="id4">
 <h4>服务提供<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>Elastic Cloud</li>
-<li>Elastic 企业云</li>
+<li><p>Elastic Cloud</p></li>
+<li><p>Elastic 企业云</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="id5">
 <h3>本地搭建<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p class="first">下载压缩包、yum apt、docker</p>
-</li>
-<li><p class="first">配置单节点ES</p>
+<li><p>下载压缩包、yum apt、docker</p></li>
+<li><p>配置单节点ES</p>
 <ul>
-<li><p class="first">elasticsearch.yml 单节点试验可以不用修改, 后面可以打开安全配置选项</p>
-</li>
-<li><p class="first">配置缺省安全选项：添加</p>
+<li><p>elasticsearch.yml 单节点试验可以不用修改, 后面可以打开安全配置选项</p></li>
+<li><p>配置缺省安全选项：添加</p>
 <blockquote>
 <div><p>xpack.security.enabled: true</p>
 </div></blockquote>
 </li>
-<li><p class="first">配置tcp通道加密：</p>
+<li><p>配置tcp通道加密：</p>
 <blockquote>
 <div><p>xpack.security.transport.ssl.enabled: true
 xpack.security.transport.ssl.verification_mode: certificate
@@ -279,52 +284,51 @@ xpack.security.transport.ssl.keystore.path: elastic-certificates.p12
 xpack.security.transport.ssl.truststore.path: elastic-certificates.p12</p>
 </div></blockquote>
 </li>
-<li><p class="first">生成keystore和truststore</p>
+<li><p>生成keystore和truststore</p>
 <ul>
-<li><p class="first">进入elasticsearch/bin目录, 将证书文件输出到config目录下</p>
+<li><p>进入elasticsearch/bin目录, 将证书文件输出到config目录下</p>
 <blockquote>
 <div><p>bin/elasticsearch-certutil cert -out config/elastic-certificates.p12 -pass “”</p>
 </div></blockquote>
 </li>
 </ul>
 </li>
-<li><p class="first">手动生成密码</p>
+<li><p>手动生成密码</p>
 <blockquote>
 <div><p>bin/elasticsearch-setup-passwords interactive</p>
 </div></blockquote>
 </li>
 </ul>
 </li>
-<li><p class="first">配置kibana</p>
+<li><p>配置kibana</p>
 <ul>
-<li><p class="first">kibana.yml</p>
+<li><p>kibana.yml</p>
 <blockquote>
 <div><p>elasticsearch.hosts: [“http://localhost:9200”]</p>
 </div></blockquote>
 </li>
 </ul>
 </li>
-<li><p class="first">开启安全设置</p>
+<li><p>开启安全设置</p>
 <ul>
-<li><p class="first">从6.8、7.1开始免费提供基本安全设置</p>
-</li>
-<li><p class="first">elasticsearch</p>
+<li><p>从6.8、7.1开始免费提供基本安全设置</p></li>
+<li><p>elasticsearch</p>
 <ul>
-<li><p class="first">elasticsearch.yml 添加：</p>
+<li><p>elasticsearch.yml 添加：</p>
 <blockquote>
 <div><p>xpack.security.enabled: true</p>
 </div></blockquote>
 </li>
 </ul>
 </li>
-<li><p class="first">设置缺省用户密码</p>
+<li><p>设置缺省用户密码</p>
 <ul class="simple">
-<li>bin/elasticsearch-setup-passwords interactive</li>
+<li><p>bin/elasticsearch-setup-passwords interactive</p></li>
 </ul>
 </li>
-<li><p class="first">kibana</p>
+<li><p>kibana</p>
 <ul>
-<li><p class="first">kibana.yml 打开注释，修改默认配置：</p>
+<li><p>kibana.yml 打开注释，修改默认配置：</p>
 <blockquote>
 <div><p>elasticsearch.username: “kibana”
 elasticsearch.password: “elastic123”</p>
@@ -348,11 +352,11 @@ kibana123
 </li>
 </ul>
 </li>
-<li><p class="first">常用管理插件</p>
+<li><p>常用管理插件</p>
 <ul class="simple">
-<li>stack monitoring</li>
-<li>APM</li>
-<li>discovery</li>
+<li><p>stack monitoring</p></li>
+<li><p>APM</p></li>
+<li><p>discovery</p></li>
 </ul>
 </li>
 </ul>
@@ -360,18 +364,18 @@ kibana123
 </div>
 <hr class="docutils" />
 <div class="section" id="logstash">
-<h2>1.2. Logstash<a class="headerlink" href="#logstash" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span>Logstash<a class="headerlink" href="#logstash" title="Permalink to this headline">¶</a></h2>
 <p>Logstash 是 Elastic Stack 的中央数据流引擎， 用于收集、丰富和统一所有数据，而不管格式或模式。 当与Elasticsearch，Kibana，及 Beats 共同使用的时候便会拥有特别强大的实时处理能力。</p>
 <div class="section" id="id6">
 <h3>Logstash入门<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p><em>the dataflow engine</em></p>
 <ul class="simple">
-<li>开源的流式 <strong>ETL</strong> 引擎</li>
-<li>几分钟即可构建 <strong>数据流</strong> 处理管道</li>
-<li>具有自适应缓冲的 <strong>水平伸缩性</strong> 和 <strong>弹性</strong></li>
-<li>数据来源中立性， 支持 <strong>众多数据源</strong></li>
-<li>丰富的周边插件， 目前200多个的第三方集成和处理器</li>
-<li>Elastic Stack自带的<strong>监控</strong>和<strong>管理</strong></li>
+<li><p>开源的流式 <strong>ETL</strong> 引擎</p></li>
+<li><p>几分钟即可构建 <strong>数据流</strong> 处理管道</p></li>
+<li><p>具有自适应缓冲的 <strong>水平伸缩性</strong> 和 <strong>弹性</strong></p></li>
+<li><p>数据来源中立性， 支持 <strong>众多数据源</strong></p></li>
+<li><p>丰富的周边插件， 目前200多个的第三方集成和处理器</p></li>
+<li><p>Elastic Stack自带的<strong>监控</strong>和<strong>管理</strong></p></li>
 </ul>
 </div>
 <div class="section" id="id7">
@@ -426,35 +430,47 @@ kibana123
 </div>
 <div class="section" id="id8">
 <h3>动态管道<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>|消息处理机制|
-|:——:|
-|Apache Pipeline|
-|JDBC Pipeline|
-|Netflow Pipeline|</p>
-<ul class="simple">
-<li>带条件和多管道的直接数据流</li>
-<li>使用身份认证和加密来确保传输安全</li>
-<li>使用modules来一键交付</li>
-<li>可轻松构建自定义插件集成和处理器</li>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">消息处理机制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Apache Pipeline</td>
+</tr>
+<tr>
+<td align="center">JDBC Pipeline</td>
+</tr>
+<tr>
+<td align="center">Netflow Pipeline</td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>带条件和多管道的直接数据流</p></li>
+<li><p>使用身份认证和加密来确保传输安全</p></li>
+<li><p>使用modules来一键交付</p></li>
+<li><p>可轻松构建自定义插件集成和处理器</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="beats">
-<h2>1.3. Beats<a class="headerlink" href="#beats" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3. </span>Beats<a class="headerlink" href="#beats" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id9">
 <h3>接入指南<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p class="first">获取资源</p>
+<li><p>获取资源</p>
 <blockquote>
 <div><p>curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.10.2-linux-x86_64.tar.gz</p>
 </div></blockquote>
 </li>
-<li><p class="first">解压</p>
+<li><p>解压</p>
 <blockquote>
 <div><p>tar zxvf filebeat-7.10.2-linux-x86_64.tar.gz</p>
 </div></blockquote>
 </li>
-<li><p class="first">修改配置文件</p>
+<li><p>修改配置文件</p>
 <blockquote>
 <div><p>vim filebeat.yml</p>
 </div></blockquote>
@@ -470,23 +486,23 @@ kibana123
 </pre></div>
 </div>
 </li>
-<li><p class="first">加载列表信息</p>
+<li><p>加载列表信息</p>
 <blockquote>
 <div><p>./filebeat modules list</p>
 </div></blockquote>
 </li>
-<li><p class="first">自定义加载关联组件</p>
+<li><p>自定义加载关联组件</p>
 <blockquote>
 <div><p>./filebeat modules enable mongodb system nginx kafka mysql</p>
 </div></blockquote>
 </li>
-<li><p class="first">自动配置assets信息</p>
+<li><p>自动配置assets信息</p>
 <blockquote>
 <div><p>./filebeat setup -e</p>
 </div></blockquote>
 <p><em>-e is optional and sends output to standard error instead of the configured log output.</em></p>
 </li>
-<li><p class="first">启动</p>
+<li><p>启动</p>
 <blockquote>
 <div><p>./filebeat -e</p>
 </div></blockquote>
@@ -495,12 +511,12 @@ kibana123
 <div><p>./filebeat -e –strict.perms=false</p>
 </div></blockquote>
 </li>
-<li><p class="first">查看日志</p>
+<li><p>查看日志</p>
 <blockquote>
 <div><p>如果没有异常信息，打开kibana -&gt; discovery -&gt; filebeat-*</p>
 </div></blockquote>
 </li>
-<li><p class="first">自定义日志录入:  打开 filebeat.yml, update input or input stream, such as:</p>
+<li><p>自定义日志录入:  打开 filebeat.yml, update input or input stream, such as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">filebeat</span><span class="o">.</span><span class="n">inputs</span><span class="p">:</span>
     <span class="c1"># Each - is an input. Most options can be set at the input level, so</span>
     <span class="c1"># you can use different inputs for various configurations.</span>
@@ -516,11 +532,10 @@ kibana123
 </pre></div>
 </div>
 </li>
-<li><p class="first"><em><strong>FAQ</strong></em><br />关于启动filebeat遇到的一些常见问题：</p>
+<li><p><em><strong>FAQ</strong></em><br />关于启动filebeat遇到的一些常见问题：</p>
 <ul>
-<li><p class="first">使用非root用户启动， 应当先授权目标用户的文件 744权限，如果权限过高， 则会启动失败；</p>
-</li>
-<li><p class="first">使用root用户启动，则按照下方规则进行配置：</p>
+<li><p>使用非root用户启动， 应当先授权目标用户的文件 744权限，如果权限过高， 则会启动失败；</p></li>
+<li><p>使用root用户启动，则按照下方规则进行配置：</p>
 <blockquote>
 <div><p>sudo chown root filebeat.yml
 sudo chown root modules.d/system.yml
@@ -536,7 +551,7 @@ sudo ./filebeat -e</p>
 <div class="section" id="id11">
 <h4>一个基本配置<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">input</span> <span class="p">{</span>
-    <span class="nx">beats</span> <span class="p">{</span> <span class="nx">port</span> <span class="p">=&gt;</span> <span class="mi">5043</span> <span class="p">}</span>
+    <span class="nx">beats</span> <span class="p">{</span> <span class="nx">port</span> <span class="p">=&gt;</span> <span class="mf">5043</span> <span class="p">}</span>
 <span class="p">}</span>
 <span class="nx">filter</span> <span class="p">{</span>
     <span class="nx">mutate</span> <span class="p">{</span> <span class="nx">lowercase</span> <span class="p">=&gt;</span> <span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span> <span class="p">}</span>
@@ -550,14 +565,14 @@ sudo ./filebeat -e</p>
 <div class="section" id="id12">
 <h4>一个事件<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>Logstash主要的数据单元就是事件</li>
-<li>他们是文档类型， 和Json文档类型很相似，支持任意层次结构和类型</li>
+<li><p>Logstash主要的数据单元就是事件</p></li>
+<li><p>他们是文档类型， 和Json文档类型很相似，支持任意层次结构和类型</p></li>
 </ul>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;@timestamp&quot;</span> <span class="p">=&gt;</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">02</span><span class="nx">T01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span>
+    <span class="s2">&quot;@timestamp&quot;</span> <span class="p">=&gt;</span> <span class="mf">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mo">02</span><span class="nx">T01</span><span class="o">-</span><span class="mo">01</span><span class="o">-</span><span class="mo">01</span><span class="p">,</span>
     <span class="s2">&quot;message&quot;</span> <span class="p">=&gt;</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
     <span class="s2">&quot;some other field&quot;</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="s2">&quot;has comflex values&quot;</span> <span class="p">=&gt;</span> <span class="mi">123</span>
+        <span class="s2">&quot;has comflex values&quot;</span> <span class="p">=&gt;</span> <span class="mf">123</span>
     <span class="p">}</span>     
 <span class="p">}</span>
 </pre></div>
@@ -566,37 +581,56 @@ sudo ./filebeat -e</p>
 <div class="section" id="id13">
 <h4>一个管道<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>pipelines 可伸缩</li>
-<li>支持多个input</li>
-<li>支持多个filter， output</li>
-<li>一个Logstash，支持多个管道</li>
+<li><p>pipelines 可伸缩</p></li>
+<li><p>支持多个input</p></li>
+<li><p>支持多个filter， output</p></li>
+<li><p>一个Logstash，支持多个管道</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="id14">
 <h3>队列和交付保障<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
-<p>|InMemoryQueue|Persistent Queue|
-| :—-: | :—-: |
-|非常快|快|
-|所有数据都在内存|收到的数据先落地磁盘，直到交付完成|
-|没有落地|落地|
-|正在处理的数据可能会因为非正常关闭而丢失|持久化，非正常关闭不会丢失数据|</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">InMemoryQueue</th>
+<th align="center">Persistent Queue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">非常快</td>
+<td align="center">快</td>
+</tr>
+<tr>
+<td align="center">所有数据都在内存</td>
+<td align="center">收到的数据先落地磁盘，直到交付完成</td>
+</tr>
+<tr>
+<td align="center">没有落地</td>
+<td align="center">落地</td>
+</tr>
+<tr>
+<td align="center">正在处理的数据可能会因为非正常关闭而丢失</td>
+<td align="center">持久化，非正常关闭不会丢失数据</td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="at-least-once-delivery">
 <h3>至少交付一次（At Least Once Delivery）<a class="headerlink" href="#at-least-once-delivery" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>大部分插件支持</li>
-<li>大部分情况，消息只交付一次</li>
-<li>非正常关闭下，持久化队列里面的事件，我们可能会运行worker不止一次，可能会产生重复消息</li>
-<li>幂等操作（永远写相同的ID）可以确保消息不重复</li>
+<li><p>大部分插件支持</p></li>
+<li><p>大部分情况，消息只交付一次</p></li>
+<li><p>非正常关闭下，持久化队列里面的事件，我们可能会运行worker不止一次，可能会产生重复消息</p></li>
+<li><p>幂等操作（永远写相同的ID）可以确保消息不重复</p></li>
 </ul>
 </div>
 <div class="section" id="packetbeat">
 <h3>packetbeat<a class="headerlink" href="#packetbeat" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>实时抓取网络包</li>
-<li>自动解析应用层协议</li>
-<li>替代wireshark</li>
+<li><p>实时抓取网络包</p></li>
+<li><p>自动解析应用层协议</p></li>
+<li><p>替代wireshark</p></li>
 </ul>
 </div>
 <div class="section" id="demo">
@@ -612,11 +646,11 @@ sudo ./filebeat -e</p>
 <h3>Logstash Modules<a class="headerlink" href="#logstash-modules" title="Permalink to this headline">¶</a></h3>
 <p><em>Immediate Insights with Modules</em></p>
 <ul class="simple">
-<li>特定数据类型的一键交付</li>
-<li>从数据到监控面板只需一步</li>
-<li>自动解析和充实数据</li>
-<li>默认的监控面板、告警设置、机器学习任务</li>
-<li><a class="reference external" href="www.elastic.co/guide/en/logstash/current/logstash-modules.html">可用的modules</a></li>
+<li><p>特定数据类型的一键交付</p></li>
+<li><p>从数据到监控面板只需一步</p></li>
+<li><p>自动解析和充实数据</p></li>
+<li><p>默认的监控面板、告警设置、机器学习任务</p></li>
+<li><p><a class="reference external" href="www.elastic.co/guide/en/logstash/current/logstash-modules.html">可用的modules</a></p></li>
 </ul>
 </div>
 <div class="section" id="codecs-serialize">
@@ -645,31 +679,31 @@ sudo ./filebeat -e</p>
 <h3>监控和管理<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <p>Monitoring</p>
 <ul class="simple">
-<li>使用 Monitoring UI 集中监控和管理多个Logstash部署</li>
-<li>通过Pipeline Viewer 快速定位和分析瓶颈</li>
-<li>借助 Monitoring API 直接从Logstash节点获取节点指标信息</li>
+<li><p>使用 Monitoring UI 集中监控和管理多个Logstash部署</p></li>
+<li><p>通过Pipeline Viewer 快速定位和分析瓶颈</p></li>
+<li><p>借助 Monitoring API 直接从Logstash节点获取节点指标信息</p></li>
 </ul>
 <p>Pipeline Management</p>
 <ul class="simple">
-<li>一个UI来管理多个Logstash节点上的多个管道</li>
-<li>Logstash可以轮询和动态重新加载更新的管道</li>
-<li>使用X-Pack Security 特性来控制管道管理的访问</li>
+<li><p>一个UI来管理多个Logstash节点上的多个管道</p></li>
+<li><p>Logstash可以轮询和动态重新加载更新的管道</p></li>
+<li><p>使用X-Pack Security 特性来控制管道管理的访问</p></li>
 </ul>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="metricbeat">
-<h2>1.4. Metricbeat<a class="headerlink" href="#metricbeat" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4. </span>Metricbeat<a class="headerlink" href="#metricbeat" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id18">
 <h3>接入指南<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>同filebeat类似，详细内容参考filebeat接入指南</li>
+<li><p>同filebeat类似，详细内容参考filebeat接入指南</p></li>
 </ul>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="apm-application-performance-monitoring">
-<h2>1.5. APM [application performance monitoring]<a class="headerlink" href="#apm-application-performance-monitoring" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.5. </span>APM [application performance monitoring]<a class="headerlink" href="#apm-application-performance-monitoring" title="Permalink to this headline">¶</a></h2>
 <p>对于大部分应用程序来说性能都是很重要的一个因素，尤其对于比如网站、手机app等直接由用户访问的应用来说更是如此，因为性能较差的应用将会直接影响其用户体验。因此，能对应用进行性能监控变得非常重要，这将帮助我们找到性能瓶颈并优化。</p>
 <p>应用性能监控（Application Performance Monitoring，APM），是对应用程序性能和可用性的监视和管理。 APM努力检测和诊断复杂的应用程序性能问题，以维持预期的服务等级。</p>
 <div class="section" id="apm-server">
@@ -690,8 +724,8 @@ sudo ./filebeat -e</p>
 <p>纳闷您的请求是如何流经整个基础架构的？通过分布式跟踪将所有内容整合到一起，清晰查看您的各项服务之间的交互情况。查找路径中哪个位置发生了延时问题，然后准确定位到需加以优化的组件。</p>
 <p>效果：</p>
 <ul class="simple">
-<li>对JVM的监控：</li>
-<li>同时支持配置alerting阈值</li>
+<li><p>对JVM的监控：</p></li>
+<li><p>同时支持配置alerting阈值</p></li>
 </ul>
 </div>
 <div class="section" id="id21">
@@ -702,18 +736,18 @@ sudo ./filebeat -e</p>
 <hr class="docutils" />
 <p><strong>X-Pack plugin 需要商业授权</strong></p>
 <ul class="simple">
-<li>Security</li>
-<li>Alerting</li>
-<li>Monitoring</li>
-<li>Reporting</li>
-<li>Graph</li>
-<li>Machine Language</li>
+<li><p>Security</p></li>
+<li><p>Alerting</p></li>
+<li><p>Monitoring</p></li>
+<li><p>Reporting</p></li>
+<li><p>Graph</p></li>
+<li><p>Machine Language</p></li>
 </ul>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="elasticsearch">
-<h2>1.6. ElasticSearch<a class="headerlink" href="#elasticsearch" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.6. </span>ElasticSearch<a class="headerlink" href="#elasticsearch" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="mysql">
 <h3>对比mysql<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h3>
 <p>|ElasticSearch|Mysql|
@@ -728,18 +762,18 @@ sudo ./filebeat -e</p>
 |PUT http://…|update table set …|</p>
 <p><strong>备注：</strong></p>
 <ul class="simple">
-<li>ElasticSearch 中的索引 Index 类似于 MySQL 中的数据库 Database；</li>
+<li><p>ElasticSearch 中的索引 Index 类似于 MySQL 中的数据库 Database；</p></li>
 </ul>
 <ol class="simple">
-<li><ul class="first">
-<li>ElasticSearch 中的类型 Type 类似于 MySQL 中的表 Table；需要注意，这个概念在 7.x 版本中被完全删除，而且概念上和 Table 也有较大差异；</li>
+<li><ul class="simple">
+<li><p>ElasticSearch 中的类型 Type 类似于 MySQL 中的表 Table；需要注意，这个概念在 7.x 版本中被完全删除，而且概念上和 Table 也有较大差异；</p></li>
 </ul>
 </li>
 </ol>
 <ul class="simple">
-<li>ElasticSearch 中的文档 Document 类似于 MySQL 中的数据行 Row，每个文档由多个字段 Filed 组成，这个Filed 就类似于 MySQL 的 Column；</li>
-<li>ElasticSearch 中的映射 Mapping 是对索引库中的索引字段及其数据类型进行定义，类似于关系型数据库中的表结构 Schema；</li>
-<li>ElasticSearch 使用自己的领域语言 Query DSL 来进行增删改查，而 MySQL 使用 SQL 语言进行上诉操作。</li>
+<li><p>ElasticSearch 中的文档 Document 类似于 MySQL 中的数据行 Row，每个文档由多个字段 Filed 组成，这个Filed 就类似于 MySQL 的 Column；</p></li>
+<li><p>ElasticSearch 中的映射 Mapping 是对索引库中的索引字段及其数据类型进行定义，类似于关系型数据库中的表结构 Schema；</p></li>
+<li><p>ElasticSearch 使用自己的领域语言 Query DSL 来进行增删改查，而 MySQL 使用 SQL 语言进行上诉操作。</p></li>
 </ul>
 </div>
 <div class="section" id="id22">
@@ -748,38 +782,38 @@ sudo ./filebeat -e</p>
 <div class="section" id="es">
 <h3>ES 优化写入性能<a class="headerlink" href="#es" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>用SSD</li>
-<li>多线程bulk</li>
-<li>尽量设置每个bulk的大小在5~15M左右</li>
-<li>增加节点、分片</li>
-<li>设置多个path.data目录，或配置RAID 0阵列</li>
-<li>如果用的是SSD，设置index.store.throttle.type：none</li>
-<li>禁用_all</li>
-<li>增大index.refresh_interval的值，默认1s</li>
-<li>增大index.translog.flush_threshold_size的值</li>
-<li>设置0副本，建完索引优化后再增加副本</li>
-<li>增大indices.memory.index_buffer_size的值</li>
-<li>用比较新版本的ES</li>
+<li><p>用SSD</p></li>
+<li><p>多线程bulk</p></li>
+<li><p>尽量设置每个bulk的大小在5~15M左右</p></li>
+<li><p>增加节点、分片</p></li>
+<li><p>设置多个path.data目录，或配置RAID 0阵列</p></li>
+<li><p>如果用的是SSD，设置index.store.throttle.type：none</p></li>
+<li><p>禁用_all</p></li>
+<li><p>增大index.refresh_interval的值，默认1s</p></li>
+<li><p>增大index.translog.flush_threshold_size的值</p></li>
+<li><p>设置0副本，建完索引优化后再增加副本</p></li>
+<li><p>增大indices.memory.index_buffer_size的值</p></li>
+<li><p>用比较新版本的ES</p></li>
 </ul>
 </div>
 <div class="section" id="es-cluster">
 <h3>ES cluster<a class="headerlink" href="#es-cluster" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>node.master：表示节点是否具有称为主节点的资格</li>
+<li><p>node.master：表示节点是否具有称为主节点的资格</p></li>
 </ul>
 <p>- true代表的是有资格竞选主节点</p>
 <p>- false代表的是没有资格竞选主节点</p>
 <ul class="simple">
-<li>node.data：表示节点是否存储数据</li>
+<li><p>node.data：表示节点是否存储数据</p></li>
 </ul>
 <div class="section" id="id23">
 <h4>部署单节点<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>123</li>
-<li>123</li>
-<li>213</li>
-<li>234</li>
-<li>2</li>
+<li><p>123</p></li>
+<li><p>123</p></li>
+<li><p>213</p></li>
+<li><p>234</p></li>
+<li><p>2</p></li>
 </ul>
 </div>
 <div class="section" id="id24">
@@ -935,22 +969,22 @@ sudo ./filebeat -e</p>
 <div class="section" id="node">
 <h4>Node组合<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h4>
 <ul>
-<li><p class="first">主节点+数据节点(master+data)</p>
+<li><p>主节点+数据节点(master+data)</p>
 <ul>
-<li><p class="first">节点即有称为主节点的资格，又存储数据</p>
+<li><p>节点即有称为主节点的资格，又存储数据</p>
 <p>node.master: true
 node.data: true</p>
 </li>
 </ul>
 </li>
-<li><p class="first">数据节点(data)
+<li><p>数据节点(data)
 　	- 节点没有成为主节点的资格，不参与选举，只会存储数据</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">node</span><span class="o">.</span><span class="n">master</span><span class="p">:</span> <span class="n">false</span>
   <span class="n">node</span><span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="n">true</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">客户端节点(client)
+<li><p>客户端节点(client)
 　　- 不会成为主节点，也不会存储数据，主要是针对海量请求的时候，可以进行负载均衡</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">node</span><span class="o">.</span><span class="n">master</span><span class="p">:</span> <span class="n">false</span>
   <span class="n">node</span><span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="n">false</span>
@@ -965,26 +999,58 @@ node.data: true</p>
 </div>
 </div>
 <div class="section" id="id26">
-<h2>1.7. 测试结果<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.7. </span>测试结果<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
 <p><em>功能点:多条件多字段分组聚合统计</em></p>
 <div class="section" id="id27">
 <h3>第一周<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
-<p>|方案|数据量|存储方式|内存|cpu|节点数量|存储|结果|<br />|:–:|:–:|:–:|:–:|:–:|:–:|:–:|:–:|
-|一|5400w|ElasticSearch|8g|32core|  单机单实例 |机械硬盘| 耗时 9s 左右|
-|二|2000w  | mongodb | 8g |32core | 单机单实例  |机械硬盘|耗时25-35s|</p>
-<p>结论:</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">方案</th>
+<th align="center">数据量</th>
+<th align="center">存储方式</th>
+<th align="center">内存</th>
+<th align="center">cpu</th>
+<th align="center">节点数量</th>
+<th align="center">存储</th>
+<th align="center">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">一</td>
+<td align="center">5400w</td>
+<td align="center">ElasticSearch</td>
+<td align="center">8g</td>
+<td align="center">32core</td>
+<td align="center">单机单实例</td>
+<td align="center">机械硬盘</td>
+<td align="center">耗时 9s 左右</td>
+</tr>
+<tr>
+<td align="center">二</td>
+<td align="center">2000w</td>
+<td align="center">mongodb</td>
+<td align="center">8g</td>
+<td align="center">32core</td>
+<td align="center">单机单实例</td>
+<td align="center">机械硬盘</td>
+<td align="center">耗时25-35s</td>
+</tr>
+</tbody>
+</table><p>结论:</p>
 <ul class="simple">
-<li>单机情况下, 无任何优化   多条件分组聚合统计效率低下</li>
-<li>存储方式为机械硬盘, 对查询效率有较大影响</li>
-<li>目标: 十亿级别数据量, 对标当前需求, 3s查询得到结果</li>
+<li><p>单机情况下, 无任何优化   多条件分组聚合统计效率低下</p></li>
+<li><p>存储方式为机械硬盘, 对查询效率有较大影响</p></li>
+<li><p>目标: 十亿级别数据量, 对标当前需求, 3s查询得到结果</p></li>
 </ul>
 <p>针对当前目标及现有资源, 做如下优化:</p>
 <ul class="simple">
-<li>增加节点,分片</li>
-<li>增加内存</li>
-<li>存储选择:SSD</li>
-<li>ES参数调优及索引调优</li>
-<li>代码优化: 根据ES官方可选属性, 针对当前业务场景选择不同维度的查询等</li>
+<li><p>增加节点,分片</p></li>
+<li><p>增加内存</p></li>
+<li><p>存储选择:SSD</p></li>
+<li><p>ES参数调优及索引调优</p></li>
+<li><p>代码优化: 根据ES官方可选属性, 针对当前业务场景选择不同维度的查询等</p></li>
 </ul>
 </div>
 <hr class="docutils" />
@@ -999,22 +1065,22 @@ node.data: true</p>
 |3node|2000w |单索引|8g*3 |32core|机械硬盘|7|8s|</p>
 <p>结论:</p>
 <ul class="simple">
-<li>首先增加了2个节点,总共3个节点  做7个字段的分组聚合 得到目标数据耗时几户相等</li>
-<li>增加内存  聚合效率相当  内存过大会OOM</li>
-<li>代码优化: 采用breath_first和depth_first   大数据量效率相当</li>
+<li><p>首先增加了2个节点,总共3个节点  做7个字段的分组聚合 得到目标数据耗时几户相等</p></li>
+<li><p>增加内存  聚合效率相当  内存过大会OOM</p></li>
+<li><p>代码优化: 采用breath_first和depth_first   大数据量效率相当</p></li>
 </ul>
 <p>待做:</p>
 <ul class="simple">
-<li>ES参数调优及索引调优</li>
-<li>存储方式</li>
-<li>cpu/memory</li>
+<li><p>ES参数调优及索引调优</p></li>
+<li><p>存储方式</p></li>
+<li><p>cpu/memory</p></li>
 </ul>
 </div>
 <div class="section" id="mongo">
 <h4>Mongo<a class="headerlink" href="#mongo" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>环境：服务器两台，搭建一个主节点，5个分片（一台3个分片，一台2个分片）</li>
-<li>查询结果：两个维度，八个指标聚合数据：1000W  5~6s</li>
+<li><p>环境：服务器两台，搭建一个主节点，5个分片（一台3个分片，一台2个分片）</p></li>
+<li><p>查询结果：两个维度，八个指标聚合数据：1000W  5~6s</p></li>
 </ul>
 </div>
 </div>
@@ -1029,29 +1095,29 @@ node.data: true</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="02_kafka.html" class="btn btn-neutral float-right" title="2. kafka 入门指北" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="开源项目 [open source project]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="02_kafka.html" class="btn btn-neutral float-right" title="2. kafka 入门指北" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="开源项目 [open source project]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, 艾克中国
+        &#169; Copyright 2021, 艾克中国.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -1059,7 +1125,6 @@ node.data: true</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
