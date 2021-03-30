@@ -1,40 +1,45 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>1. Web安全之SQL注入 [初级篇] &mdash; 区块链研究记录 1.0 documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. XSS跨站漏洞 加强Web安全" href="02_xss.html" />
+    <link rel="prev" title="Linux内核 [Operations]" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -71,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -78,17 +84,45 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">比特币 [Bitcoin]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ethereum/index.html">以太坊 [Ethereum]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hyperledger/index.html">联盟链 [Hyperledger Fabric]</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux内核 [Operations]</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. Web安全之SQL注入 [初级篇]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sql">1.1. 什么是SQL注入?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">如何理解SQL注入?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">SQL注入是怎么产生的?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">1.2. 如何寻找SQL注入漏洞?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">1.3. 如何进行SQL注入攻击?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">数字注入</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">字符串注入</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">1.4. 如何预防SQL注入?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">输入变量检查</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">过滤和转义特殊字符</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mysql">利用mysql的预编译机制</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="02_xss.html">2. XSS跨站漏洞 加强Web安全</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_csrf.html">3. 实战攻击非法网站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_ssr.html">4. ssr 一键搭建</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../opensource/index.html">开源项目 [open source project]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/index.html">分享与交流 [Interviewer]</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../elastic/index.html">比特币 [Bitcoin]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aboutme/index.html">联系我 [Call ME]</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -123,18 +157,22 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>1. Web安全之SQL注入 [初级篇]</li>
+          <li><a href="index.html">Linux内核 [Operations]</a> &raquo;</li>
+        
+      <li><span class="section-number">1. </span>Web安全之SQL注入 [初级篇]</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/operations/01_linux.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -149,9 +187,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="websql">
-<h1>1. Web安全之SQL注入 [初级篇]<a class="headerlink" href="#websql" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>Web安全之SQL注入 [初级篇]<a class="headerlink" href="#websql" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="sql">
-<h2>1.1. 什么是SQL注入?<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>什么是SQL注入?<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>如何理解SQL注入?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <blockquote>
@@ -169,48 +207,48 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h2>1.2. 如何寻找SQL注入漏洞?<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span>如何寻找SQL注入漏洞?<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>借助逻辑推理</p>
 <blockquote>
 <div><ul class="simple">
-<li>识别web应用中所有输入点  [get/post/http头信息]</li>
-<li>了解哪些类型的请求会触发异常</li>
-<li>检测服务器响应中的异常</li>
+<li><p>识别web应用中所有输入点  [get/post/http头信息]</p></li>
+<li><p>了解哪些类型的请求会触发异常</p></li>
+<li><p>检测服务器响应中的异常</p></li>
 </ul>
 </div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="id4">
-<h2>1.3. 如何进行SQL注入攻击?<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3. </span>如何进行SQL注入攻击?<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id5">
 <h3>数字注入<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>where条件中包含数字的内容</li>
+<li><p>where条件中包含数字的内容</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="n">OR</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>    <span class="p">[</span><span class="n">true</span><span class="p">]</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="n">OR</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>    <span class="p">[</span><span class="n">true</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id6">
 <h3>字符串注入<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>用户登陆场景</li>
+<li><p>用户登陆场景</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; login:  [str‘#]   [str‘-- ***]
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; login:  [str‘#]   [str‘-- ***]
 &gt;&gt;&gt; password:
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="id7">
-<h2>1.4. 如何预防SQL注入?<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4. </span>如何预防SQL注入?<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id8">
 <h3>输入变量检查<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>输入参数非空校验</li>
-<li>正则表达式</li>
+<li><p>输入参数非空校验</p></li>
+<li><p>正则表达式</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -221,7 +259,7 @@
 <h3>利用mysql的预编译机制<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>提前编写好sql模版</li>
+<li><p>提前编写好sql模版</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -233,20 +271,29 @@
            
           </div>
           <footer>
-  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="02_xss.html" class="btn btn-neutral float-right" title="2. XSS跨站漏洞 加强Web安全" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Linux内核 [Operations]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, 艾克中国
+        &#169; Copyright 2021, 艾克中国.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -254,7 +301,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,38 +1,41 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>2. 智能合约 [solidity] &mdash; 区块链研究记录 1.0 documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3. 去中心化应用 [Dapp开发指南]" href="03_numpy.html" />
@@ -73,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -109,13 +113,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hyperledger/index.html">联盟链 [Hyperledger Fabric]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/index.html">Linux内核 [Operations]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opensource/index.html">开源项目 [open source project]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/index.html">分享与交流 [Interviewer]</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../elastic/index.html">比特币 [Bitcoin]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aboutme/index.html">联系我 [Call ME]</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -150,20 +157,22 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">以太坊 [Ethereum]</a> &raquo;</li>
         
-      <li>2. 智能合约 [solidity]</li>
+      <li><span class="section-number">2. </span>智能合约 [solidity]</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/ethereum/02_ipython.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -178,88 +187,71 @@
            <div itemprop="articleBody">
             
   <div class="section" id="solidity">
-<h1>2. 智能合约 [solidity]<a class="headerlink" href="#solidity" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>智能合约 [solidity]<a class="headerlink" href="#solidity" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>2.1. 什么是智能合约<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>什么是智能合约<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>以太坊上的程序,是代码和数据(状态)的集合</li>
-<li>准图灵完备</li>
-<li>典型应用:代币:EOS    游戏:迷恋猫</li>
+<li><p>以太坊上的程序,是代码和数据(状态)的集合</p></li>
+<li><p>准图灵完备</p></li>
+<li><p>典型应用:代币:EOS    游戏:迷恋猫</p></li>
 </ul>
 </div>
 <div class="section" id="evm">
-<h2>2.2. 运行环境–&gt;EVM<a class="headerlink" href="#evm" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>运行环境–&gt;EVM<a class="headerlink" href="#evm" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>solidity—&gt;EVM(提供了一个沙盒的环境)</li>
-<li>java——-&gt;JVM</li>
+<li><p>solidity—&gt;EVM(提供了一个沙盒的环境)</p></li>
+<li><p>java——-&gt;JVM</p></li>
 </ul>
 </div>
 <div class="section" id="id2">
-<h2>2.3. solidity 语言详解<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>solidity 语言详解<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
 <h3>文件结构<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>版本声明</li>
-<li>import</li>
-<li><dl class="first docutils">
-<dt>合约</dt>
-<dd><ul class="first last">
-<li>状态变量</li>
-<li>函数</li>
-<li>结构类型</li>
-<li>事件</li>
-<li>函数修改器</li>
+<li><p>版本声明</p></li>
+<li><p>import</p></li>
+<li><dl class="simple">
+<dt>合约</dt><dd><ul>
+<li><p>状态变量</p></li>
+<li><p>函数</p></li>
+<li><p>结构类型</p></li>
+<li><p>事件</p></li>
+<li><p>函数修改器</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>代码注释</li>
+<li><p>代码注释</p></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="id4">
 <h3>数据类型<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>值类型(Value Type)</dt>
-<dd><ul class="first last">
-<li>Booleans</li>
-<li><dl class="first docutils">
-<dt>Integers</dt>
-<dd><ul class="first last">
-<li>int/uint        关键字unit8到uint256(以8步进)</li>
+<li><dl class="simple">
+<dt>值类型(Value Type)</dt><dd><ul>
+<li><p>Booleans</p></li>
+<li><dl class="simple">
+<dt>Integers</dt><dd><ul>
+<li><p>int/uint        关键字unit8到uint256(以8步进)</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>Fixed Point Numbers</li>
-<li>Fixed-Size Byte Arrays</li>
-<li>Rational and Integer Literals</li>
-<li>String Literals</li>
-<li>Hexadecimal literals</li>
-<li>Enums</li>
-<li>Function Types</li>
-<li><dl class="first docutils">
-<dt>Address:表示一个账户地址(20字节,16进制数)</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>成员</dt>
-<dd><ul class="first last">
-<li>属性:balance</li>
-<li>函数:transfer()</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Address Literals</dt>
-<dd><ul class="first last">
-<li>地址合法性检查</li>
+<li><p>Fixed Point Numbers</p></li>
+<li><p>Fixed-Size Byte Arrays</p></li>
+<li><p>Rational and Integer Literals</p></li>
+<li><p>String Literals</p></li>
+<li><p>Hexadecimal literals</p></li>
+<li><p>Enums</p></li>
+<li><p>Function Types</p></li>
+<li><dl class="simple">
+<dt>Address:表示一个账户地址(20字节,16进制数)</dt><dd><ul>
+<li><dl class="simple">
+<dt>成员</dt><dd><ul>
+<li><p>属性:balance</p></li>
+<li><p>函数:transfer()</p></li>
 </ul>
 </dd>
 </dl>
@@ -268,21 +260,29 @@
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>引用 类型(Reference Type)    Data Location(memory、storage)</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>数组(Arrays)</dt>
-<dd><ul class="first last">
-<li>T[K]:元素类型为T,固定长度为K的数组</li>
-<li>T[]:元素类型为T,长度动态调整</li>
-<li>bytes string:一种特殊的数组</li>
-<li>string可转化为bytes,bytes类似于byte[]</li>
-<li><dl class="first docutils">
-<dt>成员</dt>
-<dd><ul class="first last">
-<li>属性:length</li>
-<li>函数:push()</li>
+<li><dl class="simple">
+<dt>Address Literals</dt><dd><ul>
+<li><p>地址合法性检查</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>引用 类型(Reference Type)    Data Location(memory、storage)</dt><dd><ul>
+<li><dl class="simple">
+<dt>数组(Arrays)</dt><dd><ul>
+<li><p>T[K]:元素类型为T,固定长度为K的数组</p></li>
+<li><p>T[]:元素类型为T,长度动态调整</p></li>
+<li><p>bytes string:一种特殊的数组</p></li>
+<li><p>string可转化为bytes,bytes类似于byte[]</p></li>
+<li><dl class="simple">
+<dt>成员</dt><dd><ul>
+<li><p>属性:length</p></li>
+<li><p>函数:push()</p></li>
 </ul>
 </dd>
 </dl>
@@ -299,49 +299,45 @@
 </div>
 </div>
 <div class="section" id="id5">
-<h2>2.4. 结构体和映射<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4. </span>结构体和映射<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="mappings">
 <h3>映射(Mappings)<a class="headerlink" href="#mappings" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>mapping(address=&gt;uint)</li>
-<li>public balances</li>
+<li><p>mapping(address=&gt;uint)</p></li>
+<li><p>public balances</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="id6">
-<h2>2.5. 全局变量和函数<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5. </span>全局变量和函数<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>区块和交易属性(查看官方文档)</dt>
-<dd><ul class="first last">
-<li>msg.sender(address)   交易附带地址</li>
-<li>msg.value(uint)            当前交易附带的亿台币  (wei)</li>
-<li>block.coinbase(address)     当前块的地址   当前矿工的地址</li>
-<li>block.difficulty(uint)              当前块的难度</li>
-<li>block.number(uint)               当前块的块号</li>
-<li>block.timestamp(uint)           当前块的时间戳  1970.1.1 0.0</li>
-<li>now(uint)                               timestamp的别名</li>
-<li>tx.gasprice(uint)                    当前交易的价格</li>
+<li><dl class="simple">
+<dt>区块和交易属性(查看官方文档)</dt><dd><ul>
+<li><p>msg.sender(address)   交易附带地址</p></li>
+<li><p>msg.value(uint)            当前交易附带的亿台币  (wei)</p></li>
+<li><p>block.coinbase(address)     当前块的地址   当前矿工的地址</p></li>
+<li><p>block.difficulty(uint)              当前块的难度</p></li>
+<li><p>block.number(uint)               当前块的块号</p></li>
+<li><p>block.timestamp(uint)           当前块的时间戳  1970.1.1 0.0</p></li>
+<li><p>now(uint)                               timestamp的别名</p></li>
+<li><p>tx.gasprice(uint)                    当前交易的价格</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>错误处理</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>什么是错误处理</dt>
-<dd><ul class="first last">
-<li>程序发生错误时,处理方式—回调</li>
+<li><dl class="simple">
+<dt>错误处理</dt><dd><ul>
+<li><dl class="simple">
+<dt>什么是错误处理</dt><dd><ul>
+<li><p>程序发生错误时,处理方式—回调</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>如何处理</dt>
-<dd><ul class="first last">
-<li>assert   (gas回退)</li>
-<li>require  (gas不足)</li>
+<li><dl class="simple">
+<dt>如何处理</dt><dd><ul>
+<li><p>assert   (gas回退)</p></li>
+<li><p>require  (gas不足)</p></li>
 </ul>
 </dd>
 </dl>
@@ -350,62 +346,58 @@
 </dd>
 </dl>
 </li>
-<li>有关数字及加密功能</li>
-<li>有关地址和合约</li>
+<li><p>有关数字及加密功能</p></li>
+<li><p>有关地址和合约</p></li>
 </ul>
 </div>
 <div class="section" id="id7">
-<h2>2.6. 参数<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6. </span>参数<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li>输入参数</li>
-<li>输出参数</li>
-<li>命名参数</li>
-<li>参数解构</li>
+<li><p>输入参数</p></li>
+<li><p>输出参数</p></li>
+<li><p>命名参数</p></li>
+<li><p>参数解构</p></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="id8">
-<h2>2.7. 控制结构<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7. </span>控制结构<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li>没有switch goto</li>
+<li><p>没有switch goto</p></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="id9">
-<h2>2.8. 可见性<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.8. </span>可见性<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>public   消耗的gas更多</dt>
-<dd><ul class="first last">
-<li>公开函数是合约接口的一部分,可以通过内部,或者消息来进行调用.对于public类型的状态变量,会自动创建一个访问器</li>
-<li>函数默认可见性是public</li>
+<li><dl class="simple">
+<dt>public   消耗的gas更多</dt><dd><ul>
+<li><p>公开函数是合约接口的一部分,可以通过内部,或者消息来进行调用.对于public类型的状态变量,会自动创建一个访问器</p></li>
+<li><p>函数默认可见性是public</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>private</dt>
-<dd><ul class="first last">
-<li>私有函数和状态变量仅在当前合约中可以访问,在继承的合约内,不可访问</li>
+<li><dl class="simple">
+<dt>private</dt><dd><ul>
+<li><p>私有函数和状态变量仅在当前合约中可以访问,在继承的合约内,不可访问</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>external     消耗的gas更少</dt>
-<dd><ul class="first last">
-<li>外部函数是合约接口的一部分,只能使用消息调用</li>
+<li><dl class="simple">
+<dt>external     消耗的gas更少</dt><dd><ul>
+<li><p>外部函数是合约接口的一部分,只能使用消息调用</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>internal</dt>
-<dd><ul class="first last">
-<li>函数和状态变量只能通过内部访问.如在当前的合约中调用,或继承的合约里调用.</li>
-<li>状态变量默认的可见性是internal</li>
+<li><dl class="simple">
+<dt>internal</dt><dd><ul>
+<li><p>函数和状态变量只能通过内部访问.如在当前的合约中调用,或继承的合约里调用.</p></li>
+<li><p>状态变量默认的可见性是internal</p></li>
 </ul>
 </dd>
 </dl>
@@ -413,14 +405,14 @@
 </ul>
 </div>
 <div class="section" id="id10">
-<h2>2.9. 函数<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.9. </span>函数<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li>构造函数</li>
-<li>视图函数(constant/view)</li>
-<li>纯函数(pure)</li>
-<li>回退函数</li>
-<li>函数重载</li>
+<li><p>构造函数</p></li>
+<li><p>视图函数(constant/view)</p></li>
+<li><p>纯函数(pure)</p></li>
+<li><p>回退函数</p></li>
+<li><p>函数重载</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -431,29 +423,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="03_numpy.html" class="btn btn-neutral float-right" title="3. 去中心化应用 [Dapp开发指南]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="01_linux.html" class="btn btn-neutral float-left" title="1. 以太坊入门" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="03_numpy.html" class="btn btn-neutral float-right" title="3. 去中心化应用 [Dapp开发指南]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="01_linux.html" class="btn btn-neutral float-left" title="1. 以太坊入门" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, 艾克中国
+        &#169; Copyright 2021, 艾克中国.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -461,7 +453,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

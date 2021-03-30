@@ -1,40 +1,45 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>2. XSS跨站漏洞 加强Web安全 &mdash; 区块链研究记录 1.0 documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. 实战攻击非法网站" href="03_csrf.html" />
+    <link rel="prev" title="1. Web安全之SQL注入 [初级篇]" href="01_linux.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -71,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -78,17 +84,36 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">比特币 [Bitcoin]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ethereum/index.html">以太坊 [Ethereum]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hyperledger/index.html">联盟链 [Hyperledger Fabric]</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux内核 [Operations]</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_linux.html">1. Web安全之SQL注入 [初级篇]</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. XSS跨站漏洞 加强Web安全</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#xss">2.1. 了解XSS的定义</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.2. XSS攻击方式</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">理解XSS的攻击方式</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2.3. XSS防范措施</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2.4. XSS实战</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">2.5. 总结</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="03_csrf.html">3. 实战攻击非法网站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_ssr.html">4. ssr 一键搭建</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../opensource/index.html">开源项目 [open source project]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/index.html">分享与交流 [Interviewer]</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../elastic/index.html">比特币 [Bitcoin]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aboutme/index.html">联系我 [Call ME]</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -123,18 +148,22 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>2. XSS跨站漏洞 加强Web安全</li>
+          <li><a href="index.html">Linux内核 [Operations]</a> &raquo;</li>
+        
+      <li><span class="section-number">2. </span>XSS跨站漏洞 加强Web安全</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/operations/02_xss.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -149,39 +178,38 @@
            <div itemprop="articleBody">
             
   <div class="section" id="xss-web">
-<h1>2. XSS跨站漏洞 加强Web安全<a class="headerlink" href="#xss-web" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>XSS跨站漏洞 加强Web安全<a class="headerlink" href="#xss-web" title="Permalink to this headline">¶</a></h1>
 <p>从Web安全XSS的定义开始讲起，到深入剖析XSS攻击的原理和流程，了解常见XSS攻击的危害。同时通过项目实战针对性的分析如何应对XSS攻击做到安全的XSS防御措施。</p>
 <div class="section" id="xss">
-<h2>2.1. 了解XSS的定义<a class="headerlink" href="#xss" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>目标:</dt>
-<dd><ul class="first last simple">
-<li>了解xss攻击原理和手段</li>
-<li>掌握xss攻击的防范措施</li>
+<h2><span class="section-number">2.1. </span>了解XSS的定义<a class="headerlink" href="#xss" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>目标:</dt><dd><ul class="simple">
+<li><p>了解xss攻击原理和手段</p></li>
+<li><p>掌握xss攻击的防范措施</p></li>
 </ul>
 </dd>
 </dl>
 </div>
 <div class="section" id="id1">
-<h2>2.2. XSS攻击方式<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>XSS攻击方式<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
 <h3>理解XSS的攻击方式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>反射型</li>
-<li>存储型</li>
+<li><p>反射型</p></li>
+<li><p>存储型</p></li>
 </ul>
 </div></blockquote>
 </div>
 </div>
 <div class="section" id="id3">
-<h2>2.3. XSS防范措施<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>XSS防范措施<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id4">
-<h2>2.4. XSS实战<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4. </span>XSS实战<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id5">
-<h2>2.5. 总结<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5. </span>总结<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -190,20 +218,29 @@
            
           </div>
           <footer>
-  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="03_csrf.html" class="btn btn-neutral float-right" title="3. 实战攻击非法网站" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="01_linux.html" class="btn btn-neutral float-left" title="1. Web安全之SQL注入 [初级篇]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, 艾克中国
+        &#169; Copyright 2021, 艾克中国.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -211,7 +248,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,42 +1,45 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2. 比特币 [Bitcoin] &mdash; 区块链研究记录 1.0 documentation</title>
+  <title>1. 比特币 [Bitcoin] &mdash; 区块链研究记录 1.0 documentation</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. 以太坊 [Ethereum]" href="03_ipython.html" />
-    <link rel="prev" title="1. 区块链100问" href="01_blockchain100.html" /> 
+    <link rel="next" title="2. 以太坊 [Ethereum]" href="03_ipython.html" />
+    <link rel="prev" title="比特币 [Bitcoin]" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -73,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -82,20 +86,19 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">比特币 [Bitcoin]</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="01_blockchain100.html">1. 区块链100问</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2. 比特币 [Bitcoin]</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">2.1. 区块链历史</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">2.2. 区块链前景</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">2.3. 比特币是什么</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">2.4. 比特币原理</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">2.5. 为什么记账</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">2.6. 共识机制(工作量证明;最长链选择)</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. 比特币 [Bitcoin]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1.1. 区块链历史</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1.2. 区块链前景</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">1.3. 比特币是什么</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">1.4. 比特币原理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">1.5. 为什么记账</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">1.6. 共识机制(工作量证明;最长链选择)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id7">两个节点同时完成工作量证明,使用谁的区块?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id8">为什么要遵守协议</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id9">每个节点只认可累计工作量最大的区块链</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">2.7. 进阶</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">1.7. 进阶</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#p2p">比特币P2P网络</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#merkle-tree">区块结构Merkle Tree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#utxo">比特币UTXO及交易脚本</a></li>
@@ -104,19 +107,22 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="03_ipython.html">3. 以太坊 [Ethereum]</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_numpy.html">4. 联盟链 [Hyperledger Fabric]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_ipython.html">2. 以太坊 [Ethereum]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_numpy.html">3. 联盟链 [Hyperledger Fabric]</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ethereum/index.html">以太坊 [Ethereum]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hyperledger/index.html">联盟链 [Hyperledger Fabric]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/index.html">Linux内核 [Operations]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opensource/index.html">开源项目 [open source project]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/index.html">分享与交流 [Interviewer]</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../elastic/index.html">比特币 [Bitcoin]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aboutme/index.html">联系我 [Call ME]</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -151,20 +157,22 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">比特币 [Bitcoin]</a> &raquo;</li>
         
-      <li>2. 比特币 [Bitcoin]</li>
+      <li><span class="section-number">1. </span>比特币 [Bitcoin]</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/beginning/02_linux.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -179,15 +187,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="bitcoin">
-<h1>2. 比特币 [Bitcoin]<a class="headerlink" href="#bitcoin" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>比特币 [Bitcoin]<a class="headerlink" href="#bitcoin" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>2.1. 区块链历史<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>区块链历史<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>密码朋克(Cypherpunk)</dt>
-<dd><ul class="first last">
-<li>比特币之父:中本聪</li>
-<li>2009.1.3 成功挖出了50个比特币 (Hal-Finney)</li>
+<li><dl class="simple">
+<dt>密码朋克(Cypherpunk)</dt><dd><ul>
+<li><p>比特币之父:中本聪</p></li>
+<li><p>2009.1.3 成功挖出了50个比特币 (Hal-Finney)</p></li>
 </ul>
 </dd>
 </dl>
@@ -195,16 +202,15 @@
 </ul>
 </div>
 <div class="section" id="id2">
-<h2>2.2. 区块链前景<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span>区块链前景<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>应用场景</dt>
-<dd><ul class="first last">
-<li>资产:数字资产发行、支付(跨境支付)、交易、结算</li>
-<li>记账:股权交易、供应链金融、商业积分</li>
-<li>不可篡改:溯源、众筹、医疗证明、存在性证明</li>
-<li>点对点:共享经济、物联网</li>
-<li>隐私:匿名交易</li>
+<li><dl class="simple">
+<dt>应用场景</dt><dd><ul>
+<li><p>资产:数字资产发行、支付(跨境支付)、交易、结算</p></li>
+<li><p>记账:股权交易、供应链金融、商业积分</p></li>
+<li><p>不可篡改:溯源、众筹、医疗证明、存在性证明</p></li>
+<li><p>点对点:共享经济、物联网</p></li>
+<li><p>隐私:匿名交易</p></li>
 </ul>
 </dd>
 </dl>
@@ -212,66 +218,57 @@
 </ul>
 </div>
 <div class="section" id="id3">
-<h2>2.3. 比特币是什么<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3. </span>比特币是什么<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>比特币是数字货币</li>
-<li><dl class="first docutils">
-<dt>什么是货币</dt>
-<dd><ul class="first last">
-<li>&lt;货币论&gt;:货币是可以承载价值的一般等价物</li>
+<li><p>比特币是数字货币</p></li>
+<li><dl class="simple">
+<dt>什么是货币</dt><dd><ul>
+<li><p>&lt;货币论&gt;:货币是可以承载价值的一般等价物</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>数字货币</dt>
-<dd><ul class="first last">
-<li>一串数字</li>
+<li><dl class="simple">
+<dt>数字货币</dt><dd><ul>
+<li><p>一串数字</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>信任从何而来</dt>
-<dd><ul class="first last">
-<li>财产只受自己控制(只受自己的私钥控制)</li>
-<li>无通胀(总量2100万个)</li>
-<li>没有假钞</li>
-<li>流通性好(点对点直接到账,流通性好)</li>
+<li><dl class="simple">
+<dt>信任从何而来</dt><dd><ul>
+<li><p>财产只受自己控制(只受自己的私钥控制)</p></li>
+<li><p>无通胀(总量2100万个)</p></li>
+<li><p>没有假钞</p></li>
+<li><p>流通性好(点对点直接到账,流通性好)</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>去中心化记账系统</li>
+<li><p>去中心化记账系统</p></li>
 </ul>
 </div>
 <div class="section" id="id4">
-<h2>2.4. 比特币原理<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4. </span>比特币原理<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">账本如何验证</p>
-</li>
-<li><p class="first">所有权问题</p>
-</li>
-<li><p class="first">为什么参与记账?(挖矿)</p>
-</li>
-<li><p class="first">以谁的账本为准?(共识机制)</p>
-</li>
-<li><dl class="first docutils">
-<dt>账本如何验证?</dt>
-<dd><ul class="first last simple">
-<li>核对账本记录    少数服从多数</li>
-<li>Hash(原始信息) = 摘要信息</li>
-<li>账本记录时间:每10分钟记录一次</li>
+<li><p>账本如何验证</p></li>
+<li><p>所有权问题</p></li>
+<li><p>为什么参与记账?(挖矿)</p></li>
+<li><p>以谁的账本为准?(共识机制)</p></li>
+<li><dl class="simple">
+<dt>账本如何验证?</dt><dd><ul class="simple">
+<li><p>核对账本记录    少数服从多数</p></li>
+<li><p>Hash(原始信息) = 摘要信息</p></li>
+<li><p>账本记录时间:每10分钟记录一次</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>账户所有权问题</dt>
-<dd><ul class="first simple">
-<li>银行系统:账号    姓名    身份证</li>
-<li>比特币系统:点对点交易</li>
-<li>账号-&gt;地址</li>
+<li><dl>
+<dt>账户所有权问题</dt><dd><ul class="simple">
+<li><p>银行系统:账号    姓名    身份证</p></li>
+<li><p>比特币系统:点对点交易</p></li>
+<li><p>账号-&gt;地址</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;付款地址&quot;</span><span class="p">:</span><span class="s2">&quot;S9DF8FSS0SS34D&quot;</span>
@@ -281,9 +278,9 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li>密码-&gt;私钥</li>
+<li><p>密码-&gt;私钥</p></li>
 </ul>
-<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">地址</span><span class="p">:</span><span class="mi">23</span><span class="n">JKFADFASFS</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">地址</span><span class="p">:</span><span class="mi">23</span><span class="n">JKFADFASFS</span>
 <span class="n">私钥</span><span class="p">:</span><span class="n">iwueoijslkdjakljdfjsa9f9982423k4jkl234j23l4j2k3l</span>
 <span class="n">Hash</span><span class="p">(</span><span class="n">Hash</span><span class="p">(</span><span class="n">fun</span><span class="p">(</span><span class="n">iwueoijslkdjakljdfjsa9f9982423k4jkl234j23l4j2k3l</span><span class="p">)))</span>    <span class="o">-&gt;</span>    <span class="mi">23</span><span class="n">JKFADFASFS</span>
 </pre></div>
@@ -291,17 +288,15 @@
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>非对称加密技术(交易签名)</dt>
-<dd><ul class="first last simple">
-<li>交易进行Hash得到摘要</li>
-<li>用私钥对摘要进行签名</li>
+<li><dl class="simple">
+<dt>非对称加密技术(交易签名)</dt><dd><ul class="simple">
+<li><p>交易进行Hash得到摘要</p></li>
+<li><p>用私钥对摘要进行签名</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><p class="first">签名过程</p>
-</li>
+<li><p>签名过程</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;{&quot;付款地址&quot;:&quot;SSFJDSJFNXNDKD1&quot;</span>
            <span class="s2">&quot;收款地址&quot;</span><span class="p">:</span><span class="s2">&quot;I23EIOWIEJKLDJSLW&quot;</span>
@@ -315,15 +310,13 @@
 </pre></div>
 </div>
 <ul>
-<li><p class="first">广播交易</p>
-</li>
-<li><dl class="first docutils">
-<dt>验证</dt>
-<dd><p class="first">#参数1为签名信息
+<li><p>广播交易</p></li>
+<li><dl>
+<dt>验证</dt><dd><p>#参数1为签名信息
 #参数2为收款方地址
 #返回交易摘要
 verify(“39230kksdfkl”,”2934uiowjiwejoq”) -&gt; “9SK88SDF8S”</p>
-<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;123wasdsad123&quot;</span><span class="p">,</span><span class="s2">&quot;dqaasd12233de&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;123wasdsad123&quot;</span><span class="p">,</span><span class="s2">&quot;dqaasd12233de&quot;</span><span class="p">)</span>
     <span class="o">==</span> <span class="nb">hash</span><span class="p">(</span><span class="s1">&#39;{&quot;付款地址&quot;:&quot;SSFJDSJFNXNDKD1&quot;</span>
             <span class="s2">&quot;收款地址&quot;</span><span class="p">:</span><span class="s2">&quot;I23EIOWIEJKLDJSLW&quot;</span>
             <span class="s2">&quot;金额&quot;</span><span class="p">:</span><span class="s2">&quot;0.2btc&quot;</span>
@@ -333,24 +326,20 @@ verify(“39230kksdfkl”,”2934uiowjiwejoq”) -&gt; “9SK88SDF8S”</p>
 </dd>
 </dl>
 </li>
-<li><p class="first">写入账本</p>
-</li>
-<li><p class="first">广播</p>
-</li>
-<li><dl class="first docutils">
-<dt>签名和验证</dt>
-<dd><ul class="first last simple">
-<li>签名:加密的过程</li>
-<li>验证:解密的过程</li>
+<li><p>写入账本</p></li>
+<li><p>广播</p></li>
+<li><dl class="simple">
+<dt>签名和验证</dt><dd><ul class="simple">
+<li><p>签名:加密的过程</p></li>
+<li><p>验证:解密的过程</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>补充</dt>
-<dd><ul class="first last simple">
-<li>关于隐私(银行做的很差)</li>
-<li>安全(比特币系统中如果不泄露私钥,金额绝对安全)</li>
+<li><dl class="simple">
+<dt>补充</dt><dd><ul class="simple">
+<li><p>关于隐私(银行做的很差)</p></li>
+<li><p>安全(比特币系统中如果不泄露私钥,金额绝对安全)</p></li>
 </ul>
 </dd>
 </dl>
@@ -358,27 +347,24 @@ verify(“39230kksdfkl”,”2934uiowjiwejoq”) -&gt; “9SK88SDF8S”</p>
 </ul>
 </div>
 <div class="section" id="id5">
-<h2>2.5. 为什么记账<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.5. </span>为什么记账<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>记账:Hash打包过程</li>
-<li>消耗资源</li>
-<li><dl class="first docutils">
-<dt>奖励</dt>
-<dd><ul class="first last">
-<li>每次记账,新发行一定数量的比特币到账户    12.5个比特币</li>
+<li><p>记账:Hash打包过程</p></li>
+<li><p>消耗资源</p></li>
+<li><dl class="simple">
+<dt>奖励</dt><dd><ul>
+<li><p>每次记账,新发行一定数量的比特币到账户    12.5个比特币</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>挖矿-工作量证明</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>规则</dt>
-<dd><ul class="first last">
-<li>一段时间内(10分钟)只有一人可以记账成功</li>
-<li>通过解决密码学难题(即工作量证明)竞争获取唯一记账权</li>
-<li>其他节点复制上次记账结果</li>
+<li><dl class="simple">
+<dt>挖矿-工作量证明</dt><dd><ul>
+<li><dl class="simple">
+<dt>规则</dt><dd><ul>
+<li><p>一段时间内(10分钟)只有一人可以记账成功</p></li>
+<li><p>通过解决密码学难题(即工作量证明)竞争获取唯一记账权</p></li>
+<li><p>其他节点复制上次记账结果</p></li>
 </ul>
 </dd>
 </dl>
@@ -387,7 +373,7 @@ verify(“39230kksdfkl”,”2934uiowjiwejoq”) -&gt; “9SK88SDF8S”</p>
 </dd>
 </dl>
 </li>
-<li>工作量证明</li>
+<li><p>工作量证明</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hash</span><span class="p">(</span><span class="n">上一个Hash值</span><span class="p">,</span><span class="n">交易记录集</span><span class="p">)</span> <span class="o">=</span> <span class="mi">456635</span><span class="n">BCD</span>
 <span class="n">Hash</span><span class="p">(</span><span class="n">上一个Hash值</span><span class="p">,</span><span class="n">交易记录集</span><span class="p">,</span><span class="n">随机数</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0000</span><span class="n">aFD563BCD</span>
@@ -398,17 +384,17 @@ verify(“39230kksdfkl”,”2934uiowjiwejoq”) -&gt; “9SK88SDF8S”</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li>工作量分析</li>
+<li><p>工作量分析</p></li>
 </ul>
 </div>
 <div class="section" id="id6">
-<h2>2.6. 共识机制(工作量证明;最长链选择)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.6. </span>共识机制(工作量证明;最长链选择)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id7">
 <h3>两个节点同时完成工作量证明,使用谁的区块?<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>无仲裁机构裁决</li>
-<li>都说用我的区块</li>
+<li><p>无仲裁机构裁决</p></li>
+<li><p>都说用我的区块</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -416,7 +402,7 @@ verify(“39230kksdfkl”,”2934uiowjiwejoq”) -&gt; “9SK88SDF8S”</p>
 <h3>为什么要遵守协议<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>节点工作量只有在其他的节点认同其是有效的</li>
+<li><p>节点工作量只有在其他的节点认同其是有效的</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -424,15 +410,15 @@ verify(“39230kksdfkl”,”2934uiowjiwejoq”) -&gt; “9SK88SDF8S”</p>
 <h3>每个节点只认可累计工作量最大的区块链<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>独立</li>
-<li>延长最长链</li>
-<li>分叉解决</li>
+<li><p>独立</p></li>
+<li><p>延长最长链</p></li>
+<li><p>分叉解决</p></li>
 </ul>
 </div></blockquote>
 </div>
 </div>
 <div class="section" id="id10">
-<h2>2.7. 进阶<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.7. </span>进阶<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="p2p">
 <h3>比特币P2P网络<a class="headerlink" href="#p2p" title="Permalink to this headline">¶</a></h3>
 </div>
@@ -453,29 +439,29 @@ verify(“39230kksdfkl”,”2934uiowjiwejoq”) -&gt; “9SK88SDF8S”</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="03_ipython.html" class="btn btn-neutral float-right" title="3. 以太坊 [Ethereum]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="01_blockchain100.html" class="btn btn-neutral float-left" title="1. 区块链100问" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="03_ipython.html" class="btn btn-neutral float-right" title="2. 以太坊 [Ethereum]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="比特币 [Bitcoin]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, 艾克中国
+        &#169; Copyright 2021, 艾克中国.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -483,7 +469,6 @@ verify(“39230kksdfkl”,”2934uiowjiwejoq”) -&gt; “9SK88SDF8S”</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

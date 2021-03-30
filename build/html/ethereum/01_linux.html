@@ -1,38 +1,41 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>1. 以太坊入门 &mdash; 区块链研究记录 1.0 documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2. 智能合约 [solidity]" href="02_ipython.html" />
@@ -73,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -104,13 +108,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hyperledger/index.html">联盟链 [Hyperledger Fabric]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/index.html">Linux内核 [Operations]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opensource/index.html">开源项目 [open source project]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/index.html">分享与交流 [Interviewer]</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../elastic/index.html">比特币 [Bitcoin]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aboutme/index.html">联系我 [Call ME]</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -145,20 +152,22 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">以太坊 [Ethereum]</a> &raquo;</li>
         
-      <li>1. 以太坊入门</li>
+      <li><span class="section-number">1. </span>以太坊入门</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/ethereum/01_linux.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -173,121 +182,114 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>1. 以太坊入门<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>以太坊入门<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
-<h2>1.1. 以太坊由来<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>以太坊由来<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>vitalik buterin 2013发表以太坊白皮书</li>
+<li><p>vitalik buterin 2013发表以太坊白皮书</p></li>
 </ul>
 </div>
 <div class="section" id="id3">
-<h2>1.2. 以太坊特点<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span>以太坊特点<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>可编程的操作系统</li>
-<li>智能合约、EVM</li>
-<li>约15s出块、挖矿奖励3ETH、叔块奖励</li>
-<li>无总量限制</li>
+<li><p>可编程的操作系统</p></li>
+<li><p>智能合约、EVM</p></li>
+<li><p>约15s出块、挖矿奖励3ETH、叔块奖励</p></li>
+<li><p>无总量限制</p></li>
 </ul>
 </div>
 <div class="section" id="account">
-<h2>1.3. 以太坊核心概念-account<a class="headerlink" href="#account" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3. </span>以太坊核心概念-account<a class="headerlink" href="#account" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>账户</dt>
-<dd><ul class="first last">
-<li>地址(Address):20字节</li>
-<li>状态(state)</li>
+<li><dl class="simple">
+<dt>账户</dt><dd><ul>
+<li><p>地址(Address):20字节</p></li>
+<li><p>状态(state)</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>账户分类</dt>
-<dd><ul class="first last">
-<li>外部账户(EOA)    Externally owned account    not contacted code</li>
-<li>合约账户    contract account</li>
+<li><dl class="simple">
+<dt>账户分类</dt><dd><ul>
+<li><p>外部账户(EOA)    Externally owned account    not contacted code</p></li>
+<li><p>合约账户    contract account</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>账户关系</li>
+<li><p>账户关系</p></li>
 </ul>
 </div>
 <div class="section" id="id4">
-<h2>1.4. 预测平台<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4. </span>预测平台<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Augur</li>
+<li><p>Augur</p></li>
 </ul>
 </div>
 <div class="section" id="id5">
-<h2>1.5. 迷恋猫<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.5. </span>迷恋猫<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://www.cryptokitties.co/">https://www.cryptokitties.co/</a></li>
-<li>越接近0代的越贵</li>
-<li><dl class="first docutils">
-<dt>两个来源</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>系统生成</dt>
-<dd><ul class="first last">
-<li>第0代 每15分钟诞生一只</li>
+<li><p><a class="reference external" href="https://www.cryptokitties.co/">https://www.cryptokitties.co/</a></p></li>
+<li><p>越接近0代的越贵</p></li>
+<li><dl class="simple">
+<dt>两个来源</dt><dd><ul>
+<li><dl class="simple">
+<dt>系统生成</dt><dd><ul>
+<li><p>第0代 每15分钟诞生一只</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>人工繁殖</li>
+<li><p>人工繁殖</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>百度莱茨   网易招财猫   小米加密兔</li>
+<li><p>百度莱茨   网易招财猫   小米加密兔</p></li>
 </ul>
 </div>
 <div class="section" id="id6">
-<h2>1.6. 以太币单位<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.6. </span>以太币单位<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>最小单位:1Wei</li>
+<li><p>最小单位:1Wei</p></li>
 </ul>
 </div>
 <div class="section" id="id7">
-<h2>1.7. 以太坊网络<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.7. </span>以太坊网络<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>主网</dt>
-<dd><ul class="first last">
-<li>测试过程    会非常贵   消耗的Gas很多</li>
+<li><dl class="simple">
+<dt>主网</dt><dd><ul>
+<li><p>测试过程    会非常贵   消耗的Gas很多</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>测试网络</li>
-<li>私有链</li>
-<li>模拟环境</li>
+<li><p>测试网络</p></li>
+<li><p>私有链</p></li>
+<li><p>模拟环境</p></li>
 </ul>
 <p>## 区块链分类
 * 公有链</p>
 <blockquote>
 <div><ul class="simple">
-<li>账本完全公开,透明</li>
-<li>比特币、以太坊、</li>
+<li><p>账本完全公开,透明</p></li>
+<li><p>比特币、以太坊、</p></li>
 </ul>
 </div></blockquote>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>私有链</dt>
-<dd><ul class="first last">
-<li>个人,或者公司内部使用</li>
+<li><dl class="simple">
+<dt>私有链</dt><dd><ul>
+<li><p>个人,或者公司内部使用</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>联盟链</dt>
-<dd><ul class="first last">
-<li>有一定的准入机制</li>
-<li>IMB发起的超级账本</li>
-<li>对特定的组织开放,超级节点已经选好</li>
-<li>一般不会采用POW</li>
+<li><dl class="simple">
+<dt>联盟链</dt><dd><ul>
+<li><p>有一定的准入机制</p></li>
+<li><p>IMB发起的超级账本</p></li>
+<li><p>对特定的组织开放,超级节点已经选好</p></li>
+<li><p>一般不会采用POW</p></li>
 </ul>
 </dd>
 </dl>
@@ -295,32 +297,32 @@
 </ul>
 </div>
 <div class="section" id="id8">
-<h2>1.8. 什么是智能合约<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.8. </span>什么是智能合约<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>以太坊上的程序,是代码和数据(状态)的集合</li>
-<li>准图灵完备</li>
-<li>典型应用:代币:EOS    游戏:迷恋猫</li>
+<li><p>以太坊上的程序,是代码和数据(状态)的集合</p></li>
+<li><p>准图灵完备</p></li>
+<li><p>典型应用:代币:EOS    游戏:迷恋猫</p></li>
 </ul>
 </div>
 <div class="section" id="evm">
-<h2>1.9. 运行环境–&gt;EVM<a class="headerlink" href="#evm" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.9. </span>运行环境–&gt;EVM<a class="headerlink" href="#evm" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>solidity—&gt;EVM(提供了一个沙盒的环境)</li>
-<li>java——-&gt;JVM</li>
+<li><p>solidity—&gt;EVM(提供了一个沙盒的环境)</p></li>
+<li><p>java——-&gt;JVM</p></li>
 </ul>
 </div>
 <div class="section" id="id9">
-<h2>1.10. 钱包   (开发者工具,部署合约,管理账号等)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.10. </span>钱包   (开发者工具,部署合约,管理账号等)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Geth Mist MetaMask</li>
+<li><p>Geth Mist MetaMask</p></li>
 </ul>
 </div>
 <div class="section" id="gas">
-<h2>1.11. 交易手续费 Gas  (限制交易所需的工作量)<a class="headerlink" href="#gas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.11. </span>交易手续费 Gas  (限制交易所需的工作量)<a class="headerlink" href="#gas" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>费用:Gas价格(用以太币计价) * Gas数量</li>
-<li>EVM执行交易   Gas按照特定的规则执行消耗   Gas被消耗光  会触发异常   Gas返回合约的发起人</li>
-<li>普通的转账消耗Gas 21000</li>
+<li><p>费用:Gas价格(用以太币计价) * Gas数量</p></li>
+<li><p>EVM执行交易   Gas按照特定的规则执行消耗   Gas被消耗光  会触发异常   Gas返回合约的发起人</p></li>
+<li><p>普通的转账消耗Gas 21000</p></li>
 </ul>
 </div>
 </div>
@@ -330,29 +332,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="02_ipython.html" class="btn btn-neutral float-right" title="2. 智能合约 [solidity]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="以太坊 [Ethereum]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="02_ipython.html" class="btn btn-neutral float-right" title="2. 智能合约 [solidity]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="以太坊 [Ethereum]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2021, 艾克中国
+        &#169; Copyright 2021, 艾克中国.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -360,7 +362,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
