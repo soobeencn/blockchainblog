@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>1. 区块链技术金融评估-技术类文档 &mdash; 区块链研究记录 1.0 documentation</title>
+  <title>1. 1.整体架构 &mdash; 区块链研究记录 1.0 documentation</title>
   
 
   
@@ -95,17 +95,103 @@
 <li class="toctree-l1"><a class="reference internal" href="../opensource/index.html">开源项目 [open source project]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/index.html">分享与交流 [Interviewer]</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">企业以太坊</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">1. 区块链技术金融评估-技术类文档</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">1.1. 技术类文档</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id3">1.整体架构</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">2.共识协议设计</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id38">3.密码算法设计</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id53">4.账本数据设计</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#faq">5.FAQ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. 1.整体架构</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1.1. 基础架构介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">1.2. 平台的特点:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">1.3. 平台的功能包括：</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">2. 2.共识协议设计</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">2.1. 基本原理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">拜占庭容错</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">工作量证明和权益证明</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#clique">Clique共识算法</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">2.2. 可插拔共识机制</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id17">比较共识协议</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#properties">Properties(属性)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">2.3. 自定义配置(详解)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id19">Clique</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ibft2-0">IBFT2.0</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#id36">3. 3.密码算法设计</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id37">3.1. 哈希算法</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id38">什么是哈希计算</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id39">哈希算法的种类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id40">区块链中的哈希算法</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id42">3.2. 公开密钥算法</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id43">两把钥匙:公钥和私钥</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rsa">RSA算法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id44">椭圆曲线密码算法</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id45">3.3. 编码/解码算法</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#base64">Base64</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#base58">Base58</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#base58check">Base58Check</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id46">3.4. 应用场景</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id47">1.账户地址生成</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id48">2.价值转移保卫</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id49">3.完整性证明</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id50">4.零知识证明</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id51">4. 4.账本数据设计</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id52">4.1. 简述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id53">4.2. 默克尔树</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id54">4.3. 世界状态</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id55">4.4. 账户状态</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#nonce">nonce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#balance">balance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#storageroot">storageRoot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#codehash">codeHash</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id56">4.5. 交易</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id57">nonce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gasprice">gasPrice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gaslimit">gasLimit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#to">to</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#value">value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#v-r-s">v, r, s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data">data（只用于价值传输以及向智能合约发送消息调用）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#init">init（只用于合约创建）</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id58">4.6. 区块</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#parenthash">parentHash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ommershash">ommersHash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#beneficiary">beneficiary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stateroot">stateRoot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transactionsroot">transactionsRoot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#receiptsroot">receiptsRoot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#logsbloom">logsBloom</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#difficulty">difficulty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#number">number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id59">gasLimit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gasused">gasUsed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#timestamp">timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extradata">extraData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mixhash">mixHash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id60">nonce</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id61">4.7. 总结</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#faq">5. 5.FAQ</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../aboutme/index.html">联系我 [Call ME]</a></li>
@@ -159,7 +245,7 @@
         
           <li><a href="index.html">企业以太坊</a> &raquo;</li>
         
-      <li><span class="section-number">1. </span>区块链技术金融评估-技术类文档</li>
+      <li><span class="section-number">1. </span>1.整体架构</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -179,24 +265,20 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1><span class="section-number">1. </span>区块链技术金融评估-技术类文档<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>1.整体架构<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
-<h2><span class="section-number">1.1. </span>技术类文档<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>1.整体架构<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id4">
-<h4>基础架构介绍<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<h2><span class="section-number">1.1. </span>基础架构介绍<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>区块链平台的基础架构图如下图所示:</p>
 <p><img alt="-w810" src="whitepaper/media/16237257866417.jpg" /></p>
 <p>平台的核心能力集中在 <strong>P2P网络</strong>, <strong>共识模块</strong>, <strong>账本存储</strong>. 平台提供了一系列技术特性, 包括加密机制、共识机制和区块链治理机制等保证了数据的安全性.</p>
 <p>而交互层提供了多种SDK及Restful API对接, 保证了平台的易用性,另外平台提供监控、区块浏览器等实时查看底层链平台的运行情况、为用户创建了完备可定制的区块链生态系统.</p>
 </div>
-<div class="section" id="id5">
-<h4>平台的特点:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h2><span class="section-number">1.2. </span>平台的特点:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>平台实现了 企业以太坊联盟(EEA) 规范。EEA 规范的建立是为了在以太坊内的各种开源和闭源项目之间创建通用接口，以确保用户不会被供应商锁定，并为构建应用程序的团队创建标准接口。Besu 实施符合 EEA 客户端规范的企业功能。</p>
 </div>
-<div class="section" id="id6">
-<h4>平台的功能包括：<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id4">
+<h2><span class="section-number">1.3. </span>平台的功能包括：<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>共识算法：
 Hyperledger Besu 实现了各种共识算法，这些算法涉及交易验证、区块验证和区块生产（即工作量证明中的挖掘）。他们包括：</p>
 <ul class="simple">
@@ -239,12 +321,12 @@ Hyperledger Besu 中的隐私是指在相关方之间保持交易私密的能力
 </ul>
 </div>
 </div>
+<div class="section" id="id5">
+<h1><span class="section-number">2. </span>2.共识协议设计<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id6">
+<h2><span class="section-number">2.1. </span>基本原理<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id7">
-<h3>2.共识协议设计<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id8">
-<h4>基本原理<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id9">
-<h5>拜占庭容错<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
+<h3>拜占庭容错<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>区块链本质上是分布式系统, 其中包含不同的参与者,基于各自动机和可用信息行动.</p>
 <p>每当一笔新交易在网络中广播出来, 节点有权选择将该交易纳入其持有的账本副本中, 或者将其忽略. 当网络中的大部分参与者选定某一状态时, 就能达成<strong>共识</strong>.</p>
 <blockquote>
@@ -258,8 +340,8 @@ Hyperledger Besu 中的隐私是指在相关方之间保持交易私密的能力
 <p>要创建一种安全的共识协议, 必须实现<strong>容错性</strong>.</p>
 <p>首先我们将简要谈谈无法解决的“两军问题(Two Generals‘ Problem)”. 之后我们会延伸到拜占庭将军问题并讨论在<strong>分布式</strong> 和去中心化系统中的拜占庭容错. 最后我们会探讨上述内容与区块链领域有何关联.</p>
 <hr class="docutils" />
-<div class="section" id="id10">
-<h6>两军问题<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id8">
+<h4>两军问题<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <p>这一问题（最早于1975年提出，并于1978年得名）描述了一个两军共同抗敌的场景。将军1是领导者，而将军2是跟随者。两位将军各自的军队不足以击败敌军，因此他们需要联手同时进攻。虽然这看似是一个简单的场景，却内含警示之意：</p>
 <p>为了双方能够交流并选定时间，将军1需要派遣一名通信兵穿越敌军阵营通知将军2进攻时间。然而，通信兵有可能被敌方捕获，致使消息传递失败。结果导致将军1在发动进攻之时将军2仍驻守原地。</p>
 <p>即便第一次传信成功了，将军2必须承认（即ACK（acknowledge），注意这与TCP协议的“三次握手”相似）已收到消息，于是他派遣了一名通信兵回信，因此又会出现之前通信兵被捕获的情况。这就会引起无数次地重传 ACK 确认符，导致两位将军无法达成共识。</p>
@@ -272,8 +354,8 @@ Hyperledger Besu 中的隐私是指在相关方之间保持交易私密的能力
 <p>两军问题被证明是<strong>无解的</strong>.</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="id11">
-<h6>拜占庭将军问题<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id9">
+<h4>拜占庭将军问题<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <p>Lamport、Shostak和Pease在1982年发表的一篇著名文章中描述了拜占庭将军问题，它是改编后的两军问题的广义版本。该问题描述了一个相同的场景，只不过需要由两位以上共同抗敌的将军就进攻时间达成一致。其复杂性更强，因为一位或多位将军可能叛变，此即表明他（们）可能会在做出选择时撒谎（例如，他们会假意同意在9点发起攻击但并不行动）。</p>
 <p>两军问题中描述的领导者-跟随者模式转变成了指挥官-副官模式。在拜占庭将军问题中，为了达成共识，指挥官和每位副官必须就同一决定达成一致意见（简单来说就是攻击或撤退）。</p>
 <blockquote>
@@ -334,23 +416,23 @@ value. Lieutenant i uses the value majority (vl ….. v,-1 ).</p>
 <p>因为三位副官得到的值相同，因此达成了共识。此处请略微思考一下，即使x, y, z均不相同，对于三位副官来说majority(x, y, z)得出的值也是一样的。在这种情况下，x,y,z是完全不同的指令，我们可以假定他们采取了默认选项撤退。</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="id12">
-<h6>拜占庭容错<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id10">
+<h4>拜占庭容错<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <p>拜占庭容错定义了一类系统的特征，即允许出现属于拜占庭将军问题的错误。拜占庭容错是最难的一类<strong>容错模式</strong>。它没有限制条件，也没有对节点可能做出的行为进行假设（例如，一个节点在充当一个诚实的参与者之时可以生成任意数据）。</p>
 <p>拜占庭容错是最难解决的。航空发动机系统、核能工厂，以及几乎所有依靠大量传感器的结果决定行动的系统都需要拜占庭容错。甚至连 SpaceX 都认为其系统对此有着潜在需求。</p>
 <p>上面提到的算法是拜占庭容错以及叛徒人数不超过将军人数的 1/3 的情况。此外还存在其它能使该问题更容易解决的方案，其中包括使用数字签名或在网络中设置节点之间的交流限制。</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="id13">
-<h6>这些都跟区块链有什么关系<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id11">
+<h4>这些都跟区块链有什么关系<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
 <p>从定义上来看，区块链是不受任一中心主体控制的分布式账本。由于这些账本内蕴藏的价值，不良参与者有着极大的经济激励来试图引发错误。此即表明，区块链很需要拜占庭容错，即解决拜占庭将军问题的方案。</p>
 <p>在没有拜占庭容错的情况下，一个节点能够发送并发布错误交易，极大地破坏区块链可靠性。更糟糕的是，没有中心主体能够掌握控制权并且修复损伤。</p>
 <p>正如中本聪在这封邮件中深入描述的那样，比特币的问世带来了一项重大突破，即使用工作量证明作为拜占庭将军问题的概率解决方案。</p>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id14">
-<h5>工作量证明和权益证明<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id12">
+<h3>工作量证明和权益证明<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>上面模块已经解释了拜占庭将军的概念、如何实现拜占庭容错, 提到的算法实际上是解决拜占庭容错的一种解决方案. 然而该方案还不够有效, 其变化方案 PBFT、IBFT等存在局限性, 网络中的叛徒人数不能超过将军人数的 1/3.</p>
 <p>这将我们引向了计算机科学的一个经典问题:</p>
 <blockquote>
@@ -361,7 +443,7 @@ value. Lieutenant i uses the value majority (vl ….. v,-1 ).</p>
 该领导者还负责将该区块在网络中广播出来, 以便其他节点能够核实其内容的有效性.</p>
 <hr class="docutils" />
 <div class="section" id="pow">
-<h6>工作量证明(PoW)<a class="headerlink" href="#pow" title="Permalink to this headline">¶</a></h6>
+<h4>工作量证明(PoW)<a class="headerlink" href="#pow" title="Permalink to this headline">¶</a></h4>
 <p>对于比特币和以太坊等各有特点的虚拟货币来说，工作量证明是目前最流行的算法，应用于各种加密货币如比特币和以太坊，每个版本有各自的区别。</p>
 <p>先介绍一个基本概念:</p>
 <blockquote>
@@ -396,7 +478,7 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 </div>
 <hr class="docutils" />
 <div class="section" id="pos">
-<h6>权益证明(PoS)<a class="headerlink" href="#pos" title="Permalink to this headline">¶</a></h6>
+<h4>权益证明(PoS)<a class="headerlink" href="#pos" title="Permalink to this headline">¶</a></h4>
 <p>将领导者选举（即选择下一个区块的参与者）类比成彩票:</p>
 <blockquote>
 <div><p>就彩票而言，从概率上来说，如果Bob买的彩票比Alice多，他赢的可能性就会更高。</p>
@@ -419,9 +501,9 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 </div>
 <hr class="docutils" />
 <div class="section" id="clique">
-<h5>Clique共识算法<a class="headerlink" href="#clique" title="Permalink to this headline">¶</a></h5>
-<div class="section" id="id15">
-<h6>背景<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h6>
+<h3>Clique共识算法<a class="headerlink" href="#clique" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h4>背景<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
 <p>在以太坊中，默认使用ethash（pow）共识算法进行网络正确性的保障，这种共识算法采用的是工作量证明的机制，也就是我们所熟知的“挖矿”。</p>
 <p>除了主网络，以太坊社区还提供了测试网络供dapp开发者进行开发调试。由于dapp的运行需要消耗一定的gas，在测试网络中进行开发调试，可以帮助开发者节省经济成本。</p>
 <p>以太坊的第一个测试网络Morden从2015年7月开始运行，直至2016年的11月，由于不同客户端之间不共识的问题，导致区块链分叉而被弃用。</p>
@@ -430,8 +512,8 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 <p>自然而然，大家把目光转向了casper（pos）共识算法，但是casper算法距离真正使用仍有一段距离，为了弥补这段时间内的空缺，以太坊go team的leader Péter Szilágyi提出了一种基于认证的共识算法Clique。这种算法的原理十分简单，即网络中的每一个区块是由某一个认证节点进行认证的，其他节点仅需要验证认证信息来判断该区块是否合法。</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="id16">
-<h6>区块认证<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id14">
+<h4>区块认证<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
 <ul>
 <li><p>节点类别</p>
 <p>在介绍算法原理之前，首先介绍一下在clique算法中，节点的分类。</p>
@@ -512,8 +594,8 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 </ul>
 </div>
 <hr class="docutils" />
-<div class="section" id="id17">
-<h6>基于投票的认证节点维护<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id15">
+<h4>基于投票的认证节点维护<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
 <p>clique的区块认证机制十分简单，难点在于如何动态地维护认证节点列表信息。因此，clique中采用了一种基于投票的认证节点维护机制。</p>
 <p>首先先介绍几个基本概念：</p>
 <ul>
@@ -568,8 +650,8 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id18">
-<h4>可插拔共识机制<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id16">
+<h2><span class="section-number">2.2. </span>可插拔共识机制<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
 <p>Besu执行以下共识协议:</p>
 <ul class="simple">
 <li><p>Ethash(Proof of Work)</p></li>
@@ -634,25 +716,25 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="id19">
-<h5>比较共识协议<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id17">
+<h3>比较共识协议<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <p>Besu实施Clique和IBFT 2.0权威共识协议。当参与者相互了解且彼此之间存在一定程度的信任时，权威共识协议证明协议就会起作用。例如，在许可的财团网络中。</p>
 <p>与以太坊MainNet上使用的Ethash Work证明共识协议相比，权威证明共识协议的块时间和更大的事务吞吐量更快。</p>
 <p>在Clique和IBFT 2.0中，网络中的一组节点充当签名人（Clique）或验证人（IBFT 2.0）。签名人/验证人池中的现有节点投票向池中添加节点或从池中删除节点。</p>
 </div>
 <div class="section" id="properties">
-<h5>Properties(属性)<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h5>
+<h3>Properties(属性)<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
 <p>在比较Clique和IBFT 2.0时需要考虑的属性是:</p>
 </div>
 </div>
-<div class="section" id="id20">
-<h4>自定义配置(详解)<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id21">
-<h5>Clique<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id18">
+<h2><span class="section-number">2.3. </span>自定义配置(详解)<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id19">
+<h3>Clique<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <p>Besu实施了Clique Proof-of-Authority（PoA）共识协议。Rinkeby测试网使用Clique，专用网络也可以使用Clique。</p>
 <p>在集团网络中，被称为签名人的已批准的帐户验证交易和块。签名人轮流创建下一个区块。现有签名人提议并投票添加或删除签名人。</p>
-<div class="section" id="id22">
-<h6>创世纪文件<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id20">
+<h4>创世纪文件<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
 <p>要在专用网络中使用Clique，Besu需要一个Clique生成文件。当连接到Rinkeby时，Besu使用/besu/config/src/main/resources目录中的rinkeby.json生成文件。</p>
 <p>Clique 生成文件定义了Clique特有的属性。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -685,8 +767,8 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 <li><p>extraData- vanity data占用前32个字节，然后是初始签名人。</p></li>
 </ul>
 </div>
-<div class="section" id="id23">
-<h6>额外数据<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id21">
+<h4>额外数据<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
 <p>extraData字段包括：</p>
 <ul class="simple">
 <li><p>0x前缀。</p></li>
@@ -699,12 +781,12 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 <p>两个创始签名人:
 <img alt="-w655" src="whitepaper/media/16233808963091.jpg" /></p>
 </div>
-<div class="section" id="id24">
-<h6>连接到集团网络<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id22">
+<h4>连接到集团网络<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
 <p>要连接到Rinkeby测试网，请使用–network=rinkeby命令行选项启动Besu。要在Clique专用网络上启动节点，请使用–genesis-file选项指定自定义genesis文件。</p>
 </div>
-<div class="section" id="id25">
-<h6>添加和删除签名人<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id23">
+<h4>添加和删除签名人<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
 <p>要建议使用 JSON-RPC 方法添加或删除签名者，请使用 启用 HTTP 接口 <strong>–rpc-http-enabled</strong> 或使用 WebSockets 接口 <strong>–rpc-ws-enabled</strong>。</p>
 <p>默认情况下不启用 Clique API 方法。要启用它们，请指定 <strong>–rpc-http-api</strong> or <strong>–rpc-ws-api</strong> 选项并包含CLIQUE。</p>
 <p>添加或删除签名人的JSON-RPC方法是：</p>
@@ -720,8 +802,8 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 <div><p><em>clique_getSignerMetrics可用于识别未激活的验证器。验证器lastProposedBlockNumber将是0x0</em></p>
 </div></blockquote>
 </div>
-<div class="section" id="id26">
-<h6>添加签名人<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id24">
+<h4>添加签名人<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
 <p>要提议添加签名人，请调用clique_propose，指定提议签名人的地址和true。大多数签名人必须执行呼叫。</p>
 <ul>
 <li><p>JSON-RPC clique_propose Request 示例</p>
@@ -749,19 +831,19 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 </li>
 </ul>
 </div>
-<div class="section" id="id27">
-<h6>删除签名人<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id25">
+<h4>删除签名人<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
 <p>删除签名人的过程与添加签名人相同，除非您将 <strong>false</strong> 指定为 <strong>clique_propose</strong> 的第二个参数。</p>
 </div>
 <div class="section" id="epoch-transition">
-<h6>大纪元过渡[Epoch transition]<a class="headerlink" href="#epoch-transition" title="Permalink to this headline">¶</a></h6>
+<h4>大纪元过渡[Epoch transition]<a class="headerlink" href="#epoch-transition" title="Permalink to this headline">¶</a></h4>
 <p>在每次时代过渡中，Clique都会放弃从收到的块中收集的所有未决选票。现有提案仍然有效，签署方下次创建街区时会重新添加选票。</p>
 <p>在起源文件中定义纪元转换之间的块数。</p>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="ibft2-0">
-<h5>IBFT2.0<a class="headerlink" href="#ibft2-0" title="Permalink to this headline">¶</a></h5>
+<h3>IBFT2.0<a class="headerlink" href="#ibft2-0" title="Permalink to this headline">¶</a></h3>
 <p>Besu实现了IBFT 2.0授权证明（PoA）共识协议。专用网络可以使用IBFT 2.0。</p>
 <p><strong>注意:</strong></p>
 <blockquote>
@@ -773,12 +855,12 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 <div><p>可以使用插件通过该 –security-module 选项安全地存储验证者的密钥.</p>
 </div></blockquote>
 <p>现有验证器提议并投票添加或删除验证器。添加或删除验证器需要验证器的多数票（大于 50%）。</p>
-<div class="section" id="id28">
-<h6>最少验证器数量<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id26">
+<h4>最少验证器数量<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
 <p>IBFT 2.0 需要四个验证器来实现拜占庭容错。拜占庭容错是区块链网络在节点出现故障或向对等方传播错误信息的情况下仍能正常运行并达成共识的能力。</p>
 </div>
-<div class="section" id="id29">
-<h6>创世档案<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id27">
+<h4>创世档案<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
 <p>要使用 IBFT 2.0，Besu 需要一个 IBFT 2.0 创世文件。创世文件定义了特定于 IBFT 2.0 的属性。</p>
 <p>示例 IBFT 2.0 Genesis 文件:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 4 节点 IBFT2 网络的示例创世文件。</span>
@@ -826,8 +908,8 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 </ul>
 <p>要在 IBFT 2.0 专用网络上启动节点，请使用–genesis-file选项指定自定义创世文件。</p>
 </div>
-<div class="section" id="id30">
-<h6>额外数据<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id28">
+<h4>额外数据<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
 <p>该extraData属性是RLP编码的。RLP编码是以太坊中使用的空间高效的对象序列化方案。要生成包含在创世文件中的extraData RLP字符串，请使用rlp encodeBesu 子命令。</p>
 <p>示例:</p>
 <blockquote>
@@ -842,8 +924,8 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 </div>
 <p>将RLP编码的数据复制到extraData创世文件中的属性。</p>
 </div>
-<div class="section" id="id31">
-<h6>出块时间<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id29">
+<h4>出块时间<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
 <p>当协议接收到一个新的链头时，区块时间 ( blockperiodseconds) 和轮次超时 ( requesttimeoutseconds) 计时器启动。当blockperiodseconds到期时，协议提出一个新块。</p>
 <p>如果requesttimeoutseconds在添加提议的区块之前过期，则会发生轮次更改，并重置区块时间和超时计时器。新一轮的暂停时间为两次requesttimeoutseconds。每次一轮未能添加块时，超时时间都会继续加倍。</p>
 <p>通常，协议在到达 之前添加提议的块requesttimeoutseconds。然后新一轮开始，重置块时间和轮超时计时器。当blockperiodseconds到期时，协议提出下一个新块。</p>
@@ -871,8 +953,8 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 </li>
 </ul>
 </div>
-<div class="section" id="id32">
-<h6>可选配置选项<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id30">
+<h4>可选配置选项<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
 <p>IBFT 2.0 创世文件中的可选配置选项是：</p>
 <ul class="simple">
 <li><p>messageQueueLimit- 在资源有限的大型网络中，增加消息队列限制可能有助于消息活动激增。默认值为 1000。</p></li>
@@ -881,8 +963,8 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 <li><p>futureMessagesMaxDistance- 用于在未来消息缓冲区中缓冲消息的当前链高度的最大高度。默认值为 10。</p></li>
 </ul>
 </div>
-<div class="section" id="id33">
-<h6>添加和删除验证器<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id31">
+<h4>添加和删除验证器<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
 <p>通过投票或在网络条件需要时添加和删​​除验证器，无需投票。</p>
 <ul>
 <li><p>通过投票添加和删除验证器</p>
@@ -906,8 +988,8 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 </li>
 </ul>
 </div>
-<div class="section" id="id34">
-<h6>添加验证器<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id32">
+<h4>添加验证器<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h4>
 <p>要提议添加验证器，请调用ibft_proposeValidatorVote，指定提议的验证器的地址和true。大多数验证器必须执行调用。</p>
 <p>JSON-RPCibft_proposeValidatorVote请求示例:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;ibft_proposeValidatorVote&quot;,&quot;params&quot;:[&quot;0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73&quot;, true], &quot;id&quot;:1}&#39;</span> <span class="o">&lt;</span><span class="n">JSON</span><span class="o">-</span><span class="n">RPC</span><span class="o">-</span><span class="n">endpoint</span><span class="p">:</span><span class="n">port</span><span class="o">&gt;</span>
@@ -926,17 +1008,17 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 <div><p>curl -X POST –data ‘{“jsonrpc”:”2.0”,”method”:”ibft_discardValidatorVote”,”params”:[“0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73”], “id”:1}’ <a class="reference external" href="JSON-RPC-endpoint:port">JSON-RPC-endpoint:port</a></p>
 </div></blockquote>
 </div>
-<div class="section" id="id35">
-<h6>删除验证器<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id33">
+<h4>删除验证器<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h4>
 <p>删除验证器的过程与添加验证器的过程相同，只是您指定false为 的第二个参数ibft_proposeValidatorVote。</p>
 </div>
-<div class="section" id="id36">
-<h6>时代转变<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id34">
+<h4>时代转变<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h4>
 <p>在每个 epoch 转换中，IBFT 2.0 会丢弃从接​​收到的块中收集的所有未决投票。现有提案仍然有效，验证者在下次创建区块时重新添加他们的投票。</p>
 <p>每个epochLength块都会发生一个纪元转换。epochlength在 IBFT 2.0 创世文件中定义。</p>
 </div>
-<div class="section" id="id37">
-<h6>无需投票即可添加和删除验证器<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id35">
+<h4>无需投票即可添加和删除验证器<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h4>
 <p>网络条件可能不允许投票更改验证器。例如，如果当前大多数验证者不再参与网络，那么添加或删除验证者的投票将永远不会成功。您可以绕过投票并在 genesis 文件中指定新的验证器。</p>
 <p>要在不投票的情况下添加或删除验证器：</p>
 <ul>
@@ -1007,13 +1089,13 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id38">
-<h3>3.密码算法设计<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id39">
-<h4>哈希算法<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id36">
+<h1><span class="section-number">3. </span>3.密码算法设计<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id37">
+<h2><span class="section-number">3.1. </span>哈希算法<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h2>
 <p>哈希算法在区块链系统中的应用很广泛: 比特币使用哈希算法通过公钥计算出了<strong>钱包地址</strong>、<strong>区块头</strong>以及<strong>交易事务</strong>的哈希值，默克尔树结构本身就是一棵哈希树，就连挖矿算法都是使用的哈希值难度匹配;以太坊中的挖矿计算也使用了哈希算法，其中的默克尔–帕特里夏树同样也是一棵哈希树; 其他的区块链系统也都会多多少少使用到各种哈希算法，因此可以说哈希算法贯穿到区块链系统的方方面面。</p>
-<div class="section" id="id40">
-<h5>什么是哈希计算<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id38">
+<h3>什么是哈希计算<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
 <p>密码学上的哈希计算方法一般需要具有以下的性质:</p>
 <ul class="simple">
 <li><p>函数的输入可以是任意长的字符串;</p></li>
@@ -1037,8 +1119,8 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 <p><strong>注意:</strong></p>
 <p>由于哈希算法的输出值是固定的，而原始数据的长度却是多种多样的，这就注定了在理论上存在不同的原始数据却输出同一种哈希值的可能，这种情况在原始数据的数量极其庞大的时候就会出现。比如邮件系统的抗垃圾邮件算法，我们一般会对每一个邮件地址计算一个哈希值，存储为过滤库，可是全世界的邮件地址何其多，而且什么样格式都有，这个时候会对邮件地址进行多种哈希计算，将计算出来的多个值联合起来判断是否存在某个邮件地址，这也是<strong>布隆过滤器</strong>的基本原理，在比特币中就使用了<strong>布隆过滤器</strong>使<strong>SPV节点</strong>可以<strong>快速检索</strong>并返回相关数据。</p>
 </div>
-<div class="section" id="id41">
-<h5>哈希算法的种类<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id39">
+<h3>哈希算法的种类<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h3>
 <p>密码学中常用的哈希算法有MD5、SHA1、SHA2、SHA256、SHA512、SHA3、 RIPEMD160，下面简单介绍一下。</p>
 <ul class="simple">
 <li><p>MD5(Message Digest Algorithm5): MD5是输入不定长度信息，输出固定 长度128bits的算法。经过程序流程，生成4个32位数据，最后联合起来成为一个 128bits哈希。基本方式为求余、取余、调整长度、与链接变量进行循环运算，得 出结果。MD5算法曾被广泛使用，然而目前该算法已被证明是一种不安全的算法。王 晓云教授已经于2004年破解了MD5算法。</p></li>
@@ -1049,14 +1131,14 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 </ul>
 <p>事实上，除了以上的算法，哈希算法还有很多种，有一些是不太讲究加密特性的，比如在负载均衡领域常用的<strong>一致性哈希</strong>算法，目的只是将服务器地址快速地计算出一个摘要值，而不是加密，因此会使用一些其他的快速哈希算法。</p>
 </div>
-<div class="section" id="id42">
-<h5>区块链中的哈希算法<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h5>
-<div class="section" id="id43">
-<h6>1.区块哈希<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h6>
+<div class="section" id="id40">
+<h3>区块链中的哈希算法<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id41">
+<h4>1.区块哈希<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h4>
 <p>所谓区块哈希就是对区块头进行哈希计算，得出某个区块的哈希值，用这个哈希值可以唯一确定某一个区块，相当于给区块设定了一个身份证号，而区块与区块 之间就是通过这个身份证号进行串联，从而形成了一个区块链的结构。这样的结构 也是区块链数据难以篡改的技术基础之一。比如，一共有100个区块，如果要更改10 号区块的数据，则11号就不能与10号连接，区块链就会断开，这样等于篡改无效 了，而如果篡改了11号，就接着要篡改12号，以此类推，几乎就是牵一发动全身。 如果区块链很长，那么要想更改之前的历史数据几乎就是不可能的了。从这个角度 来看，哈希值相当于一个指针，传统的指针提供了一种获取信息的方法，而哈希指 针则提供了一种检验信息是否被改编的方法，如果信息被篡改，那么其哈希值和哈 希指针的值必定是不等的。</p>
 </div>
 <div class="section" id="merkle-tree">
-<h6>2.默克尔树 Merkle Tree<a class="headerlink" href="#merkle-tree" title="Permalink to this headline">¶</a></h6>
+<h4>2.默克尔树 Merkle Tree<a class="headerlink" href="#merkle-tree" title="Permalink to this headline">¶</a></h4>
 <p>默克尔树在不同的区块链系统中有不同的细节，但本质是一样的，我们就以比特币中的默克尔树来说明。比特币中的默克尔树称为二叉默克树，每一个区块都有自己的默克尔树，是通过将区块中的交易事务哈希值两两结对计算出新的哈希值，然后哈希值再两两结对进行哈希计算，递归循 环，直到计算出最后一个根哈希值，这样的一棵树也称为哈希树。默克尔树既能用于校验区块数据的完整性，也能对<strong>SPV钱包</strong>进行支付验证。
 举一个生活中常见的例子，当我们签订一份n页的合同时，通常都会在每页合同上盖章，只不过每一页上的章都是一样的，这就给作弊留下了空间。如果我们稍微改变一下做法，给每一页合同盖一个数字印章，并且每一页上的数字印章是前一页数字印章和本页内容一起使用哈希算法生成的哈希值。
 <strong>例如:</strong></p>
@@ -1080,17 +1162,17 @@ hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id44">
-<h4>公开密钥算法<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="id45">
-<h5>两把钥匙:公钥和私钥<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id42">
+<h2><span class="section-number">3.2. </span>公开密钥算法<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id43">
+<h3>两把钥匙:公钥和私钥<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
 <p>公钥和私钥是现代密码学分支非对称性加密里面的名词，对于一段需要保护的信息，通常使用公钥加密，用私钥解密，这种加密方法也称为公开密钥算法。</p>
 <p>在谍战剧里，发电报那种一般都是使用<strong>对称加密</strong>算法。这种加密方式缺点是显而易见的，如果被人知道了密钥和加密方法，按照加密方法反着来就能解密。一直到非对称加密算法的出现，这种情况才有所改观。公钥就是可以对全世界公开的密钥，比如你和Google通信时，你可以使用Google公开提供的1024位的公钥加密信息，加密后的密文只有使用Google私藏的私钥才可以做解密，这就保证了通信安全。</p>
 <p>一般来说，公开密钥算法对于大篇幅的原始数据加密的性能不会很高，因此如果是用于大段数据的加密与解密，通常还是会使用强度比较高的对称加密算法，而公开密钥算法会用于在网络中传输对称加密算法的密钥，两者结合使用，发挥各自的优点。(https2.0)</p>
 <p>自从非对称加密算法诞生以来，人们发现一些数学函数极其适用于这种算法，比如椭圆曲线加密算法。这些数学函数具有某种困难度:由输入算输出很容易，但是从输出计算输入则几乎不可能。比特币是使用椭圆曲线加密算法作为公共密钥编码的基础的，事实上在很多区块链系统中都是使用<strong>椭圆曲线加密算法</strong>。</p>
 </div>
 <div class="section" id="rsa">
-<h5>RSA算法<a class="headerlink" href="#rsa" title="Permalink to this headline">¶</a></h5>
+<h3>RSA算法<a class="headerlink" href="#rsa" title="Permalink to this headline">¶</a></h3>
 <p>RSA以它的三个发明者Ron Rivest、Adi Shamir和Leonard Adleman的名字首字母命名。RSA加密算法是最常见的非对称加密算法。它既能用于加密，也能用于数字签名，是目前最流行的公开密钥算法。RSA安全基于大质数分解的难度，RSA的公钥和私钥是一对<strong>大质数</strong>，从一个公钥和密文恢复明文的难度，等价于分解两个大质数之积，这是公认的数学难题。</p>
 <p>RSA的安全基于大数的因子分解，但并没有从理论上证明破译RSA的难度与大数分解难度等价，RSA的重大缺陷是无法从理论上把握它的保密性能如何。只不过RSA从提出到现在20多年，经历了各种攻击的考验，被普遍认为是目前最优秀的公钥方案之一。</p>
 <p>RSA的缺点是:</p>
@@ -1121,8 +1203,8 @@ e*x+φ(n)y=1
 <p>至此所有计算就完成了，可以看到RSA的算法过程其实还是很简单的，最关键的就是找到两个足够大的质数。</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="id46">
-<h5>椭圆曲线密码算法<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id44">
+<h3>椭圆曲线密码算法<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h3>
 <p>椭圆曲线是满足一个特殊方程的点集，注意，不要跟<strong>标准椭圆方程</strong>混淆，根本就是两回事，看一个标准的椭圆曲线方程:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y2</span><span class="o">=</span><span class="n">x3</span><span class="o">+</span><span class="n">ax</span><span class="o">+</span><span class="n">b</span> 
 </pre></div>
@@ -1134,13 +1216,13 @@ e*x+φ(n)y=1
 中，椭圆曲线加密使用得更广泛，比如比特币就是使用了椭圆曲线中的 <strong>SECP256k1</strong>，可以提供128位的安全保护。椭圆曲线具体的数学原理，其过程证明比较晦涩枯燥，这里不再赘述.</p>
 </div>
 </div>
-<div class="section" id="id47">
-<h4>编码/解码算法<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id45">
+<h2><span class="section-number">3.3. </span>编码/解码算法<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h2>
 <p>众所周知，计算机存储和处理的都是二进制数据。为了简洁，实际上使用最多 的是二进制的一个变种——十六进制。Uppercase J</p>
 <p>十六进制的07是一个Bell(响铃)，如果试着用计算机程序去打印，结果是不可见，也不可理解的，只能听到一声铃声。但是文本字符串”07”则相对容易理解和记忆。上文提到过，比特币地址都是十六进制的数，不做转换，打印的话毫无意义，人类无法直观地辨识。大家可以想象一下查询自己的银行账户余额的场景: 假如账户里只有77块钱了，查询结果打印的是大写字符M(十进制的编码是77)。我相信大部分用户都不知道那是77的意思。相对的，如果把数字77转换成文本“77”(其十六进制编码是3737)后再打印，对于显示在屏幕上的文本77，用户就会理解了。</p>
 <p>下面将讨论用文本来表示十六进制数据的几种编码方式。</p>
 <div class="section" id="base64">
-<h5>Base64<a class="headerlink" href="#base64" title="Permalink to this headline">¶</a></h5>
+<h3>Base64<a class="headerlink" href="#base64" title="Permalink to this headline">¶</a></h3>
 <p>这是一种用64个字符来表示任意二进制数据的方法，通常exe、jpg、pdf等文 件都是二进制文件，用文本编辑器打开都是乱码，那么就需要一个方法，可以将二 进制编码成字符串的格式，这样可以将二进制文件用文本打开查看。</p>
 <p>Base64编码主要用在传输、存储、表示二进制等领域，还可以用来加密。但是这种加密比较简单，只是一眼看上去不知道什么内容罢了，对应编码规则，可以很容易的解码，当然也可以对Base64的字符序列进行定制来进行加密，我们来看下Base64的编码过程。</p>
 <p>首先，既然是使用上述64个字符的范围来表示的，那么要能够表示出64个字符的各种组合，得起码用6个bit才行，根据排列组合，6个bit可以总共表示出26个组合的字符排列; 针对一份需要转化的二进制文件，可以这样来处理，每3个字节一组，这样一共是24bit，然后可以针对这个24bit再来划分，划分成每6bit一组，这样一共可以分成4组，则对照上表去查找对应的字符就可以了，这样就可以转换为Base64了.</p>
@@ -1149,7 +1231,7 @@ e*x+φ(n)y=1
 <p>根据这个原理，其实还是比较容易理解这种编码思想的，而且也可以看出，这种编码是可以逆向的，以”yes”这个字符串为例，它的Base64编码是eWVz.</p>
 </div>
 <div class="section" id="base58">
-<h5>Base58<a class="headerlink" href="#base58" title="Permalink to this headline">¶</a></h5>
+<h3>Base58<a class="headerlink" href="#base58" title="Permalink to this headline">¶</a></h3>
 <p>顾名思义，Base58是基于58个字母和数字组成的，有了Base64的基础，我们就比较容易理解Base58了，实际上就是Base64的一个子集，相对于Base64来说， Base58不包括以下Base64的字符:</p>
 <ul class="simple">
 <li><p>数字0</p></li>
@@ -1181,21 +1263,21 @@ e*x+φ(n)y=1
 </ul>
 </div>
 <div class="section" id="base58check">
-<h5>Base58Check<a class="headerlink" href="#base58check" title="Permalink to this headline">¶</a></h5>
+<h3>Base58Check<a class="headerlink" href="#base58check" title="Permalink to this headline">¶</a></h3>
 <p>在二进制数据的传输过程中，为了防止数据传输的错误，保护数据安全，通常会加一个<strong>校验码</strong>，通过校验码的配合可以发现数据是否被破坏或者是否在发送时输入错误了。<strong>Base58Check</strong>就是<strong>Base58</strong>加上<strong>校验码</strong>，或者可以说是Base58的一种编码形式，在比特币系统中生成钱包地址的时候就使用到了这种编码形式。我们知道，钱包地址是用来转账的，虽然Base58编码已经可以做到避免一些容易混淆的符，但是还不能保证用户的误输入或者地址信息在传输过程中由于某种原因被损坏，这会给用户带来潜在的损失风险。</p>
 <p>Base58Check的编码方式:进行编码前，在待编码的内容字符串中加入一个字节的版本信息，版本信息可以自行约定，比如比特币地址采用了<strong>0x00</strong>作为版本信息，然后再加入待编码内容字符串的哈希值，通常只要取得<strong>哈希值中的4个字节</strong>就可以了，加到一起后，然后再<strong>整体进行Base58编码</strong>。比特币地址的生成过程中，是将<strong>版本字节放在了头部</strong>，而将<strong>4个字节的哈希值放在了尾部</strong>，然后进行编码生成。这个原理还是很简单的，哈希算法具有先天的<strong>数据完整性</strong>检测能力，在这里我们又看到了哈希算法的又一个应用。</p>
 <p>经过整体编码后的数据在传输过程中如果有发生损坏或者篡改，接收方在得到数据后，会对原始数据进行同样的校验码计算，并且和接收到的结果中的校验码进行比较。由于哈希算法的特点，只要原始数据有任何更改，计算出的哈希值都会发生变更，因此只要校验码不一致就说明数据不是合法的。</p>
 </div>
 </div>
-<div class="section" id="id48">
-<h4>应用场景<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id46">
+<h2><span class="section-number">3.4. </span>应用场景<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h2>
 <p>密码算法在区块链系统中的重要性，相当于整个体系的骨骼，如果没有骨骼会怎样?毫无疑问，整个大厦将会坍塌，我们来举一些例子，看看都起哪些作用。</p>
-<div class="section" id="id49">
-<h5>1.账户地址生成<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id47">
+<h3>1.账户地址生成<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h3>
 <p>这个其实就是对公开密钥算法的巧妙使用，首先生成一对密钥，即私钥和公钥，由于公钥是可以公开的，因此可以作为自己对外的一个账号，而又由于公钥必须和对应的私钥匹配才能验证通过，因此这种方式生成的地址，先天就具备可验证性。</p>
 </div>
-<div class="section" id="id50">
-<h5>2.价值转移保卫<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id48">
+<h3>2.价值转移保卫<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h3>
 <p>我们不展开对价值转移本身经济意义的论述，就说实现方式，这又是公开密钥算法的一个用武之地了。无论是比特币、以太坊、超级账本Fabric还是其他区块链系统，要想在一个分布式的公网上发送一笔代表价值的数据(比如数字货币、证 券、资产所有权等)，必须解决掉两个基本的问题:</p>
 <ul class="simple">
 <li><p>证明这笔数据确实是发出者的，不是篡改或者伪装的;</p></li>
@@ -1203,20 +1285,20 @@ e*x+φ(n)y=1
 </ul>
 <p>毫无疑问，这两点要求，可以通过公开密钥算法完美地解决，发送者使用自己的私钥进行签名，相当于盖上了自己的公章，接收者可以使用发送者公开的那个公钥进行身份验证以确保无误。发送者不但使用了自己的私钥签名，还使用了接收者的公钥进行了一段关键的加密，只有接收者使用自己的私钥才能解密这个公钥，因此就能保证不被别人截获，或者说即使被截获了也没关系，因为别人没有对应的私钥来解码。</p>
 </div>
-<div class="section" id="id51">
-<h5>3.完整性证明<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id49">
+<h3>3.完整性证明<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h3>
 <p>哈希算法的典型应用, 在节点同步区块数据时，通过构建的交易哈希树来验证数据是否一致。</p>
 </div>
-<div class="section" id="id52">
-<h5>4.零知识证明<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id50">
+<h3>4.零知识证明<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h3>
 <p>要想证明自己拥有某笔资产或者拥有某个能力，或者更直接地说，要想证明自己具备对区块链上某一笔交易的所有权，应该怎么办?通常的思路自然是提交自己的密码，看能不能解锁匹配，可是这样的话，密码就泄露了，不但密码会泄露，交易内容也可能就此公开了，隐私全没了，那该怎么办?毫无疑问，在这个场合，密码算法起到了非常大的作用，只要解码一段与交易内容相关但是又不泄露真正交易内容的编码，能够解码成功就能证明所有权了。</p>
 </div>
 </div>
 </div>
-<div class="section" id="id53">
-<h3>4.账本数据设计<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id54">
-<h4>简述<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id51">
+<h1><span class="section-number">4. </span>4.账本数据设计<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id52">
+<h2><span class="section-number">4.1. </span>简述<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h2>
 <p>Hyperledger Besu 使用 RocksDB 键值数据库在本地持久化链数据。这些数据分为几个子类别：</p>
 <ul class="simple">
 <li><p>区块链： 区块链数据由<strong>区块头</strong>组成，这些区块头构成了用于加密验证区块链状态的数据“链”；包含每个块中包含的有序交易列表的块体；以及包含与交易执行相关的元数据（包括交易日志）的交易收据。</p></li>
@@ -1224,8 +1306,8 @@ e*x+φ(n)y=1
 </ul>
 <p>能理解“世界状态”和“账户状态”的概念,就能勾勒出交易以及区块的结构.</p>
 </div>
-<div class="section" id="id55">
-<h4>默克尔树<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id53">
+<h2><span class="section-number">4.2. </span>默克尔树<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h2>
 <p>要掌握区块链及世界状态的概念,以及在整个系统中的作用, 首先简要分析一下默克尔树的工作原理.</p>
 <p>默克尔-帕特里夏树维护世界状态和交易.</p>
 <p><img alt="whitepaper/media/16244148429786.jpg" src="whitepaper/media/16244148429786.jpg" /></p>
@@ -1239,31 +1321,31 @@ e*x+φ(n)y=1
 <p>第一种属性的重要之处在于, 我们能够仅利用根节点的哈希值, 就标示某一时刻整棵树所指向的数据. 这意味着仅通过保存根节点的哈希值就能标示区块 (无需储存区块链中所有的数据), 且维护数据的不可篡改.</p>
 <p>理解完默克尔树的概念后, 来看以太坊中的主要对象.</p>
 </div>
-<div class="section" id="id56">
-<h4>世界状态<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id54">
+<h2><span class="section-number">4.3. </span>世界状态<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h2>
 <p>世界状态是<strong>地址（账户）<strong>到</strong>账户状态</strong>的映射。虽然世界状态不保存在区块链上，但在黄皮书的描述中，世界状态也由树来保存数据（此树也被称为状态数据库或者状态树）。世界状态可以被视作为随着交易的执行而持续更新的全局状态。以太坊就像一个去中心化的计算机，世界状态则是这台电脑的硬盘。</p>
 <p>以太坊中所有的账户信息都体现在世界状态之中，并由世界状态树保存。如果你想知道某一账户的余额，或者某智能合约当前的状态，就需要通过查询世界状态树来获取该账户的具体状态信息。下文中我也会简要介绍这些信息是如何存储的。</p>
 <p><img alt="whitepaper/media/16244339893312.jpg" src="whitepaper/media/16244339893312.jpg" /></p>
 </div>
-<div class="section" id="id57">
-<h4>账户状态<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id55">
+<h2><span class="section-number">4.4. </span>账户状态<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h2>
 <p>以太坊中有两种账户类型：外部所有账户（Externally Owned Accounts 简称 EOA）以及合约账户。我们用来互相收发以太币、部署智能合约的账户就是 EOA 账户，而部署智能合约时自动生成的账户则是合约账户。每一个智能合约都有其独一无二的以太坊账户。</p>
 <p>账户状态反映了一个以太坊账户的各项信息。例如，它存储了当前账户以太币的余额信息、当前账户发送过的交易数量…每一个账户都有账户状态。</p>
 <p>下面就来看看账户状态中都包括什么：</p>
 <div class="section" id="nonce">
-<h5>nonce<a class="headerlink" href="#nonce" title="Permalink to this headline">¶</a></h5>
+<h3>nonce<a class="headerlink" href="#nonce" title="Permalink to this headline">¶</a></h3>
 <p>从此地址发送出去的交易数量（如果当前为 EOA 账户）或者此账号产生的合约创建操作（现在先别管合约创建操作是什么）。</p>
 </div>
 <div class="section" id="balance">
-<h5>balance<a class="headerlink" href="#balance" title="Permalink to this headline">¶</a></h5>
+<h3>balance<a class="headerlink" href="#balance" title="Permalink to this headline">¶</a></h3>
 <p>此账号所拥有的以太币数量（以 Wei 计量）。</p>
 </div>
 <div class="section" id="storageroot">
-<h5>storageRoot<a class="headerlink" href="#storageroot" title="Permalink to this headline">¶</a></h5>
+<h3>storageRoot<a class="headerlink" href="#storageroot" title="Permalink to this headline">¶</a></h3>
 <p>账户存储树的根节点哈希值（稍后介绍账户存储是什么）。</p>
 </div>
 <div class="section" id="codehash">
-<h5>codeHash<a class="headerlink" href="#codehash" title="Permalink to this headline">¶</a></h5>
+<h3>codeHash<a class="headerlink" href="#codehash" title="Permalink to this headline">¶</a></h3>
 <p>对于合约账户，就是此账户存储 EVM 代码的哈希值。对于 EOA 账户，此处留空。</p>
 <p>账户状态中不容忽视的一个细节是，上述对象在内的所有对象都可变（除了 codeHash）。举例来说，当一个账户向其他账户发送以太币时，除了 nonce 会增加，账户的余额也会相应改变。</p>
 <p>而 codeHash 的不可变性使得，如果部署了有漏洞的智能合约，也无法修复更新此合约。对应的，只能部署一个新合约（而有漏洞的版本会一直存在于区块链上）。这也是为什么使用 <a class="reference external" href="https://truffleframework.com/">Truffle</a> 进行智能合约的开发和部署十分必要，并且用 Solidity 编程时要遵循 <a class="reference external" href="https://consensys.github.io/smart-contract-best-practices/software_engineering/#upgrading-broken-contracts">最佳实践</a> 的要求。</p>
@@ -1271,8 +1353,8 @@ e*x+φ(n)y=1
 <p><img alt="whitepaper/media/16244341727178.jpg" src="whitepaper/media/16244341727178.jpg" /></p>
 </div>
 </div>
-<div class="section" id="id58">
-<h4>交易<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id56">
+<h2><span class="section-number">4.5. </span>交易<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h2>
 <p>交易推动当前状态到下一状态的转变。在以太坊中有三种交易：</p>
 <ul class="simple">
 <li><p>1.EOA 之间传输值的交易（例如，改变发送方和接收方余额大小）。</p></li>
@@ -1281,20 +1363,20 @@ e*x+φ(n)y=1
 </ul>
 <p>（从技术角度来讲，前两种交易是一样的…它们都是通过消息调用来改变账户状态的交易，只不过一个是 <strong>EOA 账户</strong>，一个是<strong>合约账户</strong>。）</p>
 <p>交易由以下部分组成：</p>
-<div class="section" id="id59">
-<h5>nonce<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id57">
+<h3>nonce<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h3>
 <p>此账户发出的交易序号数（可以粗略理解为“这是该账户的第几笔交易”）。</p>
 </div>
 <div class="section" id="gasprice">
-<h5>gasPrice<a class="headerlink" href="#gasprice" title="Permalink to this headline">¶</a></h5>
+<h3>gasPrice<a class="headerlink" href="#gasprice" title="Permalink to this headline">¶</a></h3>
 <p>执行此交易、进行计算时为每单位 <strong>gas</strong> 所支付的费用（以 Wei 计量）。</p>
 </div>
 <div class="section" id="gaslimit">
-<h5>gasLimit<a class="headerlink" href="#gaslimit" title="Permalink to this headline">¶</a></h5>
+<h3>gasLimit<a class="headerlink" href="#gaslimit" title="Permalink to this headline">¶</a></h3>
 <p>执行此交易时可以使用的最大 <strong>gas</strong> 数量。</p>
 </div>
 <div class="section" id="to">
-<h5>to<a class="headerlink" href="#to" title="Permalink to this headline">¶</a></h5>
+<h3>to<a class="headerlink" href="#to" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>如果此交易用于传送以太币，此处为接收以太币的 EOA 地址。</p></li>
 <li><p>如果此交易用于向合约发送消息（例如，调用智能合约中的方法），此处为合约的地址。</p></li>
@@ -1302,7 +1384,7 @@ e*x+φ(n)y=1
 </ul>
 </div>
 <div class="section" id="value">
-<h5>value<a class="headerlink" href="#value" title="Permalink to this headline">¶</a></h5>
+<h3>value<a class="headerlink" href="#value" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>如果此交易用于收发以太币，此处为发往接收账户以 Wei 计量的代币数量。</p></li>
 <li><p>如果此交易用于发送对合约的消息调用，此处为向接收此消息智能合约所给付的 Wei 数量。</p></li>
@@ -1310,21 +1392,21 @@ e*x+φ(n)y=1
 </ul>
 </div>
 <div class="section" id="v-r-s">
-<h5>v, r, s<a class="headerlink" href="#v-r-s" title="Permalink to this headline">¶</a></h5>
+<h3>v, r, s<a class="headerlink" href="#v-r-s" title="Permalink to this headline">¶</a></h3>
 <p>在交易的密码学签名中用到的值，可以用于确定交易的发送方。</p>
 </div>
 <div class="section" id="data">
-<h5>data（只用于价值传输以及向智能合约发送消息调用）<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h5>
+<h3>data（只用于价值传输以及向智能合约发送消息调用）<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
 <p>发送消息调用时附带的输入数据（例如，假设你想要执行智能合约中的 setter 方法，数据区就应该包括 setter 方法的标识符，以及你想要设定的参数值）。</p>
 </div>
 <div class="section" id="init">
-<h5>init（只用于合约创建）<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h5>
+<h3>init（只用于合约创建）<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h3>
 <p>用于初始化合约的 EVM 代码。</p>
 <p>相信不出你的意料，区块中所有的交易也是存储在默克尔树中的。并且这棵树的根节点哈希值由区块头保存！下面我们就来剖析一下以太坊区块结构。</p>
 </div>
 </div>
-<div class="section" id="id60">
-<h4>区块<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id58">
+<h2><span class="section-number">4.6. </span>区块<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h2>
 <p>区块分为两部分，即 <strong>区块头</strong> 和 <strong>区块体</strong>。</p>
 <p>区块头就是以太坊中的区块链部分。它保存了前一个区块（也可称为父区块）的哈希值，通过区块头的连接形成了一条由密码学背书的链。</p>
 <p>区块体包含了此区块中记录的一系列交易，以及叔块（ommer）区块头列表。</p>
@@ -1332,68 +1414,68 @@ e*x+φ(n)y=1
 <img alt="whitepaper/media/16244351688494.jpg" src="whitepaper/media/16244351688494.jpg" /></p>
 <p>下面就来介绍区块头包括哪些部分。</p>
 <div class="section" id="parenthash">
-<h5>parentHash<a class="headerlink" href="#parenthash" title="Permalink to this headline">¶</a></h5>
+<h3>parentHash<a class="headerlink" href="#parenthash" title="Permalink to this headline">¶</a></h3>
 <p>前一个区块的区块头哈希值。每个区块都包含前序区块的哈希值，一路可回溯至链上的创世块。这也就是维护数据不会被篡改的结构设计（任何对前序区块的篡改都会影响后续所有区块的哈希值）。</p>
 </div>
 <div class="section" id="ommershash">
-<h5>ommersHash<a class="headerlink" href="#ommershash" title="Permalink to this headline">¶</a></h5>
+<h3>ommersHash<a class="headerlink" href="#ommershash" title="Permalink to this headline">¶</a></h3>
 <p>叔块头以及部分区块体的哈希值。</p>
 </div>
 <div class="section" id="beneficiary">
-<h5>beneficiary<a class="headerlink" href="#beneficiary" title="Permalink to this headline">¶</a></h5>
+<h3>beneficiary<a class="headerlink" href="#beneficiary" title="Permalink to this headline">¶</a></h3>
 <p>因为挖到此区块而获得收益的以太坊账户。</p>
 </div>
 <div class="section" id="stateroot">
-<h5>stateRoot<a class="headerlink" href="#stateroot" title="Permalink to this headline">¶</a></h5>
+<h3>stateRoot<a class="headerlink" href="#stateroot" title="Permalink to this headline">¶</a></h3>
 <p>世界状态树的根节点哈希值（在所有交易被执行后）。</p>
 </div>
 <div class="section" id="transactionsroot">
-<h5>transactionsRoot<a class="headerlink" href="#transactionsroot" title="Permalink to this headline">¶</a></h5>
+<h3>transactionsRoot<a class="headerlink" href="#transactionsroot" title="Permalink to this headline">¶</a></h3>
 <p>交易树根节点的哈希值。这棵树包含了区块体的所有交易。</p>
 </div>
 <div class="section" id="receiptsroot">
-<h5>receiptsRoot<a class="headerlink" href="#receiptsroot" title="Permalink to this headline">¶</a></h5>
+<h3>receiptsRoot<a class="headerlink" href="#receiptsroot" title="Permalink to this headline">¶</a></h3>
 <p>每当交易执行时，以太坊都会生成对应结果的交易收据。此处就是这个交易收据树的根节点哈希。</p>
 </div>
 <div class="section" id="logsbloom">
-<h5>logsBloom<a class="headerlink" href="#logsbloom" title="Permalink to this headline">¶</a></h5>
+<h3>logsBloom<a class="headerlink" href="#logsbloom" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://hackernoon.com/probabilistic-data-structures-bloom-filter-5374112a7832">布隆过滤器</a>，用于判断某区块的交易是否产生了某日志（如果对这方面感兴趣，可以查阅 <a class="reference external" href="https://ethereum.stackexchange.com/questions/3418/how-does-ethereum-make-use-of-bloom-filters/3426#3426">Stack Overflow 的这个答案</a>）。这避免了在区块中存储日志信息（节省了大量空间）。</p>
 </div>
 <div class="section" id="difficulty">
-<h5>difficulty<a class="headerlink" href="#difficulty" title="Permalink to this headline">¶</a></h5>
+<h3>difficulty<a class="headerlink" href="#difficulty" title="Permalink to this headline">¶</a></h3>
 <p>此区块的难度值。这是当前区块挖矿难度的度量值（此处不对此概念的细节和计算作介绍）。</p>
 </div>
 <div class="section" id="number">
-<h5>number<a class="headerlink" href="#number" title="Permalink to this headline">¶</a></h5>
+<h3>number<a class="headerlink" href="#number" title="Permalink to this headline">¶</a></h3>
 <p>前序区块的总数。这标示了区块链的高度（即区块链上有多少区块）。创世区块的 number 为 0 。</p>
 </div>
-<div class="section" id="id61">
-<h5>gasLimit<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id59">
+<h3>gasLimit<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h3>
 <p>每一个交易都需要消耗 gas 。gas limit 标示了该区块所记录的所有交易可以使用的 gas 总量。这是限制区块内交易数量的一种手段。</p>
 </div>
 <div class="section" id="gasused">
-<h5>gasUsed<a class="headerlink" href="#gasused" title="Permalink to this headline">¶</a></h5>
+<h3>gasUsed<a class="headerlink" href="#gasused" title="Permalink to this headline">¶</a></h3>
 <p>区块中各条交易所实际消耗的 gas 总量。</p>
 </div>
 <div class="section" id="timestamp">
-<h5>timestamp<a class="headerlink" href="#timestamp" title="Permalink to this headline">¶</a></h5>
+<h3>timestamp<a class="headerlink" href="#timestamp" title="Permalink to this headline">¶</a></h3>
 <p>区块创建时的 Unix 时间戳。谨记由于以太坊网络去中心化的特性，我们不能信任这个值，特别是撰写智能合约、涉及到时间相关的商业逻辑时不能依靠这个值。</p>
 </div>
 <div class="section" id="extradata">
-<h5>extraData<a class="headerlink" href="#extradata" title="Permalink to this headline">¶</a></h5>
+<h3>extraData<a class="headerlink" href="#extradata" title="Permalink to this headline">¶</a></h3>
 <p>能输入任何东西的不定长字节数组。当矿工创建区块时，可以在这个区域添加任何东西。</p>
 </div>
 <div class="section" id="mixhash">
-<h5>mixHash<a class="headerlink" href="#mixhash" title="Permalink to this headline">¶</a></h5>
+<h3>mixHash<a class="headerlink" href="#mixhash" title="Permalink to this headline">¶</a></h3>
 <p>用于验证一个区块是否被真正记录到链上的哈希值（如果想要真正理解这个概念，建议阅读这篇文章 <a class="reference external" href="https://github.com/ethereum/wiki/wiki/Ethash">Ethash proof-of-work function</a> ）。</p>
 </div>
-<div class="section" id="id62">
-<h5>nonce<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id60">
+<h3>nonce<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h3>
 <p>和 mixHash 一样，用于验证区块是否被真正记录到链上的值。</p>
 </div>
 </div>
-<div class="section" id="id63">
-<h4>总结<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id61">
+<h2><span class="section-number">4.7. </span>总结<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h2>
 <p>总体来看,以太坊有四种前缀树:</p>
 <ul class="simple">
 <li><p>1.<strong>世界状态树包括了从地址到账户状态之间的映射</strong>。 世界状态树的根节点哈希值由区块保存（在 stateRoot 字段），它标示了区块创建时的当前状态。整个网络中只有一个世界状态树。</p></li>
@@ -1411,9 +1493,7 @@ e*x+φ(n)y=1
 </div>
 </div>
 <div class="section" id="faq">
-<h3>5.FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
+<h1><span class="section-number">5. </span>5.FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
