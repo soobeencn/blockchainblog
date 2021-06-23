@@ -20,7 +20,7 @@ centos版 一键部署:
 
 5. 卸载v2ray： bash <(curl -sL https://raw.githubusercontent.com/hijkpw/scripts/master/centos_install_v2ray.sh) uninstall
 
-详情参考: https://www.kxxzz.com/xx/367.html
+详情参考: https://ssrvps.org/archives/1023
 
 
 ubuntu版 一键部署:
