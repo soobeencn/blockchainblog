@@ -1,0 +1,1467 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1. 区块链技术金融评估-技术类文档 &mdash; 区块链研究记录 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="联系我 [Call ME]" href="../aboutme/index.html" />
+    <link rel="prev" title="企业以太坊" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 区块链研究记录
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">比特币 [Bitcoin]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ethereum/index.html">以太坊 [Ethereum]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hyperledger/index.html">联盟链 [Hyperledger Fabric]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operations/index.html">Linux内核 [Operations]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opensource/index.html">开源项目 [open source project]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/index.html">分享与交流 [Interviewer]</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">企业以太坊</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. 区块链技术金融评估-技术类文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1.1. 技术类文档</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">1.整体架构</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">2.共识协议设计</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id38">3.密码算法设计</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id53">4.账本数据设计</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#faq">5.FAQ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../aboutme/index.html">联系我 [Call ME]</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">区块链研究记录</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">企业以太坊</a> &raquo;</li>
+        
+      <li><span class="section-number">1. </span>区块链技术金融评估-技术类文档</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/whitepaper/01_test.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">1. </span>区块链技术金融评估-技术类文档<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2><span class="section-number">1.1. </span>技术类文档<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>1.整体架构<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h4>基础架构介绍<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>区块链平台的基础架构图如下图所示:</p>
+<p><img alt="-w810" src="whitepaper/media/16237257866417.jpg" /></p>
+<p>平台的核心能力集中在 <strong>P2P网络</strong>, <strong>共识模块</strong>, <strong>账本存储</strong>. 平台提供了一系列技术特性, 包括加密机制、共识机制和区块链治理机制等保证了数据的安全性.</p>
+<p>而交互层提供了多种SDK及Restful API对接, 保证了平台的易用性,另外平台提供监控、区块浏览器等实时查看底层链平台的运行情况、为用户创建了完备可定制的区块链生态系统.</p>
+</div>
+<div class="section" id="id5">
+<h4>平台的特点:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>平台实现了 企业以太坊联盟(EEA) 规范。EEA 规范的建立是为了在以太坊内的各种开源和闭源项目之间创建通用接口，以确保用户不会被供应商锁定，并为构建应用程序的团队创建标准接口。Besu 实施符合 EEA 客户端规范的企业功能。</p>
+</div>
+<div class="section" id="id6">
+<h4>平台的功能包括：<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>共识算法：
+Hyperledger Besu 实现了各种共识算法，这些算法涉及交易验证、区块验证和区块生产（即工作量证明中的挖掘）。他们包括：</p>
+<ul class="simple">
+<li><p>权威证明：
+Hyperledger Besu 实现了多种权威证明协议。例如，当参与者彼此认识并且他们之间存在一定程度的信任时，就会使用权威证明共识协议——例如，在一个许可的联盟网络中。</p>
+<ul>
+<li><p>IBFT 2.0： 在 IBFT 2.0 网络中，交易和区块由经批准的账户（称为验证器）进行验证。验证者轮流创建下一个区块。现有验证器提议并投票添加或删除验证器。IBFT 2.0 具有即时终结性。使用 IBFT 2.0 时，没有分叉，所有有效块都包含在主链中。</p></li>
+<li><p>Clique： Clique 比 IBFT 2.0 更容错。Clique 最多可以容忍一半的验证器失败。IBFT 2.0 网络需要大于或等于 ⅔ 的验证器来操作以创建块。Clique 没有立即确定性。使用 Clique 的实现必须意识到分叉和链重组的发生。</p></li>
+</ul>
+</li>
+<li><p>P2P 网络：
+Hyperledger Besu 实现了以太坊的 devp2p 网络协议，用于客户端间通信和 IBFT2 的附加子协议：</p>
+<ul>
+<li><p>Discovery： 一种基于 UDP 的协议，用于在网络上查找对等点</p></li>
+<li><p>RLPx： 一种基于 TCP 的协议，用于通过各种“子协议”在对等方之间进行通信：</p></li>
+<li><p>ETH 子协议（以太坊有线协议）：用于在整个网络中同步区块链状态并传播新交易。</p></li>
+<li><p>IBF 子协议：由 IBFT2 共识协议使用，以促进共识决策。</p></li>
+</ul>
+</li>
+<li><p>面向用户的 API：
+Hyperledger Besu 通过 HTTP 和 WebSocket 协议以及 GraphQL API 提供主网 Ethereum 和 EEA JSON-RPC API。</p>
+<ul>
+<li><p>JSON-RPC</p>
+<ul>
+<li><p>HTTP JSON-RPC 服务</p></li>
+<li><p>WebSocket JSON-RPC 服务</p></li>
+</ul>
+</li>
+<li><p>GraphQL</p></li>
+</ul>
+</li>
+<li><p>监控：
+Hyperledger Besu 允许您监控节点和网络性能。
+节点性能使用 Prometheus 或 debug_metrics JSON-RPC API 方法进行监控。
+网络性能由Alethio 工具（例如 Block Explorer 和 EthStats Network Monitor）进行监控。</p></li>
+<li><p>隐私：
+Hyperledger Besu 中的隐私是指在相关方之间保持交易私密的能力。其他方无法访问交易内容、发送方或参与方列表。Besu 使用 Private Transaction Manager 来实现隐私。</p></li>
+<li><p>许可：
+许可网络通过在网络上启用节点许可和/或帐户许可，只允许指定的节点和帐户参与。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>2.共识协议设计<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h4>基本原理<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id9">
+<h5>拜占庭容错<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
+<p>区块链本质上是分布式系统, 其中包含不同的参与者,基于各自动机和可用信息行动.</p>
+<p>每当一笔新交易在网络中广播出来, 节点有权选择将该交易纳入其持有的账本副本中, 或者将其忽略. 当网络中的大部分参与者选定某一状态时, 就能达成<strong>共识</strong>.</p>
+<blockquote>
+<div><p>分布式计算 和 多智能体系统 的一个基本问题是如何在一些错误流程存在的情况下实现整体系统的可靠性.这通常需要各个流程就计算中所需的某些数据值达成一致意见.</p>
+</div></blockquote>
+<p>这些过程被称为共识:</p>
+<ul class="simple">
+<li><p>当某个参与者决定不遵守规则并篡改其账本状态之时会发生什么状况?</p></li>
+<li><p>当这些参与者构成网络中的一大部分且总数不过半之时会发生什么状况?</p></li>
+</ul>
+<p>要创建一种安全的共识协议, 必须实现<strong>容错性</strong>.</p>
+<p>首先我们将简要谈谈无法解决的“两军问题(Two Generals‘ Problem)”. 之后我们会延伸到拜占庭将军问题并讨论在<strong>分布式</strong> 和去中心化系统中的拜占庭容错. 最后我们会探讨上述内容与区块链领域有何关联.</p>
+<hr class="docutils" />
+<div class="section" id="id10">
+<h6>两军问题<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h6>
+<p>这一问题（最早于1975年提出，并于1978年得名）描述了一个两军共同抗敌的场景。将军1是领导者，而将军2是跟随者。两位将军各自的军队不足以击败敌军，因此他们需要联手同时进攻。虽然这看似是一个简单的场景，却内含警示之意：</p>
+<p>为了双方能够交流并选定时间，将军1需要派遣一名通信兵穿越敌军阵营通知将军2进攻时间。然而，通信兵有可能被敌方捕获，致使消息传递失败。结果导致将军1在发动进攻之时将军2仍驻守原地。</p>
+<p>即便第一次传信成功了，将军2必须承认（即ACK（acknowledge），注意这与TCP协议的“三次握手”相似）已收到消息，于是他派遣了一名通信兵回信，因此又会出现之前通信兵被捕获的情况。这就会引起无数次地重传 ACK 确认符，导致两位将军无法达成共识。</p>
+<blockquote>
+<div><p>要实现这两位将军都确认对方同意作战方案的第二点要求是不可能的. 两位将军总是会心存疑惑, 想知道他们的最后一名通信兵是否成功穿越了敌方阵营.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>因为消息传递失败的可能性始终大于0, 两位将军永远不可能在100%的信任下达成共识.</p></li>
+</ul>
+<p>两军问题被证明是<strong>无解的</strong>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id11">
+<h6>拜占庭将军问题<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h6>
+<p>Lamport、Shostak和Pease在1982年发表的一篇著名文章中描述了拜占庭将军问题，它是改编后的两军问题的广义版本。该问题描述了一个相同的场景，只不过需要由两位以上共同抗敌的将军就进攻时间达成一致。其复杂性更强，因为一位或多位将军可能叛变，此即表明他（们）可能会在做出选择时撒谎（例如，他们会假意同意在9点发起攻击但并不行动）。</p>
+<p>两军问题中描述的领导者-跟随者模式转变成了指挥官-副官模式。在拜占庭将军问题中，为了达成共识，指挥官和每位副官必须就同一决定达成一致意见（简单来说就是攻击或撤退）。</p>
+<blockquote>
+<div><p>Byzantine Generals Problem. A commanding general must send an order to his n - 1 lieutenant generals such that
+IC1. All loyal lieutenants obey the same order.
+IC2. If the commanding general is loyal, then every loyal lieutenant obeys the
+order he sends.</p>
+</div></blockquote>
+<p>此外, 上图中的条件 IC2 还可能出现一种有趣的情况, 如果指挥官叛变了, 依然要达成共识. 结果, 所有副官取得了多数票.</p>
+<p>在这种情况下, 达成共识的算法依旧根据的是由副官观察到的大多数成员决定的值.</p>
+<blockquote>
+<div><p>原理: 取任意值m, 如果将军人数为3m以上, 叛徒的人数不超过m, 算法OM(m)则达成共识.</p>
+</div></blockquote>
+<p>这表明只要有2/3的参与者是忠诚的, 该算法就能达成共识. 如果叛徒的人数超过1/3, 则无法达成共识, 同盟军无法协调进攻, 敌方获胜.</p>
+<blockquote>
+<div><p>Algorithm OM(0).
+(1) The commander sends his value to every lieutenant.
+(2) Each lieutenant uses the value he receives from the commander, or uses the value
+RETREAT if he receives no value.
+Algorithm OM(m), m &gt; O.
+(1) The commander sends his value to every lieutenant.
+(2) For each i, let vi be the value Lieutenant i receives from the commander, or else be
+RETREAT if he re :eives no value. Lieutenant i acts as the commander in Algorithm
+OM(m - 1) to send the value vi to each of the n - 2 other lieutenants.
+(3) For each i, and each j ~ i, let vj be the value Lieutenant i received from Lieutenant j in step (2) (using Algorithm OM(m - 1)), or else RETREAT if he received no such
+value. Lieutenant i uses the value majority (vl ….. v,-1 ).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>m = 0 -&gt; 没有叛徒, 所有副官选择一致</p></li>
+<li><p>m &gt; 0 -&gt; 每位副官的最终选择取决于绝大多数副官的选择</p></li>
+</ul>
+<p>从副官2的视角图示举例会更加直观清楚–C表示指挥官, L{i}代指副官i:
+<img alt="-w1522" src="whitepaper/media/16237401935295.jpg" /></p>
+<ul class="simple">
+<li><p>OM(1): 副官3是叛徒–副官2的视角</p></li>
+</ul>
+<p>步骤:</p>
+<ul class="simple">
+<li><p>1.指挥官将v发送给所有副官</p></li>
+<li><p>2.L1将v发送给L2|L3将x发送给L2</p></li>
+<li><p>3.L2计算收集到的消息可知: v是大多数, L2 &lt;- majority(v,v,x) == v</p></li>
+</ul>
+<p>最终决定取决于L1, L2, L3中的多数票, 因此达成了共识.</p>
+<blockquote>
+<div><p>要记住的重要一点是该算法旨在让多数副官选择 [相同] 的决定, 而非某一决定.</p>
+</div></blockquote>
+<p>让我们探究一下指挥官叛变的情况:
+<img alt="-w1514" src="whitepaper/media/16237406467646.jpg" /></p>
+<ul class="simple">
+<li><p>OM(1): 指挥官是叛徒</p></li>
+</ul>
+<p>步骤:</p>
+<ul class="simple">
+<li><p>1.指挥官分别向L1, L2, L3发送 x, y, z</p></li>
+<li><p>2.L1 向L2, L3 发送x | L2向L1, L3发送y | L3向L1, L2发送z</p></li>
+<li><p>3.L1 &lt;- majority(x,y,z) | L2 &lt;- majority(x,y,z) | L3 &lt;- majority(x,y,z)</p></li>
+</ul>
+<p>因为三位副官得到的值相同，因此达成了共识。此处请略微思考一下，即使x, y, z均不相同，对于三位副官来说majority(x, y, z)得出的值也是一样的。在这种情况下，x,y,z是完全不同的指令，我们可以假定他们采取了默认选项撤退。</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id12">
+<h6>拜占庭容错<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h6>
+<p>拜占庭容错定义了一类系统的特征，即允许出现属于拜占庭将军问题的错误。拜占庭容错是最难的一类<strong>容错模式</strong>。它没有限制条件，也没有对节点可能做出的行为进行假设（例如，一个节点在充当一个诚实的参与者之时可以生成任意数据）。</p>
+<p>拜占庭容错是最难解决的。航空发动机系统、核能工厂，以及几乎所有依靠大量传感器的结果决定行动的系统都需要拜占庭容错。甚至连 SpaceX 都认为其系统对此有着潜在需求。</p>
+<p>上面提到的算法是拜占庭容错以及叛徒人数不超过将军人数的 1/3 的情况。此外还存在其它能使该问题更容易解决的方案，其中包括使用数字签名或在网络中设置节点之间的交流限制。</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id13">
+<h6>这些都跟区块链有什么关系<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h6>
+<p>从定义上来看，区块链是不受任一中心主体控制的分布式账本。由于这些账本内蕴藏的价值，不良参与者有着极大的经济激励来试图引发错误。此即表明，区块链很需要拜占庭容错，即解决拜占庭将军问题的方案。</p>
+<p>在没有拜占庭容错的情况下，一个节点能够发送并发布错误交易，极大地破坏区块链可靠性。更糟糕的是，没有中心主体能够掌握控制权并且修复损伤。</p>
+<p>正如中本聪在这封邮件中深入描述的那样，比特币的问世带来了一项重大突破，即使用工作量证明作为拜占庭将军问题的概率解决方案。</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id14">
+<h5>工作量证明和权益证明<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h5>
+<p>上面模块已经解释了拜占庭将军的概念、如何实现拜占庭容错, 提到的算法实际上是解决拜占庭容错的一种解决方案. 然而该方案还不够有效, 其变化方案 PBFT、IBFT等存在局限性, 网络中的叛徒人数不能超过将军人数的 1/3.</p>
+<p>这将我们引向了计算机科学的一个经典问题:</p>
+<blockquote>
+<div><p>我们能做的更好吗?</p>
+</div></blockquote>
+<p>接下来讨论 实现拜占庭容错 的替代性算法.</p>
+<p>区块链使用共识算法选择一名领导者, 以决定下一区块内容
+该领导者还负责将该区块在网络中广播出来, 以便其他节点能够核实其内容的有效性.</p>
+<hr class="docutils" />
+<div class="section" id="pow">
+<h6>工作量证明(PoW)<a class="headerlink" href="#pow" title="Permalink to this headline">¶</a></h6>
+<p>对于比特币和以太坊等各有特点的虚拟货币来说，工作量证明是目前最流行的算法，应用于各种加密货币如比特币和以太坊，每个版本有各自的区别。</p>
+<p>先介绍一个基本概念:</p>
+<blockquote>
+<div><p>哈希函数是可以用来将任意长度的数据映射为固定长度的数据的函数.
+如果一个哈希函数是安全的话，其输出值与随机数无异.</p>
+</div></blockquote>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">keccak256</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span><span class="n">c8aff950685c2ed4bc3174f3472287b56d9517b9c948127319a09a7a36deac8</span>
+<span class="n">keccak256</span><span class="p">(</span><span class="s2">&quot;hello1&quot;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">57</span><span class="n">c65f1718e8297f4048beff2419e134656b7a856872b27ad77846e395f13ffe</span>
+</pre></div>
+</div>
+<p>在工作量证明中, 为了选出一位参与者成为领导者并选择下一个加入区块链的区块, 参与者必须解决一个特定的数学问题:</p>
+<blockquote>
+<div><p>已知数据X，找到一个数字 n，使得n附加到 X的结果的哈希值是一个小于 Y的数字。</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>示例——hash即一个假定的哈希函数，其输出值如下
+Y = 10, X = &#39;test&#39;
+hash(X) = hash(&#39;test&#39;) = 0x0f = 15 &gt; 10
+hash(X+1) = hash(&#39;test1&#39;) = 0xff = 255 &gt; 10
+hash(X+2) = hash(&#39;test2&#39;) = 0x09 = 9 &lt; 10  
+问题解决
+</pre></div>
+</div>
+<p>由于上述示例使用的哈希函数具备加密安全性[1,2]，要想解决该问题只能依靠蛮力（即尝试所有组合）。换言之，从概率上来说，在大多数时候第一个解决上述问题的参与者是拥有最多算力的人。这些参与者也被称为矿工。</p>
+<p>哈希函数之所以取得了广泛的成功主要是因为其具备以下特性：</p>
+<ul class="simple">
+<li><p>1.对于给定问题很难找到解决方法</p></li>
+<li><p>2.一旦找到问题的答案，很容易就能证实它是对的</p></li>
+</ul>
+<p>每挖出一个新的区块，矿工就会得到一些代币奖励（区块奖励、交易费），以此激励他们继续挖矿。在工作量证明中，其它节点通过检验该区块数据的哈希值是否小于预设值来验证该区块的有效性。</p>
+<p>由于算力的供给有限，抑制了矿工的作弊行为。攻击网络的成本很高，因为除了要投入高昂的硬件和电力成本，还会造成潜在挖矿利润的流失。</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="pos">
+<h6>权益证明(PoS)<a class="headerlink" href="#pos" title="Permalink to this headline">¶</a></h6>
+<p>将领导者选举（即选择下一个区块的参与者）类比成彩票:</p>
+<blockquote>
+<div><p>就彩票而言，从概率上来说，如果Bob买的彩票比Alice多，他赢的可能性就会更高。</p>
+</div></blockquote>
+<p>同理可得:</p>
+<blockquote>
+<div><p>就工作量证明而言，如果Bob拥有的算力和电力都比Alice多——因此能够计算出更多的输出值——他赢（挖出下一个区块）的可能性就会更高。</p>
+</div></blockquote>
+<p>同理又可得:</p>
+<blockquote>
+<div><p>就权益证明而言，如果Bob的权益比Alice多，他赢（“挖出”下一个区块）的可能性就会更高。</p>
+</div></blockquote>
+<p>权益证明用权益替代了工作量证明在电力和算力方面的要求。权益指的是参与者在一段时间内愿意锁定的代币量。作为回报，他们成为下一个领导者并选择下一个区块的可能性是与他们所下的赌注成正比的。目前有几种代币使用纯权益证明，如Nxt和Blackcoin等。</p>
+<blockquote>
+<div><p>Proof of Stake: Proof of Stake, the creator of a new block is chosen in a deterministic way, depending on its wealth, also defined as stake.</p>
+</div></blockquote>
+<p>权益证明的主要问题是所谓的“无利害关系（nothing at stake)”问题。从本质上来说，该问题主要是，在出现分叉的情况下，权益持有者有动机在由分叉形成的两条链上都下赌注，更有可能出现<strong>双重支付</strong>问题。</p>
+<p>为了避免上述问题，混合共识算法出现了，例如Decred就使用了工作量证明和权益证明的结合算法。以太坊基金会通过 Casper The Friendly Ghost 和 Casper The Friendly Finality Gadget 对安全的分布式权益证明协议进行了积极的研究。</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="clique">
+<h5>Clique共识算法<a class="headerlink" href="#clique" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id15">
+<h6>背景<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h6>
+<p>在以太坊中，默认使用ethash（pow）共识算法进行网络正确性的保障，这种共识算法采用的是工作量证明的机制，也就是我们所熟知的“挖矿”。</p>
+<p>除了主网络，以太坊社区还提供了测试网络供dapp开发者进行开发调试。由于dapp的运行需要消耗一定的gas，在测试网络中进行开发调试，可以帮助开发者节省经济成本。</p>
+<p>以太坊的第一个测试网络Morden从2015年7月开始运行，直至2016年的11月，由于不同客户端之间不共识的问题，导致区块链分叉而被弃用。</p>
+<p>以太坊的第二个测试网络Ropsten与此同时被部署，直至运行到2017年的2月，由于测试网络本身算力不足，恶意攻击者在网络中传递巨大的区块数据，导致整体网络瘫痪，造成区块链分叉，测试网络再次不可用。</p>
+<p>Ropsten网络瘫痪的根本原因是测试网络中没有足够算力来支撑ethash共识算法，导致共识算法失去作用。即便是重新部署一个测试网络，也无法解决该问题，因此，所有工作量证明类的算法都不适用于测试网络。</p>
+<p>自然而然，大家把目光转向了casper（pos）共识算法，但是casper算法距离真正使用仍有一段距离，为了弥补这段时间内的空缺，以太坊go team的leader Péter Szilágyi提出了一种基于认证的共识算法Clique。这种算法的原理十分简单，即网络中的每一个区块是由某一个认证节点进行认证的，其他节点仅需要验证认证信息来判断该区块是否合法。</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id16">
+<h6>区块认证<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h6>
+<ul>
+<li><p>节点类别</p>
+<p>在介绍算法原理之前，首先介绍一下在clique算法中，节点的分类。</p>
+<p>节点可以分为两类：</p>
+<ul class="simple">
+<li><p>认证节点</p></li>
+<li><p>非认证节点</p></li>
+</ul>
+<p>前者具有为一个区块签名的权利，可以对应pow算法中的矿工节点；</p>
+<p>后者不具备签名的权利，是区块链网络中的普通同步节点；</p>
+<p>两者可以相互转换，而这种动态管理所有认证节点的机制也是clique算法的难点与精髓之一。</p>
+</li>
+<li><p>认证原理</p>
+<p>clique中使用的认证原理非常简单，借用了椭圆曲线数字签名算法进行实现。</p>
+<p>每一个认证节点，可以利用本地节点的私钥对一个区块的数据进行签名，并将产生的数字签名放置在区块头中；</p>
+<p>其他节点在接收到该区块后，利用数字签名和区块数据反解出签名节点的公钥信息，并截取出相应的节点地址，若该节点地址在本地节点所维护的认证节点列表中，且该区块通过所有共识相关的检测，则认为该区块是合法的；否则就认为接收到了一个恶意区块。</p>
+<p>为了不破坏区块本身的数据结构，clique在实现时复用了之前定义的字段，将认证节点的签名放在区块头的extraData字段中。</p>
+</li>
+<li><p>机会均等</p>
+<p>为了使得出块的负载（或者说是机会）对于每个认证节点尽量均等，同时避免某些恶意节点持续出块，clique中规定每一个认证节点在连续的SIGNER_LIMIT个区块中，最多只能签发一个区块，也就是说，每一轮中，最多只有SIGNER_COUNT - SIGNER_LIMIT个认证节点可以参与区块签发。</p>
+<p>其中SIGNER_LIMIT = floor(SIGNER_COUNT / 2) + 1，SIGNER_COUNT表示认证节点的个数。</p>
+<p>这样设计的目的：</p>
+<blockquote>
+<div><p>在保证好节点的个数大于坏节点的前提下，好节点最少的个数为SIGNER_LIMIT（大于50%），坏节点最多的个数为SIGNER_COUNT - SIGNER_LIMIT（小于50%）。一个节点在SIGNER_LIMIT这个时间窗口内最多只能签发一个区块，这就使得恶意节点在不超过50%的情况下，从理论上无法一直掌握区块的签发权。</p>
+</div></blockquote>
+</li>
+<li><p>难度计算</p>
+<p>在以太坊中，每个节点都会维护一条难度总值最大的区块链作为主链，在其他叉链上的区块成为叔区块。因此为了兼容现有的架构，clique中同样有难度值这个概念。</p>
+<p>为了让每个认证节点都有均等的机会去签发一个区块，每个节点在签发时都会判断本节点是不是本轮的“inturn”节点，若是inturn节点，则该节点产生的区块难度为2，否则为1。每一轮仅有一个节点为inturn节点。</p>
+<p>判断是否为inturn的节点十分简单，将本地维护的认证节点按照字典序排序，若当前区块号除以认证节点个数的余数等于该节点的下标，则该节点为inturn节点。</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// inturn returns if a signer at a given block height is in-turn or not.</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">Snapshot</span><span class="p">)</span> <span class="nx">inturn</span><span class="p">(</span><span class="nx">number</span> <span class="kt">uint64</span><span class="p">,</span> <span class="nx">signer</span> <span class="nx">common</span><span class="p">.</span><span class="nx">Address</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+    <span class="nx">signers</span><span class="p">,</span> <span class="nx">offset</span> <span class="o">:=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">signers</span><span class="p">(),</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="nx">offset</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">signers</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">signers</span><span class="p">[</span><span class="nx">offset</span><span class="p">]</span> <span class="o">!=</span> <span class="nx">signer</span> <span class="p">{</span>
+        <span class="nx">offset</span><span class="o">++</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">number</span> <span class="o">%</span> <span class="nb">uint64</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">signers</span><span class="p">)))</span> <span class="o">==</span> <span class="nb">uint64</span><span class="p">(</span><span class="nx">offset</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>为inturn节点设计更高难度值的目的是：</p>
+<blockquote>
+<div><p>使得区块链能够朝着某一个方向进行收敛。倘若所有节点签发区块的难度没有区别，则会出现多条难度相同的叉链导致网络无法达成共识。</p>
+</div></blockquote>
+<p>但是即便inturn节点能够签发高难度区块，其他节点竟然会参与竞争。这是因为inturn节点可能在此期间处于离线状态，其他节点可以弥补inturn节点的空缺，继续为网络签发区块。不过这也就会导致这一轮可能会有若干条不同状态的区块链产生（因为其他节点签发的难度值相同），这种状态最终会通过下一轮或者下几轮inturn节点签发的高难度区块而达到收敛。</p>
+</li>
+</ul>
+<p><em><strong>缺陷</strong></em></p>
+<p>inturn节点拥有签发高难度区块的权利，从理论上来说，也就是“预定”了本轮区块竞赛最终的胜者会是这个inturn节点，这也是clique算法不完备的地方，恶意攻击者可以预知每一轮的出块者，并且提前向他发起攻击。</p>
+<ul>
+<li><p>区块分发</p>
+<p>clique算法每一轮出块的间隔时间是可配置的，假设每一轮出块的时间配置为10秒，那么每个认证节点在完成一个区块的签名流程后，会计算当前区块的时间戳，计算方式为父区块的时间加上10秒，并且延迟至该时间才向外广播区块。</p>
+<p>但是在一轮区块竞赛中，网络中会有SIGNER_COUNT - SIGNER_LIMIT个认证节点可以参与签发区块，为了避免网络拥堵以及不必要的区块链重组，在每个节点完成签发，分发区块之前，采用了非inturn节点延迟分发的优化。</p>
+<p>具体的策略为非inturn节点随机延迟rand(SIGNER_LIMIT)*500ms的时间，而inturn节点不增加额外的延迟时间。</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// Sweet, the protocol permits us to sign the block, wait for our time</span>
+    <span class="nx">delay</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Unix</span><span class="p">(</span><span class="nx">header</span><span class="p">.</span><span class="nx">Time</span><span class="p">.</span><span class="nx">Int64</span><span class="p">(),</span> <span class="mi">0</span><span class="p">).</span><span class="nx">Sub</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">())</span>
+    <span class="k">if</span> <span class="nx">header</span><span class="p">.</span><span class="nx">Difficulty</span><span class="p">.</span><span class="nx">Cmp</span><span class="p">(</span><span class="nx">diffNoTurn</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="c1">// It&#39;s not our turn explicitly to sign, delay it a bit</span>
+        <span class="nx">wiggle</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">snap</span><span class="p">.</span><span class="nx">Signers</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nx">wiggleTime</span>
+        <span class="nx">delay</span> <span class="o">+=</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span><span class="p">(</span><span class="nx">rand</span><span class="p">.</span><span class="nx">Int63n</span><span class="p">(</span><span class="nb">int64</span><span class="p">(</span><span class="nx">wiggle</span><span class="p">)))</span>
+    <span class="p">}</span>
+    <span class="k">select</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="o">&lt;-</span><span class="nx">stop</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="kc">nil</span>
+    <span class="k">case</span> <span class="o">&lt;-</span><span class="nx">time</span><span class="p">.</span><span class="nx">After</span><span class="p">(</span><span class="nx">delay</span><span class="p">):</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>区块链重组：</p>
+</div></blockquote>
+<blockquote>
+<div><p>由于在以太坊网络中，每个节点接收到不同”矿工“节点产生的区块时间不同，因此可能产生首先接收到了一个难度值较低的区块，随后又接收到了一个难度值更高且处于同一高度的新区块，当发生这种这种情况时，便会进行区块链头部的切换，以总难度值最大的区块链为主链。</p>
+</div></blockquote>
+</li>
+<li><p>区块验证
+普通节点在收到一个新区块时，会从区块头的extraData字段中取出认证节点的签名，利用标准的spec256k1椭圆曲线进行反解公钥信息，并且从公钥中截取出签发节点的地址，若该节点是认证节点，且该节点本轮拥有签名的权限，则认为该区块为合法区块。</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="id17">
+<h6>基于投票的认证节点维护<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h6>
+<p>clique的区块认证机制十分简单，难点在于如何动态地维护认证节点列表信息。因此，clique中采用了一种基于投票的认证节点维护机制。</p>
+<p>首先先介绍几个基本概念：</p>
+<ul>
+<li><p>signer</p>
+<p>认证节点</p>
+</li>
+<li><p>purposal</p>
+<p>用户可以利用rpc接口发起一次purposal，指定要加入或移除某一个认证节点。一个purposal的结构为:</p>
+<ul class="simple">
+<li><p>(1).需要改变状态的认证节点的地址</p></li>
+<li><p>(2).新状态；</p></li>
+</ul>
+</li>
+<li><p>vote</p>
+<p>每个认证节点在每一轮签发区块时，都会从pending的purposal池里随机挑选一个purposal，并将purposal的目标节点地址填在beneficiary字段中，将新状态填在nonce字段中，以此作为一次投票；</p>
+</li>
+<li><p>tally</p>
+<p>每个认证节点本地会维护一个投票结果计数器tally，其中记录了每一个被选举节点</p>
+<ul class="simple">
+<li><p>(1).新状态&lt;加入或移除&gt;</p></li>
+<li><p>(2).已经获取的票数。</p></li>
+</ul>
+<p>一旦获得票数超过半数，就立即更改认证节点的状态；</p>
+</li>
+</ul>
+<p>clique的一次投票流程如下图所示：</p>
+<ul class="simple">
+<li><p>1.用户通过rpc接口发起一次请求，要求对地址为a的节点进行状态变更，将其从普通节点变为认证节点或者从认证节点变为普通节点。生成的请求会缓存在本地的purposal池中，等待应用；</p></li>
+<li><p>2.<strong>本地认证节点</strong>在一次区块打包的过程中，从purposal池中随机挑选一条还未被应用的purposal，并将信息填入区块头，将区块广播给其他节点；</p></li>
+<li><p>3.其他节点在接收到区块后，取出其中的信息，封装成一个vote进行存储，并将投票结果应用到本地，若关于目标节点的状态更改获得的一致投票超过半数，则更改目标节点的状态：</p>
+<ul>
+<li><p>若为新增认证节点，将目标节点的地址添加到本地的认证节点的列表中；</p></li>
+<li><p>若为删除认证节点，将目标节点的地址从本地的认证节点列表中删除；</p></li>
+</ul>
+</li>
+</ul>
+<p>较为复杂的情况是删除一个认证节点。由于认证节点的减少，导致之前还未到达共识的purposal由于节点数的减少而达到了一致，也就是说在一次投票应用的过程中，可能会有多个purposal同时达到满足条件，针对这种情况，clique规定在一个投票应用中，只能对beneficiary字段指定的地址进行状态变更，而对于其他的purposal，需要等待到下一次beneficiary与其目标地址一致时才可以被触发。</p>
+<p><img alt="whitepaper/media/16237527590357.jpg" src="whitepaper/media/16237527590357.jpg" /></p>
+<p><strong>注意</strong>: 由于可能发生区块链重组的情况, 因此即便一个新的认证节点被加入, 或者被删除, 都有可能发生回滚.</p>
+<ul>
+<li><p>Checkpoint</p>
+<p>为了防止某些恶意节点不断地发起purposal，导致每个节点在内存中维护大量的投票统计信息，clique加入了一个checkpoint机制。每隔一个epoch，所有节点将pending状态的投票信息、统计信息都删除，并在这个区块头中填入当前所有认证节点的地址信息，供其他节点进行一次状态同步。</p>
+<p>这样做的优势是：</p>
+<ul class="simple">
+<li><p>1.避免了维护统计信息无限增大的内存开销；</p></li>
+<li><p>2.使得新加入的节点不必要从头同步区块数据，来重放投票过程生成认证节点地址列表，而直接通过checkpoint的区块获取完整的认证节点地址（例如fast sync）；</p></li>
+</ul>
+<p><strong>注意</strong>：可以看到，其实与区块数据一样，认证节点信息在各个节点的每一个阶段也都是严格的一致的！换一句话说，认证节点的信息也是“<strong>编码</strong>”在区块信息中的。例如初始的认证节点信息被编码在创世区块的区块头中。所有新加入的节点通过不断重放投票过程可以得到相同的认证节点信息。这也就能够保证新节点加入时，无论采用哪种同步方式（normal, fast, light, warp），都能够在每一个阶段得到一致的结果。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id18">
+<h4>可插拔共识机制<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<p>Besu执行以下共识协议:</p>
+<ul class="simple">
+<li><p>Ethash(Proof of Work)</p></li>
+<li><p>Clique(Proof of Authority)</p></li>
+<li><p>IBFT2.0(Proof of Authority)</p></li>
+<li><p>Quorum IBFT 1.0(Proof of Authority)[弃用]</p></li>
+</ul>
+<p>创世区块中各种协议 config 配置属性如下:</p>
+<ul class="simple">
+<li><p>Ethash</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;config&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="o">...</span>
+    <span class="s2">&quot;ethash&quot;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="o">...</span>
+   <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Clique</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;config&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="o">...</span>
+    <span class="s2">&quot;clique&quot;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="o">...</span>
+   <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>IBFT 2.0</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;config&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="o">...</span>
+    <span class="s2">&quot;ibft2&quot;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="o">...</span>
+   <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>IBFT 1.0</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;config&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="o">...</span>
+    <span class="s2">&quot;ibft&quot;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="o">...</span>
+   <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="id19">
+<h5>比较共识协议<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h5>
+<p>Besu实施Clique和IBFT 2.0权威共识协议。当参与者相互了解且彼此之间存在一定程度的信任时，权威共识协议证明协议就会起作用。例如，在许可的财团网络中。</p>
+<p>与以太坊MainNet上使用的Ethash Work证明共识协议相比，权威证明共识协议的块时间和更大的事务吞吐量更快。</p>
+<p>在Clique和IBFT 2.0中，网络中的一组节点充当签名人（Clique）或验证人（IBFT 2.0）。签名人/验证人池中的现有节点投票向池中添加节点或从池中删除节点。</p>
+</div>
+<div class="section" id="properties">
+<h5>Properties(属性)<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h5>
+<p>在比较Clique和IBFT 2.0时需要考虑的属性是:</p>
+</div>
+</div>
+<div class="section" id="id20">
+<h4>自定义配置(详解)<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id21">
+<h5>Clique<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
+<p>Besu实施了Clique Proof-of-Authority（PoA）共识协议。Rinkeby测试网使用Clique，专用网络也可以使用Clique。</p>
+<p>在集团网络中，被称为签名人的已批准的帐户验证交易和块。签名人轮流创建下一个区块。现有签名人提议并投票添加或删除签名人。</p>
+<div class="section" id="id22">
+<h6>创世纪文件<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h6>
+<p>要在专用网络中使用Clique，Besu需要一个Clique生成文件。当连接到Rinkeby时，Besu使用/besu/config/src/main/resources目录中的rinkeby.json生成文件。</p>
+<p>Clique 生成文件定义了Clique特有的属性。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;config&quot;</span><span class="p">:{</span>
+    <span class="s2">&quot;chainId&quot;</span><span class="p">:</span><span class="mi">1981</span><span class="p">,</span>
+    <span class="s2">&quot;constantinoplefixblock&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;clique&quot;</span><span class="p">:{</span>
+      <span class="s2">&quot;blockperiodseconds&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span>
+      <span class="s2">&quot;epochlength&quot;</span><span class="p">:</span><span class="mi">30000</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;coinbase&quot;</span><span class="p">:</span><span class="s2">&quot;0x0000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;difficulty&quot;</span><span class="p">:</span><span class="s2">&quot;0x1&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;extraData&quot;</span><span class="p">:</span><span class="s2">&quot;0x000000000000000000000000000000000000000000000000000000000000000001a54556254bfa3db2daa7673435ec63649925c50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;gasLimit&quot;</span><span class="p">:</span><span class="s2">&quot;0x1fffffffffffff&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;mixHash&quot;</span><span class="p">:</span><span class="s2">&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;nonce&quot;</span><span class="p">:</span><span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;0x5c51a607&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;alloc&quot;</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="s2">&quot;number&quot;</span><span class="p">:</span><span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;gasUsed&quot;</span><span class="p">:</span><span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;parentHash&quot;</span><span class="p">:</span><span class="s2">&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Clique特有的属性是:</p>
+<ul class="simple">
+<li><p>blockperiodseconds- 阻塞时间，以秒为单位。</p></li>
+<li><p>epochlength- 重置所有选票的街区数。</p></li>
+<li><p>extraData- vanity data占用前32个字节，然后是初始签名人。</p></li>
+</ul>
+</div>
+<div class="section" id="id23">
+<h6>额外数据<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h6>
+<p>extraData字段包括：</p>
+<ul class="simple">
+<li><p>0x前缀。</p></li>
+<li><p>32个字节（64个十六进制字符）的 vanity data。</p></li>
+<li><p>初始签名人地址的串联列表（至少需要一个初始签名人）。每个签名人20字节（40个十六进制字符）。</p></li>
+<li><p>65字节（130个十六进制字符）用于提案人签名。在起源块中没有初始提议者，因此提议者签名均为零。</p></li>
+</ul>
+<p>一个创始签名:
+<img alt="-w655" src="whitepaper/media/16233808554358.jpg" /></p>
+<p>两个创始签名人:
+<img alt="-w655" src="whitepaper/media/16233808963091.jpg" /></p>
+</div>
+<div class="section" id="id24">
+<h6>连接到集团网络<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h6>
+<p>要连接到Rinkeby测试网，请使用–network=rinkeby命令行选项启动Besu。要在Clique专用网络上启动节点，请使用–genesis-file选项指定自定义genesis文件。</p>
+</div>
+<div class="section" id="id25">
+<h6>添加和删除签名人<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h6>
+<p>要建议使用 JSON-RPC 方法添加或删除签名者，请使用 启用 HTTP 接口 <strong>–rpc-http-enabled</strong> 或使用 WebSockets 接口 <strong>–rpc-ws-enabled</strong>。</p>
+<p>默认情况下不启用 Clique API 方法。要启用它们，请指定 <strong>–rpc-http-api</strong> or <strong>–rpc-ws-api</strong> 选项并包含CLIQUE。</p>
+<p>添加或删除签名人的JSON-RPC方法是：</p>
+<ul class="simple">
+<li><p>clique_propose</p></li>
+<li><p>clique_getSigners</p></li>
+<li><p>clique_discard。</p></li>
+</ul>
+<p><strong>大多数现有签名人必须同意添加或删除签名人。也就是说，超过50%的签名人必须执行clique_propose才能添加或删除签名人。例如，如果您有四个签名人，则必须在三个签名人上投票。</strong></p>
+<p>要查看指定块范围的签名指标，请调用 <strong>clique_getSignerMetrics</strong>。</p>
+<p>Tips:</p>
+<blockquote>
+<div><p><em>clique_getSignerMetrics可用于识别未激活的验证器。验证器lastProposedBlockNumber将是0x0</em></p>
+</div></blockquote>
+</div>
+<div class="section" id="id26">
+<h6>添加签名人<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h6>
+<p>要提议添加签名人，请调用clique_propose，指定提议签名人的地址和true。大多数签名人必须执行呼叫。</p>
+<ul>
+<li><p>JSON-RPC clique_propose Request 示例</p>
+<blockquote>
+<div><p>curl -X POST –data ‘{“jsonrpc”:”2.0”,”method”:”clique_propose”,”params”:[“0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73”, true], “id”:1}’ <a class="reference external" href="JSON-RPC-endpoint:port">JSON-RPC-endpoint:port</a></p>
+</div></blockquote>
+</li>
+</ul>
+<p>当签名人创建下一个块时，签名人为提议的签名人向该块添加投票。</p>
+<p>当一半以上的现有签名人提议添加签名人，他们的选票以块形式分配时，签名人可以开始签名块。</p>
+<p>要返回签名人列表并确认添加拟议签名人，请调用clique_getSigners。</p>
+<ul>
+<li><p>JSON-RPC clique_getSigners 请求示例</p>
+<blockquote>
+<div><p>curl -X POST –data ‘{“jsonrpc”:”2.0”,”method”:”clique_getSigners”,”params”:[“latest”], “id”:1}’ <a class="reference external" href="JSON-RPC-endpoint:port">JSON-RPC-endpoint:port</a></p>
+</div></blockquote>
+</li>
+</ul>
+<p>要在确认添加签名人后丢弃您的提案，请调用clique_discard，指定拟议签名人的地址。</p>
+<ul>
+<li><p>JSON-RPC clique_discard 请求示例</p>
+<blockquote>
+<div><p>curl -X POST –data ‘{“jsonrpc”:”2.0”,”method”:”clique_discard”,”params”:[“0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73”], “id”:1}’ <a class="reference external" href="JSON-RPC-endpoint:port">JSON-RPC-endpoint:port</a></p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id27">
+<h6>删除签名人<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h6>
+<p>删除签名人的过程与添加签名人相同，除非您将 <strong>false</strong> 指定为 <strong>clique_propose</strong> 的第二个参数。</p>
+</div>
+<div class="section" id="epoch-transition">
+<h6>大纪元过渡[Epoch transition]<a class="headerlink" href="#epoch-transition" title="Permalink to this headline">¶</a></h6>
+<p>在每次时代过渡中，Clique都会放弃从收到的块中收集的所有未决选票。现有提案仍然有效，签署方下次创建街区时会重新添加选票。</p>
+<p>在起源文件中定义纪元转换之间的块数。</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="ibft2-0">
+<h5>IBFT2.0<a class="headerlink" href="#ibft2-0" title="Permalink to this headline">¶</a></h5>
+<p>Besu实现了IBFT 2.0授权证明（PoA）共识协议。专用网络可以使用IBFT 2.0。</p>
+<p><strong>注意:</strong></p>
+<blockquote>
+<div><p>配置您的网络以确保您永远不会丢失 ⅓ 或更多验证器。如果超过 1/3 的验证者停止参与，则不再创建新块，并且网络会停止。一旦节点重新启动，可能需要很长时间才能恢复。</p>
+</div></blockquote>
+<p>在 IBFT 2.0 网络中，经过批准的账户（称为验证器）验证交易和区块。验证者轮流创建下一个区块。在将区块插入链上之前，绝大多数（超过 66%）的验证者必须首先签署区块。</p>
+<p><strong>注意:</strong></p>
+<blockquote>
+<div><p>可以使用插件通过该 –security-module 选项安全地存储验证者的密钥.</p>
+</div></blockquote>
+<p>现有验证器提议并投票添加或删除验证器。添加或删除验证器需要验证器的多数票（大于 50%）。</p>
+<div class="section" id="id28">
+<h6>最少验证器数量<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h6>
+<p>IBFT 2.0 需要四个验证器来实现拜占庭容错。拜占庭容错是区块链网络在节点出现故障或向对等方传播错误信息的情况下仍能正常运行并达成共识的能力。</p>
+</div>
+<div class="section" id="id29">
+<h6>创世档案<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h6>
+<p>要使用 IBFT 2.0，Besu 需要一个 IBFT 2.0 创世文件。创世文件定义了特定于 IBFT 2.0 的属性。</p>
+<p>示例 IBFT 2.0 Genesis 文件:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 4 节点 IBFT2 网络的示例创世文件。</span>
+  <span class="o">{</span>
+    <span class="s2">&quot;config&quot;</span>: <span class="o">{</span>
+      <span class="s2">&quot;chainId&quot;</span>: <span class="m">1981</span>,
+      <span class="s2">&quot;muirglacierblock&quot;</span>: <span class="m">0</span>,
+      <span class="s2">&quot;ibft2&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;blockperiodseconds&quot;</span>: <span class="m">2</span>,
+        <span class="s2">&quot;epochlength&quot;</span>: <span class="m">30000</span>,
+        <span class="s2">&quot;requesttimeoutseconds&quot;</span>: <span class="m">4</span>,
+        <span class="s2">&quot;blockreward&quot;</span>: <span class="s2">&quot;5000000000000000&quot;</span>,
+        <span class="s2">&quot;miningbeneficiary&quot;</span>: <span class="s2">&quot;0xfe3b557e8fb62b89f4916b721be55ceb828dbd73&quot;</span>
+      <span class="o">}</span>
+    <span class="o">}</span>,
+    <span class="s2">&quot;nonce&quot;</span>: <span class="s2">&quot;0x0&quot;</span>,
+    <span class="s2">&quot;timestamp&quot;</span>: <span class="s2">&quot;0x58ee40ba&quot;</span>,
+    <span class="s2">&quot;extraData&quot;</span>: <span class="s2">&quot;0xf83ea00000000000000000000000000000000000000000000000000000000000000000d594c2ab482b506de561668e07f04547232a72897daf808400000000c0&quot;</span>,
+    <span class="s2">&quot;gasLimit&quot;</span>: <span class="s2">&quot;0x1fffffffffffff&quot;</span>,
+    <span class="s2">&quot;difficulty&quot;</span>: <span class="s2">&quot;0x1&quot;</span>,
+    <span class="s2">&quot;mixHash&quot;</span>: <span class="s2">&quot;0x63746963616c2062797a616e74696e65206661756c7420746f6c6572616e6365&quot;</span>,
+    <span class="s2">&quot;alloc&quot;</span>: <span class="o">{}</span>
+  <span class="o">}</span>
+</pre></div>
+</div>
+<p>IBFT 2.0 特有的属性是：</p>
+<ul class="simple">
+<li><p>blockperiodseconds - 最小区块时间，以秒为单位。</p></li>
+<li><p>epochlength - 重置所有投票后的块数。</p></li>
+<li><p>requesttimeoutseconds - 回合更改前每个共识回合的超时时间，以秒为单位。</p></li>
+<li><p>blockreward- 可选择在魏中奖励金额以奖励受益人。默认为零 (0)。可以指定为十六进制（带有 0x 前缀）或十进制字符串值。如果设置，则网络上的所有节点必须使用相同的值。</p></li>
+<li><p>miningbeneficiary- 的可选受益人blockreward。默认为提议区块的验证者。如果设置，则网络上的所有节点必须使用相同的受益人。</p></li>
+<li><p>extraData - RLP([32 bytes Vanity, List<Validators>, No Vote, Round=Int(0), 0 Seals]).</p></li>
+</ul>
+<p><strong>注意:</strong></p>
+<blockquote>
+<div><p>blockperiodseconds、blockreward、miningbeneficiary一旦你启动网络属性不能被更新。
+不建议epochlength在正在运行的网络中进行更改。更改epochlength后创世纪可能会导致非法块。</p>
+</div></blockquote>
+<p>IBFT2.0创世文件中具有特定值的属性是:</p>
+<ul class="simple">
+<li><p>nonce —— 0x0</p></li>
+<li><p>difficulty —— 0x1</p></li>
+<li><p>mixHash-0x63746963616c2062797a616e74696e65206661756c7420746f6c6572616e6365用于伊斯坦布尔区块识别。</p></li>
+</ul>
+<p>要在 IBFT 2.0 专用网络上启动节点，请使用–genesis-file选项指定自定义创世文件。</p>
+</div>
+<div class="section" id="id30">
+<h6>额外数据<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h6>
+<p>该extraData属性是RLP编码的。RLP编码是以太坊中使用的空间高效的对象序列化方案。要生成包含在创世文件中的extraData RLP字符串，请使用rlp encodeBesu 子命令。</p>
+<p>示例:</p>
+<blockquote>
+<div><p>besu rlp encode –from=toEncode.json</p>
+</div></blockquote>
+<p>其中toEncode.json文件包含按升序排列的初始验证器列表。要写入验证器地址并将其复制到toEncode.json文件，请使用public-key export-addressBesu 子命令。例如：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># toEncode.json文件中的一个初始验证器</span>
+<span class="o">[</span>
+ <span class="s2">&quot;9811ebc35d7b06b3fa8dc5809a1f9c52751e1deb&quot;</span>
+<span class="o">]</span>
+</pre></div>
+</div>
+<p>将RLP编码的数据复制到extraData创世文件中的属性。</p>
+</div>
+<div class="section" id="id31">
+<h6>出块时间<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h6>
+<p>当协议接收到一个新的链头时，区块时间 ( blockperiodseconds) 和轮次超时 ( requesttimeoutseconds) 计时器启动。当blockperiodseconds到期时，协议提出一个新块。</p>
+<p>如果requesttimeoutseconds在添加提议的区块之前过期，则会发生轮次更改，并重置区块时间和超时计时器。新一轮的暂停时间为两次requesttimeoutseconds。每次一轮未能添加块时，超时时间都会继续加倍。</p>
+<p>通常，协议在到达 之前添加提议的块requesttimeoutseconds。然后新一轮开始，重置块时间和轮超时计时器。当blockperiodseconds到期时，协议提出下一个新块。</p>
+<p>警告:</p>
+<blockquote>
+<div><p>如果超过 1/3 的验证者停止参与，则无法再创建新区块，并且requesttimeoutseconds每轮更改都会加倍。恢复块生产的最快方法是重新启动所有验证器，这将重置requesttimeoutseconds为其创世值。</p>
+</div></blockquote>
+<p>一旦blockperiodseconds结束，即使在具有地理分散验证器的网络中，从提议块到添加块的时间也很短（通常大约一秒）。</p>
+<p>示例:</p>
+<blockquote>
+<div><p>由 PegaSys 运营的内部 IBFT 2.0 网络在瑞典、悉尼和北弗吉尼亚有四个地理上分散的验证器。在 ablockperiodseconds为 5 和 arequesttimeoutseconds为 10 的情况下，测试网始终以 5 秒的块时间创建块。</p>
+</div></blockquote>
+<ul>
+<li><p>调整块超时
+要为您的网络部署调整块超时：</p>
+<ul class="simple">
+<li><p>设置blockperiodseconds为您想要的阻塞时间和requesttimeoutseconds两次blockperiodseconds。</p></li>
+<li><p>减少requesttimeoutseconds直到您开始看到发生的圆形变化。</p></li>
+<li><p>提高requesttimeoutseconds到一轮的变革不再发生的值。</p></li>
+</ul>
+<p>注意:</p>
+<blockquote>
+<div><p>查看TRACE日志以查看轮次更改日志消息。</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id32">
+<h6>可选配置选项<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h6>
+<p>IBFT 2.0 创世文件中的可选配置选项是：</p>
+<ul class="simple">
+<li><p>messageQueueLimit- 在资源有限的大型网络中，增加消息队列限制可能有助于消息活动激增。默认值为 1000。</p></li>
+<li><p>duplicateMesageLimit- 如果同一节点正在重传消息，则增加重复消息限制可能会减少重传次数。验证器数量的 2 到 3 倍通常就足够了。默认值为 100。</p></li>
+<li><p>futureMessagesLimit- 未来消息缓冲区保存未来链高度的 IBFT 2.0 消息。对于大型网络，增加未来的消息限制可能很有用。默认值为 1000。</p></li>
+<li><p>futureMessagesMaxDistance- 用于在未来消息缓冲区中缓冲消息的当前链高度的最大高度。默认值为 10。</p></li>
+</ul>
+</div>
+<div class="section" id="id33">
+<h6>添加和删除验证器<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h6>
+<p>通过投票或在网络条件需要时添加和删​​除验证器，无需投票。</p>
+<ul>
+<li><p>通过投票添加和删除验证器</p>
+<p>要建议使用 JSON-RPC 方法添加或删除验证器，请使用 启用 HTTP 接口–rpc-http-enabled或使用 WebSockets 接口–rpc-ws-enabled。</p>
+<p>默认情况下不启用 IBFT API 方法。要启用它们，请指定–rpc-http-apior–rpc-ws-api选项并包含IBFT。</p>
+<p>添加或删除验证器的 JSON-RPC 方法是：</p>
+<ul class="simple">
+<li><p>ibft_getPendingVotes</p></li>
+<li><p>ibft_proposeValidatorVote</p></li>
+<li><p>ibft_discardValidatorVote.</p></li>
+</ul>
+<p><strong>重要:</strong></p>
+<blockquote>
+<div><p>大多数现有验证器必须同意添加或删除验证器。也就是说，必须执行ibft_proposeValidatorVote 超过50% 的验证器才能添加或删除验证器。例如，如果您有四个验证者，则必须对三个验证者进行投票。</p>
+</div></blockquote>
+<p>要查看指定区块范围的验证器指标，请使用ibft_getSignerMetrics.</p>
+<p><strong>注意:</strong></p>
+<blockquote>
+<div><p>ibft_getSignerMetrics可用于识别未激活的验证器。验证器lastProposedBlockNumber将是0x0</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id34">
+<h6>添加验证器<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h6>
+<p>要提议添加验证器，请调用ibft_proposeValidatorVote，指定提议的验证器的地址和true。大多数验证器必须执行调用。</p>
+<p>JSON-RPCibft_proposeValidatorVote请求示例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;ibft_proposeValidatorVote&quot;,&quot;params&quot;:[&quot;0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73&quot;, true], &quot;id&quot;:1}&#39;</span> <span class="o">&lt;</span><span class="n">JSON</span><span class="o">-</span><span class="n">RPC</span><span class="o">-</span><span class="n">endpoint</span><span class="p">:</span><span class="n">port</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>当验证者提议下一个区块时，协议会将收到的一个提议插入ibft_proposeValidatorVote到区块中。如果区块包含所有提议，则验证者提议的后续区块将不包含投票。</p>
+<p>当超过一半的现有验证者发布了匹配的提案时，协议将提议的验证者添加到验证者池中，验证者可以开始验证区块。</p>
+<p>要返回验证器列表并确认添加建议的验证器，请使用ibft_getValidatorsByBlockNumber。</p>
+<p>JSON-RPCibft_getValidatorsByBlockNumber请求示例:</p>
+<blockquote>
+<div><p>curl -X POST –data ‘{“jsonrpc”:”2.0”,”method”:”ibft_getValidatorsByBlockNumber”,”params”:[“latest”], “id”:1}’ <a class="reference external" href="JSON-RPC-endpoint:port">JSON-RPC-endpoint:port</a></p>
+</div></blockquote>
+<p>要在确认添加验证器后放弃您的提议，请调用ibft_discardValidatorVote，并指定提议的验证器的地址。</p>
+<p>JSON-RPCibft_discardValidatorVote请求示例:</p>
+<blockquote>
+<div><p>curl -X POST –data ‘{“jsonrpc”:”2.0”,”method”:”ibft_discardValidatorVote”,”params”:[“0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73”], “id”:1}’ <a class="reference external" href="JSON-RPC-endpoint:port">JSON-RPC-endpoint:port</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="id35">
+<h6>删除验证器<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h6>
+<p>删除验证器的过程与添加验证器的过程相同，只是您指定false为 的第二个参数ibft_proposeValidatorVote。</p>
+</div>
+<div class="section" id="id36">
+<h6>时代转变<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h6>
+<p>在每个 epoch 转换中，IBFT 2.0 会丢弃从接​​收到的块中收集的所有未决投票。现有提案仍然有效，验证者在下次创建区块时重新添加他们的投票。</p>
+<p>每个epochLength块都会发生一个纪元转换。epochlength在 IBFT 2.0 创世文件中定义。</p>
+</div>
+<div class="section" id="id37">
+<h6>无需投票即可添加和删除验证器<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h6>
+<p>网络条件可能不允许投票更改验证器。例如，如果当前大多数验证者不再参与网络，那么添加或删除验证者的投票将永远不会成功。您可以绕过投票并在 genesis 文件中指定新的验证器。</p>
+<p>要在不投票的情况下添加或删除验证器：</p>
+<ul>
+<li><p>1.停止网络中的所有节点。</p></li>
+<li><p>2.在 genesis 文件中，添加transitions配置项，其中：</p>
+<ul class="simple">
+<li><p>BlockNumber 是即将更改验证器的块。</p></li>
+<li><p>ValidatorAddressX … ValidatorAddressZ 是代表验证者账户地址的字符串<BlockNumber>。</p></li>
+</ul>
+<p>创世文件中的转换对象:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 语法</span>
+<span class="o">{</span>
+  <span class="s2">&quot;config&quot;</span>: <span class="o">{</span>
+     ...
+     <span class="s2">&quot;ibft2&quot;</span>: <span class="o">{</span>
+       <span class="s2">&quot;blockperiodseconds&quot;</span>: <span class="m">2</span>,
+       <span class="s2">&quot;epochlength&quot;</span>: <span class="m">30000</span>,
+       <span class="s2">&quot;requesttimeoutseconds&quot;</span>: <span class="m">4</span>
+     <span class="o">}</span>,
+     <span class="s2">&quot;transitions&quot;</span>: <span class="o">{</span>
+       <span class="s2">&quot;ibft2&quot;</span>: <span class="o">[</span>
+       <span class="o">{</span>
+         <span class="s2">&quot;block&quot;</span>: &lt;BlockNumber&gt;,
+         <span class="s2">&quot;validators&quot;</span>: <span class="o">[</span>
+            &lt;ValidatorAddressX&gt;,
+            ...
+            &lt;ValidatorAddressZ&gt;
+         <span class="o">]</span>
+       <span class="o">}</span>
+       <span class="o">]</span>
+     <span class="o">}</span>
+  <span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 示例</span>
+<span class="o">{</span>
+  <span class="s2">&quot;config&quot;</span>: <span class="o">{</span>
+    ...
+    <span class="s2">&quot;ibft2&quot;</span>: <span class="o">{</span>
+      <span class="s2">&quot;blockperiodseconds&quot;</span>: <span class="m">2</span>,
+      <span class="s2">&quot;epochlength&quot;</span>: <span class="m">30000</span>,
+      <span class="s2">&quot;requesttimeoutseconds&quot;</span>: <span class="m">4</span>
+    <span class="o">}</span>,
+    <span class="s2">&quot;transitions&quot;</span>: <span class="o">{</span>
+       <span class="s2">&quot;ibft2&quot;</span>: <span class="o">[</span>
+       <span class="o">{</span>
+        <span class="s2">&quot;block&quot;</span>: <span class="m">25</span>,
+        <span class="s2">&quot;validators&quot;</span>: <span class="o">[</span>
+          <span class="s2">&quot;0x372a70ace72b02cc7f1757183f98c620254f9c8d&quot;</span>,
+          <span class="s2">&quot;0x9811ebc35d7b06b3fa8dc5809a1f9c52751e1deb&quot;</span>
+          <span class="o">]</span>
+        <span class="o">}</span>
+       <span class="o">]</span>
+    <span class="o">}</span>
+  <span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>3.使用更新的 genesis 文件重新启动网络中的所有节点。</p></li>
+<li><p>4.要验证转换块之后的更改，请调用ibft_getValidatorsByBlockNumber，指定latest。</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id38">
+<h3>3.密码算法设计<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id39">
+<h4>哈希算法<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h4>
+<p>哈希算法在区块链系统中的应用很广泛: 比特币使用哈希算法通过公钥计算出了<strong>钱包地址</strong>、<strong>区块头</strong>以及<strong>交易事务</strong>的哈希值，默克尔树结构本身就是一棵哈希树，就连挖矿算法都是使用的哈希值难度匹配;以太坊中的挖矿计算也使用了哈希算法，其中的默克尔–帕特里夏树同样也是一棵哈希树; 其他的区块链系统也都会多多少少使用到各种哈希算法，因此可以说哈希算法贯穿到区块链系统的方方面面。</p>
+<div class="section" id="id40">
+<h5>什么是哈希计算<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h5>
+<p>密码学上的哈希计算方法一般需要具有以下的性质:</p>
+<ul class="simple">
+<li><p>函数的输入可以是任意长的字符串;</p></li>
+<li><p>函数的输出是固定长度的;</p></li>
+<li><p>函数的计算过程是有效率的。</p></li>
+</ul>
+<p>这个说法比较学术化，说白了，就是通过一个方法将一段任意输入的字符串计算出一个固定长度的值，相当于计算出一个身份证号。通过哈希算法计算出的结果，是无法再通过一个算法还原出原始数据的，即是单向的，因此适合用于一些<strong>身份验证</strong>的场合，同时由于<strong>哈希值</strong>能够起到一个类似于身份证号的作用，因此也可以用于判断<strong>数据的完整性</strong>，哪怕数据发生微小的变化，重新计算后的哈希值都会与之前的不一样。</p>
+<p>一般来说，为了保证哈希函数在密码学上的安全性，必须满足以下3个条件:</p>
+<ul>
+<li><p>抗冲突(collision-resistance)。</p>
+<p>简单来说，哈希函数抗冲突指的是不同的输入不能产生相同的输出。这就好像到电影院买票看电影，对于付出真金白银买了电影票的人，他们的座位号不能是一样的。同时必须说明的是，抗冲突并不是说不会有冲突，只不过找到有冲突的两个输入的代价很大，不可承受。这就好像 暴力破解一个有效期为20年的密码，整个破解过程长达30年，虽然最后密码被破解了，但是由于密码有效期过了，所以也就失去了意义。</p>
+</li>
+<li><p>信息隐藏(information hiding)。</p>
+<p>这个特性是指如果知道了哈希函数的输出，不可能逆向推导出输入。
+这在密码学很好理解:即使敌人截获了公开信道 (比如无线电波)，获取了传送的哈希信息，敌人也不可能根据这段信息还原出明文。</p>
+</li>
+<li><p>可隐匿性(puzzle friendly)。</p>
+<p>如果有人希望哈希函数的输出是一个特定的值(意味着有人事先知道了哈希函数的输出结果)，只要输入的部分足够随机，在足够合理的时间内都将不可能破解。这个特性主要是为了对付伪造和仿制。近来某位当红歌星的演唱会门票超贵，10000元一张。这就催生了假票行当:伪造个人演唱会的门票。这里门票是公开的，大家都知道长什么样，用什么材质，这相当于已知哈希函数的输出。可隐匿特性就是要做假票的明明知道输出长什么样，但不知道使用何种“原料”和“工艺”造出一模一样的票来。</p>
+</li>
+</ul>
+<p><strong>注意:</strong></p>
+<p>由于哈希算法的输出值是固定的，而原始数据的长度却是多种多样的，这就注定了在理论上存在不同的原始数据却输出同一种哈希值的可能，这种情况在原始数据的数量极其庞大的时候就会出现。比如邮件系统的抗垃圾邮件算法，我们一般会对每一个邮件地址计算一个哈希值，存储为过滤库，可是全世界的邮件地址何其多，而且什么样格式都有，这个时候会对邮件地址进行多种哈希计算，将计算出来的多个值联合起来判断是否存在某个邮件地址，这也是<strong>布隆过滤器</strong>的基本原理，在比特币中就使用了<strong>布隆过滤器</strong>使<strong>SPV节点</strong>可以<strong>快速检索</strong>并返回相关数据。</p>
+</div>
+<div class="section" id="id41">
+<h5>哈希算法的种类<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h5>
+<p>密码学中常用的哈希算法有MD5、SHA1、SHA2、SHA256、SHA512、SHA3、 RIPEMD160，下面简单介绍一下。</p>
+<ul class="simple">
+<li><p>MD5(Message Digest Algorithm5): MD5是输入不定长度信息，输出固定 长度128bits的算法。经过程序流程，生成4个32位数据，最后联合起来成为一个 128bits哈希。基本方式为求余、取余、调整长度、与链接变量进行循环运算，得 出结果。MD5算法曾被广泛使用，然而目前该算法已被证明是一种不安全的算法。王 晓云教授已经于2004年破解了MD5算法。</p></li>
+<li><p>SHA1: SHA1在许多安全协议中广为使用，包括TLS和SSL。2017年2月， Google宣布已攻破了SHA1，并准备在其Chrome浏览器产品中逐渐降低SHA1证书的 安全指数，逐步停止对使用SHA1哈希算法证书的支持。</p></li>
+<li><p>SHA2: 这是SHA算法家族的第二代，支持了更长的摘要信息输出，主要有 SHA224、SHA256、SHA384和SHA512，数字后缀表示它们生成的哈希摘要结果长 度。</p></li>
+<li><p>SHA3: 看名称就知道，这是SHA算法家族的第三代，之前名为Keccak算法， SHA3并不是要取代SHA2，因为目前SHA2并没有出现明显的弱点。</p></li>
+<li><p>RIPEMD-160(RACE Integrity Primitives Evaluation Message Digest160): RIPEMD160是一个160位加密哈希函数。它旨在替代128位哈希函数 MD4、MD5和RIPEMD-128。</p></li>
+</ul>
+<p>事实上，除了以上的算法，哈希算法还有很多种，有一些是不太讲究加密特性的，比如在负载均衡领域常用的<strong>一致性哈希</strong>算法，目的只是将服务器地址快速地计算出一个摘要值，而不是加密，因此会使用一些其他的快速哈希算法。</p>
+</div>
+<div class="section" id="id42">
+<h5>区块链中的哈希算法<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id43">
+<h6>1.区块哈希<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h6>
+<p>所谓区块哈希就是对区块头进行哈希计算，得出某个区块的哈希值，用这个哈希值可以唯一确定某一个区块，相当于给区块设定了一个身份证号，而区块与区块 之间就是通过这个身份证号进行串联，从而形成了一个区块链的结构。这样的结构 也是区块链数据难以篡改的技术基础之一。比如，一共有100个区块，如果要更改10 号区块的数据，则11号就不能与10号连接，区块链就会断开，这样等于篡改无效 了，而如果篡改了11号，就接着要篡改12号，以此类推，几乎就是牵一发动全身。 如果区块链很长，那么要想更改之前的历史数据几乎就是不可能的了。从这个角度 来看，哈希值相当于一个指针，传统的指针提供了一种获取信息的方法，而哈希指 针则提供了一种检验信息是否被改编的方法，如果信息被篡改，那么其哈希值和哈 希指针的值必定是不等的。</p>
+</div>
+<div class="section" id="merkle-tree">
+<h6>2.默克尔树 Merkle Tree<a class="headerlink" href="#merkle-tree" title="Permalink to this headline">¶</a></h6>
+<p>默克尔树在不同的区块链系统中有不同的细节，但本质是一样的，我们就以比特币中的默克尔树来说明。比特币中的默克尔树称为二叉默克树，每一个区块都有自己的默克尔树，是通过将区块中的交易事务哈希值两两结对计算出新的哈希值，然后哈希值再两两结对进行哈希计算，递归循 环，直到计算出最后一个根哈希值，这样的一棵树也称为哈希树。默克尔树既能用于校验区块数据的完整性，也能对<strong>SPV钱包</strong>进行支付验证。
+举一个生活中常见的例子，当我们签订一份n页的合同时，通常都会在每页合同上盖章，只不过每一页上的章都是一样的，这就给作弊留下了空间。如果我们稍微改变一下做法，给每一页合同盖一个数字印章，并且每一页上的数字印章是前一页数字印章和本页内容一起使用哈希算法生成的哈希值。
+<strong>例如:</strong></p>
+<ul class="simple">
+<li><p>合同第一页的数字印章是本页内容的哈希值，即第一页数字印章=Hash(第 一页内容)。</p></li>
+<li><p>合同第二页的数字印章是第一页的数字印章及第二页内容加在一起后再哈希的值，第二页数字印章=Hash(第一页的数字印章+第二页内容)。</p></li>
+<li><p>合同第三页的数字印章是第二页的数字印章及第三页内容加在一起后再哈希 后的值，即第三页数字印章=Hash(第二页的数字印章+第三页内容)。</p></li>
+<li><p>上述过程以此类推。
+这样对第一页合同的篡改必然使其哈希值和第一页上的数字印章不符，且其后的2，3，4，5，…，n页也是如此;对第二页合同的篡改必然使其哈希值和第二页上的数字印章不符，且其后的3，4，5，…，n页也是如此。</p></li>
+</ul>
+<p>从上面的例子，我们可以发现默克尔树的优势:
+1)我们能知道信息是否被篡改;
+2)我们还能知道是第几页或者第几块的信息被篡改了。 为了便于理解，我们看下默克尔树的典型架构，如下图所示:
+<img alt="whitepaper/media/16242599612724.jpg" src="whitepaper/media/16242599612724.jpg" /></p>
+<p>我们看到，首先这是一个树结构，在底部有4个哈希值，假设某个区块中一共有4条交易事务，那么每条交易事务都计算一个哈希值，分别对应这里的Hash1到 Hash4，然后再两两结对，再次计算哈希值，以此类推，直到计算出最后一个哈希值，也就是根哈希。这样的一棵树结构就称为默克尔树(merkle tree)，而这个根哈希就是<strong>默克尔根(merkle root)</strong>。我们再来看一个示意图:
+<img alt="whitepaper/media/16242600251003.jpg" src="whitepaper/media/16242600251003.jpg" /></p>
+<p>可以看到，每一个区块都是具有一棵默克尔树结构的，同时可以发现，默克尔树中的每一个节点都是一个哈希值，因此也可以称之为哈希树，而比特币中的默克尔树是通过交易事务的哈希值两两哈希计算而成，所以这样默克尔树称为<strong>二叉默克尔树</strong>，那么这样的树结构有什么作用呢?</p>
+<p>比特币是分布式的网络结构，当一个节点需要同步自己的区块链账本数据时，并没有一个明确的服务器来下载，而是通过与其他的节点进行通信实现的。在下载区块数据的时候，难免会有部分数据会损坏，对于这些一条条的交易事务，如何去校验有没有问题呢?</p>
+<p>这个时候，默克尔树就能发挥作用了，由于哈希算法的特点，只要参与计算的数据发生一点点的变更，计算出的哈希值就会改变。我们以第一个 示意图来说明，假设A通过B来同步区块数据，同步完成后，发现计算出的默克尔根与B不一致，也就是有数据发生了损坏，此时先比较Hash12和Hash34哪个不一致，假如是Hash12不一致，则再比较Hash1和Hash2哪个不一致，如果是Hash2不一致，则只要重新下载交易事务2就行了.重新下载后，再计算出Hash12并与Hash34共同计算出新的默克尔根比较，如果一致，则说明数据完整。我们发现，通过默克尔树，可以很快找到出问题的数据块，而且本来一大块的区块数据可以被切分成小块处理。</p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id44">
+<h4>公开密钥算法<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id45">
+<h5>两把钥匙:公钥和私钥<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h5>
+<p>公钥和私钥是现代密码学分支非对称性加密里面的名词，对于一段需要保护的信息，通常使用公钥加密，用私钥解密，这种加密方法也称为公开密钥算法。</p>
+<p>在谍战剧里，发电报那种一般都是使用<strong>对称加密</strong>算法。这种加密方式缺点是显而易见的，如果被人知道了密钥和加密方法，按照加密方法反着来就能解密。一直到非对称加密算法的出现，这种情况才有所改观。公钥就是可以对全世界公开的密钥，比如你和Google通信时，你可以使用Google公开提供的1024位的公钥加密信息，加密后的密文只有使用Google私藏的私钥才可以做解密，这就保证了通信安全。</p>
+<p>一般来说，公开密钥算法对于大篇幅的原始数据加密的性能不会很高，因此如果是用于大段数据的加密与解密，通常还是会使用强度比较高的对称加密算法，而公开密钥算法会用于在网络中传输对称加密算法的密钥，两者结合使用，发挥各自的优点。(https2.0)</p>
+<p>自从非对称加密算法诞生以来，人们发现一些数学函数极其适用于这种算法，比如椭圆曲线加密算法。这些数学函数具有某种困难度:由输入算输出很容易，但是从输出计算输入则几乎不可能。比特币是使用椭圆曲线加密算法作为公共密钥编码的基础的，事实上在很多区块链系统中都是使用<strong>椭圆曲线加密算法</strong>。</p>
+</div>
+<div class="section" id="rsa">
+<h5>RSA算法<a class="headerlink" href="#rsa" title="Permalink to this headline">¶</a></h5>
+<p>RSA以它的三个发明者Ron Rivest、Adi Shamir和Leonard Adleman的名字首字母命名。RSA加密算法是最常见的非对称加密算法。它既能用于加密，也能用于数字签名，是目前最流行的公开密钥算法。RSA安全基于大质数分解的难度，RSA的公钥和私钥是一对<strong>大质数</strong>，从一个公钥和密文恢复明文的难度，等价于分解两个大质数之积，这是公认的数学难题。</p>
+<p>RSA的安全基于大数的因子分解，但并没有从理论上证明破译RSA的难度与大数分解难度等价，RSA的重大缺陷是无法从理论上把握它的保密性能如何。只不过RSA从提出到现在20多年，经历了各种攻击的考验，被普遍认为是目前最优秀的公钥方案之一。</p>
+<p>RSA的缺点是:</p>
+<ul class="simple">
+<li><p>产生密钥很麻烦，受限于质数产生的技术;</p></li>
+<li><p>分组长度太大，运算代价高，速度慢。</p></li>
+</ul>
+<p>我们通过一个例子来理解RSA算法。</p>
+<p>假设Alice要与Bob进行加密通信，她该怎么生成公钥和私钥呢?</p>
+<ol>
+<li><p><strong>选择两个质数</strong>。通常是随机选择两个不同的质数，我们不妨称为p和q，Alice选择了61和53，当然实际应用中，这两个质数越大越好，这样就越难破解。</p></li>
+<li><p><strong>计算p和q的乘积n</strong>。Alice把61和53相乘:n=61×53=3233。n的长度就是密钥长度，3233写成二进制是110010100001，一共有12位，所以这个密钥就是12位，实际应用中，RSA密钥一般是1024位，重要场合则为2048位，还是那句话，越长越好。</p></li>
+<li><p><strong>计算n的欧拉函数Φ(n)</strong>。根据公式:φ(n)=(p-1)(q-1)，Alice算出φ(3233)等于60×52，即 3120，实际上就是两个质数分别减1后的乘积。</p></li>
+<li><p><strong>选择一个整数e</strong>。这个整数是随机选择的，并且有个条件，条件是1&lt;e&lt;Φ(n)，且e与Φ(n)互质。Alice就在1到3120之间，随机选择了17，实际应用中，常常选择65537。</p></li>
+<li><p><strong>计算e对于Φ(n)的模反元素d</strong>。所谓“模反元素”就是指有一个整数d，可以使得e*d被φ(n)除的余数为1，表达式如下:</p>
+<blockquote>
+<div><p>e<em>d≡1(modφ(n))
+这个式子等价于
+e</em>d-1=kφ(n)
+于是找到模反元素d，实质上就是对下面这个二元一次方程求解:
+e*x+φ(n)y=1
+已知e=17，φ(n)=3120，则17x+3120y=1。
+这个方程可以用“扩展欧几里得算法”求解，此处省略具体过程。总之，Alice 算出一组整数解为(x，y)=(2753，-15)，即d=2753。</p>
+</div></blockquote>
+</li>
+<li><p><strong>产生公钥和私钥</strong>。将n和e封装成公钥，n和d封装成私钥，在Alice的例子中，n=3233，e=17， d=2753，所以公钥就是(3233，17)，私钥就是(3233，2753)。</p></li>
+</ol>
+<p>至此所有计算就完成了，可以看到RSA的算法过程其实还是很简单的，最关键的就是找到两个足够大的质数。</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id46">
+<h5>椭圆曲线密码算法<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h5>
+<p>椭圆曲线是满足一个特殊方程的点集，注意，不要跟<strong>标准椭圆方程</strong>混淆，根本就是两回事，看一个标准的椭圆曲线方程:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y2</span><span class="o">=</span><span class="n">x3</span><span class="o">+</span><span class="n">ax</span><span class="o">+</span><span class="n">b</span> 
+</pre></div>
+</div>
+<p>在几何意义上，它通常是这样的一个图形，如下所示:
+<img alt="whitepaper/media/16242610978208.jpg" src="whitepaper/media/16242610978208.jpg" /></p>
+<p>如上图所示，一个椭圆曲线通常是满足一个变量为2阶，另一个变量为3阶的二元方程。按照这样的定义，椭圆曲线是有很多种的，而椭圆曲线密码算法是基于椭圆曲线数学的一种公钥密码算法，其主要的安全性在于利用了椭圆曲线离散对数问题的困难性。</p>
+<p>在区块链中，常用的是<strong>ECDSA(椭圆曲线数字签名算法)</strong>，这是利用**椭圆曲线密码(ECC)<strong>对</strong>数字签名算法(DSA)**的模拟。ECDSA于1999年成为ANSI标准，并于2000年成为IEEE和NIST(美国国家标准与技术研究院)标准。<strong>椭圆曲线密码算法</strong>实现了数据加解密、数字签名和身份认证等功能，该技术具有安全性高、生成公私钥方便、处理速度快和存储空间小等方面的优势。相对于RSA算法，在实际的开发使用
+中，椭圆曲线加密使用得更广泛，比如比特币就是使用了椭圆曲线中的 <strong>SECP256k1</strong>，可以提供128位的安全保护。椭圆曲线具体的数学原理，其过程证明比较晦涩枯燥，这里不再赘述.</p>
+</div>
+</div>
+<div class="section" id="id47">
+<h4>编码/解码算法<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h4>
+<p>众所周知，计算机存储和处理的都是二进制数据。为了简洁，实际上使用最多 的是二进制的一个变种——十六进制。Uppercase J</p>
+<p>十六进制的07是一个Bell(响铃)，如果试着用计算机程序去打印，结果是不可见，也不可理解的，只能听到一声铃声。但是文本字符串”07”则相对容易理解和记忆。上文提到过，比特币地址都是十六进制的数，不做转换，打印的话毫无意义，人类无法直观地辨识。大家可以想象一下查询自己的银行账户余额的场景: 假如账户里只有77块钱了，查询结果打印的是大写字符M(十进制的编码是77)。我相信大部分用户都不知道那是77的意思。相对的，如果把数字77转换成文本“77”(其十六进制编码是3737)后再打印，对于显示在屏幕上的文本77，用户就会理解了。</p>
+<p>下面将讨论用文本来表示十六进制数据的几种编码方式。</p>
+<div class="section" id="base64">
+<h5>Base64<a class="headerlink" href="#base64" title="Permalink to this headline">¶</a></h5>
+<p>这是一种用64个字符来表示任意二进制数据的方法，通常exe、jpg、pdf等文 件都是二进制文件，用文本编辑器打开都是乱码，那么就需要一个方法，可以将二 进制编码成字符串的格式，这样可以将二进制文件用文本打开查看。</p>
+<p>Base64编码主要用在传输、存储、表示二进制等领域，还可以用来加密。但是这种加密比较简单，只是一眼看上去不知道什么内容罢了，对应编码规则，可以很容易的解码，当然也可以对Base64的字符序列进行定制来进行加密，我们来看下Base64的编码过程。</p>
+<p>首先，既然是使用上述64个字符的范围来表示的，那么要能够表示出64个字符的各种组合，得起码用6个bit才行，根据排列组合，6个bit可以总共表示出26个组合的字符排列; 针对一份需要转化的二进制文件，可以这样来处理，每3个字节一组，这样一共是24bit，然后可以针对这个24bit再来划分，划分成每6bit一组，这样一共可以分成4组，则对照上表去查找对应的字符就可以了，这样就可以转换为Base64了.</p>
+<p>那么，如果在3个字节一组划分的时候，如果不是3的倍数怎么办呢?这样就需 要使用 <strong>\x00</strong> 字节在末尾补足，再在编码的末尾加上1个或2个=号，表示补了多少字节。</p>
+<p>由于标准的Base64编码后可能出现字符+和/，在URL中就不能直接作为参数， 所以又有一种url safe的Base64编码，其实就是把字符+和/分别变成-和_。</p>
+<p>根据这个原理，其实还是比较容易理解这种编码思想的，而且也可以看出，这种编码是可以逆向的，以”yes”这个字符串为例，它的Base64编码是eWVz.</p>
+</div>
+<div class="section" id="base58">
+<h5>Base58<a class="headerlink" href="#base58" title="Permalink to this headline">¶</a></h5>
+<p>顾名思义，Base58是基于58个字母和数字组成的，有了Base64的基础，我们就比较容易理解Base58了，实际上就是Base64的一个子集，相对于Base64来说， Base58不包括以下Base64的字符:</p>
+<ul class="simple">
+<li><p>数字0</p></li>
+<li><p>大写字母O</p></li>
+<li><p>大写字母I</p></li>
+<li><p>小写字母l</p></li>
+<li><p>+与/</p></li>
+</ul>
+<p>可以看出，小写o和大写O很容易和数字0混淆，小写l和大写I很容易和数字1混淆，Base58就是Base64去除了几个看起来容易混淆的字符，以及容易导致转义的 / 和 +。Base58的编码表如下:</p>
+<blockquote>
+<div><p>123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz</p>
+</div></blockquote>
+<p>必须注意，不同的应用实现使用的编码表内容是一样的，但是顺序可能不一样，比如:</p>
+<ul>
+<li><p>比特币地址:</p>
+<blockquote>
+<div><p>123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz</p>
+</div></blockquote>
+</li>
+<li><p>Ripple地址:</p>
+<blockquote>
+<div><p>rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz</p>
+</div></blockquote>
+</li>
+</ul>
+<p>比特币使用的是改进版的Base58算法， 是为了解决Base58编码的字符串没有完整性校验机制。在传播过程中，如果出现某些字符损坏或者遗漏，就没法检测出来了，所以使用了改进版的算法</p>
+<ul class="simple">
+<li><p>Base58Check。</p></li>
+</ul>
+</div>
+<div class="section" id="base58check">
+<h5>Base58Check<a class="headerlink" href="#base58check" title="Permalink to this headline">¶</a></h5>
+<p>在二进制数据的传输过程中，为了防止数据传输的错误，保护数据安全，通常会加一个<strong>校验码</strong>，通过校验码的配合可以发现数据是否被破坏或者是否在发送时输入错误了。<strong>Base58Check</strong>就是<strong>Base58</strong>加上<strong>校验码</strong>，或者可以说是Base58的一种编码形式，在比特币系统中生成钱包地址的时候就使用到了这种编码形式。我们知道，钱包地址是用来转账的，虽然Base58编码已经可以做到避免一些容易混淆的符，但是还不能保证用户的误输入或者地址信息在传输过程中由于某种原因被损坏，这会给用户带来潜在的损失风险。</p>
+<p>Base58Check的编码方式:进行编码前，在待编码的内容字符串中加入一个字节的版本信息，版本信息可以自行约定，比如比特币地址采用了<strong>0x00</strong>作为版本信息，然后再加入待编码内容字符串的哈希值，通常只要取得<strong>哈希值中的4个字节</strong>就可以了，加到一起后，然后再<strong>整体进行Base58编码</strong>。比特币地址的生成过程中，是将<strong>版本字节放在了头部</strong>，而将<strong>4个字节的哈希值放在了尾部</strong>，然后进行编码生成。这个原理还是很简单的，哈希算法具有先天的<strong>数据完整性</strong>检测能力，在这里我们又看到了哈希算法的又一个应用。</p>
+<p>经过整体编码后的数据在传输过程中如果有发生损坏或者篡改，接收方在得到数据后，会对原始数据进行同样的校验码计算，并且和接收到的结果中的校验码进行比较。由于哈希算法的特点，只要原始数据有任何更改，计算出的哈希值都会发生变更，因此只要校验码不一致就说明数据不是合法的。</p>
+</div>
+</div>
+<div class="section" id="id48">
+<h4>应用场景<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h4>
+<p>密码算法在区块链系统中的重要性，相当于整个体系的骨骼，如果没有骨骼会怎样?毫无疑问，整个大厦将会坍塌，我们来举一些例子，看看都起哪些作用。</p>
+<div class="section" id="id49">
+<h5>1.账户地址生成<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h5>
+<p>这个其实就是对公开密钥算法的巧妙使用，首先生成一对密钥，即私钥和公钥，由于公钥是可以公开的，因此可以作为自己对外的一个账号，而又由于公钥必须和对应的私钥匹配才能验证通过，因此这种方式生成的地址，先天就具备可验证性。</p>
+</div>
+<div class="section" id="id50">
+<h5>2.价值转移保卫<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h5>
+<p>我们不展开对价值转移本身经济意义的论述，就说实现方式，这又是公开密钥算法的一个用武之地了。无论是比特币、以太坊、超级账本Fabric还是其他区块链系统，要想在一个分布式的公网上发送一笔代表价值的数据(比如数字货币、证 券、资产所有权等)，必须解决掉两个基本的问题:</p>
+<ul class="simple">
+<li><p>证明这笔数据确实是发出者的，不是篡改或者伪装的;</p></li>
+<li><p>确保只有接收者才能解码这笔携带价值的数据。</p></li>
+</ul>
+<p>毫无疑问，这两点要求，可以通过公开密钥算法完美地解决，发送者使用自己的私钥进行签名，相当于盖上了自己的公章，接收者可以使用发送者公开的那个公钥进行身份验证以确保无误。发送者不但使用了自己的私钥签名，还使用了接收者的公钥进行了一段关键的加密，只有接收者使用自己的私钥才能解密这个公钥，因此就能保证不被别人截获，或者说即使被截获了也没关系，因为别人没有对应的私钥来解码。</p>
+</div>
+<div class="section" id="id51">
+<h5>3.完整性证明<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h5>
+<p>哈希算法的典型应用, 在节点同步区块数据时，通过构建的交易哈希树来验证数据是否一致。</p>
+</div>
+<div class="section" id="id52">
+<h5>4.零知识证明<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h5>
+<p>要想证明自己拥有某笔资产或者拥有某个能力，或者更直接地说，要想证明自己具备对区块链上某一笔交易的所有权，应该怎么办?通常的思路自然是提交自己的密码，看能不能解锁匹配，可是这样的话，密码就泄露了，不但密码会泄露，交易内容也可能就此公开了，隐私全没了，那该怎么办?毫无疑问，在这个场合，密码算法起到了非常大的作用，只要解码一段与交易内容相关但是又不泄露真正交易内容的编码，能够解码成功就能证明所有权了。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id53">
+<h3>4.账本数据设计<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id54">
+<h4>简述<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h4>
+<p>Hyperledger Besu 使用 RocksDB 键值数据库在本地持久化链数据。这些数据分为几个子类别：</p>
+<ul class="simple">
+<li><p>区块链： 区块链数据由<strong>区块头</strong>组成，这些区块头构成了用于加密验证区块链状态的数据“链”；包含每个块中包含的有序交易列表的块体；以及包含与交易执行相关的元数据（包括交易日志）的交易收据。</p></li>
+<li><p>世界状态： 每个区块头都通过 stateRoot 哈希引用一个世界状态。世界状态是从地址到帐户的映射。外部拥有的账户包含以太余额，而智能合约账户还包含可执行代码和存储。</p></li>
+</ul>
+<p>能理解“世界状态”和“账户状态”的概念,就能勾勒出交易以及区块的结构.</p>
+</div>
+<div class="section" id="id55">
+<h4>默克尔树<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h4>
+<p>要掌握区块链及世界状态的概念,以及在整个系统中的作用, 首先简要分析一下默克尔树的工作原理.</p>
+<p>默克尔-帕特里夏树维护世界状态和交易.</p>
+<p><img alt="whitepaper/media/16244148429786.jpg" src="whitepaper/media/16244148429786.jpg" /></p>
+<p>在默克尔树中, 由叶子节点保存区块数据的哈希, 而由非叶子结点保存其子节点的哈希.</p>
+<p>默克尔树所指向数据的任何改动都会引起节点哈希的变化. 由于每一个父节点中所保存的哈希值都取决于子节点所包含的数据, 所以子节点数据的变更都会引起父节点哈希的变化. 并且这样的影响是连锁反应, 从叶子结点直达根节点. 因此对叶子节点所指向数据的改动会引起根节点所保存哈希的变化.</p>
+<p>由上述结构特征, 可以引申出两条重要的属性:</p>
+<ul class="simple">
+<li><p>1.在判断两颗默克尔树所指向数据是否完全相同时, 我们不需要比较每个叶子节点, 只需要比较根节点保存的哈希;</p></li>
+<li><p>2.在判断特定数据是否被树所指向时, 我们可以使用 <a class="reference external" href="https://medium.com/crypto-0-nite/merkle-proofs-explained-6dd429623dc5">默克尔证明</a> 技术.</p></li>
+</ul>
+<p>第一种属性的重要之处在于, 我们能够仅利用根节点的哈希值, 就标示某一时刻整棵树所指向的数据. 这意味着仅通过保存根节点的哈希值就能标示区块 (无需储存区块链中所有的数据), 且维护数据的不可篡改.</p>
+<p>理解完默克尔树的概念后, 来看以太坊中的主要对象.</p>
+</div>
+<div class="section" id="id56">
+<h4>世界状态<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h4>
+<p>世界状态是<strong>地址（账户）<strong>到</strong>账户状态</strong>的映射。虽然世界状态不保存在区块链上，但在黄皮书的描述中，世界状态也由树来保存数据（此树也被称为状态数据库或者状态树）。世界状态可以被视作为随着交易的执行而持续更新的全局状态。以太坊就像一个去中心化的计算机，世界状态则是这台电脑的硬盘。</p>
+<p>以太坊中所有的账户信息都体现在世界状态之中，并由世界状态树保存。如果你想知道某一账户的余额，或者某智能合约当前的状态，就需要通过查询世界状态树来获取该账户的具体状态信息。下文中我也会简要介绍这些信息是如何存储的。</p>
+<p><img alt="whitepaper/media/16244339893312.jpg" src="whitepaper/media/16244339893312.jpg" /></p>
+</div>
+<div class="section" id="id57">
+<h4>账户状态<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h4>
+<p>以太坊中有两种账户类型：外部所有账户（Externally Owned Accounts 简称 EOA）以及合约账户。我们用来互相收发以太币、部署智能合约的账户就是 EOA 账户，而部署智能合约时自动生成的账户则是合约账户。每一个智能合约都有其独一无二的以太坊账户。</p>
+<p>账户状态反映了一个以太坊账户的各项信息。例如，它存储了当前账户以太币的余额信息、当前账户发送过的交易数量…每一个账户都有账户状态。</p>
+<p>下面就来看看账户状态中都包括什么：</p>
+<div class="section" id="nonce">
+<h5>nonce<a class="headerlink" href="#nonce" title="Permalink to this headline">¶</a></h5>
+<p>从此地址发送出去的交易数量（如果当前为 EOA 账户）或者此账号产生的合约创建操作（现在先别管合约创建操作是什么）。</p>
+</div>
+<div class="section" id="balance">
+<h5>balance<a class="headerlink" href="#balance" title="Permalink to this headline">¶</a></h5>
+<p>此账号所拥有的以太币数量（以 Wei 计量）。</p>
+</div>
+<div class="section" id="storageroot">
+<h5>storageRoot<a class="headerlink" href="#storageroot" title="Permalink to this headline">¶</a></h5>
+<p>账户存储树的根节点哈希值（稍后介绍账户存储是什么）。</p>
+</div>
+<div class="section" id="codehash">
+<h5>codeHash<a class="headerlink" href="#codehash" title="Permalink to this headline">¶</a></h5>
+<p>对于合约账户，就是此账户存储 EVM 代码的哈希值。对于 EOA 账户，此处留空。</p>
+<p>账户状态中不容忽视的一个细节是，上述对象在内的所有对象都可变（除了 codeHash）。举例来说，当一个账户向其他账户发送以太币时，除了 nonce 会增加，账户的余额也会相应改变。</p>
+<p>而 codeHash 的不可变性使得，如果部署了有漏洞的智能合约，也无法修复更新此合约。对应的，只能部署一个新合约（而有漏洞的版本会一直存在于区块链上）。这也是为什么使用 <a class="reference external" href="https://truffleframework.com/">Truffle</a> 进行智能合约的开发和部署十分必要，并且用 Solidity 编程时要遵循 <a class="reference external" href="https://consensys.github.io/smart-contract-best-practices/software_engineering/#upgrading-broken-contracts">最佳实践</a> 的要求。</p>
+<p>账户存储树是保存与账户相关联数据的结构。该项只有合约账户才有，而在 EOA 中， storageRoot 留空、 codeHash 则是一串空字符串的哈希值。所有智能合约的数据都以 32 字节映射的形式保存在账户存储树中。此处不再赘述账户状态树如何维持合约数据。如果对其内部实现感兴趣，强烈建议阅读<a class="reference external" href="https://medium.com/coinmonks/a-practical-walkthrough-smart-contract-storage-d3383360ea1b">这篇文章</a>。账户状态中的 storageRoot 区域负责维持账户存储树根节点哈希值。</p>
+<p><img alt="whitepaper/media/16244341727178.jpg" src="whitepaper/media/16244341727178.jpg" /></p>
+</div>
+</div>
+<div class="section" id="id58">
+<h4>交易<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h4>
+<p>交易推动当前状态到下一状态的转变。在以太坊中有三种交易：</p>
+<ul class="simple">
+<li><p>1.EOA 之间传输值的交易（例如，改变发送方和接收方余额大小）。</p></li>
+<li><p>2.发送消息来调用合约的交易（例如，通过发送消息调用来触发 setter 方法，以设置合约中的值）。</p></li>
+<li><p>3.用于部署合约的交易（由此创建了合约账户）。</p></li>
+</ul>
+<p>（从技术角度来讲，前两种交易是一样的…它们都是通过消息调用来改变账户状态的交易，只不过一个是 <strong>EOA 账户</strong>，一个是<strong>合约账户</strong>。）</p>
+<p>交易由以下部分组成：</p>
+<div class="section" id="id59">
+<h5>nonce<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h5>
+<p>此账户发出的交易序号数（可以粗略理解为“这是该账户的第几笔交易”）。</p>
+</div>
+<div class="section" id="gasprice">
+<h5>gasPrice<a class="headerlink" href="#gasprice" title="Permalink to this headline">¶</a></h5>
+<p>执行此交易、进行计算时为每单位 <strong>gas</strong> 所支付的费用（以 Wei 计量）。</p>
+</div>
+<div class="section" id="gaslimit">
+<h5>gasLimit<a class="headerlink" href="#gaslimit" title="Permalink to this headline">¶</a></h5>
+<p>执行此交易时可以使用的最大 <strong>gas</strong> 数量。</p>
+</div>
+<div class="section" id="to">
+<h5>to<a class="headerlink" href="#to" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>如果此交易用于传送以太币，此处为接收以太币的 EOA 地址。</p></li>
+<li><p>如果此交易用于向合约发送消息（例如，调用智能合约中的方法），此处为合约的地址。</p></li>
+<li><p>如果此交易用于创建合约，此处值为空。</p></li>
+</ul>
+</div>
+<div class="section" id="value">
+<h5>value<a class="headerlink" href="#value" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p>如果此交易用于收发以太币，此处为发往接收账户以 Wei 计量的代币数量。</p></li>
+<li><p>如果此交易用于发送对合约的消息调用，此处为向接收此消息智能合约所给付的 Wei 数量。</p></li>
+<li><p>如果此交易用于创建合约，此处为合约初始化时账户存放的以 Wei 计量的以太币数量。</p></li>
+</ul>
+</div>
+<div class="section" id="v-r-s">
+<h5>v, r, s<a class="headerlink" href="#v-r-s" title="Permalink to this headline">¶</a></h5>
+<p>在交易的密码学签名中用到的值，可以用于确定交易的发送方。</p>
+</div>
+<div class="section" id="data">
+<h5>data（只用于价值传输以及向智能合约发送消息调用）<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h5>
+<p>发送消息调用时附带的输入数据（例如，假设你想要执行智能合约中的 setter 方法，数据区就应该包括 setter 方法的标识符，以及你想要设定的参数值）。</p>
+</div>
+<div class="section" id="init">
+<h5>init（只用于合约创建）<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h5>
+<p>用于初始化合约的 EVM 代码。</p>
+<p>相信不出你的意料，区块中所有的交易也是存储在默克尔树中的。并且这棵树的根节点哈希值由区块头保存！下面我们就来剖析一下以太坊区块结构。</p>
+</div>
+</div>
+<div class="section" id="id60">
+<h4>区块<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h4>
+<p>区块分为两部分，即 <strong>区块头</strong> 和 <strong>区块体</strong>。</p>
+<p>区块头就是以太坊中的区块链部分。它保存了前一个区块（也可称为父区块）的哈希值，通过区块头的连接形成了一条由密码学背书的链。</p>
+<p>区块体包含了此区块中记录的一系列交易，以及叔块（ommer）区块头列表。</p>
+<p>以太坊区块的抽象示意图:
+<img alt="whitepaper/media/16244351688494.jpg" src="whitepaper/media/16244351688494.jpg" /></p>
+<p>下面就来介绍区块头包括哪些部分。</p>
+<div class="section" id="parenthash">
+<h5>parentHash<a class="headerlink" href="#parenthash" title="Permalink to this headline">¶</a></h5>
+<p>前一个区块的区块头哈希值。每个区块都包含前序区块的哈希值，一路可回溯至链上的创世块。这也就是维护数据不会被篡改的结构设计（任何对前序区块的篡改都会影响后续所有区块的哈希值）。</p>
+</div>
+<div class="section" id="ommershash">
+<h5>ommersHash<a class="headerlink" href="#ommershash" title="Permalink to this headline">¶</a></h5>
+<p>叔块头以及部分区块体的哈希值。</p>
+</div>
+<div class="section" id="beneficiary">
+<h5>beneficiary<a class="headerlink" href="#beneficiary" title="Permalink to this headline">¶</a></h5>
+<p>因为挖到此区块而获得收益的以太坊账户。</p>
+</div>
+<div class="section" id="stateroot">
+<h5>stateRoot<a class="headerlink" href="#stateroot" title="Permalink to this headline">¶</a></h5>
+<p>世界状态树的根节点哈希值（在所有交易被执行后）。</p>
+</div>
+<div class="section" id="transactionsroot">
+<h5>transactionsRoot<a class="headerlink" href="#transactionsroot" title="Permalink to this headline">¶</a></h5>
+<p>交易树根节点的哈希值。这棵树包含了区块体的所有交易。</p>
+</div>
+<div class="section" id="receiptsroot">
+<h5>receiptsRoot<a class="headerlink" href="#receiptsroot" title="Permalink to this headline">¶</a></h5>
+<p>每当交易执行时，以太坊都会生成对应结果的交易收据。此处就是这个交易收据树的根节点哈希。</p>
+</div>
+<div class="section" id="logsbloom">
+<h5>logsBloom<a class="headerlink" href="#logsbloom" title="Permalink to this headline">¶</a></h5>
+<p><a class="reference external" href="https://hackernoon.com/probabilistic-data-structures-bloom-filter-5374112a7832">布隆过滤器</a>，用于判断某区块的交易是否产生了某日志（如果对这方面感兴趣，可以查阅 <a class="reference external" href="https://ethereum.stackexchange.com/questions/3418/how-does-ethereum-make-use-of-bloom-filters/3426#3426">Stack Overflow 的这个答案</a>）。这避免了在区块中存储日志信息（节省了大量空间）。</p>
+</div>
+<div class="section" id="difficulty">
+<h5>difficulty<a class="headerlink" href="#difficulty" title="Permalink to this headline">¶</a></h5>
+<p>此区块的难度值。这是当前区块挖矿难度的度量值（此处不对此概念的细节和计算作介绍）。</p>
+</div>
+<div class="section" id="number">
+<h5>number<a class="headerlink" href="#number" title="Permalink to this headline">¶</a></h5>
+<p>前序区块的总数。这标示了区块链的高度（即区块链上有多少区块）。创世区块的 number 为 0 。</p>
+</div>
+<div class="section" id="id61">
+<h5>gasLimit<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h5>
+<p>每一个交易都需要消耗 gas 。gas limit 标示了该区块所记录的所有交易可以使用的 gas 总量。这是限制区块内交易数量的一种手段。</p>
+</div>
+<div class="section" id="gasused">
+<h5>gasUsed<a class="headerlink" href="#gasused" title="Permalink to this headline">¶</a></h5>
+<p>区块中各条交易所实际消耗的 gas 总量。</p>
+</div>
+<div class="section" id="timestamp">
+<h5>timestamp<a class="headerlink" href="#timestamp" title="Permalink to this headline">¶</a></h5>
+<p>区块创建时的 Unix 时间戳。谨记由于以太坊网络去中心化的特性，我们不能信任这个值，特别是撰写智能合约、涉及到时间相关的商业逻辑时不能依靠这个值。</p>
+</div>
+<div class="section" id="extradata">
+<h5>extraData<a class="headerlink" href="#extradata" title="Permalink to this headline">¶</a></h5>
+<p>能输入任何东西的不定长字节数组。当矿工创建区块时，可以在这个区域添加任何东西。</p>
+</div>
+<div class="section" id="mixhash">
+<h5>mixHash<a class="headerlink" href="#mixhash" title="Permalink to this headline">¶</a></h5>
+<p>用于验证一个区块是否被真正记录到链上的哈希值（如果想要真正理解这个概念，建议阅读这篇文章 <a class="reference external" href="https://github.com/ethereum/wiki/wiki/Ethash">Ethash proof-of-work function</a> ）。</p>
+</div>
+<div class="section" id="id62">
+<h5>nonce<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h5>
+<p>和 mixHash 一样，用于验证区块是否被真正记录到链上的值。</p>
+</div>
+</div>
+<div class="section" id="id63">
+<h4>总结<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h4>
+<p>总体来看,以太坊有四种前缀树:</p>
+<ul class="simple">
+<li><p>1.<strong>世界状态树包括了从地址到账户状态之间的映射</strong>。 世界状态树的根节点哈希值由区块保存（在 stateRoot 字段），它标示了区块创建时的当前状态。整个网络中只有一个世界状态树。</p></li>
+<li><p>2.<strong>账户存储树保存了与某一智能合约相关的数据信息</strong>。由账户状态保存账户存储树的根节点哈希值（在 storageRoot 字段）。每个账户都有一个账户存储树。</p></li>
+<li><p>3.<strong>交易树包含了一个区块中的所有交易信息</strong>。由区块头（在 transactionsRoot 区域）保存交易树的根节点哈希值。每个区块都有一棵交易树。</p></li>
+<li><p>4.<strong>交易收据树包含了一个区块中所有交易的收据信息</strong>。同样由区块头（在 receiptsRoot 区域）保存交易收据树的根节点哈希值；每个区块都有对应的交易收据树。</p></li>
+</ul>
+<p>以太坊对象有：</p>
+<ul class="simple">
+<li><p><strong>世界状态</strong>: 以太坊这台分布式计算机的硬盘。它是从地址到账户状态的映射。</p></li>
+<li><p><strong>账户状态</strong>: 保存着每个以太坊账户的状态信息。账户状态同样保存着账户状态树的 storageRoot，后者包含了该账户的存储数据。</p></li>
+<li><p><strong>交易</strong>: 标示了系统中的状态转移。它可以是资金的转移、消息调用或是合约的部署。</p></li>
+<li><p><strong>区块</strong>: 包括对前序区块（parentHash）的链接，并且保存了当执行时会在系统中产生新状态的交易。区块同时保存了 stateRoot 、transactionRoot 、 receiptsRoot 、 世界状态树的根节点哈希、交易树以及对应的交易收据树。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="faq">
+<h3>5.FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../aboutme/index.html" class="btn btn-neutral float-right" title="联系我 [Call ME]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="企业以太坊" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, 艾克中国.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

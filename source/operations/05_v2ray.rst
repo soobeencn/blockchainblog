@@ -50,4 +50,3 @@ ubuntu版 一键部署:
 
     https://ssrvps.org/archives/1023
 
-    xinghua

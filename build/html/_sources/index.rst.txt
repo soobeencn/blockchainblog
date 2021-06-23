@@ -21,6 +21,7 @@
    operations/index
    opensource/index
    base/index
+   whitepaper/index
    aboutme/index
    
 .. hadoop/index
