@@ -40,9 +40,7 @@
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="联系我 [Call ME]" href="../aboutme/index.html" />
-    <link rel="prev" title="企业以太坊" href="index.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,113 +85,13 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">比特币 [Bitcoin]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ethereum/index.html">以太坊 [Ethereum]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hyperledger/index.html">联盟链 [Hyperledger Fabric]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../operations/index.html">Linux内核 [Operations]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../opensource/index.html">开源项目 [open source project]</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/index.html">分享与交流 [Interviewer]</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">企业以太坊</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">1. 1.整体架构</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">1.1. 基础架构介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">1.2. 平台的特点:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">1.3. 平台的功能包括：</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">2. 2.共识协议设计</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id6">2.1. 基本原理</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id7">拜占庭容错</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id12">工作量证明和权益证明</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#clique">Clique共识算法</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id16">2.2. 可插拔共识机制</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id17">比较共识协议</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#properties">Properties(属性)</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id18">2.3. 自定义配置(详解)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id19">Clique</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ibft2-0">IBFT2.0</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#id36">3. 3.密码算法设计</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id37">3.1. 哈希算法</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id38">什么是哈希计算</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id39">哈希算法的种类</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id40">区块链中的哈希算法</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id42">3.2. 公开密钥算法</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id43">两把钥匙:公钥和私钥</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#rsa">RSA算法</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id44">椭圆曲线密码算法</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id45">3.3. 编码/解码算法</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#base64">Base64</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#base58">Base58</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#base58check">Base58Check</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id46">3.4. 应用场景</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id47">1.账户地址生成</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id48">2.价值转移保卫</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id49">3.完整性证明</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id50">4.零知识证明</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#id51">4. 4.账本数据设计</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id52">4.1. 简述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id53">4.2. 默克尔树</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id54">4.3. 世界状态</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id55">4.4. 账户状态</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#nonce">nonce</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#balance">balance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#storageroot">storageRoot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#codehash">codeHash</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id56">4.5. 交易</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id57">nonce</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gasprice">gasPrice</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gaslimit">gasLimit</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#to">to</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#value">value</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#v-r-s">v, r, s</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#data">data（只用于价值传输以及向智能合约发送消息调用）</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#init">init（只用于合约创建）</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id58">4.6. 区块</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#parenthash">parentHash</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ommershash">ommersHash</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#beneficiary">beneficiary</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#stateroot">stateRoot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#transactionsroot">transactionsRoot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#receiptsroot">receiptsRoot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#logsbloom">logsBloom</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#difficulty">difficulty</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#number">number</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id59">gasLimit</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gasused">gasUsed</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#timestamp">timestamp</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#extradata">extraData</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mixhash">mixHash</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id60">nonce</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id61">4.7. 总结</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#faq">5. 5.FAQ</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../aboutme/index.html">联系我 [Call ME]</a></li>
 </ul>
 
@@ -242,8 +140,6 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="index.html">企业以太坊</a> &raquo;</li>
         
       <li><span class="section-number">1. </span>1.整体架构</li>
     
@@ -1501,10 +1397,6 @@ e*x+φ(n)y=1
            
           </div>
           <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../aboutme/index.html" class="btn btn-neutral float-right" title="联系我 [Call ME]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="index.html" class="btn btn-neutral float-left" title="企业以太坊" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
 
   <hr/>
 
