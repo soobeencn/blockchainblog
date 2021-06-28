@@ -20,7 +20,6 @@
    hyperledger/index
    operations/index
    opensource/index
-   base/index
    aboutme/index
    
 .. hadoop/index
