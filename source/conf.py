@@ -49,10 +49,6 @@ extensions = [
     'sphinx_markdown_tables',
 ]
 
-extensions = [
-    'sphinx_markdown_tables',
-]
-
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -188,3 +184,5 @@ epub_exclude_files = ['search.html']
 # -- Extension configuration -------------------------------------------------
 
 numpydoc_show_class_members = False
+
+python = 3.9
