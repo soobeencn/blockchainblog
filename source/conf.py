@@ -184,5 +184,3 @@ epub_exclude_files = ['search.html']
 # -- Extension configuration -------------------------------------------------
 
 numpydoc_show_class_members = False
-
-python = 3.9
