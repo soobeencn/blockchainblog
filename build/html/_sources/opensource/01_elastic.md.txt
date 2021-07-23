@@ -21,13 +21,13 @@ _实时搜索、分析和可视化数据、100% 开源_
 ### 2. 微服务的日志系统
 既然日志如此重要，在我们微服务复杂的体系中更不可缺，但是由于微服务的特性，一个大服务被拆分成多个小服务，一个小服务被分布在多台机器中，如何让运维和开发人员能快速定位到某个服务和某台机器？
 
-![-w491](http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16196020568092.jpg)
+(http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16196020568092.jpg)
 
 如上图所描述，难道运维人员需要每台机器都登录上去去检索，那就太奔溃了。我们换个想法：把分散的日志想个办法集中起来，让运维和开发到一个集中的地方进行检索和分析。
 
 我们重新设计下，在每台服务器上安装个 agent ，将设定好的 log ，按照一定的规则，上报给日志平台，日志平台有一个可以存储日志数据的存储服务，有一个友好检索查看日志的界面
 
-![-w726](http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16196025354497.jpg)
+(http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16196025354497.jpg)
 
 
 ### 3. 日志平台组件设计图
@@ -47,7 +47,7 @@ _实时搜索、分析和可视化数据、100% 开源_
 - **Elasticsearch** ：分布式搜索引擎,基于 Lucene 开发。具有高可伸缩、高可靠、易管理等特点。可以用于全文检索、结构化检索和分析，并能将这三者结合起来。
 
 整体架构图: 
-![-w778](http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16195939349591.jpg)
+(http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16195939349591.jpg)
 
 -------------------------
 ## Kibana
