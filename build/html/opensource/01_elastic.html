@@ -219,10 +219,10 @@
 <div class="section" id="id3">
 <h3>2. 微服务的日志系统<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>既然日志如此重要，在我们微服务复杂的体系中更不可缺，但是由于微服务的特性，一个大服务被拆分成多个小服务，一个小服务被分布在多台机器中，如何让运维和开发人员能快速定位到某个服务和某台机器？</p>
-<p><img alt=" " src="http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16196020568092.jpg" /></p>
+<p><img alt="Alt" src="http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16196020568092.jpg" /></p>
 <p>如上图所描述，难道运维人员需要每台机器都登录上去去检索，那就太奔溃了。我们换个想法：把分散的日志想个办法集中起来，让运维和开发到一个集中的地方进行检索和分析。</p>
 <p>我们重新设计下，在每台服务器上安装个 agent ，将设定好的 log ，按照一定的规则，上报给日志平台，日志平台有一个可以存储日志数据的存储服务，有一个友好检索查看日志的界面</p>
-<p><img alt=" " src="http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16196025354497.jpg" /></p>
+<p><img alt="Alt" src="http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16196025354497.jpg" /></p>
 </div>
 <div class="section" id="id4">
 <h3>3. 日志平台组件设计图<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
