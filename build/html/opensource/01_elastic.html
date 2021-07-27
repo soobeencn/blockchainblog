@@ -95,9 +95,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">开源项目 [open source project]</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">1. Elastic Stack</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">1.1. 分布式日志系统必要性:</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id2">1. 为什么要做日志系统</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3">2. 微服务的日志系统</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">3. 日志平台组件设计图</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">为什么要做日志系统</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">微服务的日志系统</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">日志平台组件设计图</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#kibana">1.2. Kibana</a></li>
@@ -204,7 +204,7 @@
 <div class="section" id="id1">
 <h2><span class="section-number">1.1. </span>分布式日志系统必要性:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
-<h3>1. 为什么要做日志系统<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>为什么要做日志系统<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>首先，什么是日志？</p>
 <p>日志就是我们的应用程序中产生，可能是应用容器也能是我们的写的程序产生，并且按照一个格式的文本数据。</p>
 <p>通常日志是在我们的服务器中产生，按照一定的规则，输出到我们指定的文件中，例如，在操作系统中会有系统日志，安全日志，在应用容器中会有访问日志，在我们的程序中会有程序日志，而这些日志是分散的存储在不同的机器中。</p>
@@ -217,7 +217,7 @@
 <p>在我们系统发生故障或者需要对数据进行分析和查找时，我们的运维或开发人员就要登录到不同对应的服务器上，用 grep awk 等工具对日志进行分析和查找，因为负载均衡的原因，我们的服务往往是分布在多个服务实例中，而我们对服务进行排查时需要先确定这块故障究竟是出现在哪一个服务实例，才能进行登录和日志排查。</p>
 </div>
 <div class="section" id="id3">
-<h3>2. 微服务的日志系统<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>微服务的日志系统<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>既然日志如此重要，在我们微服务复杂的体系中更不可缺，但是由于微服务的特性，一个大服务被拆分成多个小服务，一个小服务被分布在多台机器中，如何让运维和开发人员能快速定位到某个服务和某台机器？</p>
 <p><img alt=" " src="http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16196020568092.jpg" /></p>
 <p>如上图所描述，难道运维人员需要每台机器都登录上去去检索，那就太奔溃了。我们换个想法：把分散的日志想个办法集中起来，让运维和开发到一个集中的地方进行检索和分析。</p>
@@ -225,7 +225,7 @@
 <p><img alt=" " src="http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16196025354497.jpg" /></p>
 </div>
 <div class="section" id="id4">
-<h3>3. 日志平台组件设计图<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>日志平台组件设计图<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>我们做了个设计，整合了日志平台，在原来的基础上添加个 3 大组件，分别是：</p>
 <ul class="simple">
 <li><p>数据收集和规则匹配 ： 在每台服务上添加一个模块 agent，可以动态从各个数据源（日志）收集数据，并对数据进行过滤，分析，丰富统一格式等操作，用网络的方式上报给日志平台；</p></li>
