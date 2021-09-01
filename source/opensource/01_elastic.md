@@ -145,7 +145,7 @@ _Immediate Insights with Modules_
 ### 动态管道
 
 |消息处理机制|
-|:------:|
+|:--:|
 |Apache Pipeline|
 |JDBC Pipeline|
 |Netflow Pipeline|
