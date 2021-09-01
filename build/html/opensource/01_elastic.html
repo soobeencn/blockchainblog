@@ -336,12 +336,24 @@
 </div>
 <div class="section" id="id8">
 <h3>动态管道<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>|消息处理机制|
-|:——:|
-|Apache Pipeline|
-|JDBC Pipeline|
-|Netflow Pipeline|</p>
-<ul class="simple">
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">消息处理机制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Apache Pipeline</td>
+</tr>
+<tr>
+<td align="center">JDBC Pipeline</td>
+</tr>
+<tr>
+<td align="center">Netflow Pipeline</td>
+</tr>
+</tbody>
+</table><ul class="simple">
 <li><p>带条件和多管道的直接数据流</p></li>
 <li><p>使用身份认证和加密来确保传输安全</p></li>
 <li><p>使用modules来一键交付</p></li>
@@ -784,13 +796,32 @@ sudo ./filebeat -e</p>
 </div>
 <div class="section" id="id23">
 <h5>队列和交付保障<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h5>
-<p>|InMemoryQueue|Persistent Queue|
-| :—-: | :—-: |
-|非常快|快|
-|所有数据都在内存|收到的数据先落地磁盘，直到交付完成|
-|没有落地|落地|
-|正在处理的数据可能会因为非正常关闭而丢失|持久化，非正常关闭不会丢失数据|</p>
-</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">InMemoryQueue</th>
+<th align="center">Persistent Queue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">非常快</td>
+<td align="center">快</td>
+</tr>
+<tr>
+<td align="center">所有数据都在内存</td>
+<td align="center">收到的数据先落地磁盘，直到交付完成</td>
+</tr>
+<tr>
+<td align="center">没有落地</td>
+<td align="center">落地</td>
+</tr>
+<tr>
+<td align="center">正在处理的数据可能会因为非正常关闭而丢失</td>
+<td align="center">持久化，非正常关闭不会丢失数据</td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="at-least-once-delivery">
 <h5>至少交付一次（At Least Once Delivery）<a class="headerlink" href="#at-least-once-delivery" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
