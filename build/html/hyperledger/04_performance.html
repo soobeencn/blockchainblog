@@ -1,13 +1,13 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="zh-CN" >
 <head>
   <meta charset="utf-8" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4. Hyperledger Fabric 性能评测 &mdash; 区块链研究记录 1.0 documentation</title>
+  <title>4. Hyperledger Fabric 性能评测 &mdash; 区块链研究记录 1.0 文档</title>
   
 
   
@@ -35,12 +35,13 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="5. Hyperledger Explorer" href="05_explorer.html" />
     <link rel="prev" title="3. Fabric 系统架构" href="03_framework.html" /> 
 </head>
@@ -70,7 +71,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="在文档中搜索" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -164,7 +165,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/hyperledger/04_performance.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/hyperledger/04_performance.rst.txt" rel="nofollow"> 查看页面源码</a>
           
         
       </li>
@@ -178,9 +179,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="hyperledger-fabric">
-<h1><span class="section-number">4. </span>Hyperledger Fabric 性能评测<a class="headerlink" href="#hyperledger-fabric" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4. </span>Hyperledger Fabric 性能评测<a class="headerlink" href="#hyperledger-fabric" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
-<h2><span class="section-number">4.1. </span>环境配置<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1. </span>环境配置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>go version : 1.13.4</p></li>
 <li><p>fabric version : v1.4.0 / v1.4.1</p></li>
@@ -193,7 +194,7 @@
 </ul>
 </div>
 <div class="section" id="id2">
-<h2><span class="section-number">4.2. </span>部署流程<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2. </span>部署流程<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><dl class="simple">
 <dt>caliper源码部署</dt><dd><ul>
@@ -227,7 +228,7 @@
 </ul>
 </div>
 <div class="section" id="id3">
-<h2><span class="section-number">4.3. </span>报告分析:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3. </span>报告分析:<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><dl>
 <dt>第一次测试(默认配置文件)</dt><dd><ul>
@@ -383,7 +384,7 @@
 </ul>
 </div>
 <div class="section" id="id4">
-<h2><span class="section-number">4.4. </span>总结:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.4. </span>总结:<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>1.Fabric不同场景下, open TPS维持在220左右, query TPS保持在440左右, transfer TPS维持在180左右, 同时交易成功率仅有25% ~ 50%左右, 另外交易延迟区间也足够大, 这点可能会影响到账速度.</p></li>
 <li><p>2.在测试过程中,执行open测试的时候, 发现cpu占用率达到100%以上,同时经过多轮提升cpu性能均会出现cpu占用率超过100%的情况,无法提升send rate, 导致吞吐率无法从根本上提升.</p></li>
@@ -398,26 +399,26 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="05_explorer.html" class="btn btn-neutral float-right" title="5. Hyperledger Explorer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="03_framework.html" class="btn btn-neutral float-left" title="3. Fabric 系统架构" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="05_explorer.html" class="btn btn-neutral float-right" title="5. Hyperledger Explorer" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="03_framework.html" class="btn btn-neutral float-left" title="3. Fabric 系统架构" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, 艾克中国.
+        &#169; 版权所有 2021, 艾克中国.
 
     </p>
   </div>
     
     
     
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
     
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
     
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>

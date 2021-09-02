@@ -1,13 +1,13 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="zh-CN" >
 <head>
   <meta charset="utf-8" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4. ElasticSearch 面试题 &mdash; 区块链研究记录 1.0 documentation</title>
+  <title>4. ElasticSearch 面试题 &mdash; 区块链研究记录 1.0 文档</title>
   
 
   
@@ -35,12 +35,13 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -68,7 +69,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="在文档中搜索" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -146,7 +147,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/science/04_es.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/science/04_es.md.txt" rel="nofollow"> 查看页面源码</a>
           
         
       </li>
@@ -160,85 +161,85 @@
            <div itemprop="articleBody">
             
   <div class="section" id="elasticsearch">
-<h1><span class="section-number">4. </span>ElasticSearch 面试题<a class="headerlink" href="#elasticsearch" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4. </span>ElasticSearch 面试题<a class="headerlink" href="#elasticsearch" title="永久链接至标题">¶</a></h1>
 <div class="section" id="elasticsearch-es">
-<h2><span class="section-number">4.1. </span>elasticsearch 了解多少，说说你们公司 es 的集群架构，索引数据大小，分片有多少，以及一些调优手段<a class="headerlink" href="#elasticsearch-es" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1. </span>elasticsearch 了解多少，说说你们公司 es 的集群架构，索引数据大小，分片有多少，以及一些调优手段<a class="headerlink" href="#elasticsearch-es" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id1">
-<h3>设计阶段调优<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>设计阶段调优<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
 </div>
 <div class="section" id="id2">
-<h3>写入调优<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>写入调优<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 </div>
 <div class="section" id="id3">
-<h3>查询调优<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>查询调优<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 </div>
 <div class="section" id="id4">
-<h3>其他调优<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>其他调优<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 </div>
 </div>
 <div class="section" id="id5">
-<h2><span class="section-number">4.2. </span>倒排索引是什么<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2. </span>倒排索引是什么<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 </div>
 <div class="section" id="es">
-<h2><span class="section-number">4.3. </span>ES索引数据多了怎么办,如何调优,部署<a class="headerlink" href="#es" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3. </span>ES索引数据多了怎么办,如何调优,部署<a class="headerlink" href="#es" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id6">
-<h3>动态索引层面<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3>动态索引层面<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 </div>
 <div class="section" id="id7">
-<h3>存储层面<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3>存储层面<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 </div>
 <div class="section" id="id8">
-<h3>部署层面<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3>部署层面<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 </div>
 </div>
 <div class="section" id="esmaster">
-<h2><span class="section-number">4.4. </span>ES如何实现master选举<a class="headerlink" href="#esmaster" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.4. </span>ES如何实现master选举<a class="headerlink" href="#esmaster" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>1,只有候选节点(master: ture)的节点才能成为主节点;</p></li>
 <li><p>2,最小节点数(min_master_nodes)的目的是为了防止脑裂;</p></li>
 </ul>
 </div>
 <div class="section" id="id9">
-<h2><span class="section-number">4.5. </span>详细描述一下ES索引文档的过程<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5. </span>详细描述一下ES索引文档的过程<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 </div>
 <div class="section" id="id10">
-<h2><span class="section-number">4.6. </span>详细描述一下ES搜索的过程<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.6. </span>详细描述一下ES搜索的过程<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
 </div>
 <div class="section" id="es-linux">
-<h2><span class="section-number">4.7. </span>ES部署时,对linux的设置有哪些优化方法<a class="headerlink" href="#es-linux" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.7. </span>ES部署时,对linux的设置有哪些优化方法<a class="headerlink" href="#es-linux" title="永久链接至标题">¶</a></h2>
 </div>
 <div class="section" id="lucene">
-<h2><span class="section-number">4.8. </span>lucene的内部结构是什么<a class="headerlink" href="#lucene" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.8. </span>lucene的内部结构是什么<a class="headerlink" href="#lucene" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>索引</p></li>
 <li><p>搜索</p></li>
 </ul>
 </div>
 <div class="section" id="id11">
-<h2><span class="section-number">4.9. </span>ES如何实现master选举<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.9. </span>ES如何实现master选举<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
 </div>
 <div class="section" id="elasticsearch-20-10-master-10-master">
-<h2><span class="section-number">4.10. </span>Elasticsearch 中的节点（比如共 20 个），其中的 10 个选了一个 master，另外 10 个选了另一个 master，怎么办？<a class="headerlink" href="#elasticsearch-20-10-master-10-master" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.10. </span>Elasticsearch 中的节点（比如共 20 个），其中的 10 个选了一个 master，另外 10 个选了另一个 master，怎么办？<a class="headerlink" href="#elasticsearch-20-10-master-10-master" title="永久链接至标题">¶</a></h2>
 </div>
 <div class="section" id="gc-es">
-<h2><span class="section-number">4.11. </span>对于GC方面,使用ES时要注意什么<a class="headerlink" href="#gc-es" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.11. </span>对于GC方面,使用ES时要注意什么<a class="headerlink" href="#gc-es" title="永久链接至标题">¶</a></h2>
 </div>
 <div class="section" id="id12">
-<h2><span class="section-number">4.12. </span>Elasticsearch 对于大数据量（上亿量级）的聚合如何实现？<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.12. </span>Elasticsearch 对于大数据量（上亿量级）的聚合如何实现？<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
 </div>
 <div class="section" id="id13">
-<h2><span class="section-number">4.13. </span>并发情况下,ES如何保证读写一致<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.13. </span>并发情况下,ES如何保证读写一致<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id14">
-<h3>可以通过版本号使用乐观并发控制,确保新版本不会被旧版本替代,由应用层解决冲突<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<h3>可以通过版本号使用乐观并发控制,确保新版本不会被旧版本替代,由应用层解决冲突<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 </div>
 <div class="section" id="id15">
-<h3>写一致性<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<h3>写一致性<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>一致性级别支持quorum/one/all   默认为quorum,即只有当大多数分片可用时才允许写操作)</p></li>
 </ul>
 </div>
 <div class="section" id="id16">
-<h3>读一致性<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<h3>读一致性<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>replication设置为sync(默认) 即操作在主分片和副本分片都完成后才会返回</p></li>
 <li><p>replication设置为async时,也可以通过设置搜索请求参数_preference为primary来查询主分片,确保文档是最新版本</p></li>
@@ -246,16 +247,16 @@
 </div>
 </div>
 <div class="section" id="id17">
-<h2><span class="section-number">4.14. </span>介绍一下个性化搜索方案<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.14. </span>介绍一下个性化搜索方案<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>SEE 基于 word2vec 和 Elasticsearch 实现个性化搜索</p></li>
 </ul>
 </div>
 <div class="section" id="id18">
-<h2><span class="section-number">4.15. </span>是否了解字典树<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.15. </span>是否了解字典树<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h2>
 </div>
 <div class="section" id="id19">
-<h2><span class="section-number">4.16. </span>拼写纠错是如何实现的<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.16. </span>拼写纠错是如何实现的<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h2>
 </div>
 </div>
 
@@ -269,18 +270,18 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, 艾克中国.
+        &#169; 版权所有 2021, 艾克中国.
 
     </p>
   </div>
     
     
     
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
     
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
     
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>

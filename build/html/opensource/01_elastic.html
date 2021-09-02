@@ -1,13 +1,13 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="zh-CN" >
 <head>
   <meta charset="utf-8" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>1. Elastic Stack &mdash; 区块链研究记录 1.0 documentation</title>
+  <title>1. Elastic Stack &mdash; 区块链研究记录 1.0 文档</title>
   
 
   
@@ -35,12 +35,13 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="2. kafka 入门指北" href="02_kafka.html" />
     <link rel="prev" title="开源项目 [open source project]" href="index.html" /> 
 </head>
@@ -70,7 +71,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="在文档中搜索" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -185,7 +186,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/opensource/01_elastic.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/opensource/01_elastic.md.txt" rel="nofollow"> 查看页面源码</a>
           
         
       </li>
@@ -199,12 +200,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="elastic-stack">
-<h1><span class="section-number">1. </span>Elastic Stack<a class="headerlink" href="#elastic-stack" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>Elastic Stack<a class="headerlink" href="#elastic-stack" title="永久链接至标题">¶</a></h1>
 <p><em>实时搜索、分析和可视化数据、100% 开源</em></p>
 <div class="section" id="id1">
-<h2><span class="section-number">1.1. </span>分布式日志系统必要性:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>分布式日志系统必要性:<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id2">
-<h3>为什么要做日志系统<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>为什么要做日志系统<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>首先，什么是日志？</p>
 <p>日志就是我们的应用程序中产生，可能是应用容器也能是我们的写的程序产生，并且按照一个格式的文本数据。</p>
 <p>通常日志是在我们的服务器中产生，按照一定的规则，输出到我们指定的文件中，例如，在操作系统中会有系统日志，安全日志，在应用容器中会有访问日志，在我们的程序中会有程序日志，而这些日志是分散的存储在不同的机器中。</p>
@@ -217,7 +218,7 @@
 <p>在我们系统发生故障或者需要对数据进行分析和查找时，我们的运维或开发人员就要登录到不同对应的服务器上，用 grep awk 等工具对日志进行分析和查找，因为负载均衡的原因，我们的服务往往是分布在多个服务实例中，而我们对服务进行排查时需要先确定这块故障究竟是出现在哪一个服务实例，才能进行登录和日志排查。</p>
 </div>
 <div class="section" id="id3">
-<h3>微服务的日志系统<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>微服务的日志系统<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>既然日志如此重要，在我们微服务复杂的体系中更不可缺，但是由于微服务的特性，一个大服务被拆分成多个小服务，一个小服务被分布在多台机器中，如何让运维和开发人员能快速定位到某个服务和某台机器？</p>
 <p><img alt=" " src="http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16196020568092.jpg" /></p>
 <p>如上图所描述，难道运维人员需要每台机器都登录上去去检索，那就太奔溃了。我们换个想法：把分散的日志想个办法集中起来，让运维和开发到一个集中的地方进行检索和分析。</p>
@@ -225,7 +226,7 @@
 <p><img alt=" " src="http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16196025354497.jpg" /></p>
 </div>
 <div class="section" id="id4">
-<h3>日志平台组件设计图<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>日志平台组件设计图<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>我们做了个设计，整合了日志平台，在原来的基础上添加个 3 大组件，分别是：</p>
 <ul class="simple">
 <li><p>数据收集和规则匹配 ： 在每台服务上添加一个模块 agent，可以动态从各个数据源（日志）收集数据，并对数据进行过滤，分析，丰富统一格式等操作，用网络的方式上报给日志平台；</p></li>
@@ -244,7 +245,7 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="kibana">
-<h2><span class="section-number">1.2. </span>Kibana<a class="headerlink" href="#kibana" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span>Kibana<a class="headerlink" href="#kibana" title="永久链接至标题">¶</a></h2>
 <p>Kibana 是通向 Elastic 产品集的窗口， 它可以在 Elasticsearch 中对数据进行视觉探索和实时分析</p>
 <p>包含多种解决方案, 如搜索、地理位置分析、日志、指标、安全、APM
 同时拥有多种功能, 如</p>
@@ -259,10 +260,10 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="logstash">
-<h2><span class="section-number">1.3. </span>Logstash<a class="headerlink" href="#logstash" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3. </span>Logstash<a class="headerlink" href="#logstash" title="永久链接至标题">¶</a></h2>
 <p>Logstash 是 Elastic Stack 的中央数据流引擎， 用于收集、丰富和统一所有数据，而不管格式或模式。 当与Elasticsearch，Kibana，及 Beats 共同使用的时候便会拥有特别强大的实时处理能力。</p>
 <div class="section" id="id5">
-<h3>Logstash入门<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>Logstash入门<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p><em>the dataflow engine</em></p>
 <ul class="simple">
 <li><p>开源的流式 <strong>ETL</strong> 引擎</p></li>
@@ -274,7 +275,7 @@
 </ul>
 </div>
 <div class="section" id="id6">
-<h3>Logstash结构<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3>Logstash结构<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <table>
     <tr>
         <th colspan="3">Logstash</th>
@@ -324,7 +325,7 @@
 <p><em>1.At-least-once: 交付保障和基于持久化队列的自适应缓冲</em><br /><em>2.将错误事件发送到死信队列(dead letter queue)中, 用于离线处理和重放</em></p>
 </div>
 <div class="section" id="id7">
-<h3>Logstash模块<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3>Logstash模块<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p><em>Immediate Insights with Modules</em></p>
 <ul class="simple">
 <li><p>特定数据类型的一键交付</p></li>
@@ -335,7 +336,7 @@
 </ul>
 </div>
 <div class="section" id="id8">
-<h3>动态管道<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3>动态管道<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -361,11 +362,11 @@
 </ul>
 </div>
 <div class="section" id="id9">
-<h3>处理数据<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3>处理数据<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <p>codecs &amp; serialize
 <em><strong>using codecs to serialize/deserialize data</strong></em></p>
 <div class="section" id="id10">
-<h4>一个示例：<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<h4>一个示例：<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h4>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">input</span> <span class="p">{</span>
     <span class="nx">file</span> <span class="p">{</span> 
         <span class="c1">// Deserialize new line separated JSON</span>
@@ -386,11 +387,11 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="springboot">
-<h3>SpringBoot集成<a class="headerlink" href="#springboot" title="Permalink to this headline">¶</a></h3>
+<h3>SpringBoot集成<a class="headerlink" href="#springboot" title="永久链接至标题">¶</a></h3>
 <div class="section" id="log4j2">
-<h4>Log4j2配置<a class="headerlink" href="#log4j2" title="Permalink to this headline">¶</a></h4>
+<h4>Log4j2配置<a class="headerlink" href="#log4j2" title="永久链接至标题">¶</a></h4>
 <div class="section" id="pom-xmlmaven">
-<h5>1.pom.xml添加maven依赖<a class="headerlink" href="#pom-xmlmaven" title="Permalink to this headline">¶</a></h5>
+<h5>1.pom.xml添加maven依赖<a class="headerlink" href="#pom-xmlmaven" title="永久链接至标题">¶</a></h5>
 <p>先上示例:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
@@ -436,7 +437,7 @@
 </ol>
 </div>
 <div class="section" id="resourceslog4j2-spring-xml">
-<h5>2.resources目录下添加log4j2-spring.xml<a class="headerlink" href="#resourceslog4j2-spring-xml" title="Permalink to this headline">¶</a></h5>
+<h5>2.resources目录下添加log4j2-spring.xml<a class="headerlink" href="#resourceslog4j2-spring-xml" title="永久链接至标题">¶</a></h5>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;Configuration</span> <span class="na">status=</span><span class="s">&quot;OFF&quot;</span> <span class="na">monitorInterval=</span><span class="s">&quot;60&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;Appenders&gt;</span>
@@ -463,9 +464,9 @@
 </div>
 </div>
 <div class="section" id="id11">
-<h5>3.准备logstash环境<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h5>
+<h5>3.准备logstash环境<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h5>
 <div class="section" id="a-eslogstash">
-<h6>a.下载对应es版本的logstash<a class="headerlink" href="#a-eslogstash" title="Permalink to this headline">¶</a></h6>
+<h6>a.下载对应es版本的logstash<a class="headerlink" href="#a-eslogstash" title="永久链接至标题">¶</a></h6>
 <blockquote>
 <div><p>curl https://artifacts.elastic.co/downloads/logstash/logstash-7.10.2-linux-x86_64.tar.gz</p>
 </div></blockquote>
@@ -474,7 +475,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="b-conf">
-<h6>b.配置conf<a class="headerlink" href="#b-conf" title="Permalink to this headline">¶</a></h6>
+<h6>b.配置conf<a class="headerlink" href="#b-conf" title="永久链接至标题">¶</a></h6>
 <p>logstash中一个log4j2配置:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>input <span class="o">{</span>
   tcp <span class="o">{</span>
@@ -505,7 +506,7 @@ output <span class="o">{</span>
 </div>
 </div>
 <div class="section" id="c">
-<h6>c.添加插件<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h6>
+<h6>c.添加插件<a class="headerlink" href="#c" title="永久链接至标题">¶</a></h6>
 <p>根据上述input/filter/output标签内使用的组件, 在logstash列表中添加</p>
 <blockquote>
 <div><p>./bin/logstash-plugin list</p>
@@ -515,14 +516,14 @@ output <span class="o">{</span>
 </div></blockquote>
 </div>
 <div class="section" id="d">
-<h6>d.启动<a class="headerlink" href="#d" title="Permalink to this headline">¶</a></h6>
+<h6>d.启动<a class="headerlink" href="#d" title="永久链接至标题">¶</a></h6>
 <blockquote>
 <div><p>./bin/logstash -f conf/log4j2-conf.conf</p>
 </div></blockquote>
 </div>
 </div>
 <div class="section" id="id12">
-<h5>4.准备测试环境<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h5>
+<h5>4.准备测试环境<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h5>
 <p>一个controller控制器:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@RestController</span>
 <span class="nd">@RequestMapping</span><span class="p">(</span><span class="s">&quot;Log&quot;</span><span class="p">)</span>
@@ -541,16 +542,16 @@ output <span class="o">{</span>
 </div>
 </div>
 <div class="section" id="id13">
-<h5>5.kibana展示<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h5>
+<h5>5.kibana展示<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h5>
 <p><img alt="http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16263194520313.jpg" src="http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16263194520313.jpg" /></p>
 <p>内网服务器链接: <em>http://192.168.1.161:5601/app/discover</em></p>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="logback">
-<h4>Logback配置<a class="headerlink" href="#logback" title="Permalink to this headline">¶</a></h4>
+<h4>Logback配置<a class="headerlink" href="#logback" title="永久链接至标题">¶</a></h4>
 <div class="section" id="pom">
-<h5>1.修改pom文件<a class="headerlink" href="#pom" title="Permalink to this headline">¶</a></h5>
+<h5>1.修改pom文件<a class="headerlink" href="#pom" title="永久链接至标题">¶</a></h5>
 <div class="highlight-pom notranslate"><div class="highlight"><pre><span></span>&lt;dependency&gt;
     &lt;groupId&gt;net.logstash.logback&lt;/groupId&gt;
     &lt;artifactId&gt;logstash-logback-encoder&lt;/artifactId&gt;
@@ -570,7 +571,7 @@ output <span class="o">{</span>
 </div>
 </div>
 <div class="section" id="resourceslogback-spring-xml">
-<h5>2.resources目录下添加logback-spring.xml<a class="headerlink" href="#resourceslogback-spring-xml" title="Permalink to this headline">¶</a></h5>
+<h5>2.resources目录下添加logback-spring.xml<a class="headerlink" href="#resourceslogback-spring-xml" title="永久链接至标题">¶</a></h5>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;configuration</span> <span class="na">debug=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;LOG_HOME&quot;</span> <span class="na">value=</span><span class="s">&quot;logs/demo.log&quot;</span><span class="nt">/&gt;</span>
@@ -597,7 +598,7 @@ output <span class="o">{</span>
 </div>
 </div>
 <div class="section" id="id14">
-<h5>3.准备logstash环境<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h5>
+<h5>3.准备logstash环境<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h5>
 <p>区别在于配置文件的修改, 只需要添加logback.conf:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>input <span class="o">{</span>
   tcp <span class="o">{</span>
@@ -633,7 +634,7 @@ output <span class="o">{</span>
 </div></blockquote>
 </div>
 <div class="section" id="id15">
-<h5>4.准备测试环境<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h5>
+<h5>4.准备测试环境<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h5>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@RestController</span>
 <span class="nd">@RequestMapping</span><span class="p">(</span><span class="s">&quot;Log&quot;</span><span class="p">)</span>
 <span class="nd">@Slf4j</span>
@@ -650,7 +651,7 @@ output <span class="o">{</span>
 </div>
 </div>
 <div class="section" id="id16">
-<h5>5.kibana展示<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h5>
+<h5>5.kibana展示<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h5>
 <p><img alt="http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16263388227370.jpg" src="http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/mweb/16263388227370.jpg" /></p>
 </div>
 </div>
@@ -658,14 +659,14 @@ output <span class="o">{</span>
 </div>
 <hr class="docutils" />
 <div class="section" id="id17">
-<h2><span class="section-number">1.4. </span>轻量级插件<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4. </span>轻量级插件<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h2>
 <p>鉴于在服务端采集使用日志采用 Logstash 带来的额外的性能开销，可以引入 Filebeat 解决这一部分问题。
 使用 Filebeat ，就是简化部分的 LogStash，Filebeat 是基于 logstash-forwarder 的源码改造而成，用 Golang 编写，无需依赖 Java 环境，效率高，占用内存和 CPU 比较少，非常适合作为 Agent 跑在服务器上。</p>
 <div class="section" id="filebeats">
-<h3>Filebeats<a class="headerlink" href="#filebeats" title="Permalink to this headline">¶</a></h3>
+<h3>Filebeats<a class="headerlink" href="#filebeats" title="永久链接至标题">¶</a></h3>
 <p>轻量级logstash</p>
 <div class="section" id="id18">
-<h4>接入指南<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<h4>接入指南<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h4>
 <ul>
 <li><p>获取资源</p>
 <blockquote>
@@ -754,9 +755,9 @@ sudo ./filebeat -e</p>
 </ul>
 </div>
 <div class="section" id="id19">
-<h4>原理<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<h4>原理<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h4>
 <div class="section" id="id20">
-<h5>一个基本配置<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h5>
+<h5>一个基本配置<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h5>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">input</span> <span class="p">{</span>
     <span class="nx">beats</span> <span class="p">{</span> <span class="nx">port</span> <span class="p">=&gt;</span> <span class="mf">5043</span> <span class="p">}</span>
 <span class="p">}</span>
@@ -770,7 +771,7 @@ sudo ./filebeat -e</p>
 </div>
 </div>
 <div class="section" id="id21">
-<h5>一个事件<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
+<h5>一个事件<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h5>
 <ul class="simple">
 <li><p>Logstash主要的数据单元就是事件</p></li>
 <li><p>他们是文档类型， 和Json文档类型很相似，支持任意层次结构和类型</p></li>
@@ -786,7 +787,7 @@ sudo ./filebeat -e</p>
 </div>
 </div>
 <div class="section" id="id22">
-<h5>一个管道<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h5>
+<h5>一个管道<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h5>
 <ul class="simple">
 <li><p>pipelines 可伸缩</p></li>
 <li><p>支持多个input</p></li>
@@ -795,7 +796,7 @@ sudo ./filebeat -e</p>
 </ul>
 </div>
 <div class="section" id="id23">
-<h5>队列和交付保障<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h5>
+<h5>队列和交付保障<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h5>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -823,7 +824,7 @@ sudo ./filebeat -e</p>
 </tbody>
 </table></div>
 <div class="section" id="at-least-once-delivery">
-<h5>至少交付一次（At Least Once Delivery）<a class="headerlink" href="#at-least-once-delivery" title="Permalink to this headline">¶</a></h5>
+<h5>至少交付一次（At Least Once Delivery）<a class="headerlink" href="#at-least-once-delivery" title="永久链接至标题">¶</a></h5>
 <ul class="simple">
 <li><p>大部分插件支持</p></li>
 <li><p>大部分情况，消息只交付一次</p></li>
@@ -834,7 +835,7 @@ sudo ./filebeat -e</p>
 </div>
 </div>
 <div class="section" id="packetbeat">
-<h3>Packetbeat<a class="headerlink" href="#packetbeat" title="Permalink to this headline">¶</a></h3>
+<h3>Packetbeat<a class="headerlink" href="#packetbeat" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>实时抓取网络包</p></li>
 <li><p>自动解析应用层协议</p></li>
@@ -843,9 +844,9 @@ sudo ./filebeat -e</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="metricbeat">
-<h3>Metricbeat<a class="headerlink" href="#metricbeat" title="Permalink to this headline">¶</a></h3>
+<h3>Metricbeat<a class="headerlink" href="#metricbeat" title="永久链接至标题">¶</a></h3>
 <div class="section" id="id24">
-<h4>监控和管理<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<h4>监控和管理<a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h4>
 <p>Monitoring</p>
 <ul class="simple">
 <li><p>使用 Monitoring UI 集中监控和管理多个Logstash部署</p></li>
@@ -859,7 +860,7 @@ sudo ./filebeat -e</p>
 <li><p>使用X-Pack Security 特性来控制管道管理的访问</p></li>
 </ul>
 <div class="section" id="id25">
-<h5>接入指南<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h5>
+<h5>接入指南<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h5>
 <ul class="simple">
 <li><p>同filebeat类似，详细内容参考filebeat接入指南</p></li>
 </ul>
@@ -867,24 +868,24 @@ sudo ./filebeat -e</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="apm-application-performance-monitoring">
-<h4>APM [application performance monitoring]<a class="headerlink" href="#apm-application-performance-monitoring" title="Permalink to this headline">¶</a></h4>
+<h4>APM [application performance monitoring]<a class="headerlink" href="#apm-application-performance-monitoring" title="永久链接至标题">¶</a></h4>
 <p>对于大部分应用程序来说性能都是很重要的一个因素，尤其对于比如网站、手机app等直接由用户访问的应用来说更是如此，因为性能较差的应用将会直接影响其用户体验。因此，能对应用进行性能监控变得非常重要，这将帮助我们找到性能瓶颈并优化。</p>
 <p>应用性能监控（Application Performance Monitoring，APM），是对应用程序性能和可用性的监视和管理。 APM努力检测和诊断复杂的应用程序性能问题，以维持预期的服务等级。</p>
 <div class="section" id="apm-server">
-<h5>APM Server<a class="headerlink" href="#apm-server" title="Permalink to this headline">¶</a></h5>
+<h5>APM Server<a class="headerlink" href="#apm-server" title="永久链接至标题">¶</a></h5>
 <p>APM 服务器会从 APM 代理处接收数据，然后再将这些数据转换为 Elasticsearch 文档。
 它是通过暴露 HTTP 服务器端点（代理会将所收集的 APM 数据流式传输到此端点）来实现这一点的。APM 服务器对来自 APM 代理的事件进行验证和处理之后，服务器会将数据转换为 Elasticsearch 文档，并将这些文档存储在相应的 Elasticsearch 索引中。</p>
 </div>
 <div class="section" id="apm">
-<h5>APM 代理<a class="headerlink" href="#apm" title="Permalink to this headline">¶</a></h5>
+<h5>APM 代理<a class="headerlink" href="#apm" title="永久链接至标题">¶</a></h5>
 <p>APM 代理是以您服务所用的相同语言编写的开源库。您可以像安装任何其他库一样，将 APM 代理安装到您的服务中。它们可以检测您的代码并在运行时收集性能数据和错误。这些数据会缓存一小段时间，然后发送到 APM 服务器。</p>
 </div>
 <div class="section" id="id26">
-<h5>APM 应用<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h5>
+<h5>APM 应用<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h5>
 <p>查找并修复代码中存在的问题归根结底就是搜索。通过 Kibana 中的专用 APM 应用，您能够识别瓶颈并在代码层面准确定位到存在问题的地方。因此，您能够编写更好、更高效的代码，进而帮助您加快“开发-测试-部署”周期，让您的应用程序运行更快，客户体验更佳。</p>
 </div>
 <div class="section" id="id27">
-<h5>分布式跟踪<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h5>
+<h5>分布式跟踪<a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h5>
 <p>纳闷您的请求是如何流经整个基础架构的？通过分布式跟踪将所有内容整合到一起，清晰查看您的各项服务之间的交互情况。查找路径中哪个位置发生了延时问题，然后准确定位到需加以优化的组件。</p>
 <p>效果：</p>
 <ul class="simple">
@@ -893,9 +894,9 @@ sudo ./filebeat -e</p>
 </ul>
 </div>
 <div class="section" id="id28">
-<h5>APM接入指南<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h5>
+<h5>APM接入指南<a class="headerlink" href="#id28" title="永久链接至标题">¶</a></h5>
 <div class="section" id="elastic-search-apm-server">
-<h6>1. 下载elastic search 同版本 apm-server, 按照惯例, 官网<a class="headerlink" href="#elastic-search-apm-server" title="Permalink to this headline">¶</a></h6>
+<h6>1. 下载elastic search 同版本 apm-server, 按照惯例, 官网<a class="headerlink" href="#elastic-search-apm-server" title="永久链接至标题">¶</a></h6>
 <blockquote>
 <div><p>https://www.elastic.co/cn/downloads/past-releases#apm-server</p>
 </div></blockquote>
@@ -905,13 +906,13 @@ sudo ./filebeat -e</p>
 </div></blockquote>
 </div>
 <div class="section" id="id29">
-<h6>2. 解压<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h6>
+<h6>2. 解压<a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h6>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="o">-</span><span class="n">xvf</span> <span class="n">apm</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="mf">7.10.2</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">tar</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id30">
-<h6>3. 修改配置文件<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h6>
+<h6>3. 修改配置文件<a class="headerlink" href="#id30" title="永久链接至标题">¶</a></h6>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">apm</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="mf">7.10.2</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span> 
 <span class="n">vim</span> <span class="n">apm</span><span class="o">-</span><span class="n">server</span><span class="o">.</span><span class="n">yml</span>
 </pre></div>
@@ -948,15 +949,15 @@ output.elasticsearch:
 </div>
 </div>
 <div class="section" id="id31">
-<h6>4.初始化配置<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h6>
+<h6>4.初始化配置<a class="headerlink" href="#id31" title="永久链接至标题">¶</a></h6>
 <p>./apm-server setup</p>
 </div>
 <div class="section" id="id32">
-<h6>5.启动apm<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h6>
+<h6>5.启动apm<a class="headerlink" href="#id32" title="永久链接至标题">¶</a></h6>
 <p>./apm-server -c apm-server.yml</p>
 </div>
 <div class="section" id="java">
-<h6>6.下载插件并启动java程序<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h6>
+<h6>6.下载插件并启动java程序<a class="headerlink" href="#java" title="永久链接至标题">¶</a></h6>
 <p>先去 <strong>maven central</strong> 官网下载插件:<br /><em>https://search.maven.org/search?q=g:co.elastic.apm%20AND%20a:elastic-apm-agent</em></p>
 <p>or 直接下载对应jar:</p>
 <blockquote>
@@ -973,10 +974,10 @@ output.elasticsearch:
 </div>
 <hr class="docutils" />
 <div class="section" id="elasticsearch">
-<h2><span class="section-number">1.5. </span>ElasticSearch<a class="headerlink" href="#elasticsearch" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.5. </span>ElasticSearch<a class="headerlink" href="#elasticsearch" title="永久链接至标题">¶</a></h2>
 <p><span id="jump"></span></p>
 <div class="section" id="id33">
-<h3>启动单节点<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<h3>启动单节点<a class="headerlink" href="#id33" title="永久链接至标题">¶</a></h3>
 <ul>
 <li><p>下载压缩包、yum、apt、docker</p></li>
 <li><p>配置单节点ES</p>
@@ -1074,9 +1075,9 @@ kibana123
 </div>
 <hr class="docutils" />
 <div class="section" id="id34">
-<h3>启动集群环境<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h3>
+<h3>启动集群环境<a class="headerlink" href="#id34" title="永久链接至标题">¶</a></h3>
 <div class="section" id="id35">
-<h4>配置文件<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h4>
+<h4>配置文件<a class="headerlink" href="#id35" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
 <li><p>node.master：表示节点是否具有称为主节点的资格</p></li>
 </ul>
@@ -1086,7 +1087,7 @@ kibana123
 <li><p>node.data：表示节点是否存储数据</p></li>
 </ul>
 <div class="section" id="id36">
-<h5>3个节点配置如下:<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h5>
+<h5>3个节点配置如下:<a class="headerlink" href="#id36" title="永久链接至标题">¶</a></h5>
 <p>node-1:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ---------------------------------- Cluster -----------------------------------</span>
 <span class="c1">#</span>
@@ -1234,7 +1235,7 @@ kibana123
 </div>
 </div>
 <div class="section" id="node">
-<h4>Node组合<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h4>
+<h4>Node组合<a class="headerlink" href="#node" title="永久链接至标题">¶</a></h4>
 <ul>
 <li><p>主节点+数据节点(master+data)</p>
 <ul>
@@ -1271,9 +1272,9 @@ kibana123
 </div>
 <hr class="docutils" />
 <div class="section" id="id37">
-<h3>配置优化<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
+<h3>配置优化<a class="headerlink" href="#id37" title="永久链接至标题">¶</a></h3>
 <div class="section" id="id38">
-<h4>写入性能优化策略:<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h4>
+<h4>写入性能优化策略:<a class="headerlink" href="#id38" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
 <li><p>用SSD</p></li>
 <li><p>多线程bulk</p></li>
@@ -1290,9 +1291,9 @@ kibana123
 </ul>
 </div>
 <div class="section" id="id39">
-<h4>堆内存优化<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h4>
+<h4>堆内存优化<a class="headerlink" href="#id39" title="永久链接至标题">¶</a></h4>
 <div class="section" id="id40">
-<h5>建议配置<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h5>
+<h5>建议配置<a class="headerlink" href="#id40" title="永久链接至标题">¶</a></h5>
 <ol class="simple">
 <li><p>将Xms和Xmx设置为彼此相等, 具体原因可了解: GC触发器、GC触发条件等</p></li>
 <li><p>ElasticSearch可用的堆越多,可用于缓存的内存就越多</p>
@@ -1305,7 +1306,7 @@ kibana123
 </ol>
 </div>
 <div class="section" id="id41">
-<h5>如何配置<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h5>
+<h5>如何配置<a class="headerlink" href="#id41" title="永久链接至标题">¶</a></h5>
 <ul>
 <li><p>1.进入elasticsearch根目录, 在config/jvm.option 配置文件中设置:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="o">-</span><span class="n">Xms4g</span>
@@ -1322,7 +1323,7 @@ kibana123
 </ul>
 </div>
 <div class="section" id="id42">
-<h5>问题抛晰<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h5>
+<h5>问题抛晰<a class="headerlink" href="#id42" title="永久链接至标题">¶</a></h5>
 <ul class="simple">
 <li><p>堆内存为什么不能超过物理机内存的一半？</p></li>
 </ul>
@@ -1357,7 +1358,7 @@ Java使用称为压缩oops的技巧来解决这个问题。而不是指向内存
 </div>
 </div>
 <div class="section" id="index-buffer-size">
-<h5>调整index_buffer_size<a class="headerlink" href="#index-buffer-size" title="Permalink to this headline">¶</a></h5>
+<h5>调整index_buffer_size<a class="headerlink" href="#index-buffer-size" title="永久链接至标题">¶</a></h5>
 <ul>
 <li><p>默认为堆内存的10%, 调整为堆内存的20%</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">indices</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">index_buffer_size</span><span class="p">:</span> <span class="mi">10</span><span class="o">%</span>
@@ -1373,11 +1374,11 @@ Java使用称为压缩oops的技巧来解决这个问题。而不是指向内存
 </div>
 </div>
 <div class="section" id="os">
-<h4>OS配置优化<a class="headerlink" href="#os" title="Permalink to this headline">¶</a></h4>
+<h4>OS配置优化<a class="headerlink" href="#os" title="永久链接至标题">¶</a></h4>
 <div class="section" id="os-cachees-memory-swap">
-<h5>OS cache与ES memory swap<a class="headerlink" href="#os-cachees-memory-swap" title="Permalink to this headline">¶</a></h5>
+<h5>OS cache与ES memory swap<a class="headerlink" href="#os-cachees-memory-swap" title="永久链接至标题">¶</a></h5>
 <div class="section" id="id43">
-<h6>一：最好的办法是在系统上完全禁用交换。<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h6>
+<h6>一：最好的办法是在系统上完全禁用交换。<a class="headerlink" href="#id43" title="永久链接至标题">¶</a></h6>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     这可以暂时完成：
 
     sudo swapoff -a
@@ -1387,7 +1388,7 @@ Java使用称为压缩oops的技巧来解决这个问题。而不是指向内存
 </div>
 </div>
 <div class="section" id="id44">
-<h6>二：控制操作系统尝试交换内存的积极性。<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h6>
+<h6>二：控制操作系统尝试交换内存的积极性。<a class="headerlink" href="#id44" title="永久链接至标题">¶</a></h6>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>如果完全禁用交换不是一种选择，您可以尝试降低swappiness。该值控制操作系统尝试交换内存的积极性。这可以防止在正常情况下交换，但仍然允许操作系统在紧急内存情况下进行交换。
 
 对于大多数Linux系统，这是使用sysctl值配置的：
@@ -1399,7 +1400,7 @@ Java使用称为压缩oops的技巧来解决这个问题。而不是指向内存
 </div>
 </div>
 <div class="section" id="mlockalljvm">
-<h6>三：mlockall允许JVM锁定其内存并防止其被操作系统交换。<a class="headerlink" href="#mlockalljvm" title="Permalink to this headline">¶</a></h6>
+<h6>三：mlockall允许JVM锁定其内存并防止其被操作系统交换。<a class="headerlink" href="#mlockalljvm" title="永久链接至标题">¶</a></h6>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>最后，如果两种方法都不可行，则应启用mlockall。文件。这允许JVM锁定其内存并防止其被操作系统交换。在你的elasticsearch.yml中，设置这个：
 
     1bootstrap.mlockall：true
@@ -1408,7 +1409,7 @@ Java使用称为压缩oops的技巧来解决这个问题。而不是指向内存
 </div>
 </div>
 <div class="section" id="memory-lock">
-<h5>内存锁:memory lock<a class="headerlink" href="#memory-lock" title="Permalink to this headline">¶</a></h5>
+<h5>内存锁:memory lock<a class="headerlink" href="#memory-lock" title="永久链接至标题">¶</a></h5>
 <blockquote>
 <div><p>Swapping is very bad for performance and for node stability and should be avoided at all costs. It can cause garbage collections to last for minutes instead of milliseconds and can cause nodes to respond slowly or even to disconnect from the cluster.      – 来源官方</p>
 </div></blockquote>
@@ -1444,10 +1445,10 @@ XXX hard memlock unlimited</p>
 </div>
 </div>
 <div class="section" id="id45">
-<h3>开发者快速接入<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h3>
+<h3>开发者快速接入<a class="headerlink" href="#id45" title="永久链接至标题">¶</a></h3>
 <p>完成一套ELK/EFK的快速搭建, 将服务器日志 run.log 发送到 ElasticSearch, 并使用 Kibana 检索日志</p>
 <div class="section" id="id46">
-<h4>版本<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h4>
+<h4>版本<a class="headerlink" href="#id46" title="永久链接至标题">¶</a></h4>
 <blockquote>
 <div><p>ElasticSearch 7.10.2
 FileBeats 7.10.2
@@ -1456,9 +1457,9 @@ Kibana 7.10.2</p>
 <p><strong>注意</strong>：三个组件安装的版本必须一致请进入官网需要下载的版本，下载后解压配置后即可以使用。</p>
 </div>
 <div class="section" id="id47">
-<h4>配置<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h4>
+<h4>配置<a class="headerlink" href="#id47" title="永久链接至标题">¶</a></h4>
 <div class="section" id="es">
-<h5>1.修改ES默认配置文件<a class="headerlink" href="#es" title="Permalink to this headline">¶</a></h5>
+<h5>1.修改ES默认配置文件<a class="headerlink" href="#es" title="永久链接至标题">¶</a></h5>
 <blockquote>
 <div><p>$ vim elsticsearch.yml</p>
 </div></blockquote>
@@ -1483,7 +1484,7 @@ Kibana 7.10.2</p>
 <p><a class="reference external" href="#jump">密钥生成请参考启动单节点启动步骤,完成设置</a></p>
 </div>
 <div class="section" id="filebeat">
-<h5>2.修改filebeat配置<a class="headerlink" href="#filebeat" title="Permalink to this headline">¶</a></h5>
+<h5>2.修改filebeat配置<a class="headerlink" href="#filebeat" title="永久链接至标题">¶</a></h5>
 <blockquote>
 <div><p>$ vim filebeat.yml</p>
 </div></blockquote>
@@ -1502,7 +1503,7 @@ Kibana 7.10.2</p>
 </div>
 </div>
 <div class="section" id="id48">
-<h5>3.修改kibana配置文件<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h5>
+<h5>3.修改kibana配置文件<a class="headerlink" href="#id48" title="永久链接至标题">¶</a></h5>
 <blockquote>
 <div><p>$ vim kibana.yml</p>
 </div></blockquote>
@@ -1529,26 +1530,26 @@ Kibana 7.10.2</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="02_kafka.html" class="btn btn-neutral float-right" title="2. kafka 入门指北" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="index.html" class="btn btn-neutral float-left" title="开源项目 [open source project]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="02_kafka.html" class="btn btn-neutral float-right" title="2. kafka 入门指北" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="开源项目 [open source project]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, 艾克中国.
+        &#169; 版权所有 2021, 艾克中国.
 
     </p>
   </div>
     
     
     
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
     
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
     
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>

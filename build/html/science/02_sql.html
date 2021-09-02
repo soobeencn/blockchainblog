@@ -1,13 +1,13 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="zh-CN" >
 <head>
   <meta charset="utf-8" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2. 数据库真题 &mdash; 区块链研究记录 1.0 documentation</title>
+  <title>2. 数据库真题 &mdash; 区块链研究记录 1.0 文档</title>
   
 
   
@@ -35,12 +35,13 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -68,7 +69,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="在文档中搜索" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -146,7 +147,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/science/02_sql.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/science/02_sql.md.txt" rel="nofollow"> 查看页面源码</a>
           
         
       </li>
@@ -160,11 +161,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1><span class="section-number">2. </span>数据库真题<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>数据库真题<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="sql">
-<h2><span class="section-number">2.1. </span>SQL慢查询的解决思路<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>SQL慢查询的解决思路<a class="headerlink" href="#sql" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id2">
-<h3>慢SQL的系统表现<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>慢SQL的系统表现<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>1.数据库CPU负载高。一般是查询语句中有很多计算逻辑，导致数据库cpu负载。</p></li>
 <li><p>2.IO负载高导致服务器卡住。这个一般和全表查询没索引有关系。</p></li>
@@ -172,9 +173,9 @@
 </ul>
 </div>
 <div class="section" id="id3">
-<h3>开启SQL慢查询的日志<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>开启SQL慢查询的日志<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <div class="section" id="mysql-my-cnf-mysqld">
-<h4>在 MySQL 的配置文件 my.cnf 的 [mysqld] 项下配置慢查询日志开启<a class="headerlink" href="#mysql-my-cnf-mysqld" title="Permalink to this headline">¶</a></h4>
+<h4>在 MySQL 的配置文件 my.cnf 的 [mysqld] 项下配置慢查询日志开启<a class="headerlink" href="#mysql-my-cnf-mysqld" title="永久链接至标题">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="p">[</span><span class="n">mysqld</span><span class="p">]</span><span class="n">slow_query_log</span><span class="o">=</span><span class="mi">1</span>
 <span class="o">-</span> <span class="n">slow_query_log_file</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">mysql</span><span class="o">/</span><span class="n">log</span><span class="o">-</span><span class="n">slow</span><span class="o">-</span><span class="n">queries</span><span class="o">.</span><span class="n">log</span>
 <span class="o">-</span> <span class="n">long_query_time</span><span class="o">=</span><span class="mi">2</span>
@@ -183,7 +184,7 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h3>总结<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>总结<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>1.打开慢日志查询，确定是否有SQL语句占用了过多资源，如果是，在不改变业务原意的前提下，对insert、group by、order by、join等语句进行优化。</p></li>
 <li><p>2.考虑调整MySQL的系统参数： innodb_buffer_pool_size、innodb_log_file_size、table_cache等。</p></li>
@@ -193,9 +194,9 @@
 </div>
 </div>
 <div class="section" id="id5">
-<h2><span class="section-number">2.2. </span>事务的隔离级别<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>事务的隔离级别<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id6">
-<h3>数据库必须具备的四个特性<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3>数据库必须具备的四个特性<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <ul>
 <li><p>1.原子性：事务包含的所有操作要么全部成功，要么全部失败回滚;成功必须要完全应用到数据库，失败则不能对数据库产生影响；</p></li>
 <li><p>2.一致性：事务执行前和执行后必须处于一致性状态;</p>
@@ -206,7 +207,7 @@
 </ul>
 </div>
 <div class="section" id="id7">
-<h3>隔离性：当多个线程都开启事务来操作数据库中的数据时，数据库系统要进行隔离操作，以保证各个线程获取数据的准确性。 不考虑事务的隔离性，会产生的几种问题：<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3>隔离性：当多个线程都开启事务来操作数据库中的数据时，数据库系统要进行隔离操作，以保证各个线程获取数据的准确性。 不考虑事务的隔离性，会产生的几种问题：<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>1.脏读</p></li>
 </ul>
@@ -224,7 +225,7 @@
 <p>注:幻读和不可重复读都读取另一条已经提交的事务，所不同的是不可重复读查询的都是同一数据项，而幻读针对的是一批数据整体。</p>
 </div>
 <div class="section" id="id8">
-<h3>数据库提供的四种隔离级别：<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3>数据库提供的四种隔离级别：<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>1.Read uncommitted(读未提交)：最低级别，任何情况都会发生。</p></li>
 <li><p>2.Read Committed(读已提交)：可避免脏读的发生。</p></li>
@@ -233,7 +234,7 @@
 </ul>
 </div>
 <div class="section" id="id9">
-<h3>注意：<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3>注意：<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <p>四种隔离级别最高：Seralizable级别，最低的是Read uncommitted级别; 级别越高，执行效率就越低; 隔离级别的设置只对当前链接有效，对JDBC操作数据库来说，一个Connection对象相当于一个链接，只对该Connection对象设置的隔离级别只对该connection对象有效，与其它链接connection对象无关。</p>
 <ul class="simple">
 <li><p>1.Mysql的默认隔离级别是：可重复读：Repeatable read;</p></li>
@@ -253,18 +254,18 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, 艾克中国.
+        &#169; 版权所有 2021, 艾克中国.
 
     </p>
   </div>
     
     
     
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
     
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
     
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>

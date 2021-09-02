@@ -1,13 +1,13 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="zh-CN" >
 <head>
   <meta charset="utf-8" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2. kafka 入门指北 &mdash; 区块链研究记录 1.0 documentation</title>
+  <title>2. kafka 入门指北 &mdash; 区块链研究记录 1.0 文档</title>
   
 
   
@@ -35,12 +35,13 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="联系我 [Call ME]" href="../aboutme/index.html" />
     <link rel="prev" title="1. Elastic Stack" href="01_elastic.html" /> 
 </head>
@@ -70,7 +71,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="在文档中搜索" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -163,7 +164,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/opensource/02_kafka.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/opensource/02_kafka.md.txt" rel="nofollow"> 查看页面源码</a>
           
         
       </li>
@@ -177,9 +178,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="kafka">
-<h1><span class="section-number">2. </span>kafka 入门指北<a class="headerlink" href="#kafka" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>kafka 入门指北<a class="headerlink" href="#kafka" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
-<h2><span class="section-number">2.1. </span>Kafka作为消息系统<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Kafka作为消息系统<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>Kafka streams的概念与传统的企业消息系统相比如何？</p>
 <p>传统的消息系统有两个模块: 队列 和 发布-订阅。 在队列中，消费者池从server读取数据，每条记录被池子中的一个消费者消费; 在发布订阅中，记录被广播到所有的消费者。两者均有优缺点。 队列的优点在于它允许你将处理数据的过程分给多个消费者实例，使你可以扩展处理过程。 不好的是，队列不是多订阅者模式的—一旦一个进程读取了数据，数据就会被丢弃。 而发布-订阅系统允许你广播数据到多个进程，但是无法进行扩展处理，因为每条消息都会发送给所有的订阅者。</p>
 <p>消费组在Kafka有两层概念。在队列中，消费组允许你将处理过程分发给一系列进程(消费组中的成员)。 在发布订阅中，Kafka允许你将消息广播给多个消费组。</p>
@@ -190,14 +191,14 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="id2">
-<h2><span class="section-number">2.2. </span>下载<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>下载<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div><p>tar -xzf kafka_2.11-1.0.0.tgz</p>
 <p>cd kafka_2.11-1.0.0</p>
 </div></blockquote>
 </div>
 <div class="section" id="id3">
-<h2><span class="section-number">2.3. </span>启动服务器<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>启动服务器<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>Kafka 使用 ZooKeeper 如果你还没有ZooKeeper服务器，</p>
 <p>你需要先启动一个ZooKeeper服务器。</p>
 <p>您可以通过与kafka打包在一起的便捷脚本来快速简单地创建一个单节点ZooKeeper实例。</p>
@@ -215,7 +216,7 @@
 </div>
 </div>
 <div class="section" id="topic">
-<h2><span class="section-number">2.4. </span>创建一个 topic<a class="headerlink" href="#topic" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4. </span>创建一个 topic<a class="headerlink" href="#topic" title="永久链接至标题">¶</a></h2>
 <p>让我们创建一个名为“test”的topic，它有一个分区和一个副本：</p>
 <blockquote>
 <div><p>bin/kafka-topics.sh –create –zookeeper localhost:2181 –replication-factor 1 –partitions 1 –topic test</p>
@@ -228,7 +229,7 @@ test</p>
 <p>或者，您也可将代理配置为：在发布的topic不存在时，自动创建topic，而不是手动创建。</p>
 </div>
 <div class="section" id="consumer">
-<h2><span class="section-number">2.5. </span>启动一个 consumer<a class="headerlink" href="#consumer" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5. </span>启动一个 consumer<a class="headerlink" href="#consumer" title="永久链接至标题">¶</a></h2>
 <p>Kafka 还有一个命令行consumer（消费者），将消息转储到标准输出。</p>
 <blockquote>
 <div><p>bin/kafka-console-consumer.sh –bootstrap-server localhost:9092 –topic test –from-beginning</p>
@@ -241,7 +242,7 @@ test</p>
 <p>所有的命令行工具都有其他选项；运行不带任何参数的命令将显示更加详细的使用信息。</p>
 </div>
 <div class="section" id="id4">
-<h2><span class="section-number">2.6. </span>设置多代理集群<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6. </span>设置多代理集群<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>到目前为止，我们一直在使用单个代理，这并不好玩。对 Kafka来说，单个代理只是一个大小为一的集群，除了启动更多的代理实例外，没有什么变化。 为了深入了解它，让我们把集群扩展到三个节点（仍然在本地机器上）。</p>
 <p>首先，为每个代理创建一个配置文件 (在Windows上使用copy 命令来代替)：</p>
 <blockquote>
@@ -364,7 +365,7 @@ test</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="kafkatopicdata">
-<h2><span class="section-number">2.7. </span>kafka彻底删除topic及data<a class="headerlink" href="#kafkatopicdata" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7. </span>kafka彻底删除topic及data<a class="headerlink" href="#kafkatopicdata" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>step1:</p>
 <p>如果需要被删除topic 此时正在被程序 produce和consume，则这些生产和消费程序需要停止。</p>
@@ -423,26 +424,26 @@ rmr /config/topics/【topic name】
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../aboutme/index.html" class="btn btn-neutral float-right" title="联系我 [Call ME]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="01_elastic.html" class="btn btn-neutral float-left" title="1. Elastic Stack" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../aboutme/index.html" class="btn btn-neutral float-right" title="联系我 [Call ME]" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="01_elastic.html" class="btn btn-neutral float-left" title="1. Elastic Stack" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, 艾克中国.
+        &#169; 版权所有 2021, 艾克中国.
 
     </p>
   </div>
     
     
     
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
     
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
     
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>

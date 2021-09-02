@@ -1,13 +1,13 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="zh-CN" >
 <head>
   <meta charset="utf-8" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2. 智能合约 [solidity] &mdash; 区块链研究记录 1.0 documentation</title>
+  <title>2. 智能合约 [solidity] &mdash; 区块链研究记录 1.0 文档</title>
   
 
   
@@ -35,12 +35,13 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="3. 去中心化应用 [Dapp开发指南]" href="03_numpy.html" />
     <link rel="prev" title="1. 以太坊入门" href="01_linux.html" /> 
 </head>
@@ -70,7 +71,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="在文档中搜索" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -175,7 +176,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/ethereum/02_ipython.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/ethereum/02_ipython.rst.txt" rel="nofollow"> 查看页面源码</a>
           
         
       </li>
@@ -189,9 +190,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="solidity">
-<h1><span class="section-number">2. </span>智能合约 [solidity]<a class="headerlink" href="#solidity" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>智能合约 [solidity]<a class="headerlink" href="#solidity" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
-<h2><span class="section-number">2.1. </span>什么是智能合约<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>什么是智能合约<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>以太坊上的程序,是代码和数据(状态)的集合</p></li>
 <li><p>准图灵完备</p></li>
@@ -199,16 +200,16 @@
 </ul>
 </div>
 <div class="section" id="evm">
-<h2><span class="section-number">2.2. </span>运行环境–&gt;EVM<a class="headerlink" href="#evm" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>运行环境–&gt;EVM<a class="headerlink" href="#evm" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>solidity—&gt;EVM(提供了一个沙盒的环境)</p></li>
 <li><p>java——-&gt;JVM</p></li>
 </ul>
 </div>
 <div class="section" id="id2">
-<h2><span class="section-number">2.3. </span>solidity 语言详解<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>solidity 语言详解<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id3">
-<h3>文件结构<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>文件结构<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>版本声明</p></li>
@@ -229,7 +230,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="id4">
-<h3>数据类型<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>数据类型<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><dl class="simple">
 <dt>值类型(Value Type)</dt><dd><ul>
@@ -301,9 +302,9 @@
 </div>
 </div>
 <div class="section" id="id5">
-<h2><span class="section-number">2.4. </span>结构体和映射<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4. </span>结构体和映射<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <div class="section" id="mappings">
-<h3>映射(Mappings)<a class="headerlink" href="#mappings" title="Permalink to this headline">¶</a></h3>
+<h3>映射(Mappings)<a class="headerlink" href="#mappings" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>mapping(address=&gt;uint)</p></li>
 <li><p>public balances</p></li>
@@ -311,7 +312,7 @@
 </div>
 </div>
 <div class="section" id="id6">
-<h2><span class="section-number">2.5. </span>全局变量和函数<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5. </span>全局变量和函数<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><dl class="simple">
 <dt>区块和交易属性(查看官方文档)</dt><dd><ul>
@@ -353,7 +354,7 @@
 </ul>
 </div>
 <div class="section" id="id7">
-<h2><span class="section-number">2.6. </span>参数<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6. </span>参数<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>输入参数</p></li>
@@ -364,7 +365,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="id8">
-<h2><span class="section-number">2.7. </span>控制结构<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7. </span>控制结构<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>没有switch goto</p></li>
@@ -372,7 +373,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="id9">
-<h2><span class="section-number">2.8. </span>可见性<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.8. </span>可见性<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><dl class="simple">
 <dt>public   消耗的gas更多</dt><dd><ul>
@@ -407,7 +408,7 @@
 </ul>
 </div>
 <div class="section" id="id10">
-<h2><span class="section-number">2.9. </span>函数<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.9. </span>函数<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>构造函数</p></li>
@@ -426,26 +427,26 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="03_numpy.html" class="btn btn-neutral float-right" title="3. 去中心化应用 [Dapp开发指南]" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="01_linux.html" class="btn btn-neutral float-left" title="1. 以太坊入门" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03_numpy.html" class="btn btn-neutral float-right" title="3. 去中心化应用 [Dapp开发指南]" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="01_linux.html" class="btn btn-neutral float-left" title="1. 以太坊入门" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, 艾克中国.
+        &#169; 版权所有 2021, 艾克中国.
 
     </p>
   </div>
     
     
     
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
     
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
     
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
 
 </footer>
         </div>

@@ -12,8 +12,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
+import os, sys
+
+
 # sys.path.insert(0, os.path.abspath('.'))
 
 
@@ -48,14 +49,18 @@ templates_path = ['_templates']
 source_parsers = {
 	'.md': 'recommonmark.parser.CommonMarkParser',
 }
-source_suffix = ['.rst', '.md']
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.txt': 'restructuredtext',
+    '.md': 'markdown',
+}
 
 
 extensions = [
     'sphinx.ext.autodoc',
     'recommonmark',
-    'sphinx_markdown_tables',
-    'myst_parser'
+    'sphinx_markdown_tables'
+    # 'myst_parser'
 ]
 
 # The master toctree document.
