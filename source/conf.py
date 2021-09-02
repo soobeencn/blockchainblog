@@ -39,12 +39,6 @@ release = u'1.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-extensions = [
-    #'sphinx.ext.autodoc',
-    'recommonmark',
-    'sphinx_markdown_tables'
-]
-
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -52,11 +46,17 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 source_parsers = {
-    '.md': 'recommonmark.parser.CommonMarkParser',
+	'.md': 'recommonmark.parser.CommonMarkParser',
 }
-
 source_suffix = ['.rst', '.md']
 
+
+extensions = [
+    'sphinx.ext.autodoc',
+    'recommonmark',
+    'sphinx_markdown_tables',
+    'myst_parser'
+]
 
 # The master toctree document.
 master_doc = 'index'
@@ -66,7 +66,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'zh_CN'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -74,7 +74,7 @@ language = None
 exclude_patterns = []
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = None
+pygments_style = 'sphinx'
 
 
 # -- Options for HTML output -------------------------------------------------
