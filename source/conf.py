@@ -55,6 +55,9 @@ source_suffix = {
     '.md': 'markdown',
 }
 
+# 解决md table问题
+# python3 -m pip freeze > requirements.txt
+
 
 extensions = [
     'sphinx.ext.autodoc',
