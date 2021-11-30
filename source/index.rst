@@ -19,6 +19,7 @@
    beginning/index
    ethereum/index
    hyperledger/index
+   metaverse/index
    operations/index
    opensource/index
    aboutme/index
