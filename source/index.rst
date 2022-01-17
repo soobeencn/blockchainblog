@@ -40,6 +40,6 @@ FAQ:
 .. note:: 
    本书为开源图书，版权归作者所有；欢迎下载及编辑(个人用途)，但未经作者同意必须保留此段声明，且不可用于商业用途，否则保留追究法律责任的权利。
 
-   - 作者: 艾克中国
+   - 作者: soobeencn
    - 个人站：pwnpub.com
    - Github：https://github.com/soobeencn
