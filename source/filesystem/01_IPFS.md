@@ -3,7 +3,7 @@
 IPFS是一个用于存储和访问文件、网站、应用程序和数据的分布式系统。
 ## 基础架构
 
-![](http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/2022/03/14/16469688305446.jpg%3F%E5%9F%9F%E5%90%8D/sample.jpg?x-oss-process=style/stylename)
+![](http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/2022/03/14/16469688305446.jpg?image/auto-orient,1/quality,Q_90)
 关键: 
 - 部署完整的集群环境, 至少3个节点起, 这点取决于raft算法
 - 每个ipfs-cluster需要依托于ipfs守护进程建立, 所以部署生产级集群环境, 每个节点必须额外部署ipfs守护进程
