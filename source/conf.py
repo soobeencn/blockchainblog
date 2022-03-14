@@ -21,7 +21,7 @@ import os, sys
 # -- Project information -----------------------------------------------------
 
 project = u'区块链研究记录'
-copyright = u'2021, 艾克中国'
+copyright = u'2022, 艾克中国'
 author = u'艾克中国'
 
 # The short X.Y version
