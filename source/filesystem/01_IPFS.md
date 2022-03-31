@@ -1,7 +1,3 @@
-IPFS 为分布式 Web 提供动力:
-
-一种**点对点**超媒体协议, 旨在通过使网络**可升级**、**有弹性**和**更开放**来保存和增长人类的知识。
-
 ## 网络背景
 明天的网络, 今天需要IPFS: IPFS旨在超越HTTP, 以便为我们所有人构建更好的网络
 
@@ -144,9 +140,6 @@ IPFS 隐私功能可以帮助关闭对应特定实体的网络。
 值得注意的是，私有网络是在核心 IPFS 功能中实现的默认特性，IPFS-Cluster 是其单独的应用程序。IPFS 和 IPFS-Cluster 应用程序以不同的包安装，以各自的进程运行，它们具有不同的节点 IP 以及 API 入口和端口。
 IPFS-Cluster 守护进程依赖于 IPFS 守护进程，应该在 IPFS 之后启动。
 
-
-
-
 ### 启动私有网络
 #### 必要条件
 - go env: https://go.dev/doc/install
@@ -160,19 +153,25 @@ _https://github.com/Kubuxu/go-ipfs-swarm-key-gen/
 
 - 下载源文件
 - 生成密钥: 
-    > ./ipfs-swarm-key-gen &> ~/.ipfs/swarm.key
-
+    ```bash
+    ./ipfs-swarm-key-gen &> ~/.ipfs/swarm.key
+    ```
 - 拷贝swarm.key 至其他私有网络的节点目录下   
-    > ./ipfs/
-
+    ```bash
+    ./ipfs/
+    ```
 #### step3: 启动第一个节点
-> ipfs daemon
+```vb
+ipfs daemon
+```
 
 查看p2p地址并记录:
-> ipfs id
-
+```bash
+ipfs id
+```
 记录Address数组中第二个:
-> /ip4/172.25.255.188/tcp/4001/p2p/12D3KooWSvvtpUfvZbATqMVDbcJLa5x1HCxnZPSzzQ16UKiHn5pF
+
+`/ip4/172.25.255.188/tcp/4001/p2p/12D3KooWSvvtpUfvZbATqMVDbcJLa5x1HCxnZPSzzQ16UKiHn5pF`
     
     
 #### step4: 删除默认p2p节点
@@ -198,9 +197,13 @@ _https://github.com/Kubuxu/go-ipfs-swarm-key-gen/
 > ipfs daemon
 
 在其中一个节点中添加文件, 从另外的节点查看
-> echo hi IPFS &> file.txt
+```bash 
+echo hi IPFS &> file.txt
+```
+```bash
+ipfs add file.txt
+```
 
-> ipfs add file.txt
 
 返回:
 ```bash
@@ -209,14 +212,18 @@ added Qme65DATcv3WFJqjhYn7tXKWz1QFYBFN9Bb4yDxbzETuFM file.txt
 注意保存added后面的字符串
 
 在本机节点以及其余节点查看
-> ipfs cat Qme65DATcv3WFJqjhYn7tXKWz1QFYBFN9Bb4yDxbzETuFM
+```bash
+ipfs cat Qme65DATcv3WFJqjhYn7tXKWz1QFYBFN9Bb4yDxbzETuFM
+```
 
 如果在其余节点均能够查看到file.txt中的信息, 说明私有网络搭建成功.
 
 ---------------
 ### 启动IPFS-守护进程
 为了让 IPFS 守护进程可以在我们退出控制台会话后继续运行，我们将会创建 systemd 服务。在我们做这个之前，先停止你的 ipfs 守护进程。为新服务创建一个文件。
-> sudo vim /etc/systemd/system/ipfs.service
+```bash
+sudo vim /etc/systemd/system/ipfs.service
+```
 
 然后添加如下配置：
 ```bash
@@ -231,14 +238,18 @@ added Qme65DATcv3WFJqjhYn7tXKWz1QFYBFN9Bb4yDxbzETuFM file.txt
  WantedBy=multi-user.target
 ```
 添加新服务:
-> sudo systemctl daemon-reload
-
-> sudo systemctl enable ipfs
-
-> sudo systemctl start ipfs
-
-> sudo systemctl status ipfs
-
+```bash
+sudo systemctl daemon-reload
+```
+```bash
+sudo systemctl enable ipfs
+```
+```bash
+sudo systemctl start ipfs
+```
+```bash
+sudo systemctl status ipfs
+```
 重新启动系统，检查IPFS守护进程是否处于活动状态并正在运行，然后可以再次尝试从一个节点添加文件并从另一个节点访问它。
 
 我们已经完成了创建私有 IPFS 网络并将其守护进程作为服务运行的工作。在这个阶段，你应该已经有了三个私有网络结点。现在，让我们创建用于数据复制的 IPFS-CLUSTER。
@@ -260,46 +271,65 @@ added Qme65DATcv3WFJqjhYn7tXKWz1QFYBFN9Bb4yDxbzETuFM file.txt
 #### step1: 初始化节点
 IPFS 集群在IPFS 分布页面上为多个平台提供了预构建的**二进制**文件：
 - ipfs-cluster-service
-    > curl -L -O https://dist.ipfs.io/ipfs-cluster-service/v0.14.5/ipfs-cluster-service_v0.14.5_linux-amd64.tar.gz
+    ```bash
+    curl -L -O https://dist.ipfs.io/ipfs-cluster-service/v0.14.5/ipfs-cluster-service_v0.14.5_linux-amd64.tar.gz
+    ```
 
 - ipfs-cluster-ctl
-    > curl -L -O https://dist.ipfs.io/ipfs-cluster-ctl/v0.14.5/ipfs-cluster-ctl_v0.14.5_linux-amd64.tar.gz
+    ```bash
+    curl -L -O https://dist.ipfs.io/ipfs-cluster-ctl/v0.14.5/ipfs-cluster-ctl_v0.14.5_linux-amd64.tar.gz
+    ```
 
 - ipfs-cluster-follow
-    > curl -L -O https://dist.ipfs.io/ipfs-cluster-follow/v0.14.5/ipfs-cluster-follow_v0.14.5_linux-amd64.tar.gz
+    ```bash
+    curl -L -O https://dist.ipfs.io/ipfs-cluster-follow/v0.14.5/ipfs-cluster-follow_v0.14.5_linux-amd64.tar.gz
+    ```
 
 **备注**: 如果遇到无法下载的情况, 可先科学上网, 下载至本地, 再push到remote server.
 
 - 解压三个文件夹, 初始化IPFS-Cluster
-    > cd ipfs-cluster-service/
-
-    > ./ipfs-cluster.service init
-
-    > cd /root/.ipfs-cluster/
-
-    > vim service.json
-
+    ```bash
+    cd ipfs-cluster-service/
+    ```
+    ```bash
+    ./ipfs-cluster.service init
+    ```
+    ```bash
+    cd /root/.ipfs-cluster/
+    ```
+    ```bash
+    vim service.json
+    ```
 - 记录下: secret
     > "secret": "d88fcac50912c5d681ccebc888bbe6a449aa548a30c952f9749fb31fcd2cc25e",
 
 - 查看Node-1的p2p地址并记录:
-    > ./ipfs-cluster-ctl id
-
+    ```bash
+    ./ipfs-cluster-ctl id
+    ```
 #### step2: 启动其他节点, 并修改service.json中的secret, 与节点1保持一致
 
-> ./ipfs-cluster-service init --custom-secret d88fcac50912c5d681ccebc888bbe6a449aa548a30c952f9749fb31fcd2cc25e
-
-> vim /root/.ipfs-cluster/service.json
+```bash
+./ipfs-cluster-service init --custom-secret d88fcac50912c5d681ccebc888bbe6a449aa548a30c952f9749fb31fcd2cc25e
+```
+查看:
+```bash
+vim /root/.ipfs-cluster/service.json
+```
 
 启动: 以引导的方式启动
-> ./ipfs-cluster-service daemon --bootstrap /ip4/172.25.255.187/tcp/9096/p2p/12D3KooWR7TbR2VEifk4ZGAZ1h4HnnpA6M3kdnYSUeYyntyEkXt7
-
+```shell
+./ipfs-cluster-service daemon --bootstrap /ip4/172.25.255.187/tcp/9096/p2p/12D3KooWR7TbR2VEifk4ZGAZ1h4HnnpA6M3kdnYSUeYyntyEkXt7
+```
 #### step3: 查看节点状态
-> ./ipfs-cluster-ctl peers ls
-
+```bash
+./ipfs-cluster-ctl peers ls
+```
 ### 启动IPFS-Cluster-守护进程
-> sudo vim /etc/systemd/system/ipfs-cluster.service
-
+```bash
+sudo vim /etc/systemd/system/ipfs-cluster.service
+```
+cat result:
 ```bash
 [Unit]
 Description=IPFS-Cluster Daemon
@@ -312,21 +342,22 @@ User=root
 [Install]
 WantedBy=multi-user.target
 ```
-> sudo systemctl daemon-reload
-
-> sudo systemctl enable ipfs-cluster
-
-> sudo systemctl start ipfs-cluster
-
-> sudo systemctl status ipfs-cluster
-
+重载:
+```bash
+sudo systemctl daemon-reload
+```
+```bash
+sudo systemctl enable ipfs-cluster
+```
+```bash
+sudo systemctl start ipfs-cluster
+```
+```bash
+sudo systemctl status ipfs-cluster
+```
 ------------------
 
 ## API接入
 
 - RESTAPI (HTTP): /ip4/127.0.0.1/tcp/9094
-
-
-
-
 
