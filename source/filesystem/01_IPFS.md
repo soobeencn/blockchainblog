@@ -19,15 +19,19 @@ IPFS 为创建具有持续可用性的多样化弹性网络提供支持——无
 
 将文件添加到 IPFS 时会发生以下情况——无论将该文件存储在自己的本地节点上，还是由固定服务或支持 IPFS 的应用程序操作的节点上。
 
-1. 当文件添加到 IPFS 时，会被拆分成更小的块，进行加密散列，并赋予一个称为 **内容标识符** (CID)的 **唯一指纹**。此 CID 充当文件的永久记录，因为它在该时间点存在。
-2. 当其他节点查找该文件时，它们会询问他们的对等节点谁存储了文件的 CID 引用的内容。当他们查看或下载文件时，他们会缓存一个副本——并成为该内容的另一个提供者，直到他们的缓存被清除。
-3. 节点可以 **固定内容** 以永久保留（并提供）它，或者丢弃一段时间未使用的内容以节省空间。这意味着网络中的每个节点 只存储它感兴趣的内容，以及一些有助于确定哪个节点存储什么的索引信息。
-4. 如果将文件的新版本添加到 IPFS，它的加密哈希是不同的，因此它会获得一个新的 CID。这意味着 存储在 IPFS 上的文件可以**抵抗篡改和审查** ——对文件的任何更改都不会覆盖原始文件，并且可以重复使用文件中的公共块，以最大限度地降低存储成本。
-5. 但是，这并不意味着必须记住一长串 CID — IPFS 可以使用 **IPNS** 分散命名系统找到文件的最新版本，并且 DNSLink 可用于将 CID 映射到 人类可读的 DNS 名称。
+- 当文件添加到 IPFS 时，会被拆分成更小的块，进行加密散列，并赋予一个称为 **内容标识符** (CID)的 **唯一指纹**。此 CID 充当文件的永久记录，因为它在该时间点存在。
+
+- 当其他节点查找该文件时，它们会询问他们的对等节点谁存储了文件的 CID 引用的内容。当他们查看或下载文件时，他们会缓存一个副本——并成为该内容的另一个提供者，直到他们的缓存被清除。
+
+- 节点可以 **固定内容** 以永久保留（并提供）它，或者丢弃一段时间未使用的内容以节省空间。这意味着网络中的每个节点 只存储它感兴趣的内容，以及一些有助于确定哪个节点存储什么的索引信息。
+
+- 如果将文件的新版本添加到 IPFS，它的加密哈希是不同的，因此它会获得一个新的 CID。这意味着 存储在 IPFS 上的文件可以**抵抗篡改和审查** ——对文件的任何更改都不会覆盖原始文件，并且可以重复使用文件中的公共块，以最大限度地降低存储成本。
+
+- 但是，这并不意味着必须记住一长串 CID — IPFS 可以使用 **IPNS** 分散命名系统找到文件的最新版本，并且 DNSLink 可用于将 CID 映射到 人类可读的 DNS 名称。
 
 ## 核心概念
 ### 内容寻址
-_内容寻址是一种用于在信息系统中组织和定位数据的技术，其中用于定位内容的密钥来自内容本身_
+_内容寻址是一种用于在信息系统中组织和定位数据的技术，其中用于定位内容的密钥来自内容本身._
 #### 基本问题
 想象一个key-value存储:
 ```java
@@ -149,7 +153,7 @@ IPFS-Cluster 守护进程依赖于 IPFS 守护进程，应该在 IPFS 之后启�
 - ipfs: https://github.com/ipfs/go-ipfs/releases
 
 #### step2: 下载swarm.key
-_https://github.com/Kubuxu/go-ipfs-swarm-key-gen/
+_https://github.com/Kubuxu/go-ipfs-swarm-key-gen/_
 
 - 下载源文件
 - 生成密钥: 
@@ -175,27 +179,33 @@ ipfs id
     
     
 #### step4: 删除默认p2p节点
-
-> ipfs bootstrap
-    
-> ipfs bootstrap rm all
+```bash
+ipfs bootstrap
+```    
+```bash
+ipfs bootstrap rm all
+```
 
 #### step5: 其他节点添加引导节点p2p地址
-> ipfs bootstrap add  /ip4/172.25.255.188/tcp/4001/p2p/12D3KooWSvvtpUfvZbATqMVDbcJLa5x1HCxnZPSzzQ16UKiHn5pF
-
+```bash
+ipfs bootstrap add  /ip4/172.25.255.188/tcp/4001/p2p/12D3KooWSvvtpUfvZbATqMVDbcJLa5x1HCxnZPSzzQ16UKiHn5pF
+```
 #### step6: 设置环境变量
 
 设置环境变量 LIBP2P_FORCE_PNET 来强制网络使用私有模式：
-> export LIBP2P_FORCE_PNET=1
-
+```bash
+export LIBP2P_FORCE_PNET=1
+```
 #### step7: 配置ip通信(如需外网访问)
 修改API、Gateway
-> vim /root/.ipfs/config
-
+```bash
+vim /root/.ipfs/config
+```
 #### step8: 启动节点并测试
 至此,已经完成了所有配置,让我们启动所有节点并测试
-> ipfs daemon
-
+```bash
+ipfs daemon
+```
 在其中一个节点中添加文件, 从另外的节点查看
 ```bash 
 echo hi IPFS &> file.txt
@@ -218,7 +228,7 @@ ipfs cat Qme65DATcv3WFJqjhYn7tXKWz1QFYBFN9Bb4yDxbzETuFM
 
 如果在其余节点均能够查看到file.txt中的信息, 说明私有网络搭建成功.
 
----------------
+-------------------------------------
 ### 启动IPFS-守护进程
 为了让 IPFS 守护进程可以在我们退出控制台会话后继续运行，我们将会创建 systemd 服务。在我们做这个之前，先停止你的 ipfs 守护进程。为新服务创建一个文件。
 ```bash
@@ -259,9 +269,6 @@ sudo systemctl status ipfs
 ### 启动IPFS-Cluster
 #### 必要条件
 - ipfs 守护进程
-
-
-
 在创建私有 IPFS 网络之后，我们可以开始在 IPFS 之上部署 IPFS-Cluster，以实现数据的自动复制和更好的数据管理。
 
 有两种方法来组织 IPFS 集群:
