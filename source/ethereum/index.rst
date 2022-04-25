@@ -11,9 +11,9 @@
     :maxdepth: 2
     :numbered: 2
 
-    01_linux
-    02_ipython
+    01_base
+    02_solidity
     03_dapp-dev
-    04_matplotlib
-    05_seaborn
-    06_important
+    04_exchange
+    05_explorer
+    06_tech
