@@ -13,7 +13,7 @@
 
     01_linux
     02_ipython
-    03_numpy
+    03_dapp-dev
     04_matplotlib
     05_seaborn
     06_important
