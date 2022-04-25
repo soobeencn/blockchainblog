@@ -1,6 +1,4 @@
-Dapp开发指南
-
-## 智能合约
+## Dapp开发指南
 
 使用 Truffle 为 Hyperledger Besu 开发与使用 Truffle 为公共以太坊网络开发相同。Truffle 支持 Besu，唯一的区别是 Besu 不支持私钥管理。要将 Besu 与 Truffle 一起使用，必须配置一个 Truffle 钱包。
 

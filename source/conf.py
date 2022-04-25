@@ -21,8 +21,8 @@ import os, sys
 # -- Project information -----------------------------------------------------
 
 project = u'区块链研究记录'
-copyright = u'2022, 艾克中国'
-author = u'艾克中国'
+copyright = u'2022, 控场大师'
+author = u'控场大师'
 
 # The short X.Y version
 version = u''
@@ -145,7 +145,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'sphinx.tex', u'区块链研究记录 Documentation',
-     u'艾克中国', 'manual'),
+     u'控场大师', 'manual'),
 ]
 
 
