@@ -10,7 +10,5 @@
     :numbered: 2
 
     01_blockchain100
-    02_linux
-    03_ipython
-    04_numpy
+    02_base
     
