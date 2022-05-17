@@ -20,7 +20,7 @@
    ethereum/index
    hyperledger/index
    filesystem/index
-   opensource/index
+   infra/index
    aboutme/index
    
 .. hadoop/index

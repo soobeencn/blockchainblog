@@ -1,4 +1,5 @@
 ## 合约设计
+
 ### 渠道存证合约
 ```sol
 // SPDX-License-Identifier: GPL-3.0

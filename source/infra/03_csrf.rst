@@ -23,16 +23,16 @@
 
 
 ssr 一键搭建
-==================
+-----------------------
 
 ssr 一键部署:
----------------------
+>>>>>>>>>>>>>>>>>>>
 ::
 
     wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssrmu.sh && chmod +x ssrmu.sh && bash ssrmu.sh
 
 使用bbr加速
----------------------
+>>>>>>>>>>>>>>>>
 
 >>> wget https://d.kxxzz.com/sh/tcp.sh    `2019年脚本`
 >>> wget https://d.kxxzz.com/sh/tcp2020/tcp.sh   `2020年脚本`
@@ -47,10 +47,10 @@ ssr 一键部署:
 
 
 v2ray 一键搭建
-==================
+>>>>>>>>>>>>>>>>>>>>>>>>>
 
 centos版 一键部署:
----------------------
+>>>>>>>>>>>>>>>>>>>>>
 ::
 
     bash <(curl -sL https://raw.githubusercontent.com/hijkpw/scripts/master/centos_install_v2ray.sh)
@@ -72,7 +72,7 @@ centos版 一键部署:
 
 
 ubuntu版 一键部署:
--------------------------
+>>>>>>>>>>>>>>>>>>>>>>
 ::
 
     bash <(curl -sL https://raw.githubusercontent.com/hijkpw/scripts/master/ubuntu_install_v2ray.sh)
