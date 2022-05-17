@@ -18,3 +18,4 @@
     05_explorer
     06_tech
     07_eip
+    08_contract
