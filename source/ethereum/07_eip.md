@@ -1,6 +1,7 @@
-## ERC-20
+## EIP
 
-### Token发行
+### ERC-20
+#### Token发行
 ```sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
@@ -19,7 +20,7 @@ contract Token is ERC20 {
 ```
 
 
-## ERC-721
+### ERC-721
 
 http://112.74.169.88:8080/ipfs/QmQzqrM3fCdNq3BWckXmR1zWJ4oiQBUWVm7iRFqeGTdGxE
 
@@ -30,7 +31,7 @@ http://112.74.169.88:8080/ipfs/QmQzqrM3fCdNq3BWckXmR1zWJ4oiQBUWVm7iRFqeGTdGxE
     "strength": 300
 }
 
-### NFT-1
+#### NFT-1
 ```sol
 //Contract based on [https://docs.openzeppelin.com/contracts/3.x/erc721](https://docs.openzeppelin.com/contracts/3.x/erc721 "https://docs.openzeppelin.com/contracts/3.x/erc721")
 // SPDX-License-Identifier: MIT
@@ -59,7 +60,7 @@ contract MyNFT is ERC721URIStorage, Ownable {
 }
 ```
 
-### NFT-2
+#### NFT-2
 ```sol
 // contracts/GameItem.sol
 // SPDX-License-Identifier: MIT
