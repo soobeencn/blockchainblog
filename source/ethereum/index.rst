@@ -17,3 +17,4 @@
     04_exchange
     05_explorer
     06_tech
+    07_eip
