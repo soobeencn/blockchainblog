@@ -18,7 +18,7 @@
 
    beginning/index
    ethereum/index
-   hyperledgerbesu/index
+   
    hyperledgerfabric/index
    filesystem/index
    infra/index
