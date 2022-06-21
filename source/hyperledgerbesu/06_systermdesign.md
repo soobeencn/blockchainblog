@@ -1,5 +1,56 @@
 # 系统设计
 
+## 整体架构
+
+# 区块链环境部署
+## 整体架构
+区块链平台的基础架构图如下图所示:
+
+![](http://mweb-storage.oss-cn-shenzhen.aliyuncs.com/2022/05/27/16500168508039.jpg?image/auto-orient,1/quality,Q_90)
+
+平台的核心能力集中在 **P2P网络**, **共识模块**, **账本存储**. 平台提供了一系列技术特性, 包括加密机制、共识机制和区块链治理机制等保证了数据的安全性.
+
+而交互层提供了多种SDK及Restful API对接, 保证了平台的易用性,另外平台提供监控、区块浏览器等实时查看底层链平台的运行情况、为用户创建了完备可定制的区块链生态系统.
+
+### 平台的特点:
+平台实现了 企业以太坊联盟(EEA) 规范。EEA 规范的建立是为了在以太坊内的各种开源和闭源项目之间创建通用接口，以确保用户不会被供应商锁定，并为构建应用程序的团队创建标准接口。Besu 实施符合 EEA 客户端规范的企业功能。 
+
+### 平台的功能包括： 
+
+共识算法： 
+Hyperledger Besu 实现了各种共识算法，这些算法涉及交易验证、区块验证和区块生产（即工作量证明中的挖掘）。他们包括：
+- 权威证明： 
+    Hyperledger Besu 实现了多种权威证明协议。例如，当参与者彼此认识并且他们之间存在一定程度的信任时，就会使用权威证明共识协议——例如，在一个许可的联盟网络中。
+    
+    - IBFT 2.0： 在 IBFT 2.0 网络中，交易和区块由经批准的账户（称为验证器）进行验证。验证者轮流创建下一个区块。现有验证器提议并投票添加或删除验证器。IBFT 2.0 具有即时终结性。使用 IBFT 2.0 时，没有分叉，所有有效块都包含在主链中。
+    - Clique： Clique 比 IBFT 2.0 更容错。Clique 最多可以容忍一半的验证器失败。IBFT 2.0 网络需要大于或等于 ⅔ 的验证器来操作以创建块。Clique 没有立即确定性。使用 Clique 的实现必须意识到分叉和链重组的发生。
+
+
+- P2P 网络： 
+Hyperledger Besu 实现了以太坊的 devp2p 网络协议，用于客户端间通信和 IBFT2 的附加子协议：
+    - Discovery： 一种基于 UDP 的协议，用于在网络上查找对等点
+    - RLPx： 一种基于 TCP 的协议，用于通过各种“子协议”在对等方之间进行通信：
+    - ETH 子协议（以太坊有线协议）：用于在整个网络中同步区块链状态并传播新交易。
+    - IBF 子协议：由 IBFT2 共识协议使用，以促进共识决策。
+- 面向用户的 API：
+Hyperledger Besu 通过 HTTP 和 WebSocket 协议以及 GraphQL API 提供主网 Ethereum 和 EEA JSON-RPC API。  
+    - JSON-RPC
+        - HTTP JSON-RPC 服务
+        - WebSocket JSON-RPC 服务
+    - GraphQL
+- 监控：
+Hyperledger Besu 允许您监控节点和网络性能。
+节点性能使用 Prometheus 或 debug_metrics JSON-RPC API 方法进行监控。
+网络性能由Alethio 工具（例如 Block Explorer 和 EthStats Network Monitor）进行监控。
+
+- 隐私：
+Hyperledger Besu 中的隐私是指在相关方之间保持交易私密的能力。其他方无法访问交易内容、发送方或参与方列表。Besu 使用 Private Transaction Manager 来实现隐私。 
+
+- 许可：
+许可网络通过在网络上启用节点许可和/或帐户许可，只允许指定的节点和帐户参与。
+
+
+## 核心模块
 ### 账本数据设计
 
 #### 简述
